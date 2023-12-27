@@ -12,7 +12,7 @@ namespace Targil0
 
         static partial void Welcome5654()
         {
-            Console.WriteLine("i am also here,i am Emanuel");
+            Console.WriteLine("this is emanuel");
         }
     }
 }
