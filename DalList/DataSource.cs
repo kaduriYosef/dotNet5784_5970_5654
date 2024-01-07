@@ -6,7 +6,7 @@ internal static class DataSource
     internal static class Config
     {
         //for task class
-        internal const int startTaskId = 0;
+        internal const int startTaskId = 1000;
         private static int nextTaskId = startTaskId;
         internal static int NextTaskId { get => nextTaskId++; }
     }
