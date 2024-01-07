@@ -41,8 +41,16 @@ public class EngineerImplementation : IEngineer
     }    
     public void Delete(int id)
     {
-
-        throw new NotImplementedException();
+        //if such index exists we will replace that Engineer with a new, non active engineer
+        //and if this index doesn't exist, meaning there isn't Engineer with such id, we will throw an exception
+        int index=DataSource.Engineers.FindIndex((en) => en.Id == id);
+        if (index != -1) 
+        {
+            Engineer non_active_engineer = DataSource.Engineers[index] with {Active=false };
+            DataSource.Engineers.RemoveAt(index);
+            DataSource.Engineers.Add(non_active_engineer);
+        }
+        else throw new Exception($"there isn't an Engineer with Id={id}.\n"); 
     }
 }
 
