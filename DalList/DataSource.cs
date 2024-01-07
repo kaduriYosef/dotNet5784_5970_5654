@@ -5,6 +5,10 @@ internal static class DataSource
 {
     internal static class Config
     {
+        public static DateTime? StartDate = null;
+        public static DateTime? EndDate=null;
+
+
         //for task class
         internal const int startTaskId = 0;
         private static int nextTaskId = startTaskId;

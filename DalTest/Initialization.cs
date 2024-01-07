@@ -11,7 +11,10 @@ public static class Initialization
 
     private static readonly Random s_rand = new();
 
-    
+    private static void createTask(){    } 
+    private static void createEngineer(){    } 
+    private static void createDependency(){    } 
+
 }
 
 
