@@ -16,7 +16,7 @@ public class EngineerImplementation : IEngineer
     public Engineer? Read(int id)
     {
        
-        return DataSource.Engineers.FirstOrDefault(result => result.Id == id);
+        return DataSource.Engineers.FirstOrDefault(eng => eng.Id == id);
     }
 
     public List<Engineer> ReadAll()
@@ -24,10 +24,11 @@ public class EngineerImplementation : IEngineer
         return new List<Engineer>(DataSource.Engineers);
     }
 
-
+    
     public void Update(Engineer item)
+    // find the index of the item to update if it exist. if not throws an exeption
     {
-        int index = DataSource.Engineers.FindIndex(e => e.Id == item.Id);
+        int index = DataSource.Engineers.FindIndex(en => en.Id == item.Id);
 
         if (index != -1)
         {
