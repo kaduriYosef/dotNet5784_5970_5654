@@ -7,23 +7,38 @@ public class DependencyImplementation : IDependency
 {
     public int Create(Dependency item)
     {
-        throw new NotImplementedException();
+        int id = DataSource.Config.NextDependencyId;
+        Dependency new_item = item with { Id = id };
+        DataSource.Dependencies.Add(new_item);
+        return id;
+
     }
 
 
     public Dependency? Read(int id)
     {
-        throw new NotImplementedException();
+        return DataSource.Dependencies.FirstOrDefault(dep => dep.Id == id);
     }
 
     public List<Dependency> ReadAll()
     {
-        throw new NotImplementedException();
+        return new List<Dependency>(DataSource.Dependencies);
     }
 
     public void Update(Dependency item)
+    // find the index of the item to update if it exist. if not throws an exeption
     {
-        throw new NotImplementedException();
+        int index = DataSource.Dependencies.FindIndex(dep => dep.Id == item.Id);
+
+        if (index != -1)
+        {
+            DataSource.Dependencies.RemoveAt(index);
+            DataSource.Dependencies.Add(item);
+        }
+        else
+        {
+            throw new Exception($"An Dependency with id={item.Id} does not exist.\n");
+        }
     }
     public void Delete(int id)
     {
