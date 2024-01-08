@@ -83,20 +83,23 @@ public static class Initialization
         List<Engineer> engineers = new List<Engineer>(s_dalEngineer.ReadAll());
         foreach (var en in engineers)
         {
+            DateTime a;
             int Id = s_rand.Next(10, 30);
             int rand = s_rand.Next(29);
             string Alias = tasksForEngineer[rand];
             string Description = tasksForEngineer[rand];
             DateTime start = new DateTime(2000, 1, 1);
-            int range = (DateTime.Today - start).Days;
-            DateTime? CreatedAtDate = null,
-    DateTime? RequiredEffortTime = null,
-    bool IsMilestone = false,
-    EngineerExperience? Copmlexity = null,
-    DateTime? StartDate = null,
-    DateTime? ScheduledDate = null,
+            int range = (DateTime.Now - start).Days;
+            DateTime CreatedAtDate = start.AddDays(s_rand.Next(range));
+            TimeSpan RequiredEffortTime = s_rand.Next(30, 365);
+            bool IsMilestone = rand % 2 == 0;
+            EngineerExperience Copmlexity = (EngineerExperience)(s_rand.Next(5));
+            //DateTime? StartDate = null;
+            DateTime ScheduledDate = null,
+            
+            
     DateTime? DeadlineDate = null,
-    DateTime? CompleteDate = null,
+    //DateTime? CompleteDate = null,
     string? Deliverables = null,
     string? Remarks = null,
     int EngineerId = 0
