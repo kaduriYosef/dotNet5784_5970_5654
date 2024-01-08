@@ -47,9 +47,12 @@ public class EngineerImplementation : IEngineer
         int index=DataSource.Engineers.FindIndex((en) => en.Id == id);
         if (index != -1) 
         {
-            Engineer non_active_engineer = DataSource.Engineers[index] with {Active=false };
+            //would have done here
+            //Engineer non_active_engineer = DataSource.Engineers[index] with {Active=false };
+            //DataSource.Engineers.Add(non_active_engineer);
+
+            //but instead we do here only
             DataSource.Engineers.RemoveAt(index);
-            DataSource.Engineers.Add(non_active_engineer);
         }
         else throw new Exception($"there isn't an Engineer with Id={id}.\n"); 
     }

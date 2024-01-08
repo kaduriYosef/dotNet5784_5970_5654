@@ -50,4 +50,8 @@ public class DependencyImplementation : IDependency
         else
             throw new Exception($"there isn't an Dependency with Id={id}.\n");
     }
+    public bool DoesExist(int dependent_id,int dependsOn_id)
+    {
+        return DataSource.Dependencies.Any(dep=>dep.DependentTask == dependent_id && dep.DependsOnTask==dep.DependsOnTask);
+    }
 }
