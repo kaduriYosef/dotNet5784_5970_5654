@@ -10,12 +10,12 @@ internal static class DataSource
 
 
         //for task class
-        internal const int startTaskId = 0;
+        internal const int startTaskId = 1000;
         private static int nextTaskId = startTaskId;
         internal static int NextTaskId { get => nextTaskId++; }
 
         //for Dependency class
-        internal const int startDependencyId = 0;
+        internal const int startDependencyId = 10000;
         private static int nextDependencyId = startDependencyId;
         internal static int NextDependencyId { get => nextDependencyId++; }
     }

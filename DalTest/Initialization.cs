@@ -83,18 +83,17 @@ public static class Initialization
         List<Task> tasks = new List<Task>();
         foreach (var task in tasksForEngineer)
         {
-            //int i = 0;
             int Id = 0;
             int rand = s_rand.Next();
             string Alias = task;
             string Description = task;
             DateTime start = new DateTime(2000, 1, 1);
-            int range = (DateTime.Now - start).Days;
+            int range = (DateTime.Today - start).Days;
             DateTime CreatedAtDate = start.AddDays(s_rand.Next(range));
             TimeSpan? RequiredEffortTime = TimeSpan.FromDays(s_rand.Next(30, 365));
             bool IsMilestone = range % 2 == 0;
             EngineerExperience? Copmlexity = (EngineerExperience)(s_rand.Next(5));
-            //DateTime? StartDate = null;
+            DateTime? StartDate = null;
             int i = RequiredEffortTime?.Days ?? 0;
             DateTime? ScheduledDate = CreatedAtDate.AddDays(s_rand.Next(range - i));
             DateTime? DeadlineDate = ScheduledDate?.AddDays(i + s_rand.Next(10, 40));
@@ -106,13 +105,6 @@ public static class Initialization
                                     ScheduledDate, DeadlineDate, CompleteDate, Deliverables, Remarks, EngineerId);
             s_dalTask!.Create(newTask);
         }
-            
-            
-
-
-
-
-
     }
 
     private static void createEngineer()
@@ -125,7 +117,7 @@ public static class Initialization
             int id;
             do
                 id = s_rand.Next(200000000, 400000000);
-            while (s_dalEngineer.Read(id) != null);
+            while (s_dalEngineer!.Read(id) != null);
             string name = en;
             string email = en + "@gmail.com";
             double cost = s_rand.Next(10000, 40000);
@@ -137,7 +129,11 @@ public static class Initialization
     }
     private static void createDependency() 
     {
-            
+        int Id = 0;
+        int DependentTask = s_rand.Next(10,40);
+        int? DependsOnTask = s_
+
+
     }
 
 
