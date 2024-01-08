@@ -2,6 +2,8 @@
 namespace DalTest;
 
 using System.Data;
+using System.Data.Common;
+using Dal;
 using DalApi;
 using DO;
 
@@ -11,7 +13,10 @@ public static class Initialization
     private static IEngineer? s_dalEngineer; //stage 1
     private static IDependency? s_dalDependency; //stage 1
 
+
     private static readonly Random s_rand = new();
+
+    public static bool DependencyImplemination { get; private set; }
 
     private static void createTask()
     {
@@ -101,7 +106,7 @@ public static class Initialization
             string? Deliverables = null;
             string? Remarks = null;
             int? EngineerId = null;
-            Task newTask = new Task(Id, Alias, Description, CreatedAtDate, RequiredEffortTime, IsMilestone, Copmlexity, null,
+            Task newTask = new Task(Id, Alias, Description, CreatedAtDate, RequiredEffortTime, IsMilestone, Copmlexity, StartDate,
                                     ScheduledDate, DeadlineDate, CompleteDate, Deliverables, Remarks, EngineerId);
             s_dalTask!.Create(newTask);
         }
@@ -127,15 +132,30 @@ public static class Initialization
 
         }
     }
-    private static void createDependency() 
+    private static void createDependency()
     {
+
         int Id = 0;
-        int DependentTask = s_rand.Next(10,40);
-        int? DependsOnTask = s_
-
-
+        int DependentTask;
+        int DependsOnTask;
+        for (int i = 0; i < 50; ++i)
+        {
+            do
+            {
+                DependentTask = s_rand.Next(1000, 1030);
+                DependsOnTask = s_rand.Next(1000, DependentTask);
+            } while (.DoesExist(DependentTask, DependsOnTask));
+            Dependency depNew = new Dependency(Id, DependentTask, DependsOnTask);
+            s_dalDependency!.Create(depNew);
+        }
     }
 
-
+    public static void Do(ITask? dalTask,IEngineer? dalEngineer, IDependency? dalDependency)
+    {
+        s_dalTask = dalTask ?? throw new NullReferenceException("DAL can not be null!");
+        s_dalDependency = dalDependency ?? throw new NullReferenceException("DAL can not be null!");
+        s_dalEngineer = dalEngineer ?? throw new NullReferenceException("DAL can not be null!");
+        createDependency(dalDependency.Create());
+    }
 }
 
