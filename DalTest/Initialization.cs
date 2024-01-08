@@ -80,32 +80,31 @@ public static class Initialization
             "Enable push notifications to keep users informed of updates.",
             "Implement a new feature module to expand application functionality.",
         };
-        List<Engineer> engineers = new List<Engineer>(s_dalEngineer.ReadAll());
-        foreach (var en in engineers)
+        List<Task> tasks = new List<Task>();
+        foreach (var task in tasksForEngineer)
         {
-            int Id = s_rand.Next(10, 30);
-            int rand = s_rand.Next(29);
-            string Alias = tasksForEngineer[rand];
-            string Description = tasksForEngineer[rand];
+            int Id = 0;
+            int rand = s_rand.Next();
+            string Alias = task;
+            string Description = task;
             DateTime start = new DateTime(2000, 1, 1);
             int range = (DateTime.Today - start).Days;
-            DateTime? CreatedAtDate = null,
-    DateTime? RequiredEffortTime = null,
-    bool IsMilestone = false,
-    EngineerExperience? Copmlexity = null,
-    DateTime? StartDate = null,
-    DateTime? ScheduledDate = null,
-    DateTime? DeadlineDate = null,
-    DateTime? CompleteDate = null,
-    string? Deliverables = null,
-    string? Remarks = null,
-    int EngineerId = 0
+            DateTime CreatedAtDate = start.AddDays(s_rand.Next(range));
+            TimeSpan? RequiredEffortTime = TimeSpan.FromDays(s_rand.Next(30, 365));
+            bool IsMilestone = range % 2 == 0;
+            EngineerExperience? Copmlexity = (EngineerExperience)(s_rand.Next(5));
+            DateTime? StartDate = null;
+            int i = RequiredEffortTime?.Days ?? 0;
+            DateTime? ScheduledDate = CreatedAtDate.AddDays(s_rand.Next(range - i));
+            DateTime? DeadlineDate = ScheduledDate?.AddDays(i + s_rand.Next(10, 40));
+            DateTime? CompleteDate = null;
+            string? Deliverables = null;
+            string? Remarks = null;
+            int? EngineerId = null;
+            Task newTask = new Task(Id, Alias, Description, CreatedAtDate, RequiredEffortTime, IsMilestone, Copmlexity, null,
+                                    ScheduledDate, DeadlineDate, CompleteDate, Deliverables, Remarks, EngineerId);
+            s_dalTask!.Create(newTask);
         }
-
-
-
-
-
     }
 
     private static void createEngineer()
@@ -118,11 +117,11 @@ public static class Initialization
             int id;
             do
                 id = s_rand.Next(200000000, 400000000);
-            while (s_dalEngineer.Read(id) != null);
+            while (s_dalEngineer!.Read(id) != null);
             string name = en;
             string email = en + "@gmail.com";
             double cost = s_rand.Next(10000, 40000);
-            bool? activ = (id % 1000 > cost) ? true : false;
+            bool activ = (id % 1000 > cost) ? true : false;
             EngineerExperience level = (EngineerExperience)s_rand.Next(5);
             Engineer engineer = new Engineer(id, email, cost, name, level, activ);
 
@@ -130,7 +129,11 @@ public static class Initialization
     }
     private static void createDependency() 
     {
-            
+        int Id = 0;
+        int DependentTask = s_rand.Next(10,40);
+        int? DependsOnTask = s_
+
+
     }
 
 
