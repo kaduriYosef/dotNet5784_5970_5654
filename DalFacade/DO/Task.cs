@@ -21,10 +21,10 @@ namespace DO;
 public record Task
 (
     int Id,
-    string? Alias=null,
-    string? Description = null ,
-    DateTime? CreatedAtDate=null,
-    DateTime? RequiredEffortTime = null,
+    string Alias,
+    string Description  ,
+    DateTime CreatedAtDate,
+    TimeSpan? RequiredEffortTime = null,
     bool IsMilestone=false,
     EngineerExperience? Copmlexity = null,
     DateTime? StartDate = null,
@@ -33,11 +33,11 @@ public record Task
     DateTime? CompleteDate=null,
     string? Deliverables = null,
     string? Remarks = null,
-    int EngineerId=0
+    int? EngineerId=null
     )
 {
     
     //Empty Ctor
-    public Task() : this(0)
+    public Task() : this(0,"","", DateTime.Now)
     { }
 }
