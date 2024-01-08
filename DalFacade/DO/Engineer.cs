@@ -10,7 +10,7 @@ public record Engineer
     double? Cost=null,
     string? Name=null,
     EngineerExperience? Level=null,
-    bool Active= true
+    bool? Active= true
 )
 {
     public Engineer() :this(0){ }
