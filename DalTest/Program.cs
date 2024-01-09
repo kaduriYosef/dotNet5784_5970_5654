@@ -10,12 +10,20 @@ internal class Program
     private static ITask? s_dalTask = new TaskImplementation(); //stage 1
     private static IEngineer? s_dalEngineer = new EngineerImplementation(); //stage 1
     private static IDependency? s_dalDependency = new DependencyImplementation(); //stage 1
+
+    //returns an integer that gets from the user
+    static private int getInteger()
+    {
+        int input=0;
+        while (!int.TryParse(Console.ReadLine(), out input)) ;
+        return input ;
+    }
     static void Main(string[] args)
     {
         try
         {
             Initialization.Do(s_dalTask, s_dalEngineer, s_dalDependency);
-            int choice, subChoice;
+            int choice, sub_choice;
             do
             {
                 printStringArray(new string[]{
@@ -27,24 +35,55 @@ internal class Program
                 });
                 choice = getInteger();
                 printMenu(choice);
-                subChoice = getInteger();
+                sub_choice = getInteger();
                 try
                 {
-                    switch (choice)
-                    {
-                        case 0: Console.WriteLine("bye bye."); break;
-                        case 1: TaskMenu(subChoice); break;
-                        case 2: EngineerMenu(subChoice); break;
-                        case 3: DependencyMenu(subChoice); break;
-                    }
+                    
+                    if( choice!=0)
+                        SubMenu(choice,sub_choice);
+   
+                   
                 }
                 catch (Exception ex) { Console.WriteLine(ex); }
             }
             while (choice != 0);
+            Console.WriteLine("bye bye.");
         }
         catch (Exception exc) { Console.WriteLine(exc); }
 
     }
+
+    static private void SubMenu(int choice,int sub_choice)
+    {
+       while(sub_choice!=0)
+        {
+            switch(sub_choice)
+            {
+                case 1:
+                    create(choice);
+                    break;
+                case 2:
+                    read(choice);
+                    break;
+                case 3:
+                    read_all(choice);
+                    break;
+                case 4:
+                    update(choice);
+                    break;  
+                case 5:
+                    delete(choice);
+                    break;
+                case 6: 
+                    does_exist(choice);
+                    break;
+                    
+                
+            }
+            sub_choice=getInteger();
+        }
+    }
+
     static private void  printStringArray(string[] arr) {foreach (string s in arr) Console.WriteLine(s);}
     /// <summary>
     /// Displays a menu based on the specified choice, providing options related to tasks, engineers, and dependencies.
@@ -81,11 +120,24 @@ internal class Program
             });
     }
 
-    //returns an integer that gets from the user
-    private static int getInteger()
+    private static void create(int choice)
     {
-        int input=0;
-        while (!int.TryParse(Console.ReadLine(), out input)) ;
-        return input ;
+
+        Console.WriteLine("Enter all the variables needed.");
+        switch(choice) 
+        {
+            case 1:
+                break; 
+            case 2:
+                break;
+            case 3:
+                break;
+        }
+
     }
+    private static void read(int choice) { }
+    private static void read_all(int choice) { }
+    private static void update(int choice) { }
+    private static void delete(int choice) { }
+    private static void does_exist(int choice) { }
 }
