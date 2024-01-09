@@ -138,16 +138,27 @@ public static class Initialization
         int Id = 0;
         int DependentTask;
         int DependsOnTask;
+        DependencyImplementation tmpDependencyImplement = new DependencyImplementation();
+        Dependency[] necessaryDependencies = new Dependency[] 
+        {new Dependency(1006,1003),new Dependency(1006,1002),new Dependency(1007,1003),new Dependency(1007,1002) };
+
+        foreach (var dep in necessaryDependencies)
+        {
+            tmpDependencyImplement.Create(dep);
+            s_dalDependency!.Create(dep);
+        }
         for (int i = 0; i < 50; ++i)
         {
             do
             {
                 DependentTask = s_rand.Next(1000, 1030);
                 DependsOnTask = s_rand.Next(1000, DependentTask);
-            } while (.DoesExist(DependentTask, DependsOnTask));
+            } while (tmpDependencyImplement.DoesExist(DependentTask, DependsOnTask));
             Dependency depNew = new Dependency(Id, DependentTask, DependsOnTask);
+            tmpDependencyImplement.Create(depNew);
             s_dalDependency!.Create(depNew);
         }
+
     }
 
     public static void Do(ITask? dalTask,IEngineer? dalEngineer, IDependency? dalDependency)
@@ -155,7 +166,9 @@ public static class Initialization
         s_dalTask = dalTask ?? throw new NullReferenceException("DAL can not be null!");
         s_dalDependency = dalDependency ?? throw new NullReferenceException("DAL can not be null!");
         s_dalEngineer = dalEngineer ?? throw new NullReferenceException("DAL can not be null!");
-        createDependency(dalDependency.Create());
+        createTask();
+        createEngineer();
+        createDependency();
     }
 }
 
