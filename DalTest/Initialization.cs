@@ -85,6 +85,40 @@ public static class Initialization
             "Enable push notifications to keep users informed of updates.",
             "Implement a new feature module to expand application functionality.",
         };
+
+        int[] engineerLevelsForTask = {
+    3, // Set Up Development Environment
+    2, // Implement User Registration
+    4, // Optimize Database Performance
+    3, // Create Dashboard Layout
+    5, // Resolve Server Downtime Issues
+    3, // Automate Deployment Process
+    4, // Integrate Predictive Analytics
+    5, // Implement Secure Payment Processing
+    2, // Review and Refactor Codebase
+    4, // Design RESTful API Endpoints
+    3, // Update Software Libraries
+    1, // Address and Fix QA Findings
+    4, // Implement Data Encryption Feature
+    2, // Write Unit Tests for Core Functions
+    3, // Enhance Front-end Responsiveness
+    4, // Connect with External API
+    2, // Refine Legacy Code Structure
+    3, // Deploy to Staging Environment
+    1, // Craft UI for New Module
+    4, // Establish CI/CD Pipeline
+    3, // Optimize Server Resource Usage
+    5, // Develop GraphQL Query Endpoints
+    3, // Migrate Data with Scripting
+    4, // Implement Data Caching Strategy
+    1, // Troubleshoot Production Bugs
+    2, // Document Coding Standards
+    3, // Optimize Mobile UI
+    4, // Integrate Cloud Storage API
+    2, // Enable Push Notifications
+    5, // Implement New Feature Module
+};
+
         List<Task> tasks = new List<Task>();
         foreach (var task in tasksForEngineer)
         {
@@ -144,7 +178,7 @@ public static class Initialization
             {
                 DependentTask = s_rand.Next(1000, 1030);
                 DependsOnTask = s_rand.Next(1000, DependentTask);
-            } while (.DoesExist(DependentTask, DependsOnTask));
+            } while (DoesExist(DependentTask, DependsOnTask));
             Dependency depNew = new Dependency(Id, DependentTask, DependsOnTask);
             s_dalDependency!.Create(depNew);
         }
@@ -155,7 +189,10 @@ public static class Initialization
         s_dalTask = dalTask ?? throw new NullReferenceException("DAL can not be null!");
         s_dalDependency = dalDependency ?? throw new NullReferenceException("DAL can not be null!");
         s_dalEngineer = dalEngineer ?? throw new NullReferenceException("DAL can not be null!");
-        createDependency(dalDependency.Create());
+
+        createTask();
+        createDependency();
+        createEngineer();
     }
 }
 
