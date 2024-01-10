@@ -5,7 +5,7 @@ using System.Diagnostics.Contracts;
 namespace DO;
 public enum EngineerExperience
 {
-  Beginner,
+  Beginner=0,
   AdvancedBeginner,
   Intermediate,
   Advanced,

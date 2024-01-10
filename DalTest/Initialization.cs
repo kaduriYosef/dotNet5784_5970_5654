@@ -19,7 +19,7 @@ public static class Initialization
 
     private static readonly Random s_rand = new();
 
-    public static bool DependencyImplemination { get; private set; }
+    
 
     /// <summary>
     /// Creates a collection of tasks with predefined names and descriptions.
@@ -100,40 +100,40 @@ public static class Initialization
         };
 
         int[] engineerLevelsForTask = {
-    3, // Set Up Development Environment
-    2, // Implement User Registration
-    4, // Optimize Database Performance
-    3, // Create Dashboard Layout
-    5, // Resolve Server Downtime Issues
-    3, // Automate Deployment Process
-    4, // Integrate Predictive Analytics
-    5, // Implement Secure Payment Processing
-    2, // Review and Refactor Codebase
-    4, // Design RESTful API Endpoints
-    3, // Update Software Libraries
-    1, // Address and Fix QA Findings
-    4, // Implement Data Encryption Feature
-    2, // Write Unit Tests for Core Functions
-    3, // Enhance Front-end Responsiveness
-    4, // Connect with External API
-    2, // Refine Legacy Code Structure
-    3, // Deploy to Staging Environment
-    1, // Craft UI for New Module
-    4, // Establish CI/CD Pipeline
-    3, // Optimize Server Resource Usage
-    5, // Develop GraphQL Query Endpoints
-    3, // Migrate Data with Scripting
-    4, // Implement Data Caching Strategy
-    1, // Troubleshoot Production Bugs
-    2, // Document Coding Standards
-    3, // Optimize Mobile UI
-    4, // Integrate Cloud Storage API
-    2, // Enable Push Notifications
-    5, // Implement New Feature Module
+            2, // Define fundraising goals
+            1, // Identify target audience
+            3, // Create a fundraising plan
+            2, // Establish a budget
+            4, // Form a fundraising team
+            2, // Train the team
+            3, // Develop fundraising materials
+            4, // Create a donor database
+            1, // Plan fundraising events
+            3, // Develop online donation platform
+            2, // Create promotional materials
+            0, // Launch social media campaign
+            3, // Contact potential sponsors
+            1, // Organize community outreach
+            2, // Plan direct mail campaign
+            3, // Prepare press releases
+            1, // Conduct sponsor meetings
+            2, // Launch fundraising events
+            0, // Monitor fundraising progress
+            3, // Adjust strategies as needed
+            2, // Engage with donors
+            4, // Process donations
+            2, // Send thank-you notes
+            3, // Evaluate event success
+            0, // Update donor database
+            1, // Report to stakeholders
+            2, // Plan for next campaign
+            3, // Conduct financial audit
+            1, // Prepare final report
+            4  // Celebrate success
 };
 
-        
-        
+
+
         for (int i = 0; i < tasksNames.Length; i++) 
         {
             int Id = 0;

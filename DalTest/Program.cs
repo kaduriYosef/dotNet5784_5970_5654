@@ -30,7 +30,7 @@ public class Program
             {
                 try
                 {
-                    choice = menu(); // Display the main menu again
+                    choice = Menu(); // Display the main menu again
                     switch (choice)
                     {
                         case 0:
@@ -52,7 +52,7 @@ public class Program
                                         PrintSingleTask(s_dalTask!.Read(id)!); // Display a specific Task
                                         break;
                                     case 3:
-                                        PrintAllTask(s_dalTask!.ReadAll()); // Display all Tasks
+                                        PrintAllTasks(s_dalTask!.ReadAll()); // Display all Tasks
                                         break;
                                     case 4:
                                         s_dalTask!.Update(TaskUpdateHelp()); // Update a Task
@@ -82,11 +82,11 @@ public class Program
                                         Console.WriteLine("Enter the Dependency's ID:");
                                         id = GetInteger();
                                         // Display a specific Dependency
-                                        PrintTheReadfunctionOfDependency(s_dalDependency!.Read(id)!);
+                                        PrintSingleDependency(s_dalDependency!.Read(id)!);
                                         break;
                                     case 3:
                                         // Display all Dependencies
-                                        PrintTheReadAllFunctionOfDependency(s_dalDependency!.ReadAll());
+                                        PrintAllDependencies(s_dalDependency!.ReadAll());
                                         break;
                                     case 4:
                                         s_dalDependency!.Update(DepUpdateHelp()); // Update a Dependency
@@ -122,10 +122,10 @@ public class Program
                                     case 2:
                                         Console.WriteLine("Enter the engineer's ID:");
                                         id = GetInteger();
-                                        PrintTheReadfunctionOfEngineer(s_dalEngineer!.Read(id)!); // Display a specific Engineer
+                                        PrintSingleEngineer(s_dalEngineer!.Read(id)!); // Display a specific Engineer
                                         break;
                                     case 3:
-                                        PrintTheReadAllFunctionOfEngineer(s_dalEngineer!.ReadAll()); // Display all Engineers
+                                        PrintAllEngineers(s_dalEngineer!.ReadAll()); // Display all Engineers
                                         break;
                                     case 4:
                                         s_dalEngineer!.Update(EngUpdateHelp()); // Update an Engineer
@@ -161,7 +161,7 @@ public class Program
 
 
     // Menu function to display the main menu and capture user's choice
-    private static int menu()
+    private static int Menu()
     {
         PrintStringArray(new string[] {
         "choose from next list",
@@ -175,6 +175,7 @@ public class Program
         return firstmenu;
     }
     // Function to display a submenu for CRUD operations and capture user's choice
+    
     private static int options(string[]? additional = null)
     {
         
@@ -199,6 +200,31 @@ public class Program
     private static int optionsForDependency()
     {
         return options(new string[] {"6 - DoesExist"});
+    }
+
+
+    // Function to create a new Task
+    private static void createTask()
+    {
+        Console.WriteLine("Enter an Alias");
+        string alias = Console.ReadLine()!;
+        Console.WriteLine("Enter a Description");
+        string description = Console.ReadLine()!;
+        DateTime createdAtDate = DateTime.Now;
+
+        Console.WriteLine("should this task be a Milestone? (Y or N):");
+        bool isMilestone = Console.ReadLine()!.ToLower() == "Y";
+
+        Console.WriteLine("Enter Complexity Level (0 - Beginner, 1 - AdvancedBeginner, etc.):");
+        EngineerExperience complexity = (EngineerExperience)GetInteger();
+        Console.WriteLine("Enter Deliverables");
+        string deliverables = Console.ReadLine()!;
+        Console.WriteLine("Enter any Remarks");
+        string remarks = Console.ReadLine()!;
+        Console.WriteLine("Enter the Engineer ID:");
+        int engineerId = GetInteger();
+        Task task = new Task(0, alias, description, createdAtDate, null, isMilestone, complexity, null, null, null, null, deliverables, remarks, engineerId);
+        s_dalTask!.Create(task);
     }
 
     // Function to create a new Dependency
@@ -226,41 +252,14 @@ public class Program
         string name = Console.ReadLine()!;
         Console.WriteLine("Enter your experience level (1-5)");
         //int l = getInteger();
-        int l=0;
-        l = GetInteger();
-        if (l > 5 || l < 0)
-        {
-            Console.WriteLine("ERROR\nEnter number again please");
-            l = GetInteger();
-        }
-        DO.EngineerExperience level = (EngineerExperience)l;
+        int intLevel = GetInteger();
+        
+        EngineerExperience level = (EngineerExperience)intLevel;
         Engineer engineer = new Engineer(id, email, cost, name, level, true);
         s_dalEngineer!.Create(engineer);
     }
 
-    // Function to create a new Task
-    private static void createTask()
-    {
-        Console.WriteLine("Enter an Alias");
-        string alias = Console.ReadLine()!;
-        Console.WriteLine("Enter a Description");
-        string description = Console.ReadLine()!;
-        DateTime createdAtDate = DateTime.Now;
-
-        Console.WriteLine("should this task be a Milestone? (Y or N):");
-        bool isMilestone = Console.ReadLine()!.ToLower() == "Y";
-
-        Console.WriteLine("Enter Complexity Level (0 - Beginner, 1 - AdvancedBeginner, etc.):");
-        EngineerExperience complexity = (EngineerExperience)GetInteger();
-        Console.WriteLine("Enter Deliverables");
-        string deliverables = Console.ReadLine()!;
-        Console.WriteLine("Enter any Remarks");
-        string remarks = Console.ReadLine()!;
-        Console.WriteLine("Enter the Engineer ID:");
-        int engineerId = GetInteger();
-        Task task = new Task(0, alias, description, createdAtDate, null, isMilestone, complexity, null, null, null, null, deliverables, remarks, engineerId);
-        s_dalTask!.Create(task);
-    }
+    
     private static Task TaskUpdateHelp()
      //function to create item for Update Task
     {
@@ -316,6 +315,7 @@ public class Program
         DO.Engineer temp = new Engineer(id, email, cost, name, level, true);
         return temp;
     }
+    
     // Prints detailed information of a single Task object.
     private static void PrintSingleTask(Task ToPrint)
     {
@@ -349,7 +349,7 @@ public class Program
         Console.WriteLine(ToPrint.EngineerId + "\n");
     }
     // Displays details of a single Dependency object, including its current and dependent tasks.
-    private static void PrintTheReadfunctionOfDependency(Dependency ToPrint)
+    private static void PrintSingleDependency(Dependency ToPrint)
     {
         Console.Write("ID: ");
         Console.WriteLine(ToPrint.Id);
@@ -359,7 +359,7 @@ public class Program
         Console.WriteLine(ToPrint.DependsOnTask + "\n");
     }
     // Outputs the information of a single Engineer object, including ID, email, cost, name, level, and active status.
-    private static void PrintTheReadfunctionOfEngineer(Engineer ToPrint)
+    private static void PrintSingleEngineer(Engineer ToPrint)
     {
         Console.Write("ID: ");
         Console.WriteLine(ToPrint.Id);
@@ -375,8 +375,9 @@ public class Program
         Console.WriteLine(ToPrint.Active + "\n");
     }
 
+    
     // Prints details of each Task object in the provided list
-    private static void PrintAllTask(List<Task> toPrint)
+    private static void PrintAllTasks(List<Task> toPrint)
     {
         foreach (Task task in toPrint)
         {
@@ -385,20 +386,20 @@ public class Program
     }
 
     // Prints details of each Dependency object in the provided list
-    private static void PrintTheReadAllFunctionOfDependency(List<Dependency> toPrint)
+    private static void PrintAllDependencies(List<Dependency> toPrint)
     {
         foreach (DO.Dependency dependency in toPrint)
         {
-            PrintTheReadfunctionOfDependency(dependency);
+            PrintSingleDependency(dependency);
         }
     }
 
     // Prints details of each Engineer object in the provided list
-    private static void PrintTheReadAllFunctionOfEngineer(List<Engineer> toPrint)
+    private static void PrintAllEngineers(List<Engineer> toPrint)
     {
         foreach (DO.Engineer engineer in toPrint)
         {
-            PrintTheReadfunctionOfEngineer(engineer);
+            PrintSingleEngineer(engineer);
         }
     }
 
