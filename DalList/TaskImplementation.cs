@@ -7,9 +7,12 @@ public class TaskImplementation : ITask
 {
     public int Create(Task item)
     {
-        bool isNew = !DataSource.Tasks.Any(en => en.Id == item.Id);
-        if (isNew) DataSource.Tasks.Add(item);
-        return isNew ? item.Id : throw new Exception($"Task with Id={item.Id} already exist.\n");
+
+        int id=DataSource.Config.NextTaskId;
+        Task new_task = item with { Id=id };
+        DataSource.Tasks.Add( new_task);
+        return id;
+        
 
     }
 
