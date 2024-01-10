@@ -28,121 +28,128 @@ public class Program
             // Main loop to handle user choices
             do
             {
-                choice = menu(); // Display the main menu again
-                switch (choice)
+                try
                 {
-                    case 0:
-                        Console.WriteLine("bye bye");
-                        break;
-                    case 1: // Task operations
-                        int OpForTask = options(); // Display Task options
-                        while (OpForTask != 0)
-                        {
-                            switch (OpForTask)
+                    choice = menu(); // Display the main menu again
+                    switch (choice)
+                    {
+                        case 0:
+                            Console.WriteLine("bye bye");
+                            break;
+                        case 1: // Task operations
+
+                            int opChoiceTask = options(); // Display Task options
+                            while (opChoiceTask != 0)
                             {
-                                case 1:
-                                    createTask(); // Create a new Task
-                                    break;
-                                case 2:
-                                    Console.WriteLine("Enter the Task's ID:");
-                                    id = getInteger();
-                                    PrintTheReadFunctionOfTask(s_dalTask!.Read(id)!); // Display a specific Task
-                                    break;
-                                case 3:
-                                    PrintTheReadAllFunctionOfTask(s_dalTask!.ReadAll()); // Display all Tasks
-                                    break;
-                                case 4:
-                                    s_dalTask!.Update(UpdateHelperTask()); // Update a Task
-                                    break;
-                                case 5:
-                                    Console.WriteLine("Enter the ID of the Task you want to delete:");
-                                    id = int.Parse(Console.ReadLine()!);
-                                    s_dalTask!.Delete(id); // Delete a Task
-                                    break;
-                                case 0:
-                                    // Exit operations for task
-                                    break;
+                                switch (opChoiceTask)
+                                {
+                                    case 1:
+                                        createTask(); // Create a new Task
+                                        break;
+                                    case 2:
+                                        Console.WriteLine("Enter the Task's ID:");
+                                        id = GetInteger();
+                                        PrintSingleTask(s_dalTask!.Read(id)!); // Display a specific Task
+                                        break;
+                                    case 3:
+                                        PrintAllTask(s_dalTask!.ReadAll()); // Display all Tasks
+                                        break;
+                                    case 4:
+                                        s_dalTask!.Update(TaskUpdateHelp()); // Update a Task
+                                        break;
+                                    case 5:
+                                        Console.WriteLine("Enter the ID of the Task you want to delete:");
+                                        id = GetInteger();
+                                        s_dalTask!.Delete(id); // Delete a Task
+                                        break;
+                                    case 0:
+                                        // Exit operations for task
+                                        break;
+                                }
+                                opChoiceTask = options(); // Show Task options again
                             }
-                            OpForTask = options(); // Show Task options again
-                        }
-                        break;
-                    case 2: // Dependency operations
-                        int OpForDependency = options(); // Display Dependency options
-                        while (OpForDependency != 0)
-                        {
-                            switch (OpForDependency)
+                            break;
+                        case 2: // Dependency operations
+                            int OpForDependency = optionsForDependency(); // Display Dependency options
+                            while (OpForDependency != 0)
                             {
-                                case 1:
-                                    createDependency(); // Create a new Dependency
-                                    break;
-                                case 2:
-                                    Console.WriteLine("Enter the Dependency's ID:");
-                                    id = getInteger();
-                                    // Display a specific Dependency
-                                    PrintTheReadfunctionOfDependency(s_dalDependency!.Read(id)!); 
-                                    break;
-                                case 3:
-                                    // Display all Dependencies
-                                    PrintTheReadAllFunctionOfDependency(s_dalDependency!.ReadAll()); 
-                                    break;
-                                case 4:
-                                    s_dalDependency!.Update(UpdateHelperForDepend()); // Update a Dependency
-                                    break;
-                                case 5:
-                                    Console.WriteLine("Enter the id of the Dependency to delete:");
-                                    id = getInteger();
-                                    s_dalDependency!.Delete(id); // Delete a Dependency
-                                    break;
-                                case 6:
-                                    Console.WriteLine("Enter the id of the dependent task");
-                                    int dependent = getInteger();
-                                    Console.WriteLine("enter the id of the task of which the first one depends on");
-                                    int depnedsOn=getInteger();
-                                    Console.WriteLine(s_dalDependency!.DoesExist(dependent,depnedsOn));
-                                    break;
-                                case 0:
-                                    OpForDependency = 0; // Exit Dependency operations
-                                    break;
+                                switch (OpForDependency)
+                                {
+                                    case 1:
+                                        createDependency(); // Create a new Dependency
+                                        break;
+                                    case 2:
+                                        Console.WriteLine("Enter the Dependency's ID:");
+                                        id = GetInteger();
+                                        // Display a specific Dependency
+                                        PrintTheReadfunctionOfDependency(s_dalDependency!.Read(id)!);
+                                        break;
+                                    case 3:
+                                        // Display all Dependencies
+                                        PrintTheReadAllFunctionOfDependency(s_dalDependency!.ReadAll());
+                                        break;
+                                    case 4:
+                                        s_dalDependency!.Update(DepUpdateHelp()); // Update a Dependency
+                                        break;
+                                    case 5:
+                                        Console.WriteLine("Enter the id of the Dependency to delete:");
+                                        id = GetInteger();
+                                        s_dalDependency!.Delete(id); // Delete a Dependency
+                                        break;
+                                    case 6:
+                                        Console.WriteLine("Enter the id of the dependent task");
+                                        int dependent = GetInteger();
+                                        Console.WriteLine("enter the id of the task of which the first one depends on");
+                                        int depnedsOn = GetInteger();
+                                        Console.WriteLine(s_dalDependency!.DoesExist(dependent, depnedsOn)?"Such dependency exist":"No such dependency exist.");
+                                        break;
+                                    case 0:
+                                        OpForDependency = 0; // Exit Dependency operations
+                                        break;
+                                }
+                                OpForDependency = options(); // Show Dependency options again
                             }
-                            OpForDependency = options(); // Show Dependency options again
-                        }
-                        break;
-                    case 3: // Engineer operations
-                        int OpForEngineer = options(); // Display Engineer options
-                        while (OpForEngineer != 0)
-                        {
-                            switch (OpForEngineer)
+                            break;
+                        case 3: // Engineer operations
+                            int OpForEngineer = options(); // Display Engineer options
+                            while (OpForEngineer != 0)
                             {
-                                case 1:
-                                    createEngineer(); // Create a new Engineer
-                                    break;
-                                case 2:
-                                    Console.WriteLine("Enter the engineer's ID:");
-                                    id = int.Parse(Console.ReadLine()!);
-                                    PrintTheReadfunctionOfEngineer(s_dalEngineer!.Read(id)!); // Display a specific Engineer
-                                    break;
-                                case 3:
-                                    PrintTheReadAllFunctionOfEngineer(s_dalEngineer!.ReadAll()); // Display all Engineers
-                                    break;
-                                case 4:
-                                    s_dalEngineer!.Update(UpdateHelperForEngineer()); // Update an Engineer
-                                    break;
-                                case 5:
-                                    Console.WriteLine("Enter the ID of the Engineer you want to delete:");
-                                    id = int.Parse(Console.ReadLine()!);
-                                    s_dalEngineer!.Delete(id); // Delete an Engineer
-                                    break;
-                                default:
-                                    OpForEngineer = 0; // Exit Engineer operations
-                                    break;
+                                switch (OpForEngineer)
+                                {
+                                    case 1:
+                                        createEngineer(); // Create a new Engineer
+                                        break;
+                                    case 2:
+                                        Console.WriteLine("Enter the engineer's ID:");
+                                        id = GetInteger();
+                                        PrintTheReadfunctionOfEngineer(s_dalEngineer!.Read(id)!); // Display a specific Engineer
+                                        break;
+                                    case 3:
+                                        PrintTheReadAllFunctionOfEngineer(s_dalEngineer!.ReadAll()); // Display all Engineers
+                                        break;
+                                    case 4:
+                                        s_dalEngineer!.Update(EngUpdateHelp()); // Update an Engineer
+                                        break;
+                                    case 5:
+                                        Console.WriteLine("Enter the ID of the Engineer you want to delete:");
+                                        id = GetInteger();
+                                        s_dalEngineer!.Delete(id); // Delete an Engineer
+                                        break;
+                                    default:
+                                        OpForEngineer = 0; // Exit Engineer operations
+                                        break;
+                                }
+                                OpForEngineer = options(); // Show Engineer options again
                             }
-                            OpForEngineer = options(); // Show Engineer options again
-                        }
-                        break;
-                    default:
-                        Console.WriteLine("Enter a Valid value"); // Handle invalid input
-                        break;
-                } // End of switch statement
+                            break;
+                        default:
+                            Console.WriteLine("Enter a Valid value"); // Handle invalid input
+                            break;
+                                
+                    }
+                    Console.Write('\n');
+                }
+                catch(Exception ex) { Console.WriteLine(ex.Message); }
 
             } while (choice != 0);
         }
@@ -156,14 +163,14 @@ public class Program
     // Menu function to display the main menu and capture user's choice
     private static int menu()
     {
-        printStringArray(new string[] {
+        PrintStringArray(new string[] {
         "choose from next list",
         "0 - exit",
         "1 - Task",
         "2 - Dependency",
         "3 - Engineer"
         });
-        int firstmenu = getInteger();
+        int firstmenu = GetInteger();
        
         return firstmenu;
     }
@@ -172,7 +179,7 @@ public class Program
     {
         
         // showing CRUD operations
-        printStringArray(new string[] 
+        PrintStringArray(new string[] 
         {
         "Your Options",
         "0 - Go back",   
@@ -183,13 +190,13 @@ public class Program
         "5 - Delete"
         });
         if (additional != null) 
-            printStringArray(additional);
+            PrintStringArray(additional);
                 
-        int op = getInteger();
+        int op = GetInteger();
         
         return op;
     }
-    private static int optionsForDepedency()
+    private static int optionsForDependency()
     {
         return options(new string[] {"6 - DoesExist"});
     }
@@ -199,9 +206,9 @@ public class Program
     {
        
         Console.WriteLine("Enter the id of the dependent Task");
-        int dependentId = getInteger();
+        int dependentId = GetInteger();
         Console.WriteLine("Enter the Task of which the first one depends on");
-        int dependsOnTaskId = getInteger();
+        int dependsOnTaskId = GetInteger();
         Dependency dependency = new Dependency(0, dependentId, dependsOnTaskId);
         s_dalDependency!.Create(dependency);
     }
@@ -210,21 +217,21 @@ public class Program
     private static void createEngineer()
     {
         Console.WriteLine("Enter your ID:");
-        int id = int.Parse(Console.ReadLine()!);
+        int id = GetInteger();
         Console.WriteLine("Enter your email:");
         string email = Console.ReadLine()!;
         Console.WriteLine("Enter your hourly cost:");
-        double cost = int.Parse(Console.ReadLine()!);
+        double cost = GetInteger();
         Console.WriteLine("Enter your name:");
         string name = Console.ReadLine()!;
         Console.WriteLine("Enter your experience level (1-5)");
-        //int l = int.Parse(Console.ReadLine()!);
+        //int l = getInteger();
         int l=0;
-        l = getInteger();
+        l = GetInteger();
         if (l > 5 || l < 0)
         {
             Console.WriteLine("ERROR\nEnter number again please");
-            l = int.Parse(Console.ReadLine()!);
+            l = GetInteger();
         }
         DO.EngineerExperience level = (EngineerExperience)l;
         Engineer engineer = new Engineer(id, email, cost, name, level, true);
@@ -244,20 +251,21 @@ public class Program
         bool isMilestone = Console.ReadLine()!.ToLower() == "Y";
 
         Console.WriteLine("Enter Complexity Level (0 - Beginner, 1 - AdvancedBeginner, etc.):");
-        EngineerExperience complexity = (EngineerExperience)getInteger();
+        EngineerExperience complexity = (EngineerExperience)GetInteger();
         Console.WriteLine("Enter Deliverables");
         string deliverables = Console.ReadLine()!;
         Console.WriteLine("Enter any Remarks");
         string remarks = Console.ReadLine()!;
         Console.WriteLine("Enter the Engineer ID:");
-        int engineerId = int.Parse(Console.ReadLine()!);
+        int engineerId = GetInteger();
         Task task = new Task(0, alias, description, createdAtDate, null, isMilestone, complexity, null, null, null, null, deliverables, remarks, engineerId);
         s_dalTask!.Create(task);
     }
-    private static Task UpdateHelperTask()//func to create item for Update Task
+    private static Task TaskUpdateHelp()
+     //function to create item for Update Task
     {
         Console.WriteLine("Enter the id of the Task you wish to update:");
-        int id = getInteger();
+        int id = GetInteger();
         Console.WriteLine("Enter an Alias");
         string alias = Console.ReadLine()!;
         Console.WriteLine("Enter a Description");
@@ -268,48 +276,48 @@ public class Program
         bool isMilestone = Console.ReadLine()!.ToLower() == "Y";
 
         Console.WriteLine("Enter Complexity Level (0 f- Beginner, 1 - AdvancedBeginner, etc.):");
-        EngineerExperience complexity = (EngineerExperience)getInteger();
+        EngineerExperience complexity = (EngineerExperience)GetInteger();
         Console.WriteLine("Enter Deliverables");
         string deliverables = Console.ReadLine()!;
         Console.WriteLine("Enter any Remarks");
         string remarks = Console.ReadLine()!;
         Console.WriteLine("Enter the Engineer ID:");
-        int engineerId = int.Parse(Console.ReadLine()!);
+        int engineerId = GetInteger();
         Task temp = new Task(id, alias, description, createdAtDate, null, 
             isMilestone, complexity, null, null, null, null, deliverables, remarks, engineerId);
         
         return temp;
     }
-    private static Dependency UpdateHelperForDepend()//func to create item for Update Dependency
+    private static Dependency DepUpdateHelp()//func to create item for Update Dependency
     {
         Console.WriteLine("Enter your ID");
-        int id = int.Parse(Console.ReadLine()!);
-        Console.WriteLine("Enter your ID of Depenency");
-        int dependencyNow = Console.Read();
-        Console.WriteLine("Enter your ID of most previose Depenency");
-        int dependencyDep = int.Parse(Console.ReadLine()!);
-        DO.Dependency temp = new Dependency(id, dependencyNow, dependencyDep);
+        int id = GetInteger();
+        Console.WriteLine("Enter the Id of the depndent task");
+        int dependentT = GetInteger();
+        Console.WriteLine("Enter the Id of the task for which the first one depends on");
+        int dependsOnT = GetInteger();
+        Dependency temp = new Dependency(id, dependentT, dependsOnT);
         return temp;
     }
-    private static Engineer UpdateHelperForEngineer()//func to create item for Update Engineer
+    private static Engineer EngUpdateHelp()//func to create item for Update Engineer
     {
         Console.WriteLine("Enter your ID:");
-        int id = int.Parse(Console.ReadLine()!);
+        int id = GetInteger();
         Console.WriteLine("Enter your email:");
         string email = Console.ReadLine()!;
         Console.WriteLine("Enter your hourly cost:");
-        double cost = int.Parse(Console.ReadLine()!);
+        double cost = GetInteger();
         Console.WriteLine("Enter your name:");
         string name = Console.ReadLine()!;
         Console.WriteLine("Enter your experience level (1-5)");
-        int l = int.Parse(Console.ReadLine()!);
+        int l = GetInteger();
         
         DO.EngineerExperience level = (EngineerExperience)l;
         DO.Engineer temp = new Engineer(id, email, cost, name, level, true);
         return temp;
     }
     // Prints detailed information of a single Task object.
-    private static void PrintTheReadFunctionOfTask(Task ToPrint)
+    private static void PrintSingleTask(Task ToPrint)
     {
         Console.Write("ID: ");
         Console.WriteLine(ToPrint.Id);
@@ -368,11 +376,11 @@ public class Program
     }
 
     // Prints details of each Task object in the provided list
-    private static void PrintTheReadAllFunctionOfTask(List<Task> toPrint)
+    private static void PrintAllTask(List<Task> toPrint)
     {
-        foreach (DO.Task task in toPrint)
+        foreach (Task task in toPrint)
         {
-            PrintTheReadFunctionOfTask(task);
+            PrintSingleTask(task);
         }
     }
 
@@ -397,169 +405,15 @@ public class Program
     
 
     //returns an integer that gets from the user
-    static private int getInteger()
+    static private int GetInteger()
     {
         int input = 0;
         while (!int.TryParse(Console.ReadLine(), out input)) ;
         return input;
     }
-    static private void printStringArray(string[] arr) { foreach (string s in arr) Console.WriteLine(s); }
+    static private void PrintStringArray(string[] arr) { foreach (string s in arr) Console.WriteLine(s); }
 }
 
-// namespace DalTest;
-
-//using Dal;
-//using DalApi;
-//using System.ComponentModel.Design;
-//using System.Runtime.InteropServices;
-
-//internal class Program
-//{
-//    private static ITask? s_dalTask = new TaskImplementation(); //stage 1
-//    private static IEngineer? s_dalEngineer = new EngineerImplementation(); //stage 1
-//    private static IDependency? s_dalDependency = new DependencyImplementation(); //stage 1
-
-//    //returns an integer that gets from the user
-//    static private int getInteger()
-//    {
-//        int input=0;
-//        while (!int.TryParse(Console.ReadLine(), out input)) ;
-//        return input ;
-//    }
-//    static void Main(string[] args)
-//    {
-//        try
-//        {
-//            Initialization.Do(s_dalTask, s_dalEngineer, s_dalDependency);
-//            int choice, sub_choice;
-//            do
-//            {
-//                printStringArray(new string[]{
-//                    "Enter which object you want to choose",
-//                    "1 - Task",
-//                    "2 - Engineer",
-//                    "3 - Dependency",
-//                    "0 - exit"
-//                });
-//                choice = getInteger();
-//                printMenu(choice);
-//                sub_choice = getInteger();
-//                try
-//                {
-
-//                    if( choice!=0)
-//                        SubMenu(choice,sub_choice);
 
 
-//                }
-//                catch (Exception ex) { Console.WriteLine(ex); }
-//            }
-//            while (choice != 0);
-//            Console.WriteLine("bye bye.");
-//        }
-//        catch (Exception exc) { Console.WriteLine(exc); }
 
-//    }
-
-//    static private void SubMenu(int choice,int sub_choice)
-//    {
-//       while(sub_choice!=0)
-//        {
-//            switch(sub_choice)
-//            {
-//                case 1:
-//                    create(choice);
-//                    break;
-//                case 2:
-//                    read(choice);
-//                    break;
-//                case 3:
-//                    read_all(choice);
-//                    break;
-//                case 4:
-//                    update(choice);
-//                    break;  
-//                case 5:
-//                    delete(choice);
-//                    break;
-//                case 6: 
-//                    does_exist(choice);
-//                    break;
-
-
-//            }
-//            sub_choice=getInteger();
-//        }
-//    }
-
-//   
-//    /// <summary>
-//    /// Displays a menu based on the specified choice, providing options related to tasks, engineers, and dependencies.
-//    /// </summary>
-//    /// <param name="choice">The user's selection indicating the type of menu to display (1 for Task, 2 for Engineer, 3 for Dependency).</param>
-//    static private void printMenu(int choice)
-//    {
-//        // Determine the type based on the user's choice
-//        string type = "";
-//        switch (choice)
-//        {
-//            case 1: type = "Task"; break;
-//            case 2: type = "Engineer"; break;
-//            case 3: type = "Dependency"; break;
-//        }
-
-//        // Display menu options based on the selected type
-//        printStringArray(new string[]
-//        {
-//        "Enter what do you wish to do",
-//        "0 - Go back",
-//        "1 - Create new " + type,
-//        "2 - Read an existing " + type,
-//        "3 - Read every " + type,
-//        "4 - Update an existing " + type,
-//        "5 - Delete an existing " + type
-//        });
-
-//        // Additional option for Dependency type
-//        if (choice == 3)
-//            printStringArray(new string[]
-//            {
-//            "6 - Show if a Dependency exists"
-//            });
-//    }
-
-//    private static void create(int choice)
-//    {
-
-//        Console.WriteLine("Enter all the variables needed.");
-//        switch(choice) 
-//        {
-//            case 1:
-//                break; 
-//            case 2:
-//                break;
-//            case 3:
-//                break;
-//        }
-
-//    }
-//    private static void read(int choice) 
-//    {
-
-//        Console.WriteLine("Enter all the needed parameters.");
-//        switch(choice)
-//        {
-//            case 1:
-//                string alias=Console.ReadLine()!;
-//                break;
-//            case 2:
-//                break;
-//            case 3:
-//                break;
-//        }
-//    }
-//    private static void read_all(int choice) { }
-//    private static void update(int choice) { }
-//    private static void delete(int choice) { }
-//    private static void does_exist(int choice) { }
-//}
