@@ -242,17 +242,16 @@ public class Program
     // Function to create a new Engineer
     private static void createEngineer()
     {
-        Console.WriteLine("Enter your ID:");
+        Console.WriteLine("Enter the ID:");
         int id = GetInteger();
-        Console.WriteLine("Enter your email:");
+        Console.WriteLine("Enter the email:");
         string email = Console.ReadLine()!;
-        Console.WriteLine("Enter your hourly cost:");
+        Console.WriteLine("Enter the hourly cost:");
         double cost = GetInteger();
-        Console.WriteLine("Enter your name:");
+        Console.WriteLine("Enter the name:");
         string name = Console.ReadLine()!;
-        Console.WriteLine("Enter your experience level (1-5)");
-        //int l = getInteger();
-        int intLevel = GetInteger();
+        Console.WriteLine("Enter the experience level 0 - beginner 1 advanced beginner etc.");
+        int intLevel = GetInteger()%5;
         
         EngineerExperience level = (EngineerExperience)intLevel;
         Engineer engineer = new Engineer(id, email, cost, name, level, true);
@@ -289,7 +288,7 @@ public class Program
     }
     private static Dependency DepUpdateHelp()//func to create item for Update Dependency
     {
-        Console.WriteLine("Enter your ID");
+        Console.WriteLine("Enter the ID");
         int id = GetInteger();
         Console.WriteLine("Enter the Id of the depndent task");
         int dependentT = GetInteger();
@@ -300,15 +299,15 @@ public class Program
     }
     private static Engineer EngUpdateHelp()//func to create item for Update Engineer
     {
-        Console.WriteLine("Enter your ID:");
+        Console.WriteLine("Enter the ID:");
         int id = GetInteger();
-        Console.WriteLine("Enter your email:");
+        Console.WriteLine("Enter the email:");
         string email = Console.ReadLine()!;
-        Console.WriteLine("Enter your hourly cost:");
+        Console.WriteLine("Enter the hourly cost:");
         double cost = GetInteger();
-        Console.WriteLine("Enter your name:");
+        Console.WriteLine("Enter the name:");
         string name = Console.ReadLine()!;
-        Console.WriteLine("Enter your experience level (1-5)");
+        Console.WriteLine("Enter the experience level (1-5)");
         int l = GetInteger();
         
         DO.EngineerExperience level = (EngineerExperience)l;
@@ -409,7 +408,8 @@ public class Program
     static private int GetInteger()
     {
         int input = 0;
-        while (!int.TryParse(Console.ReadLine(), out input)) ;
+        while (!int.TryParse(Console.ReadLine(), out input))
+            Console.WriteLine("Expecting only integer now!");
         return input;
     }
     static private void PrintStringArray(string[] arr) { foreach (string s in arr) Console.WriteLine(s); }
