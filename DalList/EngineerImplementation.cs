@@ -4,7 +4,7 @@ using DalApi;
 using DO;
 using System.Reflection.Metadata.Ecma335;
 
-public class EngineerImplementation : IEngineer
+internal class EngineerImplementation : IEngineer
 {
     public int Create(Engineer item)
     {
@@ -19,9 +19,18 @@ public class EngineerImplementation : IEngineer
         return DataSource.Engineers.FirstOrDefault(eng => eng.Id == id);
     }
 
-    public List<Engineer> ReadAll()
+    public Engineer? Read(Func<Engineer, bool> filter) // stage 2
     {
-        return new List<Engineer>(DataSource.Engineers);
+        if (filter == null) return null;
+        return DataSource.Engineers.FirstOrDefault(eng => filter(eng));
+    }
+
+    public IEnumerable<Engineer?> ReadAll(Func<Engineer, bool>? filter = null) // stage 2
+    {
+        if (filter == null)
+            return DataSource.Engineers.Select(item => item);
+        else
+            return DataSource.Engineers.Where(filter);
     }
 
     

@@ -8,10 +8,8 @@ using System.Collections.Specialized;
 
 public class Program
 {
-    // Static instances for Dependency, Engineer, and Task services
-    private static ITask? s_dalTask = new TaskImplementation();
-    private static IEngineer? s_dalEngineer = new EngineerImplementation();
-    private static IDependency? s_dalDependency = new DependencyImplementation();
+    //
+    static readonly IDal s_dal = new DalList(); //stage 2
 
     // Main method - the entry point of the application
     private static void Main(string[] args)
@@ -19,7 +17,7 @@ public class Program
         try
         {
             // Initialize the services with required dependencies
-            Initialization.Do(s_dalTask, s_dalEngineer, s_dalDependency );
+            Initialization.Do(s_dal);
 
             // Get user input from the main menu
             int choice = 0;
@@ -49,18 +47,18 @@ public class Program
                                     case 2:
                                         Console.WriteLine("Enter the Task's ID:");
                                         id = GetInteger();
-                                        PrintSingleTask(s_dalTask!.Read(id)!); // Display a specific Task
+                                        PrintSingleTask(s_dal!.Task.Read(id)!); // Display a specific Task
                                         break;
                                     case 3:
-                                        PrintAllTasks(s_dalTask!.ReadAll()); // Display all Tasks
+                                        PrintAllTasks(s_dal!.Task.ReadAll()); // Display all Tasks
                                         break;
                                     case 4:
-                                        s_dalTask!.Update(TaskUpdateHelp()); // Update a Task
+                                        s_dal!.Task.Update(TaskUpdateHelp()); // Update a Task
                                         break;
                                     case 5:
                                         Console.WriteLine("Enter the ID of the Task you want to delete:");
                                         id = GetInteger();
-                                        s_dalTask!.Delete(id); // Delete a Task
+                                        s_dal!.Task.Delete(id); // Delete a Task
                                         break;
                                     case 0:
                                         // Exit operations for task
@@ -82,26 +80,26 @@ public class Program
                                         Console.WriteLine("Enter the Dependency's ID:");
                                         id = GetInteger();
                                         // Display a specific Dependency
-                                        PrintSingleDependency(s_dalDependency!.Read(id)!);
+                                        PrintSingleDependency(s_dal!.Dependency.Read(id)!);
                                         break;
                                     case 3:
                                         // Display all Dependencies
-                                        PrintAllDependencies(s_dalDependency!.ReadAll());
+                                        PrintAllDependencies(s_dal!.Dependency.ReadAll());
                                         break;
                                     case 4:
-                                        s_dalDependency!.Update(DepUpdateHelp()); // Update a Dependency
+                                        s_dal!.Dependency.Update(DepUpdateHelp()); // Update a Dependency
                                         break;
                                     case 5:
                                         Console.WriteLine("Enter the id of the Dependency to delete:");
                                         id = GetInteger();
-                                        s_dalDependency!.Delete(id); // Delete a Dependency
+                                        s_dal!.Dependency.Delete(id); // Delete a Dependency
                                         break;
                                     case 6:
                                         Console.WriteLine("Enter the id of the dependent task");
                                         int dependent = GetInteger();
                                         Console.WriteLine("enter the id of the task of which the first one depends on");
                                         int depnedsOn = GetInteger();
-                                        Console.WriteLine(s_dalDependency!.DoesExist(dependent, depnedsOn)?"Such dependency exist":"No such dependency exist.");
+                                        Console.WriteLine(s_dal!.Dependency.DoesExist(dependent, depnedsOn)?"Such dependency exist":"No such dependency exist.");
                                         break;
                                     case 0:
                                         OpForDependency = 0; // Exit Dependency operations
@@ -122,18 +120,18 @@ public class Program
                                     case 2:
                                         Console.WriteLine("Enter the engineer's ID:");
                                         id = GetInteger();
-                                        PrintSingleEngineer(s_dalEngineer!.Read(id)!); // Display a specific Engineer
+                                        PrintSingleEngineer(s_dal!.Engineer.Read(id)!); // Display a specific Engineer
                                         break;
                                     case 3:
-                                        PrintAllEngineers(s_dalEngineer!.ReadAll()); // Display all Engineers
+                                        PrintAllEngineers(s_dal!.Engineer.ReadAll()); // Display all Engineers
                                         break;
                                     case 4:
-                                        s_dalEngineer!.Update(EngUpdateHelp()); // Update an Engineer
+                                        s_dal!.Engineer.Update(EngUpdateHelp()); // Update an Engineer
                                         break;
                                     case 5:
                                         Console.WriteLine("Enter the ID of the Engineer you want to delete:");
                                         id = GetInteger();
-                                        s_dalEngineer!.Delete(id); // Delete an Engineer
+                                        s_dal!.Engineer.Delete(id); // Delete an Engineer
                                         break;
                                     default:
                                         OpForEngineer = 0; // Exit Engineer operations
@@ -224,7 +222,7 @@ public class Program
         Console.WriteLine("Enter the Engineer ID:");
         int engineerId = GetInteger();
         Task task = new Task(0, alias, description, createdAtDate, null, isMilestone, complexity, null, null, null, null, deliverables, remarks, engineerId);
-        s_dalTask!.Create(task);
+        s_dal!.Task.Create(task);
     }
 
     // Function to create a new Dependency
@@ -236,7 +234,7 @@ public class Program
         Console.WriteLine("Enter the Task of which the first one depends on");
         int dependsOnTaskId = GetInteger();
         Dependency dependency = new Dependency(0, dependentId, dependsOnTaskId);
-        s_dalDependency!.Create(dependency);
+        s_dal!.Dependency.Create(dependency);
     }
 
     // Function to create a new Engineer
@@ -255,7 +253,7 @@ public class Program
         
         EngineerExperience level = (EngineerExperience)intLevel;
         Engineer engineer = new Engineer(id, email, cost, name, level, true);
-        s_dalEngineer!.Create(engineer);
+        s_dal!.Engineer.Create(engineer);
     }
 
     

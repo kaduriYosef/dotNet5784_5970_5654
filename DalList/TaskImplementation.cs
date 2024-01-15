@@ -3,28 +3,35 @@ namespace Dal;
 using DalApi;
 using DO;
 
-public class TaskImplementation : ITask
+internal class TaskImplementation : ITask
 {
     public int Create(Task item)
     {
 
-        int id=DataSource.Config.NextTaskId;
-        Task new_task = item with { Id=id };
-        DataSource.Tasks.Add( new_task);
+        int id = DataSource.Config.NextTaskId;
+        Task new_task = item with { Id = id };
+        DataSource.Tasks.Add(new_task);
         return id;
-        
+
 
     }
 
 
     public Task? Read(int id)
     {
-        return DataSource.Tasks.Find(result => result.Id == id);
+        return DataSource.Tasks.FirstOrDefault(result => result.Id == id);
     }
-
-    public List<Task> ReadAll()
+    public Task? Read(Func<Task, bool> filter) // stage 2
     {
-        return new List<Task>(DataSource.Tasks);
+        if(filter == null) return null;
+        return DataSource.Tasks.FirstOrDefault(task => filter(task));
+    }
+    public IEnumerable<Task?> ReadAll(Func<Task, bool>? filter = null) // stage 2
+    {
+        if (filter == null)
+            return DataSource.Tasks.Select(item => item);
+        else
+            return DataSource.Tasks.Where(filter);
     }
 
     public void Update(Task item)

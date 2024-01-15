@@ -13,9 +13,8 @@ using DO;
 /// </summary>
 public static class Initialization
 {
-    private static ITask? s_dalTask; //stage 1
-    private static IEngineer? s_dalEngineer; //stage 1
-    private static IDependency? s_dalDependency; //stage 1
+  
+    private static IDal? s_dal;
 
     private static readonly Random s_rand = new();
 
@@ -170,7 +169,7 @@ public static class Initialization
                 Deliverables, 
                 Remarks, 
                 EngineerId);
-            s_dalTask!.Create(newTask);
+            s_dal!.Task.Create(newTask);
         }
     }
     /// <summary>
@@ -204,7 +203,7 @@ public static class Initialization
 
            
             // Add engineer to your collection or process them as needed
-            s_dalEngineer!.Create(new Engineer(id, email, cost, name, level, active));
+            s_dal!.Engineer.Create(new Engineer(id, email, cost, name, level, active));
         }
     }
     /// <summary>
@@ -238,7 +237,7 @@ public static class Initialization
        
         for(int i=0; i < 50; i++) 
         {
-            s_dalDependency!.Create(new Dependency(Id,1000 + dependentTasks[i], 1000 + dependsOnTask[i]));
+            s_dal!.Dependency.Create(new Dependency(Id,1000 + dependentTasks[i], 1000 + dependsOnTask[i]));
         }
     
 
@@ -247,15 +246,11 @@ public static class Initialization
     /// Initializes the data access layer (DAL) with tasks, engineers, and dependencies.
     /// Throws a NullReferenceException if any of the DAL components are null.
     /// </summary>
-    /// <param name="dalTask">Interface for task management.</param>
-    /// <param name="dalEngineer">Interface for engineer management.</param>
-    /// <param name="dalDependency">Interface for dependency management.</param>
+    /// <param name="dal">Interface for all dal management.</param>
     /// <exception cref="NullReferenceException">Thrown when any of the DAL parameters are null.</exception>
-    public static void Do(ITask? dalTask,IEngineer? dalEngineer, IDependency? dalDependency)
+    public static void Do(IDal? dal)
     {
-        s_dalTask = dalTask ?? throw new NullReferenceException("DAL can not be null!");
-        s_dalDependency = dalDependency ?? throw new NullReferenceException("DAL can not be null!");
-        s_dalEngineer = dalEngineer ?? throw new NullReferenceException("DAL can not be null!");
+        s_dal = dal ?? throw new NullReferenceException("DAL object can not be null!"); //stage 2
         createTask();
         createEngineer();
         createDependency();

@@ -15,14 +15,19 @@ public interface ICrud<T> where T : class
     //Reads entity object by its ID 
     T? Read(int id);
 
+    //Reads entity object by some filter
+    T? Read(Func<T, bool> filter); // stage 2
+
     //stage 1 only, Reads all entity objects
-    List<T> ReadAll();
+    IEnumerable<T?> ReadAll(Func<T, bool>? filter = null); // stage 2
 
     //Updates entity object
     void Update(T item);
 
     //Deletes an object by its Id
     void Delete(int id);
+
+
 
 
 }

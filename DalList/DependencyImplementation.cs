@@ -3,7 +3,7 @@ namespace Dal;
 using DalApi;
 using DO;
 
-public class DependencyImplementation : IDependency
+internal class DependencyImplementation : IDependency
 {
     public int Create(Dependency item)
     {
@@ -20,9 +20,18 @@ public class DependencyImplementation : IDependency
         return DataSource.Dependencies.FirstOrDefault(dep => dep.Id == id);
     }
 
-    public List<Dependency> ReadAll()
+    public Dependency? Read(Func<Dependency, bool> filter) // stage 2
     {
-        return new List<Dependency>(DataSource.Dependencies);
+        if (filter == null) return null;
+        return DataSource.Dependencies.FirstOrDefault(dep => filter(dep));
+    }
+
+    public IEnumerable<Dependency?> ReadAll(Func<Dependency, bool>? filter = null) // stage 2
+    {
+        if (filter == null)
+            return DataSource.Dependencies.Select(item => item);
+        else
+            return DataSource.Dependencies.Where(filter);
     }
 
     public void Update(Dependency item)
