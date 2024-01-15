@@ -50,7 +50,7 @@ public class Program
                                         PrintSingleTask(s_dal!.Task.Read(id)!); // Display a specific Task
                                         break;
                                     case 3:
-                                        PrintAllTasks(s_dal!.Task.ReadAll()); // Display all Tasks
+                                        PrintAllTasks(s_dal!.Task.ReadAll().ToList()!); // Display all Tasks
                                         break;
                                     case 4:
                                         s_dal!.Task.Update(TaskUpdateHelp()); // Update a Task
@@ -84,7 +84,7 @@ public class Program
                                         break;
                                     case 3:
                                         // Display all Dependencies
-                                        PrintAllDependencies(s_dal!.Dependency.ReadAll());
+                                        PrintAllDependencies(s_dal!.Dependency.ReadAll().ToList()!);
                                         break;
                                     case 4:
                                         s_dal!.Dependency.Update(DepUpdateHelp()); // Update a Dependency
@@ -123,7 +123,7 @@ public class Program
                                         PrintSingleEngineer(s_dal!.Engineer.Read(id)!); // Display a specific Engineer
                                         break;
                                     case 3:
-                                        PrintAllEngineers(s_dal!.Engineer.ReadAll()); // Display all Engineers
+                                        PrintAllEngineers(s_dal!.Engineer.ReadAll().ToList()!); // Display all Engineers
                                         break;
                                     case 4:
                                         s_dal!.Engineer.Update(EngUpdateHelp()); // Update an Engineer
