@@ -1,0 +1,2523 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfTask xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Task>
+    <Id>1000</Id>
+    <Alias>Define fundraising goals</Alias>
+    <Description>Outline specific, measurable goals for the fundraising campaign.</Description>
+    <CreatedAtDate>2008-08-12T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P135D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2011-04-02T00:00:00</ScheduledDate>
+    <DeadlineDate>2011-08-25T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1001</Id>
+    <Alias>Identify target audience</Alias>
+    <Description>Research and determine the demographic and psychographic characteristics of potential donors.</Description>
+    <CreatedAtDate>2012-11-08T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P65D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2031-05-26T00:00:00</ScheduledDate>
+    <DeadlineDate>2031-08-09T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1002</Id>
+    <Alias>Create a fundraising plan</Alias>
+    <Description>Draft a detailed plan covering strategies, timelines, and responsibilities.</Description>
+    <CreatedAtDate>2000-07-20T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P59D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2020-09-27T00:00:00</ScheduledDate>
+    <DeadlineDate>2020-12-05T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1003</Id>
+    <Alias>Establish a budget</Alias>
+    <Description>Determine the financial requirements and create a budget for the campaign.</Description>
+    <CreatedAtDate>2004-12-08T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P78D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2009-12-04T00:00:00</ScheduledDate>
+    <DeadlineDate>2010-03-23T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1004</Id>
+    <Alias>Form a fundraising team</Alias>
+    <Description>Assemble a team of individuals with skills pertinent to fundraising.</Description>
+    <CreatedAtDate>2020-04-26T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P140D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Expert</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2033-05-08T00:00:00</ScheduledDate>
+    <DeadlineDate>2033-10-29T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1005</Id>
+    <Alias>Train the team</Alias>
+    <Description>Provide necessary training and resources to the fundraising team.</Description>
+    <CreatedAtDate>2015-02-21T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P193D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2031-02-21T00:00:00</ScheduledDate>
+    <DeadlineDate>2031-09-17T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1006</Id>
+    <Alias>Develop fundraising materials</Alias>
+    <Description>Create engaging materials like brochures, videos, and flyers for the campaign.</Description>
+    <CreatedAtDate>2008-05-14T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P263D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2031-05-05T00:00:00</ScheduledDate>
+    <DeadlineDate>2032-02-14T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1007</Id>
+    <Alias>Create a donor database</Alias>
+    <Description>Build a database to manage donor information and track contributions.</Description>
+    <CreatedAtDate>2013-07-25T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P299D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Expert</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2028-04-30T00:00:00</ScheduledDate>
+    <DeadlineDate>2029-03-26T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1008</Id>
+    <Alias>Plan fundraising events</Alias>
+    <Description>Design and organize fundraising events, including logistics and programming.</Description>
+    <CreatedAtDate>2017-03-16T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P78D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2039-02-12T00:00:00</ScheduledDate>
+    <DeadlineDate>2039-05-28T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1009</Id>
+    <Alias>Develop online donation platform</Alias>
+    <Description>Develop a secure and user-friendly online platform for accepting donations.</Description>
+    <CreatedAtDate>2007-07-24T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P233D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2011-12-04T00:00:00</ScheduledDate>
+    <DeadlineDate>2012-08-20T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1010</Id>
+    <Alias>Create promotional materials</Alias>
+    <Description>Produce promotional content for various media channels.</Description>
+    <CreatedAtDate>2008-02-22T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P128D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2028-03-19T00:00:00</ScheduledDate>
+    <DeadlineDate>2028-08-21T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1011</Id>
+    <Alias>Launch social media campaign</Alias>
+    <Description>Implement a campaign on social media platforms to increase awareness and donations.</Description>
+    <CreatedAtDate>2000-01-22T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P51D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Beginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2018-10-23T00:00:00</ScheduledDate>
+    <DeadlineDate>2019-01-03T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1012</Id>
+    <Alias>Contact potential sponsors</Alias>
+    <Description>Reach out to potential corporate sponsors to seek financial or in-kind support.</Description>
+    <CreatedAtDate>2021-08-01T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P232D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2022-12-13T00:00:00</ScheduledDate>
+    <DeadlineDate>2023-08-13T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1013</Id>
+    <Alias>Organize community outreach</Alias>
+    <Description>Engage with the local community through events and activities to boost support.</Description>
+    <CreatedAtDate>2014-12-26T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P264D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2024-10-24T00:00:00</ScheduledDate>
+    <DeadlineDate>2025-08-04T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1014</Id>
+    <Alias>Plan direct mail campaign</Alias>
+    <Description>Plan and execute a direct mail campaign to solicit donations.</Description>
+    <CreatedAtDate>2008-07-30T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P276D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2029-05-28T00:00:00</ScheduledDate>
+    <DeadlineDate>2030-03-13T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1015</Id>
+    <Alias>Prepare press releases</Alias>
+    <Description>Write and distribute press releases to media outlets to gain publicity.</Description>
+    <CreatedAtDate>2020-04-03T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P162D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2024-09-17T00:00:00</ScheduledDate>
+    <DeadlineDate>2025-03-28T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1016</Id>
+    <Alias>Conduct sponsor meetings</Alias>
+    <Description>Hold meetings with potential and existing sponsors to secure funding.</Description>
+    <CreatedAtDate>2007-04-24T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P178D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2023-01-26T00:00:00</ScheduledDate>
+    <DeadlineDate>2023-08-15T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1017</Id>
+    <Alias>Launch fundraising events</Alias>
+    <Description>Execute the planned fundraising events, ensuring they run smoothly.</Description>
+    <CreatedAtDate>2006-09-01T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P250D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2020-06-11T00:00:00</ScheduledDate>
+    <DeadlineDate>2021-03-05T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1018</Id>
+    <Alias>Monitor fundraising progress</Alias>
+    <Description>Regularly track and analyze the progress of the fundraising efforts.</Description>
+    <CreatedAtDate>2000-09-19T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P192D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Beginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2004-09-13T00:00:00</ScheduledDate>
+    <DeadlineDate>2005-04-03T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1019</Id>
+    <Alias>Adjust strategies as needed</Alias>
+    <Description>Modify and adapt fundraising strategies based on performance and feedback.</Description>
+    <CreatedAtDate>2015-04-04T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P146D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2032-07-12T00:00:00</ScheduledDate>
+    <DeadlineDate>2032-12-16T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1020</Id>
+    <Alias>Engage with donors</Alias>
+    <Description>Actively communicate with donors to build relationships and encourage ongoing support.</Description>
+    <CreatedAtDate>2010-10-18T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P323D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2013-05-02T00:00:00</ScheduledDate>
+    <DeadlineDate>2014-04-11T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1021</Id>
+    <Alias>Process donations</Alias>
+    <Description>Handle the receipt, recording, and acknowledgment of donations.</Description>
+    <CreatedAtDate>2018-10-29T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P109D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Expert</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2025-04-26T00:00:00</ScheduledDate>
+    <DeadlineDate>2025-09-10T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1022</Id>
+    <Alias>Send thank-you notes</Alias>
+    <Description>Send personalized thank-you notes to donors to show appreciation and foster loyalty.</Description>
+    <CreatedAtDate>2018-10-27T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P351D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2024-05-16T00:00:00</ScheduledDate>
+    <DeadlineDate>2025-06-02T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1023</Id>
+    <Alias>Evaluate event success</Alias>
+    <Description>Assess the success of each event and overall campaign effectiveness.</Description>
+    <CreatedAtDate>2015-08-15T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P210D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2021-11-10T00:00:00</ScheduledDate>
+    <DeadlineDate>2022-07-07T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1024</Id>
+    <Alias>Update donor database</Alias>
+    <Description>Update the donor database with the latest information post-campaign.</Description>
+    <CreatedAtDate>2002-05-12T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P75D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Beginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2014-03-26T00:00:00</ScheduledDate>
+    <DeadlineDate>2014-07-07T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1025</Id>
+    <Alias>Report to stakeholders</Alias>
+    <Description>Compile and present a report of the campaign's outcomes to stakeholders.</Description>
+    <CreatedAtDate>2008-02-14T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P108D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2008-03-26T00:00:00</ScheduledDate>
+    <DeadlineDate>2008-08-16T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1026</Id>
+    <Alias>Plan for next campaign</Alias>
+    <Description>Begin planning for future fundraising efforts based on learned insights.</Description>
+    <CreatedAtDate>2021-06-15T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P166D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2023-09-21T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-03-26T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1027</Id>
+    <Alias>Conduct financial audit</Alias>
+    <Description>Perform a thorough audit of the campaign's finances for transparency and accountability.</Description>
+    <CreatedAtDate>2017-07-10T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P322D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2027-09-12T00:00:00</ScheduledDate>
+    <DeadlineDate>2028-08-25T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1028</Id>
+    <Alias>Prepare final report</Alias>
+    <Description>Prepare a comprehensive report detailing the campaign's activities and financials.</Description>
+    <CreatedAtDate>2007-06-08T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P296D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2008-09-22T00:00:00</ScheduledDate>
+    <DeadlineDate>2009-08-21T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1029</Id>
+    <Alias>Celebrate success</Alias>
+    <Description>Celebrate the success of the campaign with the team and stakeholders.</Description>
+    <CreatedAtDate>2000-07-15T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P86D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Expert</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2014-07-07T00:00:00</ScheduledDate>
+    <DeadlineDate>2014-11-05T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1030</Id>
+    <Alias>Define fundraising goals</Alias>
+    <Description>Outline specific, measurable goals for the fundraising campaign.</Description>
+    <CreatedAtDate>2023-06-18T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P250D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2026-10-22T00:00:00</ScheduledDate>
+    <DeadlineDate>2027-07-09T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1031</Id>
+    <Alias>Identify target audience</Alias>
+    <Description>Research and determine the demographic and psychographic characteristics of potential donors.</Description>
+    <CreatedAtDate>2018-09-24T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P209D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2034-07-20T00:00:00</ScheduledDate>
+    <DeadlineDate>2035-03-15T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1032</Id>
+    <Alias>Create a fundraising plan</Alias>
+    <Description>Draft a detailed plan covering strategies, timelines, and responsibilities.</Description>
+    <CreatedAtDate>2011-05-08T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P311D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2018-04-25T00:00:00</ScheduledDate>
+    <DeadlineDate>2019-03-26T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1033</Id>
+    <Alias>Establish a budget</Alias>
+    <Description>Determine the financial requirements and create a budget for the campaign.</Description>
+    <CreatedAtDate>2000-10-08T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P74D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2008-05-24T00:00:00</ScheduledDate>
+    <DeadlineDate>2008-09-03T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1034</Id>
+    <Alias>Form a fundraising team</Alias>
+    <Description>Assemble a team of individuals with skills pertinent to fundraising.</Description>
+    <CreatedAtDate>2002-07-15T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P99D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Expert</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2025-12-21T00:00:00</ScheduledDate>
+    <DeadlineDate>2026-04-12T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1035</Id>
+    <Alias>Train the team</Alias>
+    <Description>Provide necessary training and resources to the fundraising team.</Description>
+    <CreatedAtDate>2001-09-03T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P204D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2010-10-27T00:00:00</ScheduledDate>
+    <DeadlineDate>2011-06-22T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1036</Id>
+    <Alias>Develop fundraising materials</Alias>
+    <Description>Create engaging materials like brochures, videos, and flyers for the campaign.</Description>
+    <CreatedAtDate>2015-01-05T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P162D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2024-03-23T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-09-20T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1037</Id>
+    <Alias>Create a donor database</Alias>
+    <Description>Build a database to manage donor information and track contributions.</Description>
+    <CreatedAtDate>2002-11-07T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P211D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Expert</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2003-11-03T00:00:00</ScheduledDate>
+    <DeadlineDate>2004-06-28T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1038</Id>
+    <Alias>Plan fundraising events</Alias>
+    <Description>Design and organize fundraising events, including logistics and programming.</Description>
+    <CreatedAtDate>2017-05-09T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P118D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2033-04-19T00:00:00</ScheduledDate>
+    <DeadlineDate>2033-09-11T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1039</Id>
+    <Alias>Develop online donation platform</Alias>
+    <Description>Develop a secure and user-friendly online platform for accepting donations.</Description>
+    <CreatedAtDate>2005-01-19T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P100D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2024-03-10T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-07-23T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1040</Id>
+    <Alias>Create promotional materials</Alias>
+    <Description>Produce promotional content for various media channels.</Description>
+    <CreatedAtDate>2013-05-20T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P322D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2027-01-17T00:00:00</ScheduledDate>
+    <DeadlineDate>2028-01-12T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1041</Id>
+    <Alias>Launch social media campaign</Alias>
+    <Description>Implement a campaign on social media platforms to increase awareness and donations.</Description>
+    <CreatedAtDate>2013-01-08T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P311D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Beginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2015-11-26T00:00:00</ScheduledDate>
+    <DeadlineDate>2016-11-08T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1042</Id>
+    <Alias>Contact potential sponsors</Alias>
+    <Description>Reach out to potential corporate sponsors to seek financial or in-kind support.</Description>
+    <CreatedAtDate>2011-09-01T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P236D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2022-08-03T00:00:00</ScheduledDate>
+    <DeadlineDate>2023-04-29T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1043</Id>
+    <Alias>Organize community outreach</Alias>
+    <Description>Engage with the local community through events and activities to boost support.</Description>
+    <CreatedAtDate>2020-06-11T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P312D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2032-01-20T00:00:00</ScheduledDate>
+    <DeadlineDate>2032-12-28T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1044</Id>
+    <Alias>Plan direct mail campaign</Alias>
+    <Description>Plan and execute a direct mail campaign to solicit donations.</Description>
+    <CreatedAtDate>2016-06-13T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P77D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2025-03-24T00:00:00</ScheduledDate>
+    <DeadlineDate>2025-06-24T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1045</Id>
+    <Alias>Prepare press releases</Alias>
+    <Description>Write and distribute press releases to media outlets to gain publicity.</Description>
+    <CreatedAtDate>2005-12-03T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P90D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2025-08-13T00:00:00</ScheduledDate>
+    <DeadlineDate>2025-11-29T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1046</Id>
+    <Alias>Conduct sponsor meetings</Alias>
+    <Description>Hold meetings with potential and existing sponsors to secure funding.</Description>
+    <CreatedAtDate>2016-01-23T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P153D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2019-12-01T00:00:00</ScheduledDate>
+    <DeadlineDate>2020-05-29T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1047</Id>
+    <Alias>Launch fundraising events</Alias>
+    <Description>Execute the planned fundraising events, ensuring they run smoothly.</Description>
+    <CreatedAtDate>2012-12-24T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P230D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2015-11-15T00:00:00</ScheduledDate>
+    <DeadlineDate>2016-07-13T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1048</Id>
+    <Alias>Monitor fundraising progress</Alias>
+    <Description>Regularly track and analyze the progress of the fundraising efforts.</Description>
+    <CreatedAtDate>2004-10-25T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P188D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Beginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2024-08-27T00:00:00</ScheduledDate>
+    <DeadlineDate>2025-03-31T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1049</Id>
+    <Alias>Adjust strategies as needed</Alias>
+    <Description>Modify and adapt fundraising strategies based on performance and feedback.</Description>
+    <CreatedAtDate>2009-11-23T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P215D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2027-05-29T00:00:00</ScheduledDate>
+    <DeadlineDate>2028-01-10T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1050</Id>
+    <Alias>Engage with donors</Alias>
+    <Description>Actively communicate with donors to build relationships and encourage ongoing support.</Description>
+    <CreatedAtDate>2013-10-20T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P255D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2021-07-07T00:00:00</ScheduledDate>
+    <DeadlineDate>2022-04-07T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1051</Id>
+    <Alias>Process donations</Alias>
+    <Description>Handle the receipt, recording, and acknowledgment of donations.</Description>
+    <CreatedAtDate>2021-07-01T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P148D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Expert</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2030-07-20T00:00:00</ScheduledDate>
+    <DeadlineDate>2031-01-21T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1052</Id>
+    <Alias>Send thank-you notes</Alias>
+    <Description>Send personalized thank-you notes to donors to show appreciation and foster loyalty.</Description>
+    <CreatedAtDate>2005-05-07T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P169D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2010-03-08T00:00:00</ScheduledDate>
+    <DeadlineDate>2010-09-17T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1053</Id>
+    <Alias>Evaluate event success</Alias>
+    <Description>Assess the success of each event and overall campaign effectiveness.</Description>
+    <CreatedAtDate>2017-02-14T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P67D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2038-09-16T00:00:00</ScheduledDate>
+    <DeadlineDate>2038-12-22T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1054</Id>
+    <Alias>Update donor database</Alias>
+    <Description>Update the donor database with the latest information post-campaign.</Description>
+    <CreatedAtDate>2006-01-06T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P237D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Beginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2011-05-11T00:00:00</ScheduledDate>
+    <DeadlineDate>2012-01-22T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1055</Id>
+    <Alias>Report to stakeholders</Alias>
+    <Description>Compile and present a report of the campaign's outcomes to stakeholders.</Description>
+    <CreatedAtDate>2021-03-15T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P274D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2033-01-31T00:00:00</ScheduledDate>
+    <DeadlineDate>2033-11-14T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1056</Id>
+    <Alias>Plan for next campaign</Alias>
+    <Description>Begin planning for future fundraising efforts based on learned insights.</Description>
+    <CreatedAtDate>2013-05-01T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P329D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2031-05-05T00:00:00</ScheduledDate>
+    <DeadlineDate>2032-04-21T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1057</Id>
+    <Alias>Conduct financial audit</Alias>
+    <Description>Perform a thorough audit of the campaign's finances for transparency and accountability.</Description>
+    <CreatedAtDate>2008-12-09T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P53D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2018-11-07T00:00:00</ScheduledDate>
+    <DeadlineDate>2019-01-28T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1058</Id>
+    <Alias>Prepare final report</Alias>
+    <Description>Prepare a comprehensive report detailing the campaign's activities and financials.</Description>
+    <CreatedAtDate>2001-04-24T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P157D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2014-02-20T00:00:00</ScheduledDate>
+    <DeadlineDate>2014-08-23T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1059</Id>
+    <Alias>Celebrate success</Alias>
+    <Description>Celebrate the success of the campaign with the team and stakeholders.</Description>
+    <CreatedAtDate>2005-11-11T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P193D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Expert</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2013-07-29T00:00:00</ScheduledDate>
+    <DeadlineDate>2014-02-22T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1060</Id>
+    <Alias>Define fundraising goals</Alias>
+    <Description>Outline specific, measurable goals for the fundraising campaign.</Description>
+    <CreatedAtDate>2006-01-26T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P156D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2013-04-13T00:00:00</ScheduledDate>
+    <DeadlineDate>2013-10-01T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1061</Id>
+    <Alias>Identify target audience</Alias>
+    <Description>Research and determine the demographic and psychographic characteristics of potential donors.</Description>
+    <CreatedAtDate>2006-10-08T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P111D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2010-11-17T00:00:00</ScheduledDate>
+    <DeadlineDate>2011-04-03T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1062</Id>
+    <Alias>Create a fundraising plan</Alias>
+    <Description>Draft a detailed plan covering strategies, timelines, and responsibilities.</Description>
+    <CreatedAtDate>2012-11-07T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P148D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2016-06-08T00:00:00</ScheduledDate>
+    <DeadlineDate>2016-11-19T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1063</Id>
+    <Alias>Establish a budget</Alias>
+    <Description>Determine the financial requirements and create a budget for the campaign.</Description>
+    <CreatedAtDate>2006-04-04T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P300D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2017-11-29T00:00:00</ScheduledDate>
+    <DeadlineDate>2018-10-11T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1064</Id>
+    <Alias>Form a fundraising team</Alias>
+    <Description>Assemble a team of individuals with skills pertinent to fundraising.</Description>
+    <CreatedAtDate>2008-11-12T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P73D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Expert</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2029-12-15T00:00:00</ScheduledDate>
+    <DeadlineDate>2030-03-08T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1065</Id>
+    <Alias>Train the team</Alias>
+    <Description>Provide necessary training and resources to the fundraising team.</Description>
+    <CreatedAtDate>2007-08-06T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P288D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2026-08-10T00:00:00</ScheduledDate>
+    <DeadlineDate>2027-06-26T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1066</Id>
+    <Alias>Develop fundraising materials</Alias>
+    <Description>Create engaging materials like brochures, videos, and flyers for the campaign.</Description>
+    <CreatedAtDate>2010-05-09T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P274D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2017-12-03T00:00:00</ScheduledDate>
+    <DeadlineDate>2018-09-22T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1067</Id>
+    <Alias>Create a donor database</Alias>
+    <Description>Build a database to manage donor information and track contributions.</Description>
+    <CreatedAtDate>2023-09-07T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P152D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Expert</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2046-09-07T00:00:00</ScheduledDate>
+    <DeadlineDate>2047-03-09T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1068</Id>
+    <Alias>Plan fundraising events</Alias>
+    <Description>Design and organize fundraising events, including logistics and programming.</Description>
+    <CreatedAtDate>2004-01-17T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P219D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2021-11-24T00:00:00</ScheduledDate>
+    <DeadlineDate>2022-07-11T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1069</Id>
+    <Alias>Develop online donation platform</Alias>
+    <Description>Develop a secure and user-friendly online platform for accepting donations.</Description>
+    <CreatedAtDate>2014-09-18T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P335D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2025-05-21T00:00:00</ScheduledDate>
+    <DeadlineDate>2026-05-20T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1070</Id>
+    <Alias>Create promotional materials</Alias>
+    <Description>Produce promotional content for various media channels.</Description>
+    <CreatedAtDate>2004-04-19T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P335D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2025-03-08T00:00:00</ScheduledDate>
+    <DeadlineDate>2026-03-09T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1071</Id>
+    <Alias>Launch social media campaign</Alias>
+    <Description>Implement a campaign on social media platforms to increase awareness and donations.</Description>
+    <CreatedAtDate>2006-02-11T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P119D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Beginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2012-11-30T00:00:00</ScheduledDate>
+    <DeadlineDate>2013-05-01T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1072</Id>
+    <Alias>Contact potential sponsors</Alias>
+    <Description>Reach out to potential corporate sponsors to seek financial or in-kind support.</Description>
+    <CreatedAtDate>2017-04-06T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P318D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2027-08-24T00:00:00</ScheduledDate>
+    <DeadlineDate>2028-07-21T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1073</Id>
+    <Alias>Organize community outreach</Alias>
+    <Description>Engage with the local community through events and activities to boost support.</Description>
+    <CreatedAtDate>2021-05-03T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P344D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2025-09-20T00:00:00</ScheduledDate>
+    <DeadlineDate>2026-09-29T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1074</Id>
+    <Alias>Plan direct mail campaign</Alias>
+    <Description>Plan and execute a direct mail campaign to solicit donations.</Description>
+    <CreatedAtDate>2014-02-28T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P328D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2017-07-14T00:00:00</ScheduledDate>
+    <DeadlineDate>2018-06-19T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1075</Id>
+    <Alias>Prepare press releases</Alias>
+    <Description>Write and distribute press releases to media outlets to gain publicity.</Description>
+    <CreatedAtDate>2013-09-01T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P48D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2015-04-17T00:00:00</ScheduledDate>
+    <DeadlineDate>2015-07-03T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1076</Id>
+    <Alias>Conduct sponsor meetings</Alias>
+    <Description>Hold meetings with potential and existing sponsors to secure funding.</Description>
+    <CreatedAtDate>2021-09-14T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P77D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2042-03-20T00:00:00</ScheduledDate>
+    <DeadlineDate>2042-07-08T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1077</Id>
+    <Alias>Launch fundraising events</Alias>
+    <Description>Execute the planned fundraising events, ensuring they run smoothly.</Description>
+    <CreatedAtDate>2007-10-06T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P274D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2022-02-10T00:00:00</ScheduledDate>
+    <DeadlineDate>2022-12-06T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1078</Id>
+    <Alias>Monitor fundraising progress</Alias>
+    <Description>Regularly track and analyze the progress of the fundraising efforts.</Description>
+    <CreatedAtDate>2003-05-12T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P107D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Beginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2025-03-02T00:00:00</ScheduledDate>
+    <DeadlineDate>2025-07-23T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1079</Id>
+    <Alias>Adjust strategies as needed</Alias>
+    <Description>Modify and adapt fundraising strategies based on performance and feedback.</Description>
+    <CreatedAtDate>2023-09-20T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P153D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2026-10-23T00:00:00</ScheduledDate>
+    <DeadlineDate>2027-04-29T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1080</Id>
+    <Alias>Engage with donors</Alias>
+    <Description>Actively communicate with donors to build relationships and encourage ongoing support.</Description>
+    <CreatedAtDate>2015-08-31T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P36D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2026-06-07T00:00:00</ScheduledDate>
+    <DeadlineDate>2026-08-07T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1081</Id>
+    <Alias>Process donations</Alias>
+    <Description>Handle the receipt, recording, and acknowledgment of donations.</Description>
+    <CreatedAtDate>2007-02-04T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P111D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Expert</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2011-07-11T00:00:00</ScheduledDate>
+    <DeadlineDate>2011-11-14T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1082</Id>
+    <Alias>Send thank-you notes</Alias>
+    <Description>Send personalized thank-you notes to donors to show appreciation and foster loyalty.</Description>
+    <CreatedAtDate>2017-11-23T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P233D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2031-07-18T00:00:00</ScheduledDate>
+    <DeadlineDate>2032-04-01T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1083</Id>
+    <Alias>Evaluate event success</Alias>
+    <Description>Assess the success of each event and overall campaign effectiveness.</Description>
+    <CreatedAtDate>2023-12-21T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P293D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2039-08-04T00:00:00</ScheduledDate>
+    <DeadlineDate>2040-06-12T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1084</Id>
+    <Alias>Update donor database</Alias>
+    <Description>Update the donor database with the latest information post-campaign.</Description>
+    <CreatedAtDate>2000-08-05T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P97D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Beginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2006-02-26T00:00:00</ScheduledDate>
+    <DeadlineDate>2006-07-08T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1085</Id>
+    <Alias>Report to stakeholders</Alias>
+    <Description>Compile and present a report of the campaign's outcomes to stakeholders.</Description>
+    <CreatedAtDate>2017-12-19T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P301D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2028-02-06T00:00:00</ScheduledDate>
+    <DeadlineDate>2028-12-17T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1086</Id>
+    <Alias>Plan for next campaign</Alias>
+    <Description>Begin planning for future fundraising efforts based on learned insights.</Description>
+    <CreatedAtDate>2007-01-15T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P260D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2018-06-30T00:00:00</ScheduledDate>
+    <DeadlineDate>2019-04-20T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1087</Id>
+    <Alias>Conduct financial audit</Alias>
+    <Description>Perform a thorough audit of the campaign's finances for transparency and accountability.</Description>
+    <CreatedAtDate>2014-03-08T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P309D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2037-03-03T00:00:00</ScheduledDate>
+    <DeadlineDate>2038-01-29T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1088</Id>
+    <Alias>Prepare final report</Alias>
+    <Description>Prepare a comprehensive report detailing the campaign's activities and financials.</Description>
+    <CreatedAtDate>2016-07-02T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P214D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2022-03-25T00:00:00</ScheduledDate>
+    <DeadlineDate>2022-11-10T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1089</Id>
+    <Alias>Celebrate success</Alias>
+    <Description>Celebrate the success of the campaign with the team and stakeholders.</Description>
+    <CreatedAtDate>2007-04-20T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P121D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Expert</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2008-08-05T00:00:00</ScheduledDate>
+    <DeadlineDate>2008-12-14T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1090</Id>
+    <Alias>Define fundraising goals</Alias>
+    <Description>Outline specific, measurable goals for the fundraising campaign.</Description>
+    <CreatedAtDate>2016-11-17T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P65D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2020-07-14T00:00:00</ScheduledDate>
+    <DeadlineDate>2020-10-01T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1091</Id>
+    <Alias>Identify target audience</Alias>
+    <Description>Research and determine the demographic and psychographic characteristics of potential donors.</Description>
+    <CreatedAtDate>2014-10-31T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P183D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2033-10-16T00:00:00</ScheduledDate>
+    <DeadlineDate>2034-05-02T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1092</Id>
+    <Alias>Create a fundraising plan</Alias>
+    <Description>Draft a detailed plan covering strategies, timelines, and responsibilities.</Description>
+    <CreatedAtDate>2013-01-20T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P225D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2016-02-15T00:00:00</ScheduledDate>
+    <DeadlineDate>2016-10-11T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1093</Id>
+    <Alias>Establish a budget</Alias>
+    <Description>Determine the financial requirements and create a budget for the campaign.</Description>
+    <CreatedAtDate>2004-12-22T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P207D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2018-05-04T00:00:00</ScheduledDate>
+    <DeadlineDate>2019-01-02T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1094</Id>
+    <Alias>Form a fundraising team</Alias>
+    <Description>Assemble a team of individuals with skills pertinent to fundraising.</Description>
+    <CreatedAtDate>2002-02-01T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P328D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Expert</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2009-05-01T00:00:00</ScheduledDate>
+    <DeadlineDate>2010-04-21T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1095</Id>
+    <Alias>Train the team</Alias>
+    <Description>Provide necessary training and resources to the fundraising team.</Description>
+    <CreatedAtDate>2023-10-01T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P236D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2039-06-28T00:00:00</ScheduledDate>
+    <DeadlineDate>2040-03-07T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1096</Id>
+    <Alias>Develop fundraising materials</Alias>
+    <Description>Create engaging materials like brochures, videos, and flyers for the campaign.</Description>
+    <CreatedAtDate>2014-10-05T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P353D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2017-01-18T00:00:00</ScheduledDate>
+    <DeadlineDate>2018-02-05T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1097</Id>
+    <Alias>Create a donor database</Alias>
+    <Description>Build a database to manage donor information and track contributions.</Description>
+    <CreatedAtDate>2008-10-06T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P360D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Expert</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2022-10-01T00:00:00</ScheduledDate>
+    <DeadlineDate>2023-10-16T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1098</Id>
+    <Alias>Plan fundraising events</Alias>
+    <Description>Design and organize fundraising events, including logistics and programming.</Description>
+    <CreatedAtDate>2018-07-10T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P185D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2024-04-09T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-11-13T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1099</Id>
+    <Alias>Develop online donation platform</Alias>
+    <Description>Develop a secure and user-friendly online platform for accepting donations.</Description>
+    <CreatedAtDate>2016-08-19T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P230D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2027-03-07T00:00:00</ScheduledDate>
+    <DeadlineDate>2027-11-23T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1100</Id>
+    <Alias>Create promotional materials</Alias>
+    <Description>Produce promotional content for various media channels.</Description>
+    <CreatedAtDate>2023-05-18T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P81D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2032-05-23T00:00:00</ScheduledDate>
+    <DeadlineDate>2032-08-31T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1101</Id>
+    <Alias>Launch social media campaign</Alias>
+    <Description>Implement a campaign on social media platforms to increase awareness and donations.</Description>
+    <CreatedAtDate>2016-08-31T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P82D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Beginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2016-12-03T00:00:00</ScheduledDate>
+    <DeadlineDate>2017-03-12T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1102</Id>
+    <Alias>Contact potential sponsors</Alias>
+    <Description>Reach out to potential corporate sponsors to seek financial or in-kind support.</Description>
+    <CreatedAtDate>2006-02-27T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P146D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2018-06-26T00:00:00</ScheduledDate>
+    <DeadlineDate>2018-12-25T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1103</Id>
+    <Alias>Organize community outreach</Alias>
+    <Description>Engage with the local community through events and activities to boost support.</Description>
+    <CreatedAtDate>2000-01-16T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P183D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2005-02-07T00:00:00</ScheduledDate>
+    <DeadlineDate>2005-09-05T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1104</Id>
+    <Alias>Plan direct mail campaign</Alias>
+    <Description>Plan and execute a direct mail campaign to solicit donations.</Description>
+    <CreatedAtDate>2016-11-15T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P328D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2023-04-06T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-03-24T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1105</Id>
+    <Alias>Prepare press releases</Alias>
+    <Description>Write and distribute press releases to media outlets to gain publicity.</Description>
+    <CreatedAtDate>2006-09-16T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P49D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2014-05-21T00:00:00</ScheduledDate>
+    <DeadlineDate>2014-07-31T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1106</Id>
+    <Alias>Conduct sponsor meetings</Alias>
+    <Description>Hold meetings with potential and existing sponsors to secure funding.</Description>
+    <CreatedAtDate>2009-06-14T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P263D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2032-08-14T00:00:00</ScheduledDate>
+    <DeadlineDate>2033-05-22T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1107</Id>
+    <Alias>Launch fundraising events</Alias>
+    <Description>Execute the planned fundraising events, ensuring they run smoothly.</Description>
+    <CreatedAtDate>2017-07-25T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P34D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2025-09-05T00:00:00</ScheduledDate>
+    <DeadlineDate>2025-10-28T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1108</Id>
+    <Alias>Monitor fundraising progress</Alias>
+    <Description>Regularly track and analyze the progress of the fundraising efforts.</Description>
+    <CreatedAtDate>2013-10-03T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P294D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Beginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2033-01-09T00:00:00</ScheduledDate>
+    <DeadlineDate>2033-11-19T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1109</Id>
+    <Alias>Adjust strategies as needed</Alias>
+    <Description>Modify and adapt fundraising strategies based on performance and feedback.</Description>
+    <CreatedAtDate>2017-07-29T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P348D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2040-08-31T00:00:00</ScheduledDate>
+    <DeadlineDate>2041-09-10T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1110</Id>
+    <Alias>Engage with donors</Alias>
+    <Description>Actively communicate with donors to build relationships and encourage ongoing support.</Description>
+    <CreatedAtDate>2012-12-14T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P280D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2036-01-18T00:00:00</ScheduledDate>
+    <DeadlineDate>2036-11-23T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1111</Id>
+    <Alias>Process donations</Alias>
+    <Description>Handle the receipt, recording, and acknowledgment of donations.</Description>
+    <CreatedAtDate>2005-10-10T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P282D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Expert</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2025-12-29T00:00:00</ScheduledDate>
+    <DeadlineDate>2026-11-03T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1112</Id>
+    <Alias>Send thank-you notes</Alias>
+    <Description>Send personalized thank-you notes to donors to show appreciation and foster loyalty.</Description>
+    <CreatedAtDate>2021-01-09T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P134D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2022-01-31T00:00:00</ScheduledDate>
+    <DeadlineDate>2022-07-02T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1113</Id>
+    <Alias>Evaluate event success</Alias>
+    <Description>Assess the success of each event and overall campaign effectiveness.</Description>
+    <CreatedAtDate>2001-04-26T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P190D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2001-05-14T00:00:00</ScheduledDate>
+    <DeadlineDate>2001-12-11T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1114</Id>
+    <Alias>Update donor database</Alias>
+    <Description>Update the donor database with the latest information post-campaign.</Description>
+    <CreatedAtDate>2014-12-01T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P350D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Beginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2028-10-19T00:00:00</ScheduledDate>
+    <DeadlineDate>2029-11-01T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1115</Id>
+    <Alias>Report to stakeholders</Alias>
+    <Description>Compile and present a report of the campaign's outcomes to stakeholders.</Description>
+    <CreatedAtDate>2014-12-14T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P60D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2029-07-30T00:00:00</ScheduledDate>
+    <DeadlineDate>2029-10-24T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1116</Id>
+    <Alias>Plan for next campaign</Alias>
+    <Description>Begin planning for future fundraising efforts based on learned insights.</Description>
+    <CreatedAtDate>2016-06-20T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P84D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2019-03-05T00:00:00</ScheduledDate>
+    <DeadlineDate>2019-06-20T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1117</Id>
+    <Alias>Conduct financial audit</Alias>
+    <Description>Perform a thorough audit of the campaign's finances for transparency and accountability.</Description>
+    <CreatedAtDate>2021-12-02T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P75D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2032-01-08T00:00:00</ScheduledDate>
+    <DeadlineDate>2032-04-15T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1118</Id>
+    <Alias>Prepare final report</Alias>
+    <Description>Prepare a comprehensive report detailing the campaign's activities and financials.</Description>
+    <CreatedAtDate>2000-10-14T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P87D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2006-04-25T00:00:00</ScheduledDate>
+    <DeadlineDate>2006-08-13T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1119</Id>
+    <Alias>Celebrate success</Alias>
+    <Description>Celebrate the success of the campaign with the team and stakeholders.</Description>
+    <CreatedAtDate>2007-10-02T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P169D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Expert</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2014-06-22T00:00:00</ScheduledDate>
+    <DeadlineDate>2014-12-24T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1120</Id>
+    <Alias>Define fundraising goals</Alias>
+    <Description>Outline specific, measurable goals for the fundraising campaign.</Description>
+    <CreatedAtDate>2002-09-22T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P41D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2026-01-24T00:00:00</ScheduledDate>
+    <DeadlineDate>2026-03-17T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1121</Id>
+    <Alias>Identify target audience</Alias>
+    <Description>Research and determine the demographic and psychographic characteristics of potential donors.</Description>
+    <CreatedAtDate>2000-05-03T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P174D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2013-05-03T00:00:00</ScheduledDate>
+    <DeadlineDate>2013-12-02T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1122</Id>
+    <Alias>Create a fundraising plan</Alias>
+    <Description>Draft a detailed plan covering strategies, timelines, and responsibilities.</Description>
+    <CreatedAtDate>2015-12-13T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P92D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2023-02-03T00:00:00</ScheduledDate>
+    <DeadlineDate>2023-05-16T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1123</Id>
+    <Alias>Establish a budget</Alias>
+    <Description>Determine the financial requirements and create a budget for the campaign.</Description>
+    <CreatedAtDate>2004-07-29T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P283D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2012-12-23T00:00:00</ScheduledDate>
+    <DeadlineDate>2013-11-06T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1124</Id>
+    <Alias>Form a fundraising team</Alias>
+    <Description>Assemble a team of individuals with skills pertinent to fundraising.</Description>
+    <CreatedAtDate>2010-10-23T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P283D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Expert</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2014-07-21T00:00:00</ScheduledDate>
+    <DeadlineDate>2015-06-03T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1125</Id>
+    <Alias>Train the team</Alias>
+    <Description>Provide necessary training and resources to the fundraising team.</Description>
+    <CreatedAtDate>2023-01-03T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P259D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2041-05-06T00:00:00</ScheduledDate>
+    <DeadlineDate>2042-01-31T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1126</Id>
+    <Alias>Develop fundraising materials</Alias>
+    <Description>Create engaging materials like brochures, videos, and flyers for the campaign.</Description>
+    <CreatedAtDate>2003-03-12T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P58D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2018-05-05T00:00:00</ScheduledDate>
+    <DeadlineDate>2018-07-24T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1127</Id>
+    <Alias>Create a donor database</Alias>
+    <Description>Build a database to manage donor information and track contributions.</Description>
+    <CreatedAtDate>2012-02-07T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P202D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Expert</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2023-05-26T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-01-13T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1128</Id>
+    <Alias>Plan fundraising events</Alias>
+    <Description>Design and organize fundraising events, including logistics and programming.</Description>
+    <CreatedAtDate>2012-05-27T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P283D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2029-01-02T00:00:00</ScheduledDate>
+    <DeadlineDate>2029-11-17T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1129</Id>
+    <Alias>Develop online donation platform</Alias>
+    <Description>Develop a secure and user-friendly online platform for accepting donations.</Description>
+    <CreatedAtDate>2000-04-01T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P195D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2007-04-14T00:00:00</ScheduledDate>
+    <DeadlineDate>2007-11-26T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1130</Id>
+    <Alias>Create promotional materials</Alias>
+    <Description>Produce promotional content for various media channels.</Description>
+    <CreatedAtDate>2002-05-23T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P255D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2022-01-14T00:00:00</ScheduledDate>
+    <DeadlineDate>2022-10-11T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1131</Id>
+    <Alias>Launch social media campaign</Alias>
+    <Description>Implement a campaign on social media platforms to increase awareness and donations.</Description>
+    <CreatedAtDate>2002-05-20T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P282D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Beginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2025-08-13T00:00:00</ScheduledDate>
+    <DeadlineDate>2026-06-14T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1132</Id>
+    <Alias>Contact potential sponsors</Alias>
+    <Description>Reach out to potential corporate sponsors to seek financial or in-kind support.</Description>
+    <CreatedAtDate>2014-06-30T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P43D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2034-10-09T00:00:00</ScheduledDate>
+    <DeadlineDate>2034-12-27T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1133</Id>
+    <Alias>Organize community outreach</Alias>
+    <Description>Engage with the local community through events and activities to boost support.</Description>
+    <CreatedAtDate>2016-07-25T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P153D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2036-05-16T00:00:00</ScheduledDate>
+    <DeadlineDate>2036-11-04T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1134</Id>
+    <Alias>Plan direct mail campaign</Alias>
+    <Description>Plan and execute a direct mail campaign to solicit donations.</Description>
+    <CreatedAtDate>2020-12-20T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P248D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2029-12-15T00:00:00</ScheduledDate>
+    <DeadlineDate>2030-09-02T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1135</Id>
+    <Alias>Prepare press releases</Alias>
+    <Description>Write and distribute press releases to media outlets to gain publicity.</Description>
+    <CreatedAtDate>2022-09-04T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P101D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2034-08-09T00:00:00</ScheduledDate>
+    <DeadlineDate>2034-12-12T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1136</Id>
+    <Alias>Conduct sponsor meetings</Alias>
+    <Description>Hold meetings with potential and existing sponsors to secure funding.</Description>
+    <CreatedAtDate>2015-11-10T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P164D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2018-11-03T00:00:00</ScheduledDate>
+    <DeadlineDate>2019-05-12T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1137</Id>
+    <Alias>Launch fundraising events</Alias>
+    <Description>Execute the planned fundraising events, ensuring they run smoothly.</Description>
+    <CreatedAtDate>2013-01-04T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P290D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2029-08-05T00:00:00</ScheduledDate>
+    <DeadlineDate>2030-06-01T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1138</Id>
+    <Alias>Monitor fundraising progress</Alias>
+    <Description>Regularly track and analyze the progress of the fundraising efforts.</Description>
+    <CreatedAtDate>2011-07-17T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P322D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Beginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2026-03-10T00:00:00</ScheduledDate>
+    <DeadlineDate>2027-02-17T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1139</Id>
+    <Alias>Adjust strategies as needed</Alias>
+    <Description>Modify and adapt fundraising strategies based on performance and feedback.</Description>
+    <CreatedAtDate>2012-03-22T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P165D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2033-10-05T00:00:00</ScheduledDate>
+    <DeadlineDate>2034-04-07T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1140</Id>
+    <Alias>Engage with donors</Alias>
+    <Description>Actively communicate with donors to build relationships and encourage ongoing support.</Description>
+    <CreatedAtDate>2003-01-30T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P69D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2026-11-02T00:00:00</ScheduledDate>
+    <DeadlineDate>2027-02-15T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1141</Id>
+    <Alias>Process donations</Alias>
+    <Description>Handle the receipt, recording, and acknowledgment of donations.</Description>
+    <CreatedAtDate>2018-06-06T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P69D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Expert</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2039-07-25T00:00:00</ScheduledDate>
+    <DeadlineDate>2039-11-03T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1142</Id>
+    <Alias>Send thank-you notes</Alias>
+    <Description>Send personalized thank-you notes to donors to show appreciation and foster loyalty.</Description>
+    <CreatedAtDate>2011-03-11T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P49D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2014-04-28T00:00:00</ScheduledDate>
+    <DeadlineDate>2014-07-13T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1143</Id>
+    <Alias>Evaluate event success</Alias>
+    <Description>Assess the success of each event and overall campaign effectiveness.</Description>
+    <CreatedAtDate>2003-10-31T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P248D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2023-02-13T00:00:00</ScheduledDate>
+    <DeadlineDate>2023-11-14T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1144</Id>
+    <Alias>Update donor database</Alias>
+    <Description>Update the donor database with the latest information post-campaign.</Description>
+    <CreatedAtDate>2019-04-14T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P79D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Beginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2034-08-21T00:00:00</ScheduledDate>
+    <DeadlineDate>2034-12-13T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1145</Id>
+    <Alias>Report to stakeholders</Alias>
+    <Description>Compile and present a report of the campaign's outcomes to stakeholders.</Description>
+    <CreatedAtDate>2002-05-21T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P360D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2016-04-05T00:00:00</ScheduledDate>
+    <DeadlineDate>2017-04-29T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1146</Id>
+    <Alias>Plan for next campaign</Alias>
+    <Description>Begin planning for future fundraising efforts based on learned insights.</Description>
+    <CreatedAtDate>2000-03-25T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P336D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2001-07-17T00:00:00</ScheduledDate>
+    <DeadlineDate>2002-07-08T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1147</Id>
+    <Alias>Conduct financial audit</Alias>
+    <Description>Perform a thorough audit of the campaign's finances for transparency and accountability.</Description>
+    <CreatedAtDate>2005-10-26T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P221D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2006-11-28T00:00:00</ScheduledDate>
+    <DeadlineDate>2007-07-28T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1148</Id>
+    <Alias>Prepare final report</Alias>
+    <Description>Prepare a comprehensive report detailing the campaign's activities and financials.</Description>
+    <CreatedAtDate>2001-03-13T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P33D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2011-10-15T00:00:00</ScheduledDate>
+    <DeadlineDate>2011-11-27T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1149</Id>
+    <Alias>Celebrate success</Alias>
+    <Description>Celebrate the success of the campaign with the team and stakeholders.</Description>
+    <CreatedAtDate>2018-09-27T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P325D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Expert</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2038-11-07T00:00:00</ScheduledDate>
+    <DeadlineDate>2039-10-15T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1150</Id>
+    <Alias>Define fundraising goals</Alias>
+    <Description>Outline specific, measurable goals for the fundraising campaign.</Description>
+    <CreatedAtDate>2017-06-28T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P142D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2038-07-10T00:00:00</ScheduledDate>
+    <DeadlineDate>2039-01-03T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1151</Id>
+    <Alias>Identify target audience</Alias>
+    <Description>Research and determine the demographic and psychographic characteristics of potential donors.</Description>
+    <CreatedAtDate>2019-09-29T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P298D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2036-04-02T00:00:00</ScheduledDate>
+    <DeadlineDate>2037-02-17T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1152</Id>
+    <Alias>Create a fundraising plan</Alias>
+    <Description>Draft a detailed plan covering strategies, timelines, and responsibilities.</Description>
+    <CreatedAtDate>2003-11-01T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P327D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2013-05-06T00:00:00</ScheduledDate>
+    <DeadlineDate>2014-04-13T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1153</Id>
+    <Alias>Establish a budget</Alias>
+    <Description>Determine the financial requirements and create a budget for the campaign.</Description>
+    <CreatedAtDate>2003-05-11T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P239D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2010-08-17T00:00:00</ScheduledDate>
+    <DeadlineDate>2011-04-26T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1154</Id>
+    <Alias>Form a fundraising team</Alias>
+    <Description>Assemble a team of individuals with skills pertinent to fundraising.</Description>
+    <CreatedAtDate>2009-09-22T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P185D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Expert</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2031-07-30T00:00:00</ScheduledDate>
+    <DeadlineDate>2032-02-26T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1155</Id>
+    <Alias>Train the team</Alias>
+    <Description>Provide necessary training and resources to the fundraising team.</Description>
+    <CreatedAtDate>2021-08-21T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P33D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2023-06-28T00:00:00</ScheduledDate>
+    <DeadlineDate>2023-09-08T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1156</Id>
+    <Alias>Develop fundraising materials</Alias>
+    <Description>Create engaging materials like brochures, videos, and flyers for the campaign.</Description>
+    <CreatedAtDate>2019-04-13T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P65D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2026-03-28T00:00:00</ScheduledDate>
+    <DeadlineDate>2026-06-15T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1157</Id>
+    <Alias>Create a donor database</Alias>
+    <Description>Build a database to manage donor information and track contributions.</Description>
+    <CreatedAtDate>2004-05-25T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P38D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Expert</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2006-01-23T00:00:00</ScheduledDate>
+    <DeadlineDate>2006-04-05T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1158</Id>
+    <Alias>Plan fundraising events</Alias>
+    <Description>Design and organize fundraising events, including logistics and programming.</Description>
+    <CreatedAtDate>2023-08-25T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P209D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2041-01-14T00:00:00</ScheduledDate>
+    <DeadlineDate>2041-09-14T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1159</Id>
+    <Alias>Develop online donation platform</Alias>
+    <Description>Develop a secure and user-friendly online platform for accepting donations.</Description>
+    <CreatedAtDate>2022-02-01T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P116D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2037-10-19T00:00:00</ScheduledDate>
+    <DeadlineDate>2038-03-15T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1160</Id>
+    <Alias>Create promotional materials</Alias>
+    <Description>Produce promotional content for various media channels.</Description>
+    <CreatedAtDate>2003-06-01T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P247D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2021-11-06T00:00:00</ScheduledDate>
+    <DeadlineDate>2022-08-19T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1161</Id>
+    <Alias>Launch social media campaign</Alias>
+    <Description>Implement a campaign on social media platforms to increase awareness and donations.</Description>
+    <CreatedAtDate>2008-02-12T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P198D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Beginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2029-01-20T00:00:00</ScheduledDate>
+    <DeadlineDate>2029-08-25T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1162</Id>
+    <Alias>Contact potential sponsors</Alias>
+    <Description>Reach out to potential corporate sponsors to seek financial or in-kind support.</Description>
+    <CreatedAtDate>2009-04-29T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P299D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2014-04-24T00:00:00</ScheduledDate>
+    <DeadlineDate>2015-03-03T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1163</Id>
+    <Alias>Organize community outreach</Alias>
+    <Description>Engage with the local community through events and activities to boost support.</Description>
+    <CreatedAtDate>2013-03-02T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P57D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2035-06-07T00:00:00</ScheduledDate>
+    <DeadlineDate>2035-08-29T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1164</Id>
+    <Alias>Plan direct mail campaign</Alias>
+    <Description>Plan and execute a direct mail campaign to solicit donations.</Description>
+    <CreatedAtDate>2011-10-15T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P335D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2017-06-27T00:00:00</ScheduledDate>
+    <DeadlineDate>2018-06-21T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1165</Id>
+    <Alias>Prepare press releases</Alias>
+    <Description>Write and distribute press releases to media outlets to gain publicity.</Description>
+    <CreatedAtDate>2005-11-23T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P306D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2010-07-15T00:00:00</ScheduledDate>
+    <DeadlineDate>2011-06-23T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1166</Id>
+    <Alias>Conduct sponsor meetings</Alias>
+    <Description>Hold meetings with potential and existing sponsors to secure funding.</Description>
+    <CreatedAtDate>2008-03-01T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P50D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2028-01-12T00:00:00</ScheduledDate>
+    <DeadlineDate>2028-03-22T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1167</Id>
+    <Alias>Launch fundraising events</Alias>
+    <Description>Execute the planned fundraising events, ensuring they run smoothly.</Description>
+    <CreatedAtDate>2016-09-10T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P138D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2018-06-25T00:00:00</ScheduledDate>
+    <DeadlineDate>2018-11-25T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1168</Id>
+    <Alias>Monitor fundraising progress</Alias>
+    <Description>Regularly track and analyze the progress of the fundraising efforts.</Description>
+    <CreatedAtDate>2007-06-28T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P163D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Beginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2011-09-10T00:00:00</ScheduledDate>
+    <DeadlineDate>2012-03-20T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1169</Id>
+    <Alias>Adjust strategies as needed</Alias>
+    <Description>Modify and adapt fundraising strategies based on performance and feedback.</Description>
+    <CreatedAtDate>2022-10-21T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P363D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2041-08-06T00:00:00</ScheduledDate>
+    <DeadlineDate>2042-08-29T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1170</Id>
+    <Alias>Engage with donors</Alias>
+    <Description>Actively communicate with donors to build relationships and encourage ongoing support.</Description>
+    <CreatedAtDate>2013-02-13T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P38D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2017-09-10T00:00:00</ScheduledDate>
+    <DeadlineDate>2017-11-20T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1171</Id>
+    <Alias>Process donations</Alias>
+    <Description>Handle the receipt, recording, and acknowledgment of donations.</Description>
+    <CreatedAtDate>2022-07-31T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P329D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Expert</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2034-04-05T00:00:00</ScheduledDate>
+    <DeadlineDate>2035-03-16T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1172</Id>
+    <Alias>Send thank-you notes</Alias>
+    <Description>Send personalized thank-you notes to donors to show appreciation and foster loyalty.</Description>
+    <CreatedAtDate>2000-03-16T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P331D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2004-12-27T00:00:00</ScheduledDate>
+    <DeadlineDate>2005-12-09T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1173</Id>
+    <Alias>Evaluate event success</Alias>
+    <Description>Assess the success of each event and overall campaign effectiveness.</Description>
+    <CreatedAtDate>2009-03-16T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P134D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2014-06-02T00:00:00</ScheduledDate>
+    <DeadlineDate>2014-10-30T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1174</Id>
+    <Alias>Update donor database</Alias>
+    <Description>Update the donor database with the latest information post-campaign.</Description>
+    <CreatedAtDate>2009-12-16T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P192D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Beginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2009-12-28T00:00:00</ScheduledDate>
+    <DeadlineDate>2010-07-28T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1175</Id>
+    <Alias>Report to stakeholders</Alias>
+    <Description>Compile and present a report of the campaign's outcomes to stakeholders.</Description>
+    <CreatedAtDate>2014-11-13T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P89D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2029-06-09T00:00:00</ScheduledDate>
+    <DeadlineDate>2029-10-11T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1176</Id>
+    <Alias>Plan for next campaign</Alias>
+    <Description>Begin planning for future fundraising efforts based on learned insights.</Description>
+    <CreatedAtDate>2007-01-07T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P311D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Intermediate</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2013-07-21T00:00:00</ScheduledDate>
+    <DeadlineDate>2014-07-01T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1177</Id>
+    <Alias>Conduct financial audit</Alias>
+    <Description>Perform a thorough audit of the campaign's finances for transparency and accountability.</Description>
+    <CreatedAtDate>2024-01-20T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P235D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Advanced</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2040-01-24T00:00:00</ScheduledDate>
+    <DeadlineDate>2040-10-06T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1178</Id>
+    <Alias>Prepare final report</Alias>
+    <Description>Prepare a comprehensive report detailing the campaign's activities and financials.</Description>
+    <CreatedAtDate>2005-04-04T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P113D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>AdvancedBeginner</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2027-03-07T00:00:00</ScheduledDate>
+    <DeadlineDate>2027-07-27T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1179</Id>
+    <Alias>Celebrate success</Alias>
+    <Description>Celebrate the success of the campaign with the team and stakeholders.</Description>
+    <CreatedAtDate>2016-10-18T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P85D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Copmlexity>Expert</Copmlexity>
+    <StartDate xsi:nil="true" />
+    <ScheduledDate>2039-07-31T00:00:00</ScheduledDate>
+    <DeadlineDate>2039-11-26T00:00:00</DeadlineDate>
+    <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+</ArrayOfTask>

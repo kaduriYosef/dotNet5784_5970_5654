@@ -9,7 +9,8 @@ using System.Collections.Specialized;
 public class Program
 {
     //
-    static readonly IDal s_dal = new DalList(); //stage 2
+    //static readonly IDal s_dal = new DalList(); //stage 2
+    static readonly IDal s_dal = new DalXml(); //stage 3
 
     // Main method - the entry point of the application
     private static void Main(string[] args)
@@ -17,7 +18,7 @@ public class Program
         try
         {
             // Initialize the services with required dependencies
-            Initialization.Do(s_dal);
+           
 
             // Get user input from the main menu
             int choice = 0;
@@ -140,6 +141,12 @@ public class Program
                                 OpForEngineer = options(); // Show Engineer options again
                             }
                             break;
+                            case 4:
+                                Console.Write("Would you like to create Initial data? (Y/N)"); //stage 3
+                                string? ans = Console.ReadLine() ?? throw new FormatException("Wrong input"); //stage 3
+                            if (ans == "Y") //stage 3
+                                Initialization.Do(s_dal);
+                            break;
                         default:
                             Console.WriteLine("Enter a Valid value"); // Handle invalid input
                             break;
@@ -166,7 +173,8 @@ public class Program
         "0 - exit",
         "1 - Task",
         "2 - Dependency",
-        "3 - Engineer"
+        "3 - Engineer",
+        "4 - Init"
         });
         int firstmenu = GetInteger();
        
