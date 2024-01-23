@@ -13,22 +13,20 @@ using DO;
 
 internal class EngineerImplementation : IEngineer
 {
-    readonly string s_Engineer_xml = "engineer";
-    static string s_xml_dir = @"xml\";
-    static string entity = "engineer";
-    static string filePath = $"{s_xml_dir + entity}";
-
+    readonly string s_Engineer_xml = "engineers";
     
 
 
     public int Create(Engineer item)
     {
-        List<Engineer> Engineers = XMLTools.LoadXMListToXMLSerializer<Engineer>(s_Engineer_xml);
+        List<Engineer> engineers = XMLTools.LoadXMListToXMLSerializer<Engineer>(s_Engineer_xml);
 
-        bool isNew = !Engineers.Any(en => en.Id == item.Id);
+        bool isNew = !engineers.Any(en => en.Id == item.Id);
 
-        if (isNew) Engineers.Add(item);
-        XMLTools.SaveListToXMLSerializer<Engineer>(Engineers, s_Engineer_xml); 
+        if (isNew) 
+            engineers.Add(item);
+
+        XMLTools.SaveListToXMLSerializer<Engineer>(engineers, s_Engineer_xml); 
         
         return isNew ? item.Id : throw new DalAlreadyExistsException($"Engineer with Id={item.Id} already exist.\n");
 

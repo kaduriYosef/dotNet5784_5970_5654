@@ -3,6 +3,7 @@ namespace DalTest;
 
 using System.Data;
 using System.Data.Common;
+using System.Xml.Linq;
 using Dal;
 using DalApi;
 using DO;
@@ -255,5 +256,9 @@ public static class Initialization
         createEngineer();
         createDependency();
     }
+    //public static void DoCleanTheFile()
+    //{
+    //    XElement xEngineer
+    //}
 }
 

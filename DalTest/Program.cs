@@ -18,7 +18,7 @@ public class Program
         try
         {
             // Initialize the services with required dependencies
-           
+
 
             // Get user input from the main menu
             int choice = 0;
@@ -100,7 +100,7 @@ public class Program
                                         int dependent = GetInteger();
                                         Console.WriteLine("enter the id of the task of which the first one depends on");
                                         int depnedsOn = GetInteger();
-                                        Console.WriteLine(s_dal!.Dependency.DoesExist(dependent, depnedsOn)?"Such dependency exist":"No such dependency exist.");
+                                        Console.WriteLine(s_dal!.Dependency.DoesExist(dependent, depnedsOn) ? "Such dependency exist" : "No such dependency exist.");
                                         break;
                                     case 0:
                                         OpForDependency = 0; // Exit Dependency operations
@@ -141,20 +141,20 @@ public class Program
                                 OpForEngineer = options(); // Show Engineer options again
                             }
                             break;
-                            case 4:
-                                Console.Write("Would you like to create Initial data? (Y/N)"); //stage 3
-                                string? ans = Console.ReadLine() ?? throw new FormatException("Wrong input"); //stage 3
+                        case 4: //reset
+                            Console.Write("Would you like to create Initial data? (Y/N)"); //stage 3
+                            string? ans = Console.ReadLine() ?? throw new FormatException("Wrong input"); //stage 3
                             if (ans == "Y") //stage 3
                                 Initialization.Do(s_dal);
                             break;
                         default:
                             Console.WriteLine("Enter a Valid value"); // Handle invalid input
                             break;
-                                
+
                     }
                     Console.Write('\n');
                 }
-                catch(Exception ex) { Console.WriteLine(ex.Message); }
+                catch (Exception ex) { Console.WriteLine(ex.Message); }
 
             } while (choice != 0);
         }
@@ -177,35 +177,35 @@ public class Program
         "4 - Init"
         });
         int firstmenu = GetInteger();
-       
+
         return firstmenu;
     }
     // Function to display a submenu for CRUD operations and capture user's choice
-    
+
     private static int options(string[]? additional = null)
     {
-        
+
         // showing CRUD operations
-        PrintStringArray(new string[] 
+        PrintStringArray(new string[]
         {
         "Your Options",
-        "0 - Go back",   
+        "0 - Go back",
         "1 - Create",
         "2 - Read",
         "3 - Read All",
         "4 - Update",
         "5 - Delete"
         });
-        if (additional != null) 
+        if (additional != null)
             PrintStringArray(additional);
-                
+
         int op = GetInteger();
-        
+
         return op;
     }
     private static int optionsForDependency()
     {
-        return options(new string[] {"6 - DoesExist"});
+        return options(new string[] { "6 - DoesExist" });
     }
 
 
@@ -223,25 +223,41 @@ public class Program
 
         Console.WriteLine("Enter Complexity Level (0 - Beginner, 1 - AdvancedBeginner, etc.):");
         EngineerExperience complexity = (EngineerExperience)GetInteger();
+
         Console.WriteLine("Enter Deliverables");
         string deliverables = Console.ReadLine()!;
+
         Console.WriteLine("Enter any Remarks");
         string remarks = Console.ReadLine()!;
+
         Console.WriteLine("Enter the Engineer ID:");
         int engineerId = GetInteger();
-        Task task = new Task(0, alias, description, createdAtDate, null, isMilestone, complexity, null, null, null, null, deliverables, remarks, engineerId);
+
+        Task task = new
+        (
+            Id: 0,
+            Alias: alias,
+            Description: description,
+            CreatedAtDate: createdAtDate,
+            IsMilestone: isMilestone,
+            Complexity: complexity,
+            Deliverables: deliverables,
+            Remarks: remarks,
+            EngineerId: engineerId
+        );
+
         s_dal!.Task.Create(task);
     }
 
     // Function to create a new Dependency
     private static void createDependency()
     {
-       
+
         Console.WriteLine("Enter the id of the dependent Task");
         int dependentId = GetInteger();
         Console.WriteLine("Enter the Task of which the first one depends on");
         int dependsOnTaskId = GetInteger();
-        Dependency dependency = new Dependency(0, dependentId, dependsOnTaskId);
+        Dependency dependency = new(0, dependentId, dependsOnTaskId);
         s_dal!.Dependency.Create(dependency);
     }
 
@@ -250,23 +266,28 @@ public class Program
     {
         Console.WriteLine("Enter the ID:");
         int id = GetInteger();
+
         Console.WriteLine("Enter the email:");
         string email = Console.ReadLine()!;
+
         Console.WriteLine("Enter the hourly cost:");
         double cost = GetInteger();
+
         Console.WriteLine("Enter the name:");
         string name = Console.ReadLine()!;
+
         Console.WriteLine("Enter the experience level 0 - beginner 1 advanced beginner etc.");
-        int intLevel = GetInteger()%5;
-        
+        int intLevel = GetInteger() % 5;
         EngineerExperience level = (EngineerExperience)intLevel;
-        Engineer engineer = new Engineer(id, email, cost, name, level, true);
+
+        Engineer engineer = new Engineer(id, email, cost, name, level, Active: true);
+
         s_dal!.Engineer.Create(engineer);
     }
 
-    
+
     private static Task TaskUpdateHelp()
-     //function to create item for Update Task
+    //function to create item for Update Task
     {
         Console.WriteLine("Enter the id of the Task you wish to update:");
         int id = GetInteger();
@@ -287,9 +308,9 @@ public class Program
         string remarks = Console.ReadLine()!;
         Console.WriteLine("Enter the Engineer ID:");
         int engineerId = GetInteger();
-        Task temp = new Task(id, alias, description, createdAtDate, null, 
+        Task temp = new Task(id, alias, description, createdAtDate, null,
             isMilestone, complexity, null, null, null, null, deliverables, remarks, engineerId);
-        
+
         return temp;
     }
     private static Dependency DepUpdateHelp()//func to create item for Update Dependency
@@ -300,7 +321,7 @@ public class Program
         int dependentT = GetInteger();
         Console.WriteLine("Enter the Id of the task for which the first one depends on");
         int dependsOnT = GetInteger();
-        Dependency temp = new Dependency(id, dependentT, dependsOnT);
+        Dependency temp = new(id, dependentT, dependsOnT);
         return temp;
     }
     private static Engineer EngUpdateHelp()//func to create item for Update Engineer
@@ -315,12 +336,12 @@ public class Program
         string name = Console.ReadLine()!;
         Console.WriteLine("Enter the experience level (1-5)");
         int l = GetInteger();
-        
+
         DO.EngineerExperience level = (EngineerExperience)l;
-        DO.Engineer temp = new Engineer(id, email, cost, name, level, true);
+        DO.Engineer temp = new(id, email, cost, name, level, true);
         return temp;
     }
-    
+
     // Prints detailed information of a single Task object.
     private static void PrintSingleTask(Task ToPrint)
     {
@@ -337,7 +358,7 @@ public class Program
         Console.Write("Is Milestone: ");
         Console.WriteLine(ToPrint.IsMilestone);
         Console.Write("Copmlexity: ");
-        Console.WriteLine(ToPrint.Copmlexity);
+        Console.WriteLine(ToPrint.Complexity);
         Console.Write("Start Date: ");
         Console.WriteLine(ToPrint.StartDate);
         Console.Write("Scheduled Date: ");
@@ -380,7 +401,7 @@ public class Program
         Console.WriteLine(ToPrint.Active + "\n");
     }
 
-    
+
     // Prints details of each Task object in the provided list
     private static void PrintAllTasks(List<Task> toPrint)
     {
@@ -408,7 +429,7 @@ public class Program
         }
     }
 
-    
+
 
     //returns an integer that gets from the user
     static private int GetInteger()

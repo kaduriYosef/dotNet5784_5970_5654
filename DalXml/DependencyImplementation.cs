@@ -13,17 +13,17 @@ using DO;
 
 internal class DependencyImplementation : IDependency
 {
-    readonly string s_Dependency_xml = "dependency";
-    
+    readonly string s_Dependency_xml = "dependencys";
+
     public int Create(Dependency item)
     {
-        
+
         int id = Config.NextDependencyId;
         XElement rootDependency = XMLTools.LoadListFromXMLElement(s_Dependency_xml);
         XElement xDependency = new XElement(s_Dependency_xml,
-                            new XElement("Id",id),
-                            new XElement("DependentTask",(item.DependentTask)?? null),
-                            new XElement("DependentOnTask", item.DependsOnTask)?? null);
+                            new XElement("Id", id),
+                            new XElement("DependentTask", (item.DependentTask) ?? null),
+                            new XElement("DependentOnTask", item.DependsOnTask) ?? null);
         rootDependency.Add(xDependency);
         XMLTools.SaveListToXMLElement(rootDependency, s_Dependency_xml);
         return id;
@@ -48,8 +48,12 @@ internal class DependencyImplementation : IDependency
     public bool DoesExist(int dependent_id, int dependsOn_id)
     {
         XElement rootDependencies = XMLTools.LoadListFromXMLElement(s_Dependency_xml);
-        return rootDependencies.Any(dep => dep.DependentTask == dependent_id && dep.DependsOnTask == dep.DependsOnTask);
 
+        var elems = (from item in rootDependencies.Elements("Dependency")
+                    select xmlToDependency(item))
+                    .ToList();
+
+        return elems.Any( x => x.DependentTask== dependent_id && x.DependsOnTask == dependsOn_id);
     }
 
     public Dependency? Read(int id)
@@ -58,60 +62,45 @@ internal class DependencyImplementation : IDependency
         return (from depend in rootDependencies.Elements()
                 where (int?)depend.Element("Id") == id
                 select xmlToDependency(depend)).FirstOrDefault() ?? throw new DalDoesNotExistException($"Id: {id}, not exist");
-                ;
+        ;
     }
 
     public Dependency? Read(Func<Dependency, bool> filter)
     {
-        XElement rootDependencies = XMLTools.LoadListFromXMLElement(s_Dependency_xml);
-        if (filter == null) return null;
-        return rootDependencies.FirstOrDefault(dep => filter(dep));
+        return XMLTools.LoadListFromXMLElement(s_Dependency_xml).Elements()
+                    .Select(dep => xmlToDependency(dep)).FirstOrDefault(filter);
+
 
     }
 
     public IEnumerable<Dependency?> ReadAll(Func<Dependency, bool>? filter = null)
     {
-        XElement rootDependencies = XMLTools.LoadListFromXMLElement(s_Dependency_xml);
-        List<XElement> dependListXml = rootDependencies.Elements().ToList();
-        List<Dependency?> depends = new List<Dependency?>();
-        foreach (var depend in dependListXml) 
-        { 
-            depends.Add(xmlToDependency(depend));
-        }
-        //if (filter == null)
-        //    return rootDependencies.Select(item => item);
-        //else
-        //    return rootDependencies.Where(filter);
+        if (filter == null)
+            return XMLTools.LoadListFromXMLElement(s_Dependency_xml).Elements()
+                    .Select(dep => xmlToDependency(dep));
+        else
+            return XMLTools.LoadListFromXMLElement(s_Dependency_xml).Elements()
+                    .Select(dep => xmlToDependency(dep)).Where(filter);
+
     }
 
     public void Update(Dependency item)
     {
-        XElement Dependencies = XMLTools.LoadListFromXMLElement(s_Dependency_xml);
-        int index = Dependencies.FindIndex(dep => dep.Id == item.Id);
+        if (Read(item.Id) == null)
+            throw new DalDoesNotExistException($"the dependency with id: {item.Id} not exist");
 
-        if (index != -1)
-        {
-            Dependencies.RemoveAt(index);
-            Dependencies.Add(item);
-        }
-        else
-        {
-            throw new DalDoesNotExistException($"An Dependency with id={item.Id} does not exist.\n");
-        }
-        XMLTools.SaveListToXMLElement(rootDependency, s_Dependency_xml);
+        Delete(item.Id);
+        XElement rootDependencies = XMLTools.LoadListFromXMLElement(s_Dependency_xml);
+        rootDependencies.Add(item);
+
+        XMLTools.SaveListToXMLElement(rootDependencies, s_Dependency_xml);
     }
-    public Dependency xmlToDependency(XElement item)
+    public DO.Dependency? xmlToDependency(XElement item)
     {
-
-        //if (Read((int?)item.Element("Id")))
-        //{
-            return new Dependency(
-                 Id: (int)item.Element("Id"),
-                 DependentTask: (int?)item.Element("DependentTask"),
-                 DependsOnTask: (int?)item.Element("DEpendentOnTask")
-                 );
-
-        //}
-        //return;
+        return new Dependency(
+             Id: item.ToIntNullable("Id") ?? throw new convertExeption("can't convert it"),
+             DependentTask: (int?)item.Element("DependentTask") ?? null,
+             DependsOnTask: (int?)item.Element("DEpendentOnTask") ?? null
+             );
     }
 }

@@ -9,7 +9,7 @@ namespace DO;
 /// <param name="CreatedAtDate">Date and time of task creation.</param>
 /// <param name="RequiredEffortTime">Estimated time to complete the task.</param>
 /// <param name="IsMilestone">Indicates if the task is a major project milestone.</param>
-/// <param name="Copmlexity">Complexity level, based on required engineering expertise.</param>
+/// <param name="Complexity">Complexity level, based on required engineering expertise.</param>
 /// <param name="StartDate">Scheduled start date for the task.</param>
 /// <param name="ScheduledDate">Planned date for task execution.</param>
 /// <param name="DeadlineDate">Deadline for task completion.</param>
@@ -26,7 +26,7 @@ public record Task
     DateTime CreatedAtDate,
     TimeSpan? RequiredEffortTime = null,
     bool IsMilestone=false,
-    EngineerExperience? Copmlexity = null,
+    EngineerExperience? Complexity = null,
     DateTime? StartDate = null,
     DateTime? ScheduledDate = null,
     DateTime? DeadlineDate = null,

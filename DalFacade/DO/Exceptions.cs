@@ -29,4 +29,10 @@ public class DalXMLFileLoadCreateException : Exception
     public DalXMLFileLoadCreateException(string? message) : base(message) { }
 }
 
+[Serializable]
+
+public class convertExeption: Exception
+{
+    public convertExeption(string? message) : base(message) { }
+}
 // These exceptions facilitate precise error handling in DAL operations.
