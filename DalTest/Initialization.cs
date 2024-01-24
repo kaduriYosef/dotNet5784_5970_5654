@@ -256,9 +256,16 @@ public static class Initialization
         createEngineer();
         createDependency();
     }
-    //public static void DoCleanTheFile()
-    //{
-    //    XElement xEngineer
-    //}
+    public static void DoCleanTheFile()
+    {
+        XElement xEngineer = new XElement("arrayOfEngineer","");
+        XElement xTask = new XElement("arrayOfTask","");
+        XElement xDependency = new XElement("arrayOfDependency","");
+        xEngineer.Save(@"..\xml\engineers.xml");
+        xTask.Save(@"..\xml\tasks.xml");
+        xDependency.Save(@"..\xml\dependencys.xml");
+
+
+    }
 }
 
