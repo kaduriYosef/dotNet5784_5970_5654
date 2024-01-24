@@ -19,7 +19,7 @@ internal class EngineerImplementation : IEngineer
 
     public int Create(Engineer item)
     {
-        List<Engineer> engineers = XMLTools.LoadXMListToXMLSerializer<Engineer>(s_Engineer_xml);
+        List<Engineer> engineers = XMLTools.LoadListFromXMLSerializer<Engineer>(s_Engineer_xml);
 
         bool isNew = !engineers.Any(en => en.Id == item.Id);
 
@@ -35,7 +35,7 @@ internal class EngineerImplementation : IEngineer
 
     public void Delete(int id)
     {
-        List<Engineer> Engineers = XMLTools.LoadXMListToXMLSerializer<Engineer>(s_Engineer_xml);
+        List<Engineer> Engineers = XMLTools.LoadListFromXMLSerializer<Engineer>(s_Engineer_xml);
         int index = Engineers.FindIndex((en) => en.Id == id);
         if (index != -1)
         {
@@ -47,7 +47,7 @@ internal class EngineerImplementation : IEngineer
     }
     public Engineer? Read(Func<Engineer, bool> filter)
     {
-        List<Engineer> Engineers = XMLTools.LoadXMListToXMLSerializer<Engineer>(s_Engineer_xml);
+        List<Engineer> Engineers = XMLTools.LoadListFromXMLSerializer<Engineer>(s_Engineer_xml);
         if (filter == null) return null;
         return Engineers.FirstOrDefault(eng => filter(eng));
         
@@ -55,22 +55,22 @@ internal class EngineerImplementation : IEngineer
 
     public Engineer? Read(int id)
     {
-        List<Engineer> Engineers = XMLTools.LoadXMListToXMLSerializer<Engineer>(s_Engineer_xml);
+        List<Engineer> Engineers = XMLTools.LoadListFromXMLSerializer<Engineer>(s_Engineer_xml);
         return Engineers.FirstOrDefault(eng => eng.Id == id);
     }
 
     public IEnumerable<Engineer?> ReadAll(Func<Engineer, bool>? filter = null)
     {
-        List<Engineer> Engineers = XMLTools.LoadXMListToXMLSerializer<Engineer>(s_Engineer_xml);
+        List<Engineer> Engineers1 = XMLTools.LoadListFromXMLSerializer<Engineer>(s_Engineer_xml);
         if (filter == null)
-            return Engineers.Select(item => item);
+            return Engineers1.Select(item => item);
         else
-            return Engineers.Where(filter);
+            return Engineers1.Where(filter);
     }
 
     public void Update(Engineer item)
     {
-        List<Engineer> Engineers = XMLTools.LoadXMListToXMLSerializer<Engineer>(s_Engineer_xml);
+        List<Engineer> Engineers = XMLTools.LoadListFromXMLSerializer<Engineer>(s_Engineer_xml);
         int index = Engineers.FindIndex(en => en.Id == item.Id);
 
         if (index != -1)

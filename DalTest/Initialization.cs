@@ -251,6 +251,7 @@ public static class Initialization
     /// <exception cref="NullReferenceException">Thrown when any of the DAL parameters are null.</exception>
     public static void Do(IDal? dal)
     {
+        DoCleanTheFile();
         s_dal = dal ?? throw new NullReferenceException("DAL object can not be null!"); //stage 2
         createTask();
         createEngineer();
@@ -258,13 +259,19 @@ public static class Initialization
     }
     public static void DoCleanTheFile()
     {
-        XElement xEngineer = new XElement("arrayOfEngineer","");
-        XElement xTask = new XElement("arrayOfTask","");
-        XElement xDependency = new XElement("arrayOfDependency","");
+        XElement xEngineer = new XElement("ArrayOfEngineer", "");
+        XElement xTask = new XElement("ArrayOfTask", "");
+        XElement xDependency = new XElement("ArrayOfDependency","");
+    
         xEngineer.Save(@"..\xml\engineers.xml");
         xTask.Save(@"..\xml\tasks.xml");
         xDependency.Save(@"..\xml\dependencys.xml");
 
+        //the config file
+        XElement NextTaskId = new XElement("NextTaskId", 1000);
+        XElement NextDependencyId = new XElement("NextDependencyId", 10000);
+        XElement config = new XElement("config", NextTaskId, NextDependencyId);
+        config.Save(@"..\xml\data-config.xml");
 
     }
 }

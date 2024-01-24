@@ -106,7 +106,7 @@ public class Program
                                         OpForDependency = 0; // Exit Dependency operations
                                         break;
                                 }
-                                OpForDependency = options(); // Show Dependency options again
+                                OpForDependency = optionsForDependency(); // Shows Dependency options again
                             }
                             break;
                         case 3: // Engineer operations
