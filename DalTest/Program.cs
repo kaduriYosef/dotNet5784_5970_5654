@@ -293,8 +293,10 @@ public class Program
     {
         Console.WriteLine("Enter the id of the Task you wish to update:");
         int id = GetInteger();
+        
         Console.WriteLine("Enter an Alias");
         string alias = Console.ReadLine()!;
+        
         Console.WriteLine("Enter a Description");
         string description = Console.ReadLine()!;
         DateTime createdAtDate = DateTime.Now;
@@ -304,14 +306,33 @@ public class Program
 
         Console.WriteLine("Enter Complexity Level (0 f- Beginner, 1 - AdvancedBeginner, etc.):");
         EngineerExperience complexity = (EngineerExperience)GetInteger();
+        
         Console.WriteLine("Enter Deliverables");
         string deliverables = Console.ReadLine()!;
+        
         Console.WriteLine("Enter any Remarks");
         string remarks = Console.ReadLine()!;
+        
         Console.WriteLine("Enter the Engineer ID:");
         int engineerId = GetInteger();
-        Task temp = new Task(id, alias, description, createdAtDate, null,
-            isMilestone, complexity, null, null, null, null, deliverables, remarks, engineerId);
+        
+        Task temp = new 
+            (
+            Id: id,
+            Alias: alias,
+            Description: description,
+            CreatedAtDate: createdAtDate,
+            RequiredEffortTime: null,
+            IsMilestone: isMilestone, 
+            Complexity: complexity,
+            StartDate: null,
+            ScheduledDate: null,
+            DeadlineDate: null,
+            CompleteDate: null,
+            Deliverables: deliverables,
+            Remarks: remarks,
+            EngineerId: engineerId
+            );
 
         return temp;
     }
@@ -319,24 +340,35 @@ public class Program
     {
         Console.WriteLine("Enter the ID");
         int id = GetInteger();
+        
         Console.WriteLine("Enter the Id of the depndent task");
         int dependentT = GetInteger();
+        
         Console.WriteLine("Enter the Id of the task for which the first one depends on");
         int dependsOnT = GetInteger();
-        Dependency temp = new(id, dependentT, dependsOnT);
+        
+        Dependency temp = new
+            (Id: id,
+            DependentTask: dependentT,
+            DependsOnTask: dependsOnT
+            );
         return temp;
     }
     private static Engineer EngUpdateHelp()//func to create item for Update Engineer
     {
         Console.WriteLine("Enter the ID:");
         int id = GetInteger();
+
         Console.WriteLine("Enter the email:");
         string email = Console.ReadLine()!;
+
         Console.WriteLine("Enter the hourly cost:");
         double cost = GetInteger();
+
         Console.WriteLine("Enter the name:");
         string name = Console.ReadLine()!;
-        Console.WriteLine("Enter the experience level (1-5)");
+
+        Console.WriteLine("Enter the experience level (0-4)");
         int l = GetInteger();
 
         DO.EngineerExperience level = (EngineerExperience)l;
