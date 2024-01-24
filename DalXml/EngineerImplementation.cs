@@ -72,16 +72,11 @@ internal class EngineerImplementation : IEngineer
 
     public IEnumerable<Engineer?> ReadAll(Func<Engineer, bool>? filter = null)
     {
-        List<Engineer> listEngineers = XMLTools.LoadListFromXMLSerializer<Engineer>(s_engineers_xml);// this is root
-        //Returns the entire list and if a condition exists, it returns only them
-        if (filter != null)
-        {
-            return from item in listEngineers
-                   where filter(item)
-                   select item;
-        }
-        return from item in listEngineers
-               select item;
+        List<Engineer> Engineers1 = XMLTools.LoadListFromXMLSerializer<Engineer>(   s_engineers_xml);
+        if (filter == null)
+            return Engineers1.Select(item => item);
+        else
+            return Engineers1.Where(filter);
     }
 
     public void Update(Engineer item)

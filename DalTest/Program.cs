@@ -106,7 +106,7 @@ public class Program
                                         OpForDependency = 0; // Exit Dependency operations
                                         break;
                                 }
-                                OpForDependency = options(); // Show Dependency options again
+                                OpForDependency = optionsForDependency(); // Shows Dependency options again
                             }
                             break;
                         case 3: // Engineer operations
@@ -218,8 +218,10 @@ public class Program
     {
         Console.WriteLine("Enter an Alias");
         string alias = Console.ReadLine()!;
+
         Console.WriteLine("Enter a Description");
         string description = Console.ReadLine()!;
+
         DateTime createdAtDate = DateTime.Now;
 
         Console.WriteLine("should this task be a Milestone? (Y or N):");
@@ -261,12 +263,7 @@ public class Program
         int dependentId = GetInteger();
         Console.WriteLine("Enter the Task of which the first one depends on");
         int dependsOnTaskId = GetInteger();
-        Dependency dependency = new(
-            Id: 0,
-            DependentTask: dependentId,
-            DependsOnTask: dependsOnTaskId
-            );
-
+        Dependency dependency = new(0, dependentId, dependsOnTaskId);
         s_dal!.Dependency.Create(dependency);
     }
 
@@ -285,7 +282,7 @@ public class Program
         Console.WriteLine("Enter the name:");
         string name = Console.ReadLine()!;
 
-        Console.WriteLine("Enter the experience level 0 - 4.");
+        Console.WriteLine("Enter the experience level 0 - beginner 1 advanced beginner etc.");
         int intLevel = GetInteger() % 5;
         EngineerExperience level = (EngineerExperience)intLevel;
 
@@ -381,7 +378,7 @@ public class Program
         int l = GetInteger();
 
         DO.EngineerExperience level = (EngineerExperience)l;
-        DO.Engineer temp = new(id, email, cost, name, level,Active: true);
+        DO.Engineer temp = new(id, email, cost, name, level, true);
         return temp;
     }
 

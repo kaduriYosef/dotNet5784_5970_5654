@@ -96,6 +96,5 @@ static class XMLTools
             throw new DalXMLFileLoadCreateException($"fail to load xml file: {filePath}, {ex.Message}");
         }
     }
-
     #endregion
 }
