@@ -296,8 +296,10 @@ public class Program
     {
         Console.WriteLine("Enter the id of the Task you wish to update:");
         int id = GetInteger();
+        
         Console.WriteLine("Enter an Alias");
         string alias = Console.ReadLine()!;
+        
         Console.WriteLine("Enter a Description");
         string description = Console.ReadLine()!;
         DateTime createdAtDate = DateTime.Now;
@@ -307,14 +309,19 @@ public class Program
 
         Console.WriteLine("Enter Complexity Level (0 f- Beginner, 1 - AdvancedBeginner, etc.):");
         EngineerExperience complexity = (EngineerExperience)GetInteger();
+        
         Console.WriteLine("Enter Deliverables");
         string deliverables = Console.ReadLine()!;
+        
         Console.WriteLine("Enter any Remarks");
         string remarks = Console.ReadLine()!;
+        
         Console.WriteLine("Enter the Engineer ID:");
         int engineerId = GetInteger();
+        
         Task temp = new 
-            (Id: id,
+            (
+            Id: id,
             Alias: alias,
             Description: description,
             CreatedAtDate: createdAtDate,
@@ -336,10 +343,13 @@ public class Program
     {
         Console.WriteLine("Enter the ID");
         int id = GetInteger();
+        
         Console.WriteLine("Enter the Id of the depndent task");
         int dependentT = GetInteger();
+        
         Console.WriteLine("Enter the Id of the task for which the first one depends on");
         int dependsOnT = GetInteger();
+        
         Dependency temp = new
             (Id: id,
             DependentTask: dependentT,
@@ -351,12 +361,16 @@ public class Program
     {
         Console.WriteLine("Enter the ID:");
         int id = GetInteger();
+
         Console.WriteLine("Enter the email:");
         string email = Console.ReadLine()!;
+
         Console.WriteLine("Enter the hourly cost:");
         double cost = GetInteger();
+
         Console.WriteLine("Enter the name:");
         string name = Console.ReadLine()!;
+
         Console.WriteLine("Enter the experience level (0-4)");
         int l = GetInteger();
 
