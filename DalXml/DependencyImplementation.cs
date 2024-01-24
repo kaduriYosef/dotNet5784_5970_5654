@@ -67,8 +67,10 @@ internal class DependencyImplementation : IDependency
 
     public Dependency? Read(Func<Dependency, bool> filter)
     {
+        if (filter == null) return null;
+        else
         return XMLTools.LoadListFromXMLElement(s_Dependency_xml).Elements()
-                    .Select(dep => xmlToDependency(dep)).FirstOrDefault(filter);
+                    .Select(dep => xmlToDependency(dep)).FirstOrDefault(filter!);
 
 
     }
@@ -80,7 +82,7 @@ internal class DependencyImplementation : IDependency
                     .Select(dep => xmlToDependency(dep));
         else
             return XMLTools.LoadListFromXMLElement(s_Dependency_xml).Elements()
-                    .Select(dep => xmlToDependency(dep)).Where(filter);
+                    .Select(dep => xmlToDependency(dep)).Where(filter!);
 
     }
 
