@@ -46,7 +46,7 @@ static class XMLTools
         }
         catch (Exception ex)
         {
-            throw new DalXMLFileLoadCreateException($"fail to create xml file: {s_xml_dir + filePath}, {ex.Message}");
+            throw new DalXMLFileLoadCreateException($"fail to create xml file: {/*s_xml_dir +*/ filePath}, {ex.Message}");
         }
     }
     public static XElement LoadListFromXMLElement(string entity)
@@ -62,7 +62,7 @@ static class XMLTools
         }
         catch (Exception ex)
         {
-            throw new DalXMLFileLoadCreateException($"fail to load xml file: {s_xml_dir + filePath}, {ex.Message}");
+            throw new DalXMLFileLoadCreateException($"fail to load xml file: {/*s_xml_dir +*/ filePath}, {ex.Message}");
         }
     }
     #endregion
@@ -78,7 +78,7 @@ static class XMLTools
         }
         catch (Exception ex)
         {
-            throw new DalXMLFileLoadCreateException($"fail to create xml file: {s_xml_dir + filePath}, {ex.Message}");
+            throw new DalXMLFileLoadCreateException($"fail to create xml file: {/*s_xml_dir +*/ filePath}, {ex.Message}");
         }
     }
     public static List<T> LoadListFromXMLSerializer<T>(string entity) where T : class

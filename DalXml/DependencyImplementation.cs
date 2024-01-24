@@ -102,7 +102,7 @@ internal class DependencyImplementation : IDependency
         return new Dependency(
              Id: item.ToIntNullable("Id") ?? throw new convertExeption("can't convert it"),
              DependentTask: (int?)item.Element("DependentTask") ?? null,
-             DependsOnTask: (int?)item.Element("DEpendentOnTask") ?? null
+             DependsOnTask: (int?)item.Element("DependentOnTask") ?? null
              );
     }
 }

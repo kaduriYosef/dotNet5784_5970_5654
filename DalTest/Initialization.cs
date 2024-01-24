@@ -258,9 +258,9 @@ public static class Initialization
     }
     public static void DoCleanTheFile()
     {
-        XElement xEngineer = new XElement("arrayOfEngineer","");
-        XElement xTask = new XElement("arrayOfTask","");
-        XElement xDependency = new XElement("arrayOfDependency","");
+        XElement xEngineer = new XElement("ArrayOfEngineer","");
+        XElement xTask = new XElement("ArrayOfTask","");
+        XElement xDependency = new XElement("ArrayOfDependency","");
         xEngineer.Save(@"..\xml\engineers.xml");
         xTask.Save(@"..\xml\tasks.xml");
         xDependency.Save(@"..\xml\dependencys.xml");

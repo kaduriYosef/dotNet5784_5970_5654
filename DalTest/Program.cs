@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 
 public class Program
 {
-    //
+    
     //static readonly IDal s_dal = new DalList(); //stage 2
     static readonly IDal s_dal = new DalXml(); //stage 3
 
@@ -144,8 +144,11 @@ public class Program
                         case 4: //reset
                             Console.Write("Would you like to create Initial data? (Y/N)"); //stage 3
                             string? ans = Console.ReadLine() ?? throw new FormatException("Wrong input"); //stage 3
-                            if (ans == "Y") //stage 3
+                            if (ans == "Y" || ans == "y") //stage 3
+                            {
+                                Initialization.DoCleanTheFile();
                                 Initialization.Do(s_dal);
+                            }
                             break;
                         default:
                             Console.WriteLine("Enter a Valid value"); // Handle invalid input

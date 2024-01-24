@@ -15,7 +15,17 @@ internal class EngineerImplementation : IEngineer
 {
     readonly string s_engineers_xml = "engineers";
 
-
+    //public int Create(Engineer item)
+    //{
+    //    List<Engineer> listEngineers = XMLTools.LoadListFromXMLSerializer<Engineer>(s_engineers_xml);// this is root
+    //    if (listEngineers.Any(engineer => engineer.Id == item.Id))
+    //        throw new DalAlreadyExistsException($"Engineer with ID={item.Id} already exists");
+    //    else
+    //        listEngineers.Add(item);//insert to list
+    //                                //return to XML file
+    //    XMLTools.SaveListToXMLSerializer<Engineer>(listEngineers, s_engineers_xml);
+    //    return item.Id;
+    //}
 
     public int Create(Engineer item)
     {
