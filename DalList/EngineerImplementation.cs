@@ -50,12 +50,16 @@ internal class EngineerImplementation : IEngineer
     /// </summary>
     /// <param name="filter">the prdicate to filter the engineer by</param>
     /// <returns></returns>
-    public IEnumerable<Engineer?> ReadAll(Func<Engineer, bool>? filter = null) // stage 2
+    public IEnumerable<Engineer?> ReadAll(Func<Engineer, bool>? filter = null)
     {
-        if (filter == null)
-            return DataSource.Engineers.Select(item => item);
-        else
-            return DataSource.Engineers.Where(filter);
+        if (filter != null)
+        {
+            return from item in DataSource.Engineers
+                   where filter(item)
+                   select item;
+        }
+        return from item in DataSource.Engineers
+               select item;
     }
 
 
