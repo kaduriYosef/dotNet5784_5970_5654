@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 
 public class Program
 {
-    //
+    
     //static readonly IDal s_dal = new DalList(); //stage 2
     //static readonly IDal s_dal = new DalXml(); //stage 3
     static readonly IDal s_dal = Factory.Get; //stage 4
@@ -204,6 +204,7 @@ public class Program
 
         return op;
     }
+
     private static int optionsForDependency()
     {
         return options(new string[] { "6 - DoesExist" });
@@ -305,7 +306,7 @@ public class Program
         Console.WriteLine("Is this task a Milestone? (Y or N):");
         bool isMilestone = Console.ReadLine()!.ToLower() == "Y";
 
-        Console.WriteLine("Enter Complexity Level (0 f- Beginner, 1 - AdvancedBeginner, etc.):");
+        Console.WriteLine("Enter Complexity Level (0 - 4):");
         EngineerExperience complexity = (EngineerExperience)GetInteger();
         
         Console.WriteLine("Enter Deliverables");
@@ -337,6 +338,7 @@ public class Program
 
         return temp;
     }
+
     private static Dependency DepUpdateHelp()//func to create item for Update Dependency
     {
         Console.WriteLine("Enter the ID");
@@ -355,6 +357,7 @@ public class Program
             );
         return temp;
     }
+
     private static Engineer EngUpdateHelp()//func to create item for Update Engineer
     {
         Console.WriteLine("Enter the ID:");
@@ -409,6 +412,7 @@ public class Program
         Console.Write("Engineer Id: ");
         Console.WriteLine(ToPrint.EngineerId + "\n");
     }
+    
     // Displays details of a single Dependency object, including its current and dependent tasks.
     private static void PrintSingleDependency(Dependency ToPrint)
     {
@@ -419,6 +423,7 @@ public class Program
         Console.Write("The current Task depends on the task: ");
         Console.WriteLine(ToPrint.DependsOnTask + "\n");
     }
+    
     // Outputs the information of a single Engineer object, including ID, email, cost, name, level, and active status.
     private static void PrintSingleEngineer(Engineer ToPrint)
     {
@@ -474,6 +479,7 @@ public class Program
             Console.WriteLine("Expecting only integer now!");
         return input;
     }
+    
     static private void PrintStringArray(string[] arr) { foreach (string s in arr) Console.WriteLine(s); }
 }
 
