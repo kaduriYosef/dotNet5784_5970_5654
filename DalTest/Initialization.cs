@@ -249,10 +249,11 @@ public static class Initialization
     /// </summary>
     /// <param name="dal">Interface for all dal management.</param>
     /// <exception cref="NullReferenceException">Thrown when any of the DAL parameters are null.</exception>
-    public static void Do(IDal? dal)
+    public static void Do()
     {
         DoCleanTheFile();
-        s_dal = dal ?? throw new NullReferenceException("DAL object can not be null!"); //stage 2
+        //s_dal = dal ?? throw new NullReferenceException("DAL object can not be null!"); //stage 2
+        s_dal = Factory.Get;
         createTask();
         createEngineer();
         createDependency();
