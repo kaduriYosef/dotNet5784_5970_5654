@@ -2,6 +2,10 @@
 using System.Diagnostics.Contracts;
 
 namespace BO;
+
+/// <summary>
+/// 
+/// </summary>
 public enum EngineerExperience {
   Beginner,
   AdvancedBeginner,
@@ -10,12 +14,15 @@ public enum EngineerExperience {
   Expert
 }
 
+/// <summary>
+/// 
+/// </summary>
 public enum Status {
  
   Unscheduled,
   Scheduled,
   OnTrack,
-  InJeopardy,
+  InJeopardy,   //maybe won't be used
   Done
 }
 

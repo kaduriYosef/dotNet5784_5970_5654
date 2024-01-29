@@ -4,26 +4,33 @@ using System;
 
 namespace BO;
 
+/// <summary>
+/// 
+/// </summary>
 public class Task
 {
 
     public int Id { get; init; }
-    public string Description;
-    public string Alias;
-    public DateTime CreatedAtDate;
-    public Status? Status;
-    public List<TaskInList>? Dependencies;
-    public MilestoneInTask? Milestone;
-    public TimeSpan? RequiredEffortTime;
-    public DateTime? StartDate;
-    public DateTime? ScheduledDate;
-    public DateTime? ForecastDate;
-    public DateTime? DeadlineDate;
-    public DateTime? CompleteDate;
-    public string? Deliverables;
-    public string? Remarks;
-    public EngineerInTask Engineer;
-    public EngineerExperience Copmlexity;
+    public string Alias {  get; set; }
+    public string Description {  get; set; }
+    public DateTime CreatedAtDate {  get; init; }
+    public Status? Status {  get; set; }
+    public List<TaskInList>? Dependencies {  get; set; }
+    public MilestoneInTask? Milestone {  get; set; }
+    public TimeSpan? RequiredEffortTime {  get; set; }
+    public DateTime? StartDate {  get; set; }
+    public DateTime? ScheduledDate {  get; set; }
+    public DateTime? ForecastDate {  get; set; }
+    public DateTime? DeadlineDate {  get; set; }
+    public DateTime? CompleteDate { get; set; }
+    public string? Deliverables {  get; set; }
+    public string? Remarks {  get; set; }
+    public EngineerInTask? Engineer {  get; set; }
+    public EngineerExperience? Copmlexity {  get; set; }
+
+
+    //added by my initiative
+    public List<EngineerInTask>? Engineers { get; set; }
 
 
 }
