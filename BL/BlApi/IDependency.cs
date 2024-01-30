@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace BlApi;
 
-internal interface IDependency
+public interface IDependency
 {
 }
