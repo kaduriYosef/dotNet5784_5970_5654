@@ -8,10 +8,10 @@ namespace BlApi;
 
 internal interface IEngineer
 {
-    public int Create(BO.Engineer boEndineer);
+    public int Create(BO.Engineer itemBoEngineer);
     public BO.Engineer? Read(int id);
     public IEnumerable<BO.Engineer> ReadAll(Func<BO.Engineer, bool> filter = null);
-    public void Update(BO.Engineer item);
+    public void Update(BO.Engineer itemBoEngineer);
     public void Delete(int id);
 
     public BO.EngineerInTask(int engineerId,int taskId); //to implement
