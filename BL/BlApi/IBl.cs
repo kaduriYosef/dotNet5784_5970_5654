@@ -9,7 +9,9 @@ namespace BlApi;
 public interface IBl
 {
     public IEngineer Engineer { get; }
-    public IDependency Dependency { get; }
-    public Itask Task { get; }  
+
+    public ITask Task { get; }
+
+    public IMilestone Milstone { get; }
 
 }

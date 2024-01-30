@@ -10,6 +10,8 @@ using BlApi;
 internal class Bl:IBl
 {
     public IEngineer Engineer => new EngineerImplementation();
-    public IDependency Dependency => new DependencyImplementation();
+    
     public ITask Task => new TaskImplementation();
+
+    public IMilestone Milestone => new MilestoneImplementation();
 }
