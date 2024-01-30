@@ -10,5 +10,4 @@ public interface IEngineer
     public void Update(BO.Engineer itemBoEngineer);
     public void Delete(int id);
     
-    
 }
