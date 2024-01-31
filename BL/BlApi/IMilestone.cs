@@ -2,17 +2,17 @@
 
 namespace BlApi;
 
-public interface IMilestone
+public interface IMilestone :ICrud<BO.Milestone>
 {
-    public IEnumerable<BO.Milestone> ReadAll(Func<BO.Milestone,bool> filter=null);
+    //public IEnumerable<BO.Milestone> ReadAll(Func<BO.Milestone,bool> filter=null);
 
-    public BO.Milestone Read(int id);
+    //public BO.Milestone Read(int id);
 
-    public int Create(BO.Milestone itemBoMilestone);
+    //public int Create(BO.Milestone itemBoMilestone);
 
-    public void Update(BO.Milestone itemBoMilestone);
+    //public void Update(BO.Milestone itemBoMilestone);
 
-    public void Delete(int id);
+    //public void Delete(int id);
 
     public double PrecentegeComplete(int id);
 }

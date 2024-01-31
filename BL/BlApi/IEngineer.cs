@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace BlApi;
 
-public interface IEngineer
+public interface IEngineer :ICrud<BO.Engineer>
 {
-    public int Create(BO.Engineer itemBoEngineer);
-    public BO.Engineer? Read(int id);
-    public IEnumerable<BO.Engineer> ReadAll(Func<BO.Engineer, bool> filter = null);
-    public void Update(BO.Engineer itemBoEngineer);
-    public void Delete(int id);
+    //public int Create(BO.Engineer itemBoEngineer);
+    //public BO.Engineer? Read(int id);
+    //public IEnumerable<BO.Engineer> ReadAll(Func<BO.Engineer, bool> filter = null);
+    //public void Update(BO.Engineer itemBoEngineer);
+    //public void Delete(int id);
     
 }
