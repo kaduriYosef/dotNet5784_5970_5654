@@ -1,6 +1,7 @@
 ﻿namespace BlImplementation;
 
 using System.Data.Common;
+using System.Security.Cryptography;
 using BlApi;
 
 
@@ -72,4 +73,23 @@ internal class EngineerImplementation : IEngineer
     {
         
     }
+
+    #region simplify Engineer
+    internal BO.EngineerInTask fromEngineerToengineerInTask(BO.Engineer itemBoEngineer)
+    {
+        return new BO.EngineerInTask {
+            Id= itemBoEngineer.Id,
+            Name= itemBoEngineer.Name,
+            };
+    }
+    internal BO.EngineerInTask fromEngineerToengineerInTask(DO.Engineer itemDoEngineer)
+    {
+        return new BO.EngineerInTask
+        {
+            Id = itemDoEngineer.Id,
+            Name = itemDoEngineer.Name,
+        };
+    }
+
+    #endregion
 }
