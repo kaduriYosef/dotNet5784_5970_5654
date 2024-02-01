@@ -1,6 +1,7 @@
 ﻿
 using System.Xml;
 using System;
+using System.ComponentModel;
 
 namespace BO;
 
@@ -15,8 +16,8 @@ public class Task
     public string Description {  get; set; }
     public DateTime CreatedAtDate {  get; init; }
     public Status? Status {  get; set; }
-    public List<TaskInList>? Dependencies {  get; set; }
-    public MilestoneInTask? Milestone {  get; set; }
+    public List<TaskInList> Dependencies {  get; set; }
+    public MilestoneInTask? Milestone {  get; set; }                    //adding of milestone
     public TimeSpan? RequiredEffortTime {  get; set; }
     public DateTime? StartDate {  get; set; }
     public DateTime? ScheduledDate {  get; set; }
@@ -26,7 +27,7 @@ public class Task
     public string? Deliverables {  get; set; }
     public string? Remarks {  get; set; }
     public EngineerInTask? Engineer {  get; set; }
-    public EngineerExperience? Copmlexity {  get; set; }
+    public EngineerExperience? Complexity {  get; set; }
 
 
     //added by my initiative

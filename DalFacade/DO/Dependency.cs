@@ -9,11 +9,13 @@
 public record Dependency
 (
     int Id,
-    int? DependentTask=null,
-    int? DependsOnTask = null
+    int DependentTask=0,
+    int DependsOnTask=0
 )
 {
     // Empty constructor
     public Dependency() : this(0)
+    { }
+    public Dependency(int dependent,int dependsOn):this(0,dependent,dependsOn)
     { }
 }
