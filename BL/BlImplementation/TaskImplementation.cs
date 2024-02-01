@@ -38,6 +38,19 @@ internal class TaskImplementation : ITask
 
     public void Delete(int id)
     {
+        
+        DO.Task? doTask = _dal.Task.Read(id);
+        if (doTask == null) throw new BlDoesNotExistException($"Task with Id = {id} doesn't exist");
+
+        if(_dal.Dependency.ReadAll(dep=>dep.DependsOnTask==id).Any())
+            throw 
+
+        foreach(var  dependsOn in _dal.Dependency.ReadAll(dep=>dep.DependentTask==id))
+        {
+            _dal.Dependency.Delete(dependsOn!.Id);
+        }
+
+        _dal.Task.Delete(id); 
 
     }
 
@@ -50,7 +63,9 @@ internal class TaskImplementation : ITask
 
     public BO.Task? Read(Func<BO.Task, bool> filter)
     {
-        throw new NotImplementedException();
+        Func<DO.Task, bool> doFilter = t => filter(DOtoBO(t));
+        DO.Task doTask =_dal?.Task?.Read(doFilter)?? BlDoesNotExistException($"Task that correspondes to such filter doesn't exist.");
+        return DOtoBO(doTask);
     }
 
     public IEnumerable<BO.Task?> ReadAll(Func<BO.Task, bool>? filter = null)
