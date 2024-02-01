@@ -84,7 +84,7 @@ internal class TaskImplementation : ITask
     }
 
 
-    private DO.Task BOtoDO(BO.Task boTask)
+    internal DO.Task BOtoDO(BO.Task boTask)
     {
         return new DO.Task(
             Id: boTask.Id,
