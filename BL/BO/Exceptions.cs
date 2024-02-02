@@ -24,3 +24,13 @@ public class BlAlreadyExistException : Exception
     public BlAlreadyExistException(string message, Exception innerException)
                 : base(message, innerException) { }
 }
+
+
+[Serializable]
+public class BlInvalidDataException : Exception
+{
+    public BlInvalidDataException(string? message) : base(message) { }
+    public BlInvalidDataException(string message, Exception innerException)
+                : base(message, innerException) { }
+}
+

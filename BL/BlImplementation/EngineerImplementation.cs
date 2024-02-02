@@ -37,7 +37,7 @@ internal class EngineerImplementation : IEngineer
         }
         catch (DO.DalDoesNotExistException ex)
         {
-            throw BO.BlDoesNotExistException(ex.Message);
+            throw new BO.BlDoesNotExistException(ex.Message);
         }
         
     }
@@ -47,7 +47,7 @@ internal class EngineerImplementation : IEngineer
         DO.Engineer? doEngineer = _dal.Engineer.Read(id);
 
         if(doEngineer == null)
-            throw new BO.BlAlreadyExistsException($"Engineer with ID={id} doesn't exist");
+            throw new BO.BlAlreadyExistException($"Engineer with ID={id} doesn't exist");
 
         return new BO.Engineer() {
               Id= doEngineer.Id,

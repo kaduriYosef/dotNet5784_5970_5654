@@ -2,6 +2,7 @@
 namespace BlImplementation;
 
 using BlApi;
+using BO;
 using DO;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography;
@@ -10,21 +11,27 @@ internal class TaskImplementation : ITask
 {
     private DalApi.IDal _dal = DalApi.Factory.Get;
 
-    private bool checkValidetyCreate(BO.Task boTask)
+    private void checkValidety(BO.Task boTask)
     {
-        if(boTask == null) return false;
-        if (boTask.Alias == "") return false;
-        //if (boTask.Id < 0) return false;                  //completely unneccecary and useless since the id is running
-        return true;
+        if (boTask == null) throw new BO.BlInvalidDataException( "this BO.Task is null");
+        string error = "";
+        if (boTask.Alias == "") error+="Alias can't be empty. ";
+        //if (boTask.Id < 0) error+="Id can't be less than zero.  ";                  //completely unneccecary and useless since the id is running
+        if (boTask.RequiredEffortTime is not null && (boTask.RequiredEffortTime < TimeSpan.Zero))
+            error += "required effort time can't be less than zero";
+        
+        
+        
+        
+        
+        if(error !="") throw new BO.BlInvalidDataException( error );
     }
     public int Create(BO.Task boTask)
     {
-        if(!checkValidetyCreate(boTask)) throw;
-
+        checkValidety(boTask);
         foreach (var t in boTask.Dependencies)
             _dal.Dependency.Create(new DO.Dependency
                 (
-                 
                 dependent: boTask.Id,
                 dependsOn: t.Id
                 ));
@@ -44,7 +51,7 @@ internal class TaskImplementation : ITask
         if (doTask == null) throw new BO.BlDoesNotExistException($"Task with Id = {id} doesn't exist");
 
         if (_dal.Dependency.ReadAll(dep => dep.DependsOnTask == id).Any())
-            throw BO.BlImpossibleToDeleteException("other tasks depends on this task");
+            throw new BO.BlImpossibleToDeleteException("other tasks depends on this task");
 
         foreach(var  dependsOn in _dal.Dependency.ReadAll(dep=>dep.DependentTask==id))
         {
@@ -57,7 +64,7 @@ internal class TaskImplementation : ITask
 
     public BO.Task? Read(int id)
     {
-        DO.Task doTask = _dal?.Task?.Read(id) ?? throw BlDoesNotExistException($"Task with Id= {id} doesn't exist.");
+        DO.Task doTask = _dal?.Task?.Read(id) ?? throw new BO.BlDoesNotExistException($"Task with Id= {id} doesn't exist.");
 
         return DOtoBO(doTask);
     }
@@ -65,7 +72,7 @@ internal class TaskImplementation : ITask
     public BO.Task? Read(Func<BO.Task, bool> filter)
     {
         Func<DO.Task, bool> doFilter = t => filter(DOtoBO(t));
-        DO.Task doTask =_dal?.Task?.Read(doFilter)?? BlDoesNotExistException($"Task that correspondes to such filter doesn't exist.");
+        DO.Task doTask =_dal?.Task?.Read(doFilter)?? throw new BO.BlDoesNotExistException($"Task that correspondes to such filter doesn't exist.");
         return DOtoBO(doTask);
     }
 
@@ -90,9 +97,10 @@ internal class TaskImplementation : ITask
         throw new NotImplementedException();
     }
 
-    public void Update(BO.Task item)
+    public void Update(BO.Task boTask)
     {
-        throw new NotImplementedException();
+        checkValidety(boTask);
+        
     }
 
 

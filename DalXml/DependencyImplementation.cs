@@ -22,8 +22,8 @@ internal class DependencyImplementation : IDependency
         XElement rootDependency = XMLTools.LoadListFromXMLElement(s_Dependency_xml);
         XElement xDependency = new XElement(s_Dependency_xml,
                             new XElement("Id", id),
-                            new XElement("DependentTask", (item.DependentTask) ?? null),
-                            new XElement("DependentOnTask", item.DependsOnTask) ?? null);
+                            new XElement("DependentTask", (int?)(item.DependentTask) ?? 0),
+                            new XElement("DependentOnTask", (int?)item.DependsOnTask ?? 0));
         rootDependency.Add(xDependency);
         XMLTools.SaveListToXMLElement(rootDependency, s_Dependency_xml);
         return id;
@@ -101,8 +101,8 @@ internal class DependencyImplementation : IDependency
     {
         return new Dependency(
              Id: item.ToIntNullable("Id") ?? throw new convertExeption("can't convert it"),
-             DependentTask: (int?)item.Element("DependentTask") ?? null,
-             DependsOnTask: (int?)item.Element("DependentOnTask") ?? null
+             DependentTask: (int?)item.Element("DependentTask")??0 ,
+             DependsOnTask: (int?)item.Element("DependentOnTask") ?? 0
              );
     }
 }
