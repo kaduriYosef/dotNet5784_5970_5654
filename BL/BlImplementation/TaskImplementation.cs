@@ -4,21 +4,22 @@ namespace BlImplementation;
 using BlApi;
 using DO;
 using System.Reflection.Metadata.Ecma335;
+using System.Security.Cryptography;
 
 internal class TaskImplementation : ITask
 {
     private DalApi.IDal _dal = DalApi.Factory.Get;
 
-    private bool checkValidety(BO.Task boTask)
+    private bool checkValidetyCreate(BO.Task boTask)
     {
         if(boTask == null) return false;
         if (boTask.Alias == "") return false;
-        //if (boTask.Id < 0) return false;                  //completely unneccecary and useless
+        //if (boTask.Id < 0) return false;                  //completely unneccecary and useless since the id is running
         return true;
     }
     public int Create(BO.Task boTask)
     {
-        if(!checkValidety(boTask)) throw;
+        if(!checkValidetyCreate(boTask)) throw;
 
         foreach (var t in boTask.Dependencies)
             _dal.Dependency.Create(new DO.Dependency
@@ -40,10 +41,10 @@ internal class TaskImplementation : ITask
     {
         
         DO.Task? doTask = _dal.Task.Read(id);
-        if (doTask == null) throw new BlDoesNotExistException($"Task with Id = {id} doesn't exist");
+        if (doTask == null) throw new BO.BlDoesNotExistException($"Task with Id = {id} doesn't exist");
 
-        if(_dal.Dependency.ReadAll(dep=>dep.DependsOnTask==id).Any())
-            throw 
+        if (_dal.Dependency.ReadAll(dep => dep.DependsOnTask == id).Any())
+            throw BO.BlImpossibleToDeleteException("other tasks depends on this task");
 
         foreach(var  dependsOn in _dal.Dependency.ReadAll(dep=>dep.DependentTask==id))
         {
@@ -70,7 +71,18 @@ internal class TaskImplementation : ITask
 
     public IEnumerable<BO.Task?> ReadAll(Func<BO.Task, bool>? filter = null)
     {
-        throw new NotImplementedException();
+        Func<DO.Task, bool>? doFilter = null;
+        if (filter is not null)
+            doFilter= t => filter!(DOtoBO(t));
+
+        return from t in _dal.Task.ReadAll(doFilter)
+               select DOtoBO(t);
+    }
+
+    public IEnumerable<BO.TaskInList> ReadAllSimplified(Func<BO.Task, bool>? filter = null)
+    {
+        return from t in ReadAll(filter)
+               select fromTaskToTaskInList(t);
     }
 
     public void StartTimeManagment(int id, DateTime date)
@@ -84,7 +96,7 @@ internal class TaskImplementation : ITask
     }
 
 
-    internal DO.Task BOtoDO(BO.Task boTask)
+    static internal DO.Task BOtoDO(BO.Task boTask)
     {
         return new DO.Task(
             Id: boTask.Id,
@@ -120,17 +132,25 @@ internal class TaskImplementation : ITask
             Alias = doTask.Alias,
             Description = doTask.Description,
             CreatedAtDate = doTask.CreatedAtDate,
-            Status = null,                                    //to calculate maybe
+            Status = calcStatus(doTask),
             Dependencies = (List<BO.TaskInList>)dependencies,
             Milestone = null,                                      //to calculate ,add of milestone
             RequiredEffortTime = doTask.RequiredEffortTime,
             StartDate = doTask.StartDate,
             ScheduledDate = doTask.ScheduledDate,
+            
+            ForecastDate = (doTask.ScheduledDate is null || doTask.RequiredEffortTime is null )? null
+            :doTask.ScheduledDate+doTask.RequiredEffortTime,
+
             DeadlineDate = doTask.DeadlineDate,
             CompleteDate = doTask.CompleteDate,
             Deliverables = doTask.Deliverables,
             Remarks = doTask.Remarks,
-            Engineer = fromEngineerToEngineerInTask(_dal.Engineer.Read(doTask.EngineerId??-1)),
+            
+            //-1 can't be an ids
+            Engineer = BlImplementation.EngineerImplementation.
+            fromEngineerToengineerInTask(_dal.Engineer.Read(doTask.EngineerId??-1)), 
+            
             Complexity=(BO.EngineerExperience)(int)doTask.Complexity
         };
 
@@ -138,28 +158,31 @@ internal class TaskImplementation : ITask
     }
 
     #region simplify tasks
-    internal BO.TaskInList? fromTaskToTaskInList(DO.Task? doTask)
+    static internal BO.TaskInList? fromTaskToTaskInList(DO.Task? doTask)
     {
+        
         if (doTask is null) return null;
         return new BO.TaskInList
         {
             Id = doTask.Id,
             Alias = doTask.Alias,
-            Description = doTask.Description
+            Description = doTask.Description,
+            Status =  calcStatus(doTask)
         };
     }
-    internal BO.TaskInList? fromTaskToTaskInList(BO.Task? boTask)
+    static internal BO.TaskInList? fromTaskToTaskInList(BO.Task? boTask)
     {
         if (boTask is null) return null;
         return new BO.TaskInList
         {
             Id = boTask.Id,
             Alias = boTask.Alias,
-            Description = boTask.Description
+            Description = boTask.Description,
+            Status= boTask.Status
         };
     }
 
-    internal BO.TaskInEngineer? fromTaskToTaskInEngineer(DO.Task? doTask)
+    static internal BO.TaskInEngineer? fromTaskToTaskInEngineer(DO.Task? doTask)
     {
         if (doTask is null) return null;
         return new BO.TaskInEngineer
@@ -170,7 +193,7 @@ internal class TaskImplementation : ITask
 
 
     }
-    internal BO.TaskInEngineer? fromTaskToTaskInEngineer(BO.Task? boTask)
+    static internal BO.TaskInEngineer? fromTaskToTaskInEngineer(BO.Task? boTask)
     {
         if (boTask is null) return null;
         return new BO.TaskInEngineer { 
@@ -183,5 +206,18 @@ internal class TaskImplementation : ITask
 
 
     #endregion
+
+    internal static BO.Status calcStatus(DO.Task doTask)
+    {
+        if (doTask.ScheduledDate is null) return BO.Status.Unscheduled;
+        if (doTask.StartDate is null) return BO.Status.Scheduled;
+        if (doTask.CompleteDate is null)
+            if (doTask.DeadlineDate < DateTime.Now)
+                return BO.Status.InJeopardy;
+            else
+                return BO.Status.OnTrack;
+        return BO.Status.Done;
+    }
+
 
 }

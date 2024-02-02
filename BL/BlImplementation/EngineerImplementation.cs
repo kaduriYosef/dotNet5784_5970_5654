@@ -25,7 +25,7 @@ internal class EngineerImplementation : IEngineer
         }
         catch (DO.DalAlreadyExistsException ex) 
         {
-            throw new BO.BlAlreadyExistsException($"Engineer with ID={boEngineer.Id} already exist", ex);
+            throw new BO.BlAlreadyExistException($"Engineer with ID={boEngineer.Id} already exist", ex);
         }
     }
 
@@ -36,8 +36,8 @@ internal class EngineerImplementation : IEngineer
             _dal.Engineer.Delete(id);
         }
         catch (DO.DalDoesNotExistException ex)
-        { 
-         throw 
+        {
+            throw BO.BlDoesNotExistException(ex.Message);
         }
         
     }
