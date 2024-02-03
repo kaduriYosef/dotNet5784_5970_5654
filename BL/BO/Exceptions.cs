@@ -18,6 +18,14 @@ public class BlImpossibleToDeleteException    : Exception
 }
 
 [Serializable]
+public class BlImpossibleToUpdateException : Exception
+{
+    public BlImpossibleToUpdateException(string? message) : base(message) { }
+    public BlImpossibleToUpdateException(string message, Exception innerException)
+                : base(message, innerException) { }
+}
+
+[Serializable]
 public class BlAlreadyExistException : Exception
 {
     public BlAlreadyExistException(string? message) : base(message) { }

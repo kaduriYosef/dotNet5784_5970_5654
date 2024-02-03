@@ -19,13 +19,15 @@ internal class TaskImplementation : ITask
         //if (boTask.Id < 0) error+="Id can't be less than zero.  ";                  //completely unneccecary and useless since the id is running
         if (boTask.RequiredEffortTime is not null && (boTask.RequiredEffortTime < TimeSpan.Zero))
             error += "required effort time can't be less than zero";
-        
-        
-        
-        
+
         
         if(error !="") throw new BO.BlInvalidDataException( error );
     }
+    
+    
+    
+    
+    #region crud
     public int Create(BO.Task boTask)
     {
         checkValidety(boTask);
@@ -94,7 +96,28 @@ internal class TaskImplementation : ITask
 
     public void StartTimeManagment(int id, DateTime date)
     {
-        throw new NotImplementedException();
+
+        BO.Task boTask=Read(id)!;
+        DO.Task? doTask = _dal.Task.Read(id);
+        if (doTask is null)
+            throw new BO.BlDoesNotExistException($"Task with Id = {id} doesn't exist");
+
+        if (boTask!.Dependencies.Any(t => _dal.Task.Read(t.Id)?.StartDate is null))
+            throw new BO.BlImpossibleToUpdateException
+                ("can't declare start date this task before declaring start date for all of the tasks of which this one depends on.");
+
+        if (boTask!.Dependencies.Any(t =>Read(t.Id)?.ForecastDate >date))
+            throw new BO.BlImpossibleToUpdateException
+                ("can't declare start date to be earlier than the Forecast date of the tasks of which this one depends on.");
+
+        try
+        {
+            _dal.Task.Update(doTask with { StartDate = date });
+        }
+        catch(DO.DalDoesNotExistException ex)
+        {
+            throw new BO.BlDoesNotExistException(ex.Message);
+        }
     }
 
     public void Update(BO.Task boTask)
@@ -102,8 +125,8 @@ internal class TaskImplementation : ITask
         checkValidety(boTask);
         
     }
-
-
+#endregion
+    #region convertors
     static internal DO.Task BOtoDO(BO.Task boTask)
     {
         return new DO.Task(
@@ -215,6 +238,7 @@ internal class TaskImplementation : ITask
 
     #endregion
 
+    #endregion
     internal static BO.Status calcStatus(DO.Task doTask)
     {
         if (doTask.ScheduledDate is null) return BO.Status.Unscheduled;
