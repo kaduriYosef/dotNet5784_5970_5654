@@ -123,7 +123,7 @@ internal class EngineerImplementation : IEngineer
 
     internal BO.Engineer DOEngineerToBOEngineer(DO.Engineer DOEngineer)
     {
-       var t=_dal.Task.ReadAll().FirstOrDefault(task => task.EngineerId == DOEngineer.Id);
+       var task=_dal.Task.ReadAll().FirstOrDefault(task => task.EngineerId == DOEngineer.Id);
        return new BO.Engineer()
         {
             Id = DOEngineer.Id,
@@ -131,7 +131,8 @@ internal class EngineerImplementation : IEngineer
             Cost = DOEngineer.Cost,
             Name = DOEngineer.Name,
             Level = (BO.EngineerExperience)(int)DOEngineer.Level,
-            Task= TaskImplementation.fromTaskToTaskInEngineer(t)
+            Task= TaskImplementation.fromTaskToTaskInEngineer(task),
+//            Tasks=from t in tasks select TaskImplementation.fromTaskToTaskInList(TaskImplementation.DOtoBO(_dal, t))
         };
     }
 

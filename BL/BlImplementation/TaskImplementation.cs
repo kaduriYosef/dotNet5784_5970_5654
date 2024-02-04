@@ -47,24 +47,6 @@ internal class TaskImplementation : ITask
 
 
 
-    public void Delete(int id)
-    {
-        
-        DO.Task? doTask = _dal.Task.Read(id);
-        if (doTask == null) throw new BO.BlDoesNotExistException($"Task with Id = {id} doesn't exist");
-
-        if (_dal.Dependency.ReadAll(dep => dep.DependsOnTask == id).Any())
-            throw new BO.BlImpossibleToDeleteException("other tasks depends on this task");
-
-        foreach(var  dependsOn in _dal.Dependency.ReadAll(dep=>dep.DependentTask==id))
-        {
-            _dal.Dependency.Delete(dependsOn!.Id);
-        }
-
-        _dal.Task.Delete(id); 
-
-    }
-
     public BO.Task? Read(int id)
     {
         DO.Task doTask = _dal?.Task?.Read(id) ?? throw new BO.BlDoesNotExistException($"Task with Id= {id} doesn't exist.");
@@ -132,6 +114,9 @@ internal class TaskImplementation : ITask
         //create new dependencies 
         foreach (var id in boTask.Dependencies.Select(boTinEng => boTinEng.Id))
             _dal.Dependency.Create(new DO.Dependency(dependent: boTask.Id, dependsOn: id));
+
+        
+
         try
         {
             _dal.Task.Update(BOtoDO(boTask));
@@ -139,9 +124,26 @@ internal class TaskImplementation : ITask
         catch(DO.DalDoesNotExistException ex) 
         { throw new BO.BlDoesNotExistException(ex.Message); }
         
-        //neede just for the checking of the validity of the date
+        //need just for the checking of the validity of the date
         if(boTask.StartDate is not null)
             StartTimeManagement(boTask.Id, (DateTime)boTask.StartDate!);
+    }
+    public void Delete(int id)
+    {
+        
+        DO.Task? doTask = _dal.Task.Read(id);
+        if (doTask == null) throw new BO.BlDoesNotExistException($"Task with Id = {id} doesn't exist");
+
+        if (_dal.Dependency.ReadAll(dep => dep.DependsOnTask == id).Any())
+            throw new BO.BlImpossibleToDeleteException("other tasks depends on this task");
+
+        foreach(var  dependsOn in _dal.Dependency.ReadAll(dep=>dep.DependentTask==id))
+        {
+            _dal.Dependency.Delete(dependsOn!.Id);
+        }
+
+        _dal.Task.Delete(id); 
+
     }
 
 #endregion
@@ -176,7 +178,6 @@ internal class TaskImplementation : ITask
            select fromTaskToTaskInList(_dal.Task.Read(dep.DependsOnTask))).
            Where(x => x != null);
 
-
         BO.Task boTask = new BO.Task
         {
             Id = doTask.Id,
@@ -189,7 +190,6 @@ internal class TaskImplementation : ITask
             RequiredEffortTime = doTask.RequiredEffortTime,
             StartDate = doTask.StartDate,
             ScheduledDate = doTask.ScheduledDate,
-            
             ForecastDate = (doTask.ScheduledDate is null || doTask.RequiredEffortTime is null )? null
             :doTask.ScheduledDate+doTask.RequiredEffortTime,
 
@@ -202,10 +202,17 @@ internal class TaskImplementation : ITask
             Engineer = BlImplementation.EngineerImplementation.
             fromEngineerToEngineerInTask(_dal.Engineer.Read(doTask.EngineerId??-1)), 
             
-            Complexity=(BO.EngineerExperience)(int)doTask.Complexity
+            Complexity=(doTask.Complexity==null)?null:(BO.EngineerExperience)(int)doTask.Complexity
         };
 
         return boTask;
+    }
+
+    static internal BO.Task DOtoBO(DalApi.IDal dal, DO.Task doTask)
+    {
+        TaskImplementation tmp
+            = new TaskImplementation { _dal= dal};
+        return tmp.DOtoBO(doTask);
     }
 
     #region simplify tasks
