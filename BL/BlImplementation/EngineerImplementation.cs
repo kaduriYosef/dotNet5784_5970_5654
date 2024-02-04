@@ -118,12 +118,11 @@ internal class EngineerImplementation : IEngineer
     }
 
 
-
-    #region simplify Engineer
+#region convertors
 
     internal BO.Engineer DOEngineerToBOEngineer(DO.Engineer DOEngineer)
     {
-       var task=_dal.Task.ReadAll().FirstOrDefault(task => task.EngineerId == DOEngineer.Id);
+       var task=_dal.Task.ReadAll().Where(x=>x is not null).FirstOrDefault(task => task.EngineerId == DOEngineer.Id);
        return new BO.Engineer()
         {
             Id = DOEngineer.Id,
@@ -131,7 +130,7 @@ internal class EngineerImplementation : IEngineer
             Cost = DOEngineer.Cost,
             Name = DOEngineer.Name,
             Level = (BO.EngineerExperience)(int)DOEngineer.Level,
-            Task= TaskImplementation.fromTaskToTaskInEngineer(task),
+            Task= Tools.fromTaskToTaskInEngineer(task),
 //            Tasks=from t in tasks select TaskImplementation.fromTaskToTaskInList(TaskImplementation.DOtoBO(_dal, t))
         };
     }
@@ -146,24 +145,9 @@ internal class EngineerImplementation : IEngineer
             Level= (DO.EngineerExperience)(int)BOEngineer.Level
         };
     }
-    static internal BO.EngineerInTask? fromEngineerToEngineerInTask(BO.Engineer? itemBoEngineer)
-    {
-        if (itemBoEngineer == null) return null;
-        return new BO.EngineerInTask {
-            Id= itemBoEngineer.Id,
-            Name= itemBoEngineer.Name,
-            };
-    }
-    static internal BO.EngineerInTask? fromEngineerToEngineerInTask(DO.Engineer? itemDoEngineer)
-    {
-        if (itemDoEngineer == null) return null;
-        return new BO.EngineerInTask
-        {
-            Id = itemDoEngineer.Id,
-            Name = itemDoEngineer.Name,
-        };
-    }
 
+
+    #endregion
     internal void checkValidity(BO.Engineer boEngineer)
     {
         if (boEngineer.Id <= 0) throw new BlInvalidDataException($"the engineer with Id: {boEngineer.Id} is invalid");
@@ -173,5 +157,4 @@ internal class EngineerImplementation : IEngineer
         if (boEngineer.Cost <=0) throw new BlInvalidDataException($"the engineer with Cost: {boEngineer.Cost} is invalid");
 
     }
-    #endregion
 }

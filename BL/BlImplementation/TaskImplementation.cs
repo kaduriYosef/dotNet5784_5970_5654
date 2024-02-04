@@ -74,7 +74,7 @@ internal class TaskImplementation : ITask
     public IEnumerable<BO.TaskInList> ReadAllSimplified(Func<BO.Task, bool>? filter = null)
     {
         return from t in ReadAll(filter)
-               select fromTaskToTaskInList(t);
+               select Tools.fromTaskToTaskInList(t);
     }
 
     public void StartTimeManagement(int id, DateTime date)
@@ -175,7 +175,7 @@ internal class TaskImplementation : ITask
         
         IEnumerable<BO.TaskInList> dependencies =
            (from dep in _dal.Dependency.ReadAll(dep=>dep.DependentTask==doTask.Id)
-           select fromTaskToTaskInList(_dal.Task.Read(dep.DependsOnTask))).
+           select Tools.fromTaskToTaskInList(_dal.Task.Read(dep.DependsOnTask))).
            Where(x => x != null);
 
         BO.Task boTask = new BO.Task
@@ -184,7 +184,7 @@ internal class TaskImplementation : ITask
             Alias = doTask.Alias,
             Description = doTask.Description,
             CreatedAtDate = doTask.CreatedAtDate,
-            Status = CalcStatus(doTask),
+            Status = Tools.CalcStatus(doTask),
             Dependencies = (List<BO.TaskInList>)dependencies,
             Milestone = null,                                      //to calculate ,add of milestone
             RequiredEffortTime = doTask.RequiredEffortTime,
@@ -199,7 +199,7 @@ internal class TaskImplementation : ITask
             Remarks = doTask.Remarks,
             
             //-1 can't be an ids
-            Engineer = BlImplementation.EngineerImplementation.
+            Engineer = Tools.
             fromEngineerToEngineerInTask(_dal.Engineer.Read(doTask.EngineerId??-1)), 
             
             Complexity=(doTask.Complexity==null)?null:(BO.EngineerExperience)(int)doTask.Complexity
@@ -215,68 +215,7 @@ internal class TaskImplementation : ITask
         return tmp.DOtoBO(doTask);
     }
 
-    #region simplify tasks
-    static internal BO.TaskInList? fromTaskToTaskInList(DO.Task? doTask)
-    {
-        
-        if (doTask is null) return null;
-        return new BO.TaskInList
-        {
-            Id = doTask.Id,
-            Alias = doTask.Alias,
-            Description = doTask.Description,
-            Status =  CalcStatus(doTask)
-        };
-    }
-    static internal BO.TaskInList? fromTaskToTaskInList(BO.Task? boTask)
-    {
-        if (boTask is null) return null;
-        return new BO.TaskInList
-        {
-            Id = boTask.Id,
-            Alias = boTask.Alias,
-            Description = boTask.Description,
-            Status= boTask.Status
-        };
-    }
-
-    static internal BO.TaskInEngineer? fromTaskToTaskInEngineer(DO.Task? doTask)
-    {
-        if (doTask is null) return null;
-        return new BO.TaskInEngineer
-        {
-            Id = doTask.Id,
-            Alias = doTask.Alias
-        };
-
-
-    }
-    static internal BO.TaskInEngineer? fromTaskToTaskInEngineer(BO.Task? boTask)
-    {
-        if (boTask is null) return null;
-        return new BO.TaskInEngineer { 
-            Id = boTask.Id, 
-            Alias = boTask.Alias };
-    
-    
-    }
-
-
-
     #endregion
-
-    #endregion
-    internal static BO.Status CalcStatus(DO.Task doTask)
-    {
-        if (doTask.ScheduledDate is null) return BO.Status.Unscheduled;
-        if (doTask.StartDate is null) return BO.Status.Scheduled;
-        if (doTask.CompleteDate is null)
-            if (doTask.DeadlineDate < DateTime.Now)
-                return BO.Status.InJeopardy;
-            else
-                return BO.Status.OnTrack;
-        return BO.Status.Done;
-    }
-
+  
 
 }
