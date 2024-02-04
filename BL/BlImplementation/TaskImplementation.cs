@@ -16,7 +16,7 @@ internal class TaskImplementation : ITask
         if (boTask == null) throw new BO.BlInvalidDataException( "this BO.Task is null");
         string error = "";
         if (boTask.Alias == "") error+="Alias can't be empty. ";
-        //if (boTask.Id < 0) error+="Id can't be less than zero.  ";                  //completely unneccecary and useless since the id is running
+        //if (boTask.Id < 0) error+="Id can't be less than zero. ";                  //completely unnecessary and useless since the id is running
         if (boTask.RequiredEffortTime is not null && (boTask.RequiredEffortTime < TimeSpan.Zero))
             error += "required effort time can't be less than zero";
 
@@ -124,9 +124,28 @@ internal class TaskImplementation : ITask
     public void Update(BO.Task boTask)
     {
         checkValidity(boTask);
+
+        //delete all previous dependencies
+        foreach (var depOfBoTask in _dal.Dependency.ReadAll(dep => dep.DependentTask == boTask.Id))
+            if (depOfBoTask is not null) _dal.Dependency.Delete(depOfBoTask.Id);
+
+        //create new dependencies 
+        foreach (var id in boTask.Dependencies.Select(boTinEng => boTinEng.Id))
+            _dal.Dependency.Create(new DO.Dependency(dependent: boTask.Id, dependsOn: id));
+        try
+        {
+            _dal.Task.Update(BOtoDO(boTask));
+        }
+        catch(DO.DalDoesNotExistException ex) 
+        { throw new BO.BlDoesNotExistException(ex.Message); }
         
+        //neede just for the checking of the validity of the date
+        if(boTask.StartDate is not null)
+            StartTimeManagement(boTask.Id, (DateTime)boTask.StartDate!);
     }
+
 #endregion
+
     #region convertors
     static internal DO.Task BOtoDO(BO.Task boTask)
     {
