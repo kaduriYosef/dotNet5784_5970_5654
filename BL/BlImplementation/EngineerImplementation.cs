@@ -3,7 +3,7 @@
 using System.Data.Common;
 using System.Security.Cryptography;
 using BlApi;
-
+using BO;
 
 internal class EngineerImplementation : IEngineer
 {
@@ -28,20 +28,6 @@ internal class EngineerImplementation : IEngineer
             throw new BO.BlAlreadyExistException($"Engineer with ID={boEngineer.Id} already exist", ex);
         }
     }
-
-    public void Delete(int id)
-    {
-        try 
-        {  
-            _dal.Engineer.Delete(id);
-        }
-        catch (DO.DalDoesNotExistException ex)
-        {
-            throw new BO.BlDoesNotExistException(ex.Message);
-        }
-        
-    }
-
     public BO.Engineer? Read(int id)
     {
         DO.Engineer? doEngineer = _dal.Engineer.Read(id);
@@ -58,6 +44,24 @@ internal class EngineerImplementation : IEngineer
             };
 
     }
+    public Engineer? Read(Func<Engineer, bool> filter)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Delete(int id)
+    {
+        try 
+        {  
+            _dal.Engineer.Delete(id);
+        }
+        catch (DO.DalDoesNotExistException ex)
+        {
+            throw new BO.BlDoesNotExistException(ex.Message);
+        }
+        
+    }
+
 
     public IEnumerable<BO.Engineer> ReadAll(Func<BO.Engineer, bool> filter = null)
     {
@@ -75,14 +79,14 @@ internal class EngineerImplementation : IEngineer
     }
 
     #region simplify Engineer
-    static internal BO.EngineerInTask fromEngineerToengineerInTask(BO.Engineer itemBoEngineer)
+    static internal BO.EngineerInTask fromEngineerToEngineerInTask(BO.Engineer itemBoEngineer)
     {
         return new BO.EngineerInTask {
             Id= itemBoEngineer.Id,
             Name= itemBoEngineer.Name,
             };
     }
-    static internal BO.EngineerInTask fromEngineerToengineerInTask(DO.Engineer itemDoEngineer)
+    static internal BO.EngineerInTask fromEngineerToEngineerInTask(DO.Engineer itemDoEngineer)
     {
         return new BO.EngineerInTask
         {
@@ -90,6 +94,7 @@ internal class EngineerImplementation : IEngineer
             Name = itemDoEngineer.Name,
         };
     }
+
 
     #endregion
 }

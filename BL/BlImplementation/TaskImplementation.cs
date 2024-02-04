@@ -11,7 +11,7 @@ internal class TaskImplementation : ITask
 {
     private DalApi.IDal _dal = DalApi.Factory.Get;
 
-    private void checkValidety(BO.Task boTask)
+    private void checkValidity(BO.Task boTask)
     {
         if (boTask == null) throw new BO.BlInvalidDataException( "this BO.Task is null");
         string error = "";
@@ -30,7 +30,7 @@ internal class TaskImplementation : ITask
     #region crud
     public int Create(BO.Task boTask)
     {
-        checkValidety(boTask);
+        checkValidity(boTask);
         foreach (var t in boTask.Dependencies)
             _dal.Dependency.Create(new DO.Dependency
                 (
@@ -38,6 +38,7 @@ internal class TaskImplementation : ITask
                 dependsOn: t.Id
                 ));
 
+        //nothing can go wrong after the checkValidity so 
         int retId = _dal.Task.Create(BOtoDO(boTask));
 
         return retId;
@@ -71,9 +72,9 @@ internal class TaskImplementation : ITask
         return DOtoBO(doTask);
     }
 
-    public BO.Task? Read(Func<BO.Task, bool> filter)
+    public BO.Task? Read(Func<BO.Task, bool> boFilter)
     {
-        Func<DO.Task, bool> doFilter = t => filter(DOtoBO(t));
+        Func<DO.Task, bool> doFilter = t => boFilter(DOtoBO(t));
         DO.Task doTask =_dal?.Task?.Read(doFilter)?? throw new BO.BlDoesNotExistException($"Task that correspondes to such filter doesn't exist.");
         return DOtoBO(doTask);
     }
@@ -94,7 +95,7 @@ internal class TaskImplementation : ITask
                select fromTaskToTaskInList(t);
     }
 
-    public void StartTimeManagment(int id, DateTime date)
+    public void StartTimeManagement(int id, DateTime date)
     {
 
         BO.Task boTask=Read(id)!;
@@ -122,7 +123,7 @@ internal class TaskImplementation : ITask
 
     public void Update(BO.Task boTask)
     {
-        checkValidety(boTask);
+        checkValidity(boTask);
         
     }
 #endregion
@@ -163,7 +164,7 @@ internal class TaskImplementation : ITask
             Alias = doTask.Alias,
             Description = doTask.Description,
             CreatedAtDate = doTask.CreatedAtDate,
-            Status = calcStatus(doTask),
+            Status = CalcStatus(doTask),
             Dependencies = (List<BO.TaskInList>)dependencies,
             Milestone = null,                                      //to calculate ,add of milestone
             RequiredEffortTime = doTask.RequiredEffortTime,
@@ -180,7 +181,7 @@ internal class TaskImplementation : ITask
             
             //-1 can't be an ids
             Engineer = BlImplementation.EngineerImplementation.
-            fromEngineerToengineerInTask(_dal.Engineer.Read(doTask.EngineerId??-1)), 
+            fromEngineerToEngineerInTask(_dal.Engineer.Read(doTask.EngineerId??-1)), 
             
             Complexity=(BO.EngineerExperience)(int)doTask.Complexity
         };
@@ -198,7 +199,7 @@ internal class TaskImplementation : ITask
             Id = doTask.Id,
             Alias = doTask.Alias,
             Description = doTask.Description,
-            Status =  calcStatus(doTask)
+            Status =  CalcStatus(doTask)
         };
     }
     static internal BO.TaskInList? fromTaskToTaskInList(BO.Task? boTask)
@@ -239,7 +240,7 @@ internal class TaskImplementation : ITask
     #endregion
 
     #endregion
-    internal static BO.Status calcStatus(DO.Task doTask)
+    internal static BO.Status CalcStatus(DO.Task doTask)
     {
         if (doTask.ScheduledDate is null) return BO.Status.Unscheduled;
         if (doTask.StartDate is null) return BO.Status.Scheduled;
