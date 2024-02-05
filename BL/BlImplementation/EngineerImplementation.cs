@@ -22,14 +22,7 @@ internal class EngineerImplementation : IEngineer
     {
         checkValidity(boEngineer);
 
-        DO.Engineer doEngineer = new DO.Engineer(
-            Id:boEngineer.Id,
-            Email:boEngineer.Email,
-            Cost:boEngineer.Cost,
-            Name:boEngineer.Name,
-            Level:(DO.EngineerExperience)(int)boEngineer.Level,
-            Active:true
-            );
+        DO.Engineer doEngineer = BOEngineerToDOEngineer(boEngineer);
         try
         {
             int idEngineer = _dal.Engineer.Create(doEngineer);
@@ -139,6 +132,13 @@ internal class EngineerImplementation : IEngineer
 
     internal DO.Engineer BOEngineerToDOEngineer(BO.Engineer BOEngineer)
     {
+        if (BOEngineer.Task != null)
+        {
+            var task = _dal.Task.Read(BOEngineer.Task.Id);
+            if (task == null)
+                throw new BO.BlDoesNotExistException($"task with {BOEngineer.Task.Id} doesn't exit. ");
+            _dal.Task.Update(task with { EngineerId=BOEngineer.Id});
+        }
         return new DO.Engineer() { 
             Id = BOEngineer.Id,
             Email= BOEngineer.Email,
@@ -157,6 +157,19 @@ internal class EngineerImplementation : IEngineer
         //MailAddress check = new MailAddress(boEngineer.Email); 
         if (boEngineer.Email == "") throw new BlInvalidDataException($"the engineer with Email: {boEngineer.Email} is invalid");
         if (boEngineer.Cost <=0) throw new BlInvalidDataException($"the engineer with Cost: {boEngineer.Cost} is invalid");
+
+        if (boEngineer.Task == null)
+            return;
+        DO.Task? doTask=_dal.Task.Read(boEngineer.Task.Id);
+        if (doTask == null)
+            throw new BO.BlInvalidDataException($"Task with id ={boEngineer.Task.Id} doesn't exist. ");
+        var areThereAnyIncompleteDeps=
+            _dal.Dependency.ReadAll(dep => dep.DependentTask==boEngineer.Task.Id).Where(x=>x is not null).
+            Any(dep=>(_dal.Task.Read(dep!.DependsOnTask)==null)?throw new BO.BlNullPropertyException($"a dependency with id {dep.Id} contains an invalid id")
+            :_dal.Task.Read(dep.DependsOnTask)!.CompleteDate==null);
+
+        if (areThereAnyIncompleteDeps) 
+            throw new BlInvalidDataException($"can't give the task with id {doTask.Id} to an engineer before all its previous tasks will be completed");
 
     }
 }
