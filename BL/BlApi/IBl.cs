@@ -12,6 +12,6 @@ public interface IBl
 
     public ITask Task { get; }
 
-    //public IMilestone Milstone { get; }
+    //public IMilestone Milestone { get; }
 
 }

@@ -20,6 +20,8 @@ internal class EngineerImplementation : IEngineer
     /// <exception cref="BO.BlAlreadyExistException"></exception>
     public int Create(BO.Engineer boEngineer)
     {
+        checkValidity(boEngineer);
+
         DO.Engineer doEngineer = new DO.Engineer(
             Id:boEngineer.Id,
             Email:boEngineer.Email,

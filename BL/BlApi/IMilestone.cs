@@ -14,7 +14,7 @@ public interface IMilestone :ICrud<BO.Milestone>
 
     //public void Delete(int id);
 
-    public double PrecentegeComplete(int id);
+    public double PrecantegeComplete(int id);
 }
 
 
