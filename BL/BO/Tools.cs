@@ -1,5 +1,6 @@
 ﻿
 using System.ComponentModel;
+using System.Reflection;
 using System.Text;
 
 namespace BO;
@@ -7,56 +8,63 @@ namespace BO;
 static internal class Tools
 {
     #region to string property
-    static private string getNtabs(int n) 
+    public static string ToStringProperty(this object obj) => ToStringProperty(obj, 0);
+
+    private static string ToStringProperty(object obj, int depth)
     {
-        string str = "";
-        for (int i = 0;i<n;++i)
-            str += "\t";
-        return str;
-            }
-    public static string ToStringProperty<T>(this T obj,int tabs=0)
-    {
-        
         if (obj == null) return "null";
-        var type = obj.GetType();
-        var sb = new StringBuilder();
+        if (obj.GetType().IsPrimitive || obj is string) return $"{new String(' ', depth * 4)}{obj}";
 
-        // פתיחת סוגריים לציון התחלת העצם
-        sb.Append($"{type.Name} \n{getNtabs(tabs)}{{\n ");
-
-        foreach (var prop in type.GetProperties())
+        Type type = obj.GetType();
+        StringBuilder sb = new StringBuilder();
+        if (depth > 0)
         {
-            var value = prop.GetValue(obj);
-            string valueString="";
-
-            if (value is System.Collections.IEnumerable && !(value is string))
-            {
-                valueString += getNtabs(tabs);
-                valueString += "\n[\n";
-                foreach (var item in (value as System.Collections.IEnumerable)!)
-                {
-                    valueString += getNtabs(tabs);
-                    valueString += ToStringProperty(item,tabs+1) + ", \n";
-                }
-                if (valueString.EndsWith(", \n")) 
-                    valueString = valueString.Substring(0, valueString.Length - 3);
-                valueString += getNtabs(tabs);
-                valueString += "\n]\n";
-            }
-            else
-            {
-                valueString +=getNtabs(tabs);
-                valueString += ToStringProperty(value,tabs+1);
-            }
-
-            sb.Append($"{prop.Name}: {valueString}, \n");
+            sb.AppendLine($"{new String(' ', depth * 4 - 4)}Type: {type.Name}");
+        }
+        else
+        {
+            sb.AppendLine($"Type: {type.Name}");
         }
 
-        if (sb.ToString().EndsWith(", \n")) sb.Length -= 3; // ניקוי פסיק ורווח מיותרים בסוף
-
-        // סגירת סוגריים לציון סיום העצם
-        sb.Append(" \n}\n");
-
+        foreach (PropertyInfo property in type.GetProperties())
+        {
+            if (property.GetGetMethod() != null && !property.GetIndexParameters().Any())
+            {
+                object value = property.GetValue(obj, null);
+                var propertyIndentation = new String(' ', depth * 4);
+                if (value is System.Collections.IEnumerable && !(value is string))
+                {
+                    sb.AppendLine($"{propertyIndentation}{property.Name}:");
+                    foreach (var item in (System.Collections.IEnumerable)value)
+                    {
+                        if (item.GetType().IsPrimitive || item is string)
+                        {
+                            sb.AppendLine($"{new String(' ', depth * 4 + 4)}{item}");
+                        }
+                        else
+                        {
+                            sb.Append(ToStringProperty(item, depth + 2));
+                        }
+                    }
+                }
+                else
+                {
+                    if(value == null)
+                    {
+                        sb.AppendLine($"{propertyIndentation}{property.Name}: null");
+                    }
+                    else if (value is string || value.GetType().IsPrimitive)
+                    {
+                        sb.AppendLine($"{propertyIndentation}{property.Name}: {value}");
+                    }
+                    else
+                    {
+                        sb.AppendLine($"{propertyIndentation}{property.Name}:");
+                        sb.Append(ToStringProperty(value, depth + 2));
+                    }
+                }
+            }
+        }
         return sb.ToString();
     }
     #endregion
@@ -149,5 +157,4 @@ static internal class Tools
 
 
     #endregion
-
 }
