@@ -19,6 +19,6 @@ public class Engineer
     
     public List<TaskInEngineer>? Tasks { get; set; }
 
-
+    public override string ToString() => this.ToStringProperty();
 
 }

@@ -50,7 +50,7 @@ internal class TaskImplementation : ITask
     /// give a list of all task that satisfy the predicate if given any, 
     /// if not just return all there is
     /// </summary>
-    /// <param name="filter">the prdicate to filter the task by</param>
+    /// <param name="filter">the predicate to filter the task by</param>
     /// <returns></returns>
     public IEnumerable<Task?> ReadAll(Func<Task, bool>? filter = null) // stage 2
     {
@@ -61,7 +61,7 @@ internal class TaskImplementation : ITask
     }
 
     /// <summary>
-    /// updatet a task (recognized by its id) 
+    /// update a task (recognized by its id) 
     /// if no task with such id exists throw exception
     /// </summary>
     /// <param name="item">the new item to update</param>

@@ -5,6 +5,7 @@ using System.Security.Cryptography;
 using System.Net.Mail;
 using BlApi;
 using BO;
+using DO;
 
 /// <summary>
 /// 
@@ -54,7 +55,7 @@ internal class EngineerImplementation : IEngineer
     /// </summary>
     /// <param name="filter"></param>
     /// <returns></returns>
-    public Engineer? Read(Func<Engineer, bool> filter)
+    public BO.Engineer? Read(Func<BO.Engineer, bool> filter)
     {
         if (filter == null) return null;
         return ReadAll().FirstOrDefault(eng => filter(eng));
@@ -160,13 +161,28 @@ internal class EngineerImplementation : IEngineer
 
         if (boEngineer.Task == null)
             return;
+
         DO.Task? doTask=_dal.Task.Read(boEngineer.Task.Id);
         if (doTask == null)
             throw new BO.BlInvalidDataException($"Task with id ={boEngineer.Task.Id} doesn't exist. ");
-        var areThereAnyIncompleteDeps=
-            _dal.Dependency.ReadAll(dep => dep.DependentTask==boEngineer.Task.Id).Where(x=>x is not null).
-            Any(dep=>(_dal.Task.Read(dep!.DependsOnTask)==null)?throw new BO.BlNullPropertyException($"a dependency with id {dep.Id} contains an invalid id")
-            :_dal.Task.Read(dep.DependsOnTask)!.CompleteDate==null);
+
+        bool areThereAnyIncompleteDeps =
+            _dal.Dependency.ReadAll(dep => dep is not null && dep.DependentTask == doTask.Id).
+            Any(dep =>
+            (_dal.Task.Read(dep!.DependsOnTask) == null)
+            ? throw new BO.BlNullPropertyException($"a dependency with id {dep.Id} contains an invalid id")
+            : _dal.Task.Read(dep.DependsOnTask)!.CompleteDate == null);
+
+        #region maybe to do
+        //var dependsOn = _dal.Dependency.ReadAll(dep => dep is not null && dep.DependentTask == doTask.Id).
+        //    GroupBy(dep =>
+        //    (_dal.Task.Read(dep!.DependsOnTask) == null)
+        //    ? throw new BO.BlNullPropertyException($"a dependency with id {dep.Id} contains an invalid id")
+        //    : _dal.Task.Read(dep!.DependsOnTask)!.CompleteDate).
+        //    Where(x => x is not null).
+        //    FirstOrDefault(li =>
+        //     _dal.Task.Read(li.FirstOrDefault(dep => true)!.DependsOnTask)!.CompleteDate == null);
+        #endregion
 
         if (areThereAnyIncompleteDeps) 
             throw new BlInvalidDataException($"can't give the task with id {doTask.Id} to an engineer before all its previous tasks will be completed");

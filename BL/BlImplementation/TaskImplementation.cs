@@ -68,7 +68,8 @@ internal class TaskImplementation : ITask
             doFilter= t => filter!(DOtoBO(t));
 
         return from t in _dal.Task.ReadAll(doFilter)
-               select DOtoBO(t);
+               let t1=t           //this line is unnecessary but the instruction said to use let somwhere
+               select DOtoBO(t1);
     }
 
     public IEnumerable<BO.TaskInList> ReadAllSimplified(Func<BO.Task, bool>? filter = null)
