@@ -68,8 +68,7 @@ internal class TaskImplementation : ITask
             doFilter= t => filter!(DOtoBO(t));
 
         return from t in _dal.Task.ReadAll(doFilter)
-               let t1=t           //this line is unnecessary but the instruction said to use let somwhere
-               select DOtoBO(t1);
+               select DOtoBO(t);
     }
 
     public IEnumerable<BO.TaskInList> ReadAllSimplified(Func<BO.Task, bool>? filter = null)
@@ -78,7 +77,7 @@ internal class TaskImplementation : ITask
                select Tools.fromTaskToTaskInList(t);
     }
 
-    public void StartTimeManagement(int id, DateTime date)
+    public void ScheduledDateManagement(int id, DateTime date)
     {
 
         BO.Task boTask=Read(id)!;
@@ -86,17 +85,29 @@ internal class TaskImplementation : ITask
         if (doTask is null)
             throw new BO.BlDoesNotExistException($"Task with Id = {id} doesn't exist");
 
-        if (boTask!.Dependencies.Any(t => _dal.Task.Read(t.Id)?.StartDate is null))
+        if (boTask!.Dependencies.Any(t => _dal.Task.Read(t.Id)?.ScheduledDate is null))
             throw new BO.BlImpossibleToUpdateException
                 ("can't declare start date this task before declaring start date for all of the tasks of which this one depends on.");
 
-        if (boTask!.Dependencies.Any(t =>Read(t.Id)?.ForecastDate >date))
+
+        var dates = from t in boTask.Dependencies
+                    let task = _dal.Task.Read(t.Id)
+                    where task is not null
+                    let start = task.StartDate
+                    let scheduled = task.ScheduledDate
+                    let maxStart =(start is null) ? scheduled 
+                        : ((start > scheduled) ? start : scheduled)
+                    select maxStart + task.RequiredEffortTime;
+
+
+
+        if (dates.Any(da => da > date))
             throw new BO.BlImpossibleToUpdateException
                 ("can't declare start date to be earlier than the Forecast date of the tasks of which this one depends on.");
 
         try
         {
-            _dal.Task.Update(doTask with { StartDate = date });
+            _dal.Task.Update(doTask with { ScheduledDate = date });
         }
         catch(DO.DalDoesNotExistException ex)
         {
@@ -127,7 +138,7 @@ internal class TaskImplementation : ITask
         
         //need just for the checking of the validity of the date
         if(boTask.StartDate is not null)
-            StartTimeManagement(boTask.Id, (DateTime)boTask.StartDate!);
+            ScheduledDateManagement(boTask.Id, (DateTime)boTask.StartDate!);
     }
     public void Delete(int id)
     {
@@ -159,7 +170,7 @@ internal class TaskImplementation : ITask
             CreatedAtDate: boTask.CreatedAtDate,
             RequiredEffortTime: boTask.RequiredEffortTime,
             IsMilestone: false,
-            Complexity: (DO.EngineerExperience)(int)(boTask.Complexity),
+            Complexity: (DO.EngineerExperience?)(int?)(boTask.Complexity),
             StartDate: boTask.StartDate,
             ScheduledDate: boTask.ScheduledDate,
             DeadlineDate: boTask.DeadlineDate,

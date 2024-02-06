@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BO;
 
-static internal class Tools
+static public class Tools
 {
     #region to string property
     public static string ToStringProperty(this object obj) => ToStringProperty(obj, 0);
@@ -13,13 +13,13 @@ static internal class Tools
     private static string ToStringProperty(object obj, int depth)
     {
         if (obj == null) return "null";
-        if (obj.GetType().IsPrimitive || obj is string) return $"{new String(' ', depth * 4)}{obj}";
+        if (obj.GetType().IsPrimitive || obj is string) return $"{new String('\t', depth )}{obj}";
 
         Type type = obj.GetType();
         StringBuilder sb = new StringBuilder();
         if (depth > 0)
         {
-            sb.AppendLine($"{new String(' ', depth * 4 - 4)}Type: {type.Name}");
+            sb.AppendLine($"{new String('\t', depth )}Type: {type.Name}");
         }
         else
         {
@@ -30,20 +30,20 @@ static internal class Tools
         {
             if (property.GetGetMethod() != null && !property.GetIndexParameters().Any())
             {
-                object value = property.GetValue(obj, null);
-                var propertyIndentation = new String(' ', depth * 4);
-                if (value is System.Collections.IEnumerable && !(value is string))
+                object? value = property.GetValue(obj, null);
+                var propertyIndentation = new String('\t', depth );
+                if (value is System.Collections.IEnumerable && !(value is string)&& !(value.GetType().IsEnum ))
                 {
                     sb.AppendLine($"{propertyIndentation}{property.Name}:");
                     foreach (var item in (System.Collections.IEnumerable)value)
                     {
                         if (item.GetType().IsPrimitive || item is string)
                         {
-                            sb.AppendLine($"{new String(' ', depth * 4 + 4)}{item}");
+                            sb.AppendLine($"{new String('\t', depth  + 1)}{item}");
                         }
                         else
                         {
-                            sb.Append(ToStringProperty(item, depth + 2));
+                            sb.Append(ToStringProperty(item, depth + 1));
                         }
                     }
                 }
@@ -53,14 +53,14 @@ static internal class Tools
                     {
                         sb.AppendLine($"{propertyIndentation}{property.Name}: null");
                     }
-                    else if (value is string || value.GetType().IsPrimitive)
+                    else if (value is string || value.GetType().IsPrimitive|| value.GetType().IsEnum)
                     {
                         sb.AppendLine($"{propertyIndentation}{property.Name}: {value}");
                     }
                     else
                     {
                         sb.AppendLine($"{propertyIndentation}{property.Name}:");
-                        sb.Append(ToStringProperty(value, depth + 2));
+                        sb.Append(ToStringProperty(value, depth + 1));
                     }
                 }
             }
