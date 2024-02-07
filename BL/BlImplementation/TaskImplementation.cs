@@ -4,6 +4,7 @@ namespace BlImplementation;
 using BlApi;
 using BO;
 using DO;
+using System.Collections.Immutable;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography;
 
@@ -23,7 +24,6 @@ internal class TaskImplementation : ITask
         
         if(error !="") throw new BO.BlInvalidDataException( error );
     }
-    
     
     
     
@@ -115,6 +115,12 @@ internal class TaskImplementation : ITask
         }
     }
 
+    protected void ScheduledDateManagementUnsafe(int id, DateTime date)
+    {
+        var doTask = _dal.Task.Read(id);
+        if (doTask == null)
+            throw new BO.BlDoesNotExistException($"task with id {id} doesn't exist. ");
+    }
     public void Update(BO.Task boTask)
     {
         checkValidity(boTask);
@@ -228,6 +234,66 @@ internal class TaskImplementation : ITask
     }
 
     #endregion
-  
+
+
+    #region schedule
+    public void ScheduleAllDates(DateTime startOfProject)
+    {
+        IEnumerable<BO.TaskInList> tasksBO = ReadAllSimplified();
+        //find all the tasks without dependencies
+        List<BO.Task?> tasksWithoutDependency = 
+            ReadAll().Where(x => x is not null).
+            Where(t=>!(t!.Dependencies.Any())).
+            ToList();
+        
+        //    Enter a start and end date
+        foreach (var task in tasksWithoutDependency)
+        {
+            //store the dates in the data layer
+            ScheduledDateManagementUnsafe(task!.Id, startOfProject);
+        }
+
+        //Finds all the tasks who depends on something
+        List<BO.Task?> tasksWithDependency =
+          ReadAll().Where(x => x is not null).
+            Where(t => (t!.Dependencies.Any())).
+            ToList();
+
+        foreach (var task in tasksWithDependency)
+        {
+            initScheduledDateRecursive(task!);
+        }
+
+    }
+    //recursive supporting function
+    private DateTime? initScheduledDateRecursive(BO.Task task)
+    {
+        if (task.ForecastDate != null)
+            return task.ForecastDate;
+        DateTime? ForecastDateFromDepend=null;
+        foreach (var depTask in task.Dependencies)
+        {
+            var fullDepTask = Read(depTask.Id);
+            DateTime = initScheduledDateRecursive(fullDepTask);
+            
+        }
+        if (task.ScheduledDate == null)
+        {
+            ScheduledDateManagementUnsafe(task.Id, ForecastDateFromDepend.GetValueOrDefault());
+            task.ScheduledDate = ForecastDateFromDepend;
+            task.DeadlineDate = ForecastDateFromDepend + task.RequiredEffortTime;
+        }
+        else
+        {
+            task.ScheduledDate =
+                (task.ScheduledDate == null) ? ForecastDateFromDepend :
+                (task.ScheduledDate > ForecastDateFromDepend) ? task.ScheduledDate : ForecastDateFromDepend;
+
+            ScheduledDateManagementUnsafe(task.Id, task.ScheduledDate.GetValueOrDefault());
+            task.ForecastDate = task.ScheduledDate + task.RequiredEffortTime;
+        }
+        return null;
+    }
+    #endregion
 
 }
