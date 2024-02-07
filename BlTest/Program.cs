@@ -44,6 +44,13 @@ static class Program
                         }
                         catch (Exception ex) { Console.WriteLine(ex.Message); }
                         break;
+                    case 3: //create schedule
+                        DateTime? startProject = null;
+                        Console.WriteLine("Enter A Project Start Date");
+                        startProject = DateTime.TryParse(Console.ReadLine(), out DateTime result) ? result : (DateTime?)null;
+                        //We will activate the function that generates the start dates of all the tasks
+                        s_bl.Task.dateGeneratorOfAllTasks(startProject.GetValueOrDefault());
+                        break;
                     default:
                         Console.WriteLine("ERROR: choose number between 1-3");
                         chose = GetInteger();
