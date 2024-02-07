@@ -119,15 +119,15 @@ static class Program
                     break;
                 case 3: //read all
                     if (EngTask == 1)
-                        foreach (var item1 in s_bl.Engineer.ReadAll())
+                        foreach (var item1 in (s_bl.Engineer.ReadAll().ToList()))
                         {
                             Console.WriteLine(item1);
                             Console.WriteLine();
                         }
                     else if (EngTask == 2)
-                        foreach (var item2 in s_bl.Task.ReadAll())
+                        foreach (var item2 in s_bl.Task.ReadAllSimplified().ToList())
                         {
-                            Console.WriteLine($"Task ID: {item2}");
+                            Console.WriteLine(item2);
                         }
                     break;
                 case 4: //update
@@ -163,7 +163,7 @@ static class Program
                     Console.Write("Enter Task's Scheduled date: ");
                     DateTime scheduledDate = GetDateTime(); // check date
 
-                    //s_bl.Task.UpdateDate(id, scheduledDate);
+                    s_bl.Task.ScheduledDateManagement(id, scheduledDate);
                     break;
 
                 default:  //if the user choose wrong number 
