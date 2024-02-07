@@ -48,6 +48,7 @@ static class Program
                         DateTime? startProject = null;
                         Console.WriteLine("Enter A Project Start Date");
                         startProject = GetDateTime();
+                        //We will activate the function that generates the start dates of all the tasks
                         s_bl.Task.ScheduleAllDates(startProject.GetValueOrDefault());
                         break;
                     default:
