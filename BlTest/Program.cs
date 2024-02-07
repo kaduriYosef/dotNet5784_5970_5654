@@ -89,9 +89,9 @@ class Program
         {
             switch (userChoice)
             {
-                case 0:     //exit
+                case 0:     
                     break;
-                case 1: //create
+                case 1: 
                     if (EngTask == 1)
                         try { s_bl.Engineer.Create(GetEngineer()); }
                         catch (Exception ex) { Console.WriteLine(ex.Message); } //if ID is allredy exist
@@ -121,9 +121,6 @@ class Program
                         foreach (var item2 in s_bl.Task.ReadAll())
                         {
                             Console.WriteLine($"Task ID: {item2}");
-                            //Console.WriteLine($"Description: {item2.Description}");
-                            //Console.WriteLine($"Alias: {item2.Alias}");
-                            //Console.WriteLine($"Status: {item2.Status}");
                         }
                     break;
                 case 4: //update
@@ -159,7 +156,7 @@ class Program
                     Console.Write("Enter Task's Scheduled date: ");
                     DateTime scheduledDate = GetDateTime(); // check date
                   
-                    s_bl.Task.UpdateDate(id, scheduledDate);
+                    //s_bl.Task.UpdateDate(id, scheduledDate);
                     break;
 
                 default:  //if the user choose wrong number 
@@ -183,12 +180,23 @@ class Program
         int cost = GetInteger();
         Console.Write("level, Rating between 1-5: ");
         BO.EngineerExperience level = (BO.EngineerExperience)(checkNum());
-        Console.WriteLine("Engineer's task:");
-        Console.Write("Task's ID: "); int taskId = GetInteger();
-        Console.Write("Task's alias: "); string taskAlias = Console.ReadLine() ?? "";
-        BO.TaskInEngineer taskInEngineer = new BO.TaskInEngineer { Id = taskId, Alias = taskAlias };
+        Console.Write("Task's ID for engineer: ");
+        BO.TaskInEngineer? taskInEngineer = new BO.TaskInEngineer();
+        try
+        {
+            BO.Task? task = s_bl.Task.Read(GetInteger());
+            taskInEngineer = new BO.TaskInEngineer
+            {
+                Id = task.Id,
+                Alias = task.Alias
+            };
 
-        
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+
         return new BO.Engineer
         {
             Id = id,
@@ -198,6 +206,9 @@ class Program
             Level = level,
             Task = taskInEngineer
         };
+        
+
+        
     }
     BO.Task GetTask()
     {
@@ -211,41 +222,35 @@ class Program
         Console.Write("Description: ");
         string description = Console.ReadLine() ?? "";
 
-        Console.Write("Status, Rating between 1-5: ");
-        BO.Status status = (BO.Status)(checkNum());
-
         Console.WriteLine("press 1 to add dependecy or 0 to skip:");
-        int? check = GetInteger();
+        int check = GetInteger();
         List<BO.TaskInList>? dependency = new List<BO.TaskInList>();
+        BO.Task task = new BO.Task();
         while (check == 1) //get all the parameter for all the dependcies of this task 
         {
-            Console.Write("ID: "); int idTask = GetInteger();
-            Console.Write("Description: "); string descruptionTask = Console.ReadLine();
-            Console.Write("Alias: "); string aliasTask = Console.ReadLine();
-            Console.Write("Status: "); BO.Status statusTask = (BO.Status)(checkNum());
-            dependency.Add(new BO.TaskInList { Id = idTask, Description = descruptionTask, Alias = aliasTask, Status = statusTask });
+            Console.Write("Enter ID of dependent task: ");
+            int idTask = GetInteger();
+            try
+            {
+                task = s_bl.Task.Read(GetInteger());
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            dependency.Add(new BO.TaskInList
+            {
+                Id = task.Id,
+                Description = task.Description,
+                Alias = task.Alias,
+                Status = task.Status,
+            });
             Console.WriteLine("press 1 to add dependecy or 0 to continue:");
             check = GetInteger();
         }
 
         Console.Write("Required Effort Time (days): ");
-        TimeSpan requiredEffortTime = TimeSpan.FromDays(double.Parse(Console.ReadLine()));
-
-        Console.Write("Start date (in the format dd/mm/yyyy): ");//receive start date (additional)
-        DateTime? tempDate = GetDateTime();//recive and check date
-        DateTime? startDate = (tempDate == null) ? null : tempDate;
-
-        Console.Write("Scheduled date (in the format dd/mm/yyyy): "); //receive Scheduled date (additional)
-        tempDate = GetDateTime();//recive and check date
-        DateTime? scheduledDate = (tempDate == null) ? null : tempDate;
-
-        Console.Write("DeadLine date (in the format dd/mm/yyyy): ");  //receive deadline date (additional)
-        tempDate = GetDateTime();//recive and check date
-        DateTime? deadLine = (tempDate == null) ? null : tempDate;
-
-        Console.Write("Complete date (in the format dd/mm/yyyy): ");  //receive complete date (additional)
-        tempDate = GetDateTime();
-        DateTime? completeDate = (tempDate == null) ? null : tempDate;
+        TimeSpan requiredEffortTime = TimeSpan.FromDays(GetInteger());
 
         Console.Write("Deliverables: ");
         string? deliverables = Console.ReadLine();
@@ -253,10 +258,24 @@ class Program
         Console.Write("Remarks: ");
         string? remark = Console.ReadLine();
 
-        Console.WriteLine("Enter Engineer's details: ");
-        Console.Write("ID: "); int idEngneer = GetInteger();
-        Console.Write("Name: "); string nameEngineer = Console.ReadLine();
-        BO.EngineerInTask? engineer = new BO.EngineerInTask { Id = idEngneer, Name = nameEngineer };
+        Console.WriteLine("Enter Engineer's ID for task: ");
+        
+        BO.EngineerInTask engInTask = new BO.EngineerInTask();
+        try
+        {
+            BO.Engineer? eng = s_bl.Engineer.Read(GetInteger());
+            engInTask=new BO.EngineerInTask
+            {
+                Id = eng.Id,
+                Name = eng.Name
+            };
+
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+
 
         Console.Write("Enter Task's complexity, Rating between 1-5: ");
         BO.EngineerExperience complexity = (BO.EngineerExperience)(checkNum());
@@ -267,17 +286,17 @@ class Program
             Alias = alias,
             Description = description,
             CreatedAtDate = DateTime.Now,
-            Status = status,
+            Status=null,
             Dependencies = dependency,
             Milestone = null,
             RequiredEffortTime = requiredEffortTime,
-            StartDate = startDate,
-            ScheduledDate = scheduledDate,
-            ForecastDate = scheduledDate + requiredEffortTime,
-            DeadlineDate = deadLine,
+            StartDate = null,
+            ScheduledDate = null,
+            ForecastDate = null,
+            DeadlineDate = null,
             Deliverables = deliverables,
             Remarks = remark,
-            Engineer = engineer,
+            Engineer = engInTask,
             Complexity = complexity
         };
         return item;
@@ -288,9 +307,9 @@ class Program
         do
         {
             level = GetInteger();
-            Console.WriteLine("ERROR: choose level between 1-5");
+            Console.WriteLine("ERROR: choose level between 0-4");
 
-        } while (level < 1 || level > 5);
+        } while (level <=0  || level > 4);
         return level;
     }
     private int GetInteger()
