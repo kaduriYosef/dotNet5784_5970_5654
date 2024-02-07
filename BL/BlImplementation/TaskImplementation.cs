@@ -270,11 +270,14 @@ internal class TaskImplementation : ITask
     {
         if (task.ForecastDate != null)
             return task.ForecastDate;
-        DateTime? ForecastDateFromDepend=null;
+
+        DateTime? ForecastDateFromDepend=DateTime.MinValue;
         foreach (var depTask in task.Dependencies)
         {
             var fullDepTask = Read(depTask.Id);
-            DateTime = initScheduledDateRecursive(fullDepTask);
+            DateTime? tmp = initScheduledDateRecursive(fullDepTask);
+            if(ForecastDateFromDepend<tmp)
+                ForecastDateFromDepend = tmp;
             
         }
         if (task.ScheduledDate == null)
