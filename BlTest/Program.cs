@@ -5,12 +5,12 @@ namespace BlTest;
 using System.Reflection.Emit;
 using BO; // Assuming the namespace for the classes
 
-class Program
+static class Program
 {
     static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
 
 
-    void Main(string[] args)
+    public static void Main(string[] args)
     {
 
 
@@ -58,7 +58,7 @@ class Program
         }
 
     }
-    int menuChoise()
+    static int menuChoise()
     {
         int choice;
         Console.WriteLine("Press - 0 exit");
@@ -67,7 +67,7 @@ class Program
         choice = GetInteger();
         return choice;
     }
-    int subMenuChoise(string type)
+    static int subMenuChoise(string type)
     {
         Console.WriteLine("Please press which action you want to take:");
         Console.WriteLine("0 - Go back");
@@ -83,7 +83,7 @@ class Program
 
         return GetInteger();
     }
-    int choiceInEntity(int userChoice, int EngTask)
+    static int choiceInEntity(int userChoice, int EngTask)
     {
         do
         {
@@ -167,7 +167,7 @@ class Program
         } while (userChoice < 0 || userChoice > 5);
         return 1;
     }
-    BO.Engineer GetEngineer()
+    static BO.Engineer GetEngineer()
     {
         Console.WriteLine("Enter Engineer's details:");
         Console.Write("ID: ");
@@ -210,7 +210,7 @@ class Program
 
         
     }
-    BO.Task GetTask()
+    static BO.Task GetTask()
     {
         Console.WriteLine("Enter Task details:");
         Console.Write("ID: ");
@@ -301,7 +301,7 @@ class Program
         };
         return item;
     }
-    private int checkNum()
+    static private int checkNum()
     {
         int level;
         do
@@ -312,14 +312,14 @@ class Program
         } while (level <=0  || level > 4);
         return level;
     }
-    private int GetInteger()
+    static private int GetInteger()
     {
         int input = 0;
         while (!int.TryParse(Console.ReadLine(), out input))
             Console.WriteLine("Expecting only integer now!");
         return input;
     }
-    private DateTime GetDateTime()
+    static private DateTime GetDateTime()
     {
         DateTime input;
         while (!DateTime.TryParse(Console.ReadLine(), out input))
