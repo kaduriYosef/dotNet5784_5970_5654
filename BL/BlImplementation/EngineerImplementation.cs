@@ -86,8 +86,8 @@ internal class EngineerImplementation : IEngineer
             var tNew = t! with { EngineerId = null };
             _dal.Task.Update(tNew);
         }
-        if (BOEngineer.Tasks is not null)
-            foreach (var t in BOEngineer.Tasks.Where(t => t is not null))
+        if (BOEngineer.AdditionalTasks is not null)
+            foreach (var t in BOEngineer.AdditionalTasks.Where(t => t is not null))
             { var task =_dal.Task.Read(t.Id)! with { EngineerId=BOEngineer.Id};
                 _dal.Task.Update(task);
                      }
@@ -128,7 +128,7 @@ internal class EngineerImplementation : IEngineer
             Name = DOEngineer.Name,
             Level = (BO.EngineerExperience)(int)DOEngineer.Level,
             Task= Tools.fromTaskToTaskInEngineer(task),
-            Tasks=(List<TaskInEngineer>)(from t in tasks select Tools.fromTaskToTaskInEngineer(t))
+            AdditionalTasks=(List<TaskInEngineer>)(from t in tasks select Tools.fromTaskToTaskInEngineer(t))
         };
     }
 

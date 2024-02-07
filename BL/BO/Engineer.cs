@@ -17,7 +17,7 @@ public class Engineer
     
     //added by my initiative 
     
-    public List<TaskInEngineer>? Tasks { get; set; }
+    public List<TaskInEngineer>? AdditionalTasks { get; set; }
 
     public override string ToString() => this.ToStringProperty();
 

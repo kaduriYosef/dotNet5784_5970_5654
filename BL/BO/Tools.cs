@@ -25,8 +25,23 @@ static public class Tools
         {
             sb.AppendLine($"Type: {type.Name}");
         }
-
-        foreach (PropertyInfo property in type.GetProperties())
+        if (value is System.Collections.IEnumerable && !(value is string) && !(value.GetType().IsEnum))
+        {
+            sb.AppendLine($"{propertyIndentation}{property.Name}:");
+            foreach (var item in (System.Collections.IEnumerable)value)
+            {
+                if (item.GetType().IsPrimitive || item is string)
+                {
+                    sb.AppendLine($"{new String('\t', depth + 1)}{item}");
+                }
+                else
+                {
+                    sb.Append(ToStringProperty(item, depth + 1));
+                }
+            }
+        }
+        else
+            foreach (PropertyInfo property in type.GetProperties())
         {
             if (property.GetGetMethod() != null && !property.GetIndexParameters().Any())
             {

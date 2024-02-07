@@ -1,11 +1,16 @@
-﻿namespace BlTest;
+﻿using System;
+using DalTest;
+
+namespace BlTest;
 using BO; // Assuming the namespace for the classes
 using System.Xml;
 
 class Program
 {
     static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
-    static void Main()
+    
+    
+    static void Main(string[] args)
     {
         // Create an engineer with tasks
         Engineer engineer = new Engineer
@@ -16,7 +21,7 @@ class Program
             Level = EngineerExperience.Expert,
             Cost = 5000,
             Task = new TaskInEngineer { Id = 101, Alias = "Initial Setup" },
-            Tasks = new List<TaskInEngineer>
+            AdditionalTasks = new List<TaskInEngineer>
             {
                 new TaskInEngineer { Id = 102, Alias = "Database Design" },
                 new TaskInEngineer { Id = 103, Alias = "API Development" }
@@ -33,22 +38,22 @@ class Program
             },
             new TaskInList()
             {
-                Id= 1,
-                Alias="t1",
+                Id= 2,
+                Alias="t2",
                 Description=null,
                 Status=BO.Status.Scheduled
             },
             new TaskInList()
             {
-                Id= 1,
-                Alias="t1",
+                Id= 3,
+                Alias="t3",
                 Description=null,
                 Status=BO.Status.Scheduled
             },
             new TaskInList()
             {
-                Id= 1,
-                Alias="t1",
+                Id= 4,
+                Alias="t4",
                 Description=null,
                 Status=BO.Status.Scheduled
             }
@@ -56,7 +61,7 @@ class Program
         Console.WriteLine(tasks.ToStringProperty());
         
         //foreach(var task in tasks) Console.WriteLine(task);
-        //Console.WriteLine(engineer.ToString());
+        //Console.WriteLine(engineer);
 
         return;
         Console.Write("Would you like to create Initial data? (Y/N)");
