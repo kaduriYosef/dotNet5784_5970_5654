@@ -25,23 +25,8 @@ static public class Tools
         {
             sb.AppendLine($"Type: {type.Name}");
         }
-        if (value is System.Collections.IEnumerable && !(value is string) && !(value.GetType().IsEnum))
-        {
-            sb.AppendLine($"{propertyIndentation}{property.Name}:");
-            foreach (var item in (System.Collections.IEnumerable)value)
-            {
-                if (item.GetType().IsPrimitive || item is string)
-                {
-                    sb.AppendLine($"{new String('\t', depth + 1)}{item}");
-                }
-                else
-                {
-                    sb.Append(ToStringProperty(item, depth + 1));
-                }
-            }
-        }
-        else
-            foreach (PropertyInfo property in type.GetProperties())
+        
+        foreach (PropertyInfo property in type.GetProperties())
         {
             if (property.GetGetMethod() != null && !property.GetIndexParameters().Any())
             {
@@ -60,6 +45,7 @@ static public class Tools
                         {
                             sb.Append(ToStringProperty(item, depth + 1));
                         }
+                        sb.Append('\n');
                     }
                 }
                 else
@@ -68,7 +54,7 @@ static public class Tools
                     {
                         sb.AppendLine($"{propertyIndentation}{property.Name}: null");
                     }
-                    else if (value is string || value.GetType().IsPrimitive|| value.GetType().IsEnum)
+                    else if (value is string || value.GetType().IsPrimitive|| value.GetType().IsEnum||value is DateTime)
                     {
                         sb.AppendLine($"{propertyIndentation}{property.Name}: {value}");
                     }
