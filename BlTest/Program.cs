@@ -22,7 +22,7 @@ static class Program
             int chose = 0;
             do
             {
-                chose = menuChoise();
+                chose = menuChoice();
 
                 switch (chose)
                 {
@@ -31,7 +31,7 @@ static class Program
                     case 1:     //Engineer's entity
                         try
                         {
-                            int choice1 = subMenuChoise("Engineer"); // showing CRUD operations
+                            int choice1 = subMenuChoice("Engineer"); // showing CRUD operations
                             choiceInEntity(choice1, 1);
                         }
                         catch (Exception ex) { Console.WriteLine(ex.Message); }
@@ -39,7 +39,7 @@ static class Program
                     case 2:     //Task entity
                         try
                         {
-                            int choice2 = subMenuChoise("Task"); // showing CRUD operations
+                            int choice2 = subMenuChoice("Task"); // showing CRUD operations
                             choiceInEntity(choice2, 2);
                         }
                         catch (Exception ex) { Console.WriteLine(ex.Message); }
@@ -65,16 +65,17 @@ static class Program
         }
 
     }
-    static int menuChoise()
+    static int menuChoice()
     {
         int choice;
         Console.WriteLine("Press - 0 exit");
         Console.WriteLine("Press - 1 for Engineer's entity");
         Console.WriteLine("Press - 2 for Task's entity");
+        Console.WriteLine("Press - 3 for auto schedule");
         choice = GetInteger();
         return choice;
     }
-    static int subMenuChoise(string type)
+    static int subMenuChoice(string type)
     {
         Console.WriteLine("Please press which action you want to take:");
         Console.WriteLine("0 - Go back");
@@ -125,7 +126,7 @@ static class Program
                             Console.WriteLine();
                         }
                     else if (EngTask == 2)
-                        foreach (var item2 in s_bl.Task.ReadAllSimplified().ToList())
+                        foreach (var item2 in (s_bl.Task.ReadAllSimplified().ToList()))
                         {
                             Console.WriteLine(item2);
                         }
@@ -167,11 +168,11 @@ static class Program
                     break;
 
                 default:  //if the user choose wrong number 
-                    Console.WriteLine("ERORR: choose numbers betwin 1-6");
+                    Console.WriteLine("ERORR: choose numbers between 1-6");
                     userChoice = GetInteger();
                     break;
             }
-        } while (userChoice < 0 || userChoice > 5);
+        } while (userChoice < 0 || userChoice > 6);
         return 1;
     }
     static BO.Engineer GetEngineer()
@@ -192,11 +193,7 @@ static class Program
         try
         {
             BO.Task? task = s_bl.Task.Read(GetInteger());
-            taskInEngineer = new BO.TaskInEngineer
-            {
-                Id = task.Id,
-                Alias = task.Alias
-            };
+            taskInEngineer = Tools.fromTaskToTaskInEngineer(task);
 
         }
         catch (Exception ex)
