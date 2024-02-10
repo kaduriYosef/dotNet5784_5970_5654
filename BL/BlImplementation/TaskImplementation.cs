@@ -8,10 +8,18 @@ using System.Collections.Immutable;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography;
 
+/// <summary>
+/// Implements the ITask interface, providing business logic and operations for task management.
+/// </summary>
 internal class TaskImplementation : ITask
 {
     private DalApi.IDal _dal = DalApi.Factory.Get;
 
+
+    /// <summary>
+    /// Checks the validity of a BO.Task object, throwing exceptions if invalid data is found.
+    /// </summary>
+    /// <param name="boTask">The BO.Task object to validate.</param>
     private void checkValidity(BO.Task boTask)
     {
         if (boTask == null) throw new BO.BlInvalidDataException( "this BO.Task is null");
@@ -24,10 +32,16 @@ internal class TaskImplementation : ITask
         
         if(error !="") throw new BO.BlInvalidDataException( error );
     }
-    
-    
-    
+
+
+
     #region crud
+
+    /// <summary>
+    /// Creates a new task in the data layer and manages dependencies.
+    /// </summary>
+    /// <param name="boTask">The task to create.</param>
+    /// <returns>The ID of the newly created task.</returns>
     public int Create(BO.Task boTask)
     {
         checkValidity(boTask);
@@ -45,7 +59,11 @@ internal class TaskImplementation : ITask
     }
 
 
-
+    /// <summary>
+    /// Reads a task based on its ID.
+    /// </summary>
+    /// <param name="id">The ID of the task to read.</param>
+    /// <returns>The task associated with the given ID.</returns>
 
     public BO.Task? Read(int id)
     {
@@ -54,12 +72,27 @@ internal class TaskImplementation : ITask
         return DOtoBO(doTask);
     }
 
+
+
+    /// <summary>
+    /// Reads a task based on a provided filter function.
+    /// </summary>
+    /// <param name="boFilter">The filter function to apply.</param>
+    /// <returns>The task that matches the filter criteria.</returns>
+
     public BO.Task? Read(Func<BO.Task, bool> boFilter)
     {
         Func<DO.Task, bool> doFilter = t => boFilter(DOtoBO(t));
         DO.Task doTask =_dal?.Task?.Read(doFilter)?? throw new BO.BlDoesNotExistException($"Task that correspondes to such filter doesn't exist.");
         return DOtoBO(doTask);
     }
+
+
+    /// <summary>
+    /// Reads all tasks, optionally filtered by a provided function.
+    /// </summary>
+    /// <param name="filter">The optional filter function to apply.</param>
+    /// <returns>An enumerable of all (filtered) tasks.</returns>
 
     public IEnumerable<BO.Task?> ReadAll(Func<BO.Task, bool>? filter = null)
     {
@@ -71,11 +104,24 @@ internal class TaskImplementation : ITask
                select DOtoBO(t);
     }
 
+    /// <summary>
+    /// Reads all tasks in a simplified format, optionally applying a filter.
+    /// </summary>
+    /// <param name="filter">The optional filter function to apply.</param>
+    /// <returns>An enumerable of all (filtered) tasks in a simplified format.</returns>
+
     public IEnumerable<BO.TaskInList> ReadAllSimplified(Func<BO.Task, bool>? filter = null)
     {
         return from t in ReadAll(filter)
                select Tools.fromTaskToTaskInList(t);
     }
+
+
+    /// <summary>
+    /// Manages the scheduled date for a task, ensuring it meets dependency requirements.
+    /// </summary>
+    /// <param name="id">The ID of the task to manage.</param>
+    /// <param name="date">The scheduled date to set for the task.</param>
 
     public void ScheduledDateManagement(int id, DateTime date)
     {
@@ -115,12 +161,25 @@ internal class TaskImplementation : ITask
         }
     }
 
+
+    /// <summary>
+    /// Unsafe version of ScheduledDateManagement, directly setting the scheduled date without dependency checks.
+    /// </summary>
+    /// <param name="id">The ID of the task.</param>
+    /// <param name="date">The date to set as the scheduled date.</param>
+
     protected void ScheduledDateManagementUnsafe(int id, DateTime date)
     {
         var doTask = _dal.Task.Read(id);
         if (doTask == null)
             throw new BO.BlDoesNotExistException($"task with id {id} doesn't exist. ");
     }
+
+
+    /// <summary>
+    /// Updates a task, handling dependencies and validation.
+    /// </summary>
+    /// <param name="boTask">The task to update.</param>
     public void Update(BO.Task boTask)
     {
         checkValidity(boTask);
@@ -146,6 +205,11 @@ internal class TaskImplementation : ITask
         if(boTask.StartDate is not null)
             ScheduledDateManagement(boTask.Id, (DateTime)boTask.StartDate!);
     }
+
+    /// <summary>
+    /// Deletes a task and its dependencies based on the task ID.
+    /// </summary>
+    /// <param name="id">The ID of the task to delete.</param>
     public void Delete(int id)
     {
         
@@ -164,9 +228,15 @@ internal class TaskImplementation : ITask
 
     }
 
-#endregion
+    #endregion
 
     #region convertors
+
+    /// <summary>
+    /// Converts a BO.Task object to a DO.Task object.
+    /// </summary>
+    /// <param name="boTask">The BO.Task to convert.</param>
+    /// <returns>The converted DO.Task object.</returns>
     static internal DO.Task BOtoDO(BO.Task boTask)
     {
         return new DO.Task(
@@ -188,6 +258,11 @@ internal class TaskImplementation : ITask
     }
 
 
+    /// <summary>
+    /// Converts a DO.Task object to a BO.Task object.
+    /// </summary>
+    /// <param name="doTask">The DO.Task to convert.</param>
+    /// <returns>The converted BO.Task object.</returns>
     internal BO.Task DOtoBO(DO.Task doTask)
     {
         
@@ -226,6 +301,7 @@ internal class TaskImplementation : ITask
         return boTask;
     }
 
+
     static internal BO.Task DOtoBO(DalApi.IDal dal, DO.Task doTask)
     {
         TaskImplementation tmp
@@ -237,6 +313,12 @@ internal class TaskImplementation : ITask
 
 
     #region schedule
+
+    /// <summary>
+    /// Schedules all dates for tasks based on the start of the project.
+    /// </summary>
+    /// <param name="startOfProject">The start date of the project.</param>
+
     public void ScheduleAllDates(DateTime startOfProject)
     {
         IEnumerable<BO.TaskInList> tasksBO = ReadAllSimplified();
@@ -265,6 +347,9 @@ internal class TaskImplementation : ITask
         }
 
     }
+
+
+
     //recursive supporting function
     private DateTime? initScheduledDateRecursive(BO.Task task)
     {
