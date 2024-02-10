@@ -203,7 +203,7 @@ internal class TaskImplementation : ITask
             Description = doTask.Description,
             CreatedAtDate = doTask.CreatedAtDate,
             Status = Tools.CalcStatus(doTask),
-            Dependencies = (List<BO.TaskInList>)dependencies,
+            Dependencies = dependencies.ToList(),
             Milestone = null,                                      //to calculate ,add of milestone
             RequiredEffortTime = doTask.RequiredEffortTime,
             StartDate = doTask.StartDate,
