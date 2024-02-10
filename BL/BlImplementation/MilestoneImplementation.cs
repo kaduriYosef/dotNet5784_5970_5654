@@ -16,7 +16,7 @@ internal class MilestoneImplementation : IMilestone
         throw new NotImplementedException();
     }
 
-    public double PrecantegeComplete(int id)
+    public double PercentageComplete(int id)
     {
         throw new NotImplementedException();
     }
