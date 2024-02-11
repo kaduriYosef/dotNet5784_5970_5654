@@ -22,9 +22,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "xml", "xml", "{3AEDE6CA-473
 		xml\tasks.xml = xml\tasks.xml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL", "BL\BL.csproj", "{DC064344-73ED-47F6-BE45-88235C44E907}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BL", "BL\BL.csproj", "{DC064344-73ED-47F6-BE45-88235C44E907}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlTest", "BlTest\BlTest.csproj", "{C6E95176-8168-4980-A5CE-7F4B58891205}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlTest", "BlTest\BlTest.csproj", "{C6E95176-8168-4980-A5CE-7F4B58891205}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PL", "PL\PL.csproj", "{AE2E526A-7B51-47EA-A592-0C1542C7F8E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -60,6 +62,10 @@ Global
 		{C6E95176-8168-4980-A5CE-7F4B58891205}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6E95176-8168-4980-A5CE-7F4B58891205}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6E95176-8168-4980-A5CE-7F4B58891205}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE2E526A-7B51-47EA-A592-0C1542C7F8E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE2E526A-7B51-47EA-A592-0C1542C7F8E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE2E526A-7B51-47EA-A592-0C1542C7F8E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE2E526A-7B51-47EA-A592-0C1542C7F8E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
