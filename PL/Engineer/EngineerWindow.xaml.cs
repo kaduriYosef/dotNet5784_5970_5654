@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace PL.Engineer
 {
     /// <summary>
-    /// Interaction logic for EngineerListWindow.xaml
+    /// Interaction logic for EngineerWindow.xaml
     /// </summary>
-    public partial class EngineerListWindow : Window
+    public partial class EngineerWindow : Window
     {
-        public EngineerListWindow()
+        public EngineerWindow()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("it's work");
         }
     }
 }

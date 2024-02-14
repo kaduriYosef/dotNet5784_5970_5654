@@ -5,8 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PL"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="640" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200*"/>
+            <RowDefinition Height="40*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
+        <TextBlock Text="let's make our tean work together"
+                    FontWeight="Bold"
+                       Grid.Row="0"
+                       Grid.Column="0"  
+                       Grid.ColumnSpan="3" FontSize="48"/>
+
+        <Button Grid.Column="1" Grid.Row="1" Content="Enginner"
+            Margin="10,10,10,10"
+            Click="Button_Engineers"/>
+        <Button Grid.Column="2" Grid.Row="1" Content="Init"
+            Margin="10,10,10,10"
+            Click="Button_Init"/>
+        <Button Grid.Column="0" Grid.Row="1" Content="Admin"
+            Margin="10,10,10,10"
+            Click="Button_Admin"/>
+        <Grid/>
     </Grid>
 </Window>
+

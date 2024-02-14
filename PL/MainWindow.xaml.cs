@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PL.Engineer;
 
 namespace PL
 {
@@ -19,6 +20,21 @@ namespace PL
         public MainWindow()
         {
             InitializeComponent();
+        }
+        private void Button_Engineers(object sender, RoutedEventArgs e)
+        {
+            new EngineerListWindow().ShowDialog();
+            MessageBox.Show("it's work");
+        }
+
+        private void Button_Init(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Would you like to create Initial data? (Y/N) ");
+        }
+
+        private void Button_Admin(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("you'r the manager");
         }
     }
 }
