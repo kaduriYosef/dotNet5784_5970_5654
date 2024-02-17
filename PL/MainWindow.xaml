@@ -17,11 +17,12 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Text="let's make our tean work together"
-                    FontWeight="Bold"
+        <Image Source="mainImage.jpg"  
                        Grid.Row="0"
+                       Grid.RowSpan="2"
                        Grid.Column="0"  
-                       Grid.ColumnSpan="3" FontSize="48"/>
+                       Grid.ColumnSpan="3"
+               Margin="0,-171,0,-4"/>
 
         <Button Grid.Column="1" Grid.Row="1" Content="Enginner"
             Margin="10,10,10,10"

@@ -275,5 +275,10 @@ public static class Initialization
         config.Save(@"..\xml\data-config.xml");
 
     }
+
+    public static void Reset()
+    {
+        DoCleanTheFile();
+    }
 }
 

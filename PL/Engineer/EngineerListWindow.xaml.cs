@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace PL.Engineer
 {
     /// <summary>
@@ -19,14 +21,29 @@ namespace PL.Engineer
     /// </summary>
     public partial class EngineerListWindow : Window
     {
+        static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
+        public IEnumerable<BO.Engineer> EngineerList
+        {
+            get { return (IEnumerable<BO.Engineer>)GetValue(EngineerListProperty); }
+            set { SetValue(EngineerListProperty, value); }
+
+        }
+        public static readonly DependencyProperty EngineerListProperty =
+            DependencyProperty.Register("EngineerList",
+            typeof(IEnumerable<BO.Engineer>),
+            typeof(EngineerListWindow),
+            new PropertyMetadata(null));
+
         public EngineerListWindow()
         {
             InitializeComponent();
+            EngineerList = s_bl.Engineer.ReadAll()!;
         }
+        public BO.EngineerExperience Experience { get; set; } = BO.EngineerExperience.None;
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("it's work");
+            //MessageBox.Show("it works");
         }
     }
 }

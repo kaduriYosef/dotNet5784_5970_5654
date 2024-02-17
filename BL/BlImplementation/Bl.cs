@@ -26,4 +26,8 @@ internal class Bl : IBl
     /// Provides access to the milestone-related functionalities.
     /// </summary>
     public IMilestone Milestone => new MilestoneImplementation();
+
+    public void InitializeDB() => DalTest.Initialization.Do();
+
+    public void ResetDB() => DalTest.Initialization.Reset();
 }

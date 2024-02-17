@@ -17,7 +17,9 @@ public enum EngineerExperience
     /// <summary>Engineer with a high level of expertise and ability to handle complex tasks independently.</summary>
     Advanced,
     /// <summary>Engineer with exceptional skill and experience, often capable of leadership roles in technical projects.</summary>
-    Expert
+    Expert,
+    /// <summary>without sinun</summary>
+    None
 }
 
 /// <summary>
