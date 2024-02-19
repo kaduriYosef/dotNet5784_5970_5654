@@ -68,9 +68,11 @@ internal class EngineerImplementation : IEngineer
     /// <returns>An enumerable of all engineers that match the filter, or all engineers if no filter is provided.</returns>
     public IEnumerable<BO.Engineer> ReadAll(Func<BO.Engineer, bool>? filter = null)
     {
-        return (from DO.Engineer doEngineer in _dal.Engineer.ReadAll()
-                select DOEngineerToBOEngineer(doEngineer));
-
+        IEnumerable<BO.Engineer> readAll = (from DO.Engineer doEngineer in _dal.Engineer.ReadAll()
+                                            select DOEngineerToBOEngineer(doEngineer));
+        if (filter == null)
+            return readAll;
+        return readAll.Where(filter);
     }
     /// <summary>
     /// Updates the information of an existing engineer.

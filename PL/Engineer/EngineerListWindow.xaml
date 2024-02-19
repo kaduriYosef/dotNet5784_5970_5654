@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PL.Engineer"
         mc:Ignorable="d"
-        Title="EngineerListWindow" Height="450" Width="800"
+        Title="EngineerListWindow" Height="640" Width="800"
         DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}">
     <Grid>
         <Grid.RowDefinitions>
@@ -18,18 +18,28 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Label Grid.Column="0" Content="Select:" HorizontalAlignment="Left" Margin="184,0,0,0" VerticalAlignment="Top"/>
-            <ComboBox ItemsSource="{Binding Source={StaticResource EngineerExperienceKey}}"
-                      Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-                      SelectedValue="{Binding Experience, Mode=TwoWay}"
-                      />
+
+            <Label Content="Select experience:" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,7,0,0"/>
+            <ComboBox 
+                      ItemsSource="{Binding Source={StaticResource EngineerExperienceKey}}"
+                      Grid.Column="1" HorizontalAlignment="Center"
+                      SelectedValue="{Binding Level, Mode=TwoWay}"
+                      SelectionChanged="cbEngineerExperiensSelector_SelectionChanged" 
+                      Height="43" VerticalAlignment="Center" Width="400">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+
 
 
 
         </Grid>
         <ListBox Grid.Row="1"/>
         <ListView Grid.Row="1" ItemsSource="{Binding EngineerList}"/>
-        <Button Content="Add" Grid.Row="2" HorizontalAlignment="Center" Height="50" Width="100"/>
+        <Button Content="Add" Click="add_engineer" Grid.Row="2" HorizontalAlignment="Center" Height="50" Width="100"/>
     </Grid>
 
 </Window>

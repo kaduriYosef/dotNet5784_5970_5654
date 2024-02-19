@@ -24,7 +24,7 @@ namespace PL
         private void Button_Engineers(object sender, RoutedEventArgs e)
         {
             new EngineerListWindow().ShowDialog();
-            MessageBox.Show("it's work");
+            //MessageBox.Show("it works");
         }
 
         private void Button_Init(object sender, RoutedEventArgs e)

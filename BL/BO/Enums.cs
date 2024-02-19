@@ -9,7 +9,7 @@ namespace BO;
 public enum EngineerExperience
 {
     /// <summary>Engineer with basic understanding and limited practical experience.</summary>
-    Beginner = 1,
+    Beginner = 0,
     /// <summary>Engineer who has surpassed the novice level but still requires guidance.</summary>
     AdvancedBeginner,
     /// <summary>Engineer with a moderate level of experience and some degree of independence.</summary>
@@ -19,7 +19,7 @@ public enum EngineerExperience
     /// <summary>Engineer with exceptional skill and experience, often capable of leadership roles in technical projects.</summary>
     Expert,
     /// <summary>without sinun</summary>
-    None
+    All
 }
 
 /// <summary>
