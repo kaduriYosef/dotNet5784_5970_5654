@@ -19,7 +19,7 @@ namespace PL.Engineer
     /// <summary>
     /// Interaction logic for EngineerListWindow.xaml
     /// </summary>
-    public partial class EngineerListWindow : Window
+    public partial class EngineerListWindow : Window 
     {
         static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
         public EngineerListWindow()
@@ -48,14 +48,26 @@ namespace PL.Engineer
                 s_bl?.Engineer.ReadAll()! : s_bl?.Engineer.ReadAll(item => item.Level == Level)!;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void click_update(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("it works");
+            BO.Engineer? engineer = (sender as ListView)?.SelectedItem as BO.Engineer;
+            if (engineer != null)
+            {
+                
+                Window Update = new EngineerWindow(engineer.Id);
+           
+                
+                Update.ShowDialog();
+                EngineerList=s_bl.Engineer.ReadAll();
+
+            }
+            
         }
 
         private void add_engineer(object sender, RoutedEventArgs e)
         {
             new EngineerWindow().ShowDialog();
+            EngineerList = s_bl.Engineer.ReadAll();
         }
     }
 }
