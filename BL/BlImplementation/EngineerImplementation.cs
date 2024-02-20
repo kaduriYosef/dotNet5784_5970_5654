@@ -100,6 +100,7 @@ internal class EngineerImplementation : IEngineer
                 _dal.Task.Update(task);
             }
         eng = BOEngineerToDOEngineer(BOEngineer);
+        _dal.Engineer.Update(eng);
     }
 
     /// <summary>

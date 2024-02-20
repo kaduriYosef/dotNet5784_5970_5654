@@ -5,8 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PL.Engineer"
         mc:Ignorable="d"
-        Title="EngineerWindow" Height="450" Width="800">
+        DataContext="{Binding Engineer, RelativeSource={RelativeSource Self}, Mode=TwoWay}"
+        Title="EngineerWindow" Height="600" Width="700">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Content="Enter Engineer Data" FontSize="30" Height="60" Foreground="#FFFFFFFF" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Grid.Row="1" Content="Id:" FontSize="22" Height="60"  VerticalContentAlignment="Center" Margin="160,0,0,0" Foreground="#FFFFFFFF"/>
+        <Label Grid.Row="2" Content="Name:" FontSize="22" Height="60" VerticalContentAlignment="Center" Margin="160,0,0,0" Foreground="#FFFFFFFF"/>
+        <Label Grid.Row="3" Content="Email:" FontSize="22" Height="60" VerticalContentAlignment="Center" Margin="160,0,0,0" Foreground="#FFFFFFFF"/>
+        <Label Grid.Row="4" Content="Level:" FontSize="22" Height="60" VerticalContentAlignment="Center" Margin="160,0,0,0" Foreground="#FFFFFFFF"/>
+        <Label Grid.Row="5" Content="Cost:" FontSize="22" Height="60" VerticalContentAlignment="Center" Margin="160,0,0,0" Foreground="#FFFFFFFF"/>
+
+
+
+        <TextBox Grid.Row="1" Text="{Binding Id}"  Height="30" Width="200"  Background="#FFFFFFFF" FontSize="20" TextAlignment="Center" VerticalContentAlignment="Center" /> <!--IsEnabled="{Binding Id,Converter={StaticResource IdToIsEnabledConverter}}"-->
+        <TextBox Grid.Row="2" Text="{Binding Name, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Height="30" Width="200" Foreground="#FF1A337A" Background="#FFFFFFFF" FontSize="20" TextAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox Grid.Row="3" Text="{Binding Email, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Height="30" Width="200" Foreground="#FF1A337A" Background="#FFFFFFFF" FontSize="20" TextAlignment="Center" VerticalContentAlignment="Center" />
+        <ComboBox Grid.Row="4"  SelectedValue="{Binding Path=Level, Mode=TwoWay}" 
+            Height="30" Width="200"  FontSize="20" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+            
+            ItemsSource="{Binding Source={StaticResource EngineerExperienceKey}}"/>
+        <TextBox Grid.Row="5" Text="{Binding Cost, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Height="30" Width="200" Foreground="#FF1A337A" Background="#FFFFFFFF" FontSize="20" TextAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button Grid.Row="6" Content="{Binding Id, Mode=OneTime, Converter={StaticResource ConverIdToContentKey}}" Click="btnAddUpdate_Click" HorizontalAlignment="Center" Height="50" Width="100" Foreground="#FF1A337A" Background="#FFFFFFFF"/>
+        <Grid.Background>
+            <LinearGradientBrush>
+                <GradientStop Color="#FF336699" Offset="5" />
+                <GradientStop Color="#FF125F61" Offset="1" />
+            </LinearGradientBrush>
+        </Grid.Background>
+
     </Grid>
 </Window>

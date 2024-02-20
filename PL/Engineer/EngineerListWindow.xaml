@@ -19,13 +19,13 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Label Content="Select experience:" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,7,0,0"/>
+            <Label Content="Select experience:" Foreground="#FFFFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <ComboBox 
                       ItemsSource="{Binding Source={StaticResource EngineerExperienceKey}}"
-                      Grid.Column="1" HorizontalAlignment="Center"
+                      Grid.Column="1" 
                       SelectedValue="{Binding Level, Mode=TwoWay}"
                       SelectionChanged="cbEngineerExperiensSelector_SelectionChanged" 
-                      Height="43" VerticalAlignment="Center" Width="400">
+                      Height="43" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Width="400">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -38,8 +38,20 @@
 
         </Grid>
         <ListBox Grid.Row="1"/>
-        <ListView Grid.Row="1" ItemsSource="{Binding EngineerList}"/>
+        <ListView Grid.Row="1" ItemsSource="{Binding EngineerList}" MouseDoubleClick="click_update">
+            <ListView.Background>
+                <SolidColorBrush Color="#FFFFFFFF"/>
+                
+            </ListView.Background>
+        </ListView>
+
         <Button Content="Add" Click="add_engineer" Grid.Row="2" HorizontalAlignment="Center" Height="50" Width="100"/>
+        <Grid.Background>
+            <LinearGradientBrush>
+                <GradientStop Color="#FF336699" Offset="5" />
+                <GradientStop Color="#FF125F61" Offset="1" />
+            </LinearGradientBrush>
+        </Grid.Background>
     </Grid>
 
 </Window>

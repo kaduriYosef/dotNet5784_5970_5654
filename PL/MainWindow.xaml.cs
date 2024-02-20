@@ -29,12 +29,14 @@ namespace PL
 
         private void Button_Init(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Would you like to create Initial data? (Y/N) ");
+            MessageBox.Show("Would you like to create Initial data? (Y/N)", "Initialization data", 
+                MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.Yes);
         }
 
         private void Button_Admin(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("you'r the manager");
         }
+
     }
 }
