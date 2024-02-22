@@ -314,20 +314,55 @@ internal class TaskImplementation : ITask
 
     #region schedule
 
+
+
+    ////external function  to reset all the ScheduledDate and the deadline of all the task 
+    //public void ScheduleAllDates(DateTime startProject)
+    //{
+    //    //find all the tasks that do not depend on any other tasks 
+    //    IEnumerable<BO.Task> notDependentTask = from doTask in _dal.Task.ReadAll()
+    //                                            let boTask = Read(doTask.Id)
+    //                                            where boTask.Dependencies == null || boTask.Dependencies.Count() == 0
+    //                                            select boTask;
+    //    reset(startProject, notDependentTask);
+    //    Console.WriteLine("i'm here\n");
+    //}
+    ////recursive function, reset all the ScheduledDate and the deadline of all the task
+    //public void reset(DateTime? prevDate, IEnumerable<BO.Task>? tasks)
+    //{
+    //    if (tasks != null && tasks.Count() != 0)
+    //        foreach (var item in tasks)
+    //        {
+    //            //update the task whit the correct ScheduledDate and DeadlineDate
+    //            _dal.Task.Update(BOtoDO(item) with
+    //            {
+    //                ScheduledDate = (item.ScheduledDate == null || item.ScheduledDate < prevDate)
+    //                ? prevDate
+    //                : item.ScheduledDate,
+    //                //ForecastDate = prevDate + item.RequiredEffortTime
+    //            });
+    //            //sending the tasks that is depending on this task
+    //            reset(prevDate + item.RequiredEffortTime, from dep in _dal.Dependency.ReadAll()
+    //                                                      where dep.DependsOnTask == item.Id
+    //                                                      select Read(dep.DependentTask));
+    //        }
+    //}
+
+
     /// <summary>
     /// Schedules all dates for tasks based on the start of the project.
     /// </summary>
-    /// <param name="startOfProject">The start date of the project.</param>
+    /// <param name = "startOfProject" > The start date of the project.</param>
 
     public void ScheduleAllDates(DateTime startOfProject)
     {
         IEnumerable<BO.TaskInList> tasksBO = ReadAllSimplified();
         //find all the tasks without dependencies
-        List<BO.Task?> tasksWithoutDependency = 
+        List<BO.Task?> tasksWithoutDependency =
             ReadAll().Where(x => x is not null).
-            Where(t=>!(t!.Dependencies.Any())).
+            Where(t => !(t!.Dependencies.Any())).
             ToList();
-        
+
         //    Enter a start and end date
         foreach (var task in tasksWithoutDependency)
         {
@@ -349,21 +384,20 @@ internal class TaskImplementation : ITask
     }
 
 
-
     //recursive supporting function
     private DateTime? initScheduledDateRecursive(BO.Task task)
     {
         if (task.ForecastDate != null)
             return task.ForecastDate;
 
-        DateTime? ForecastDateFromDepend=DateTime.MinValue;
+        DateTime? ForecastDateFromDepend = DateTime.MinValue;
         foreach (var depTask in task.Dependencies)
         {
             var fullDepTask = Read(depTask.Id);
             DateTime? tmp = initScheduledDateRecursive(fullDepTask);
-            if(ForecastDateFromDepend<tmp)
+            if (ForecastDateFromDepend < tmp)
                 ForecastDateFromDepend = tmp;
-            
+
         }
         if (task.ScheduledDate == null)
         {
@@ -382,6 +416,8 @@ internal class TaskImplementation : ITask
         }
         return null;
     }
+
+
     #endregion
 
 }
