@@ -1,13 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfEngineer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Engineer>
-    <Id>12345</Id>
-    <Email>check1</Email>
-    <Cost>280</Cost>
-    <Name>check</Name>
-    <Level>Beginner</Level>
-    <Active>true</Active>
-  </Engineer>
   <Engineer>
     <Id>123456789</Id>
     <Email>Israel</Email>
@@ -78,6 +70,14 @@
     <Cost>240</Cost>
     <Name>Morgan</Name>
     <Level>Expert</Level>
+    <Active>true</Active>
+  </Engineer>
+  <Engineer>
+    <Id>12345</Id>
+    <Email>check1</Email>
+    <Cost>180</Cost>
+    <Name>check</Name>
+    <Level>Beginner</Level>
     <Active>true</Active>
   </Engineer>
 </ArrayOfEngineer>
