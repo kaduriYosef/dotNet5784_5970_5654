@@ -17,7 +17,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Image Source="mainImage.webp"  
+        <Image Source="D:\imanuel\מכון לב\שנה ב\סמסטר א\פרויקט במערכת חלונות\פרוייקט עצמו\dotNet5784_5970_5654\PL\mainImage.webp"  
                        Grid.Row="0"
                        Grid.RowSpan="2"
                        Grid.Column="0"  
