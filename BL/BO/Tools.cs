@@ -69,7 +69,7 @@ static public class Tools
                     {
                         sb.AppendLine($"{propertyIndentation}{property.Name}: null");
                     }
-                    else if (value is string || value.GetType().IsPrimitive || value.GetType().IsEnum || value is DateTime)
+                    else if (value is string || value.GetType().IsPrimitive || value.GetType().IsEnum || value is DateTime ||value is TimeSpan)
                     {
                         sb.AppendLine($"{propertyIndentation}{property.Name}: {value}");
                     }

@@ -173,6 +173,8 @@ internal class TaskImplementation : ITask
         var doTask = _dal.Task.Read(id);
         if (doTask == null)
             throw new BO.BlDoesNotExistException($"task with id {id} doesn't exist. ");
+
+        _dal.Task.Update(doTask with { ScheduledDate = date });
     }
 
 
@@ -356,11 +358,16 @@ internal class TaskImplementation : ITask
 
     public void ScheduleAllDates(DateTime startOfProject)
     {
-        IEnumerable<BO.TaskInList> tasksBO = ReadAllSimplified();
+        foreach(var boTask in ReadAll().Where(x=>x is not null))
+        {
+            TimeSpan required = boTask!.RequiredEffortTime ?? TimeSpan.FromDays(10);
+            _dal.Task.Update(BOtoDO(boTask)with { ScheduledDate =null,RequiredEffortTime=required});
+        }
+        //IEnumerable<BO.TaskInList> boTasks = ReadAllSimplified();
         //find all the tasks without dependencies
         List<BO.Task?> tasksWithoutDependency =
             ReadAll().Where(x => x is not null).
-            Where(t => !(t!.Dependencies.Any())).
+            Where(t =>t!.Dependencies==null || !(t!.Dependencies.Any())).
             ToList();
 
         //    Enter a start and end date
@@ -394,8 +401,10 @@ internal class TaskImplementation : ITask
         foreach (var depTask in task.Dependencies)
         {
             var fullDepTask = Read(depTask.Id);
+            if (fullDepTask is null) continue;
+
             DateTime? tmp = initScheduledDateRecursive(fullDepTask);
-            if (ForecastDateFromDepend < tmp)
+            if (tmp!=null && ForecastDateFromDepend < tmp)
                 ForecastDateFromDepend = tmp;
 
         }
@@ -403,18 +412,19 @@ internal class TaskImplementation : ITask
         {
             ScheduledDateManagementUnsafe(task.Id, ForecastDateFromDepend.GetValueOrDefault());
             task.ScheduledDate = ForecastDateFromDepend;
-            task.DeadlineDate = ForecastDateFromDepend + task.RequiredEffortTime;
+            task.ForecastDate = ForecastDateFromDepend + task.RequiredEffortTime;
         }
         else
         {
             task.ScheduledDate =
-                (task.ScheduledDate == null) ? ForecastDateFromDepend :
+                
                 (task.ScheduledDate > ForecastDateFromDepend) ? task.ScheduledDate : ForecastDateFromDepend;
 
             ScheduledDateManagementUnsafe(task.Id, task.ScheduledDate.GetValueOrDefault());
             task.ForecastDate = task.ScheduledDate + task.RequiredEffortTime;
         }
-        return null;
+
+        return task.ForecastDate;
     }
 
 

@@ -143,14 +143,14 @@ public static class Initialization
             DateTime start = new DateTime(2000, 1, 1);
             int range = (DateTime.Today - start).Days;
             DateTime CreatedAtDate = start.AddDays(s_rand.Next(range));
-            TimeSpan? RequiredEffortTime = TimeSpan.FromDays(s_rand.Next(30, 365));
+            TimeSpan? RequiredEffortTime = TimeSpan.FromDays(s_rand.Next(10, 30));
             bool IsMilestone = range % 2 == 0;
             //since the engineers are sorted by thier experience
-            EngineerExperience? Copmlexity = (EngineerExperience)(engineerLevelsForTask[i]);
+            EngineerExperience? Complexity = (EngineerExperience)(engineerLevelsForTask[i]);
             DateTime? StartDate = null;
             int timeSpent= RequiredEffortTime?.Days ?? 0;
             DateTime? ScheduledDate = CreatedAtDate.AddDays(s_rand.Next(range - timeSpent));
-            DateTime? DeadlineDate = ScheduledDate?.AddDays(timeSpent + s_rand.Next(10, 40));
+            //DateTime? DeadlineDate = ScheduledDate?.AddDays(timeSpent + s_rand.Next(10, 40));
             DateTime? CompleteDate = null;
             string? Deliverables = null;
             string? Remarks = null;
@@ -162,10 +162,10 @@ public static class Initialization
                 CreatedAtDate, 
                 RequiredEffortTime, 
                 IsMilestone, 
-                Copmlexity,
+                Complexity,
                 StartDate,
-                ScheduledDate, 
-                DeadlineDate, 
+                ScheduledDate,
+                DeadlineDate:null, 
                 CompleteDate, 
                 Deliverables, 
                 Remarks, 
