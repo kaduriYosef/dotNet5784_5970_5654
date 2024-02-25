@@ -5,6 +5,7 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <local:EngineerExperience x:Key="EngineerExperienceKey" />
+        <local:EngineerExperienceOnlyLevels x:Key="EngineerExperienceOnlyLevelsKey" />
         <local:ConvertIdToContent x:Key="ConverIdToContentKey"/>
     </Application.Resources>
 </Application>

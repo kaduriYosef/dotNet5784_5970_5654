@@ -251,14 +251,14 @@ public static class Initialization
     /// <exception cref="NullReferenceException">Thrown when any of the DAL parameters are null.</exception>
     public static void Do()
     {
-        DoCleanTheFile();
+        Reset();
         //s_dal = dal ?? throw new NullReferenceException("DAL object can not be null!"); //stage 2
         s_dal = Factory.Get;
         createTask();
         createEngineer();
         createDependency();
     }
-    public static void DoCleanTheFile()
+    public static void Reset()
     {
         XElement xEngineer = new XElement("ArrayOfEngineer", "");
         XElement xTask = new XElement("ArrayOfTask", "");
@@ -276,9 +276,6 @@ public static class Initialization
 
     }
 
-    public static void Reset()
-    {
-        DoCleanTheFile();
-    }
+
 }
 

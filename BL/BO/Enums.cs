@@ -23,6 +23,23 @@ public enum EngineerExperience
 }
 
 /// <summary>
+/// the same enum but only levels without the option "All" 
+/// </summary>
+//public enum EngineerExperienceOnlyLevels
+//{
+//    /// <summary>Engineer with basic understanding and limited practical experience.</summary>
+//    Beginner = 0,
+//    /// <summary>Engineer who has surpassed the novice level but still requires guidance.</summary>
+//    AdvancedBeginner,
+//    /// <summary>Engineer with a moderate level of experience and some degree of independence.</summary>
+//    Intermediate,
+//    /// <summary>Engineer with a high level of expertise and ability to handle complex tasks independently.</summary>
+//    Advanced,
+//    /// <summary>Engineer with exceptional skill and experience, often capable of leadership roles in technical projects.</summary>
+//    Expert
+//}
+
+/// <summary>
 /// Represents the current status of a task or project, indicating its progress or completion state.
 /// </summary>
 public enum Status

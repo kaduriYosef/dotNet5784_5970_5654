@@ -11,6 +11,17 @@ static public class Tools
 {
 
     #region to string property
+/// <summary>
+/// returns whether the obj is a primitive string or we should look into it
+/// </summary>
+/// <param name="obj"></param>
+/// <returns></returns>
+    private static bool isPrimitiveString(object obj)
+    {
+        if (obj.GetType().IsPrimitive || obj is string || obj.GetType().IsEnum || obj is DateTime || obj is TimeSpan)
+            return true;
+        else return false;
+    }
 
     /// <summary>
     /// Generates a string representation of an object's properties, handling primitive types, strings, enumerables, and complex object types recursively.
@@ -28,7 +39,11 @@ static public class Tools
     private static string ToStringProperty(object obj, int depth)
     {
         if (obj == null) return "null";
-        if (obj.GetType().IsPrimitive || obj is string) return $"{new String('\t', depth)}{obj}";
+        //if (obj.GetType().IsPrimitive || obj is string || obj.GetType().IsEnum || obj is DateTime || obj is TimeSpan) 
+        //    return $"{new String('\t', depth)}{obj}";
+        if (isPrimitiveString(obj))
+            return $"{new String('\t', depth)}{obj}";
+
 
         Type type = obj.GetType();
         StringBuilder sb = new StringBuilder();
@@ -52,7 +67,7 @@ static public class Tools
                     sb.AppendLine($"{propertyIndentation}{property.Name}:");
                     foreach (var item in (System.Collections.IEnumerable)value)
                     {
-                        if (item.GetType().IsPrimitive || item is string)
+                        if (isPrimitiveString(item))
                         {
                             sb.AppendLine($"{new String('\t', depth + 1)}{item}");
                         }
@@ -69,7 +84,7 @@ static public class Tools
                     {
                         sb.AppendLine($"{propertyIndentation}{property.Name}: null");
                     }
-                    else if (value is string || value.GetType().IsPrimitive || value.GetType().IsEnum || value is DateTime ||value is TimeSpan)
+                    else if (isPrimitiveString(value))
                     {
                         sb.AppendLine($"{propertyIndentation}{property.Name}: {value}");
                     }

@@ -17,6 +17,8 @@ namespace PL
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
         public MainWindow()
         {
             InitializeComponent();
@@ -24,18 +26,20 @@ namespace PL
         private void Button_Engineers(object sender, RoutedEventArgs e)
         {
             new EngineerListWindow().ShowDialog();
+            
             //MessageBox.Show("it works");
         }
 
         private void Button_Init(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Would you like to create Initial data? (Y/N)", "Initialization data", 
-                MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.Yes);
+            MessageBoxResult a = MessageBox.Show("Would you like to create Initial data? (Y/N)", "Initialization data", 
+                                   MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.Yes);
+            if(a==MessageBoxResult.Yes) { s_bl.InitializeDB(); }
         }
 
         private void Button_Admin(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("you'r the manager");
+            MessageBox.Show("you're the manager");
         }
 
     }

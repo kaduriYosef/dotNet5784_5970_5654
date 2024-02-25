@@ -12,6 +12,9 @@ public interface IBl
 
     public ITask Task { get; }
 
+    public void InitializeDB();
+
+     
     //public IMilestone Milestone { get; }
 
 }

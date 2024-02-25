@@ -30,10 +30,11 @@
         <TextBox Grid.Row="1" Text="{Binding Id}"  Height="30" Width="200"  Background="#FFFFFFFF" FontSize="20" TextAlignment="Center" VerticalContentAlignment="Center" /> <!--IsEnabled="{Binding Id,Converter={StaticResource IdToIsEnabledConverter}}"-->
         <TextBox Grid.Row="2" Text="{Binding Name, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Height="30" Width="200" Foreground="#FF1A337A" Background="#FFFFFFFF" FontSize="20" TextAlignment="Center" VerticalContentAlignment="Center"/>
         <TextBox Grid.Row="3" Text="{Binding Email, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Height="30" Width="200" Foreground="#FF1A337A" Background="#FFFFFFFF" FontSize="20" TextAlignment="Center" VerticalContentAlignment="Center" />
-        <ComboBox Grid.Row="4"  SelectedValue="{Binding Path=Level, Mode=TwoWay}" 
+        <ComboBox Grid.Row="4"  ItemsSource="{Binding Source={StaticResource EngineerExperienceOnlyLevelsKey}}"
+                  SelectedValue="{Binding Path=Level, Mode=TwoWay}" 
             Height="30" Width="200"  FontSize="20" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
             
-            ItemsSource="{Binding Source={StaticResource EngineerExperienceKey}}"/>
+            />
         <TextBox Grid.Row="5" Text="{Binding Cost, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Height="30" Width="200" Foreground="#FF1A337A" Background="#FFFFFFFF" FontSize="20" TextAlignment="Center" VerticalContentAlignment="Center"/>
         <Button Grid.Row="6" Content="{Binding Id, Mode=OneTime, Converter={StaticResource ConverIdToContentKey}}" Click="btnAddUpdate_Click" HorizontalAlignment="Center" Height="50" Width="100" Foreground="#FF1A337A" Background="#FFFFFFFF"/>
         <Grid.Background>

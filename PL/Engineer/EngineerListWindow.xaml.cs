@@ -45,7 +45,7 @@ namespace PL.Engineer
         private void cbEngineerExperiensSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             EngineerList = (Level == BO.EngineerExperience.All) ?
-                s_bl?.Engineer.ReadAll()! : s_bl?.Engineer.ReadAll(item => item.Level == Level)!;
+                (s_bl?.Engineer.ReadAll()!) : (s_bl?.Engineer.ReadAll(item => item.Level == Level)!);
         }
 
         private void click_update(object sender, MouseButtonEventArgs e)
@@ -53,7 +53,7 @@ namespace PL.Engineer
             BO.Engineer? engineer = (sender as ListView)?.SelectedItem as BO.Engineer;
             if (engineer != null)
             {
-                
+                this.Close();
                 Window Update = new EngineerWindow(engineer.Id);
            
                 
@@ -66,6 +66,7 @@ namespace PL.Engineer
 
         private void add_engineer(object sender, RoutedEventArgs e)
         {
+            this.Close();
             new EngineerWindow().ShowDialog();
             EngineerList = s_bl.Engineer.ReadAll();
         }

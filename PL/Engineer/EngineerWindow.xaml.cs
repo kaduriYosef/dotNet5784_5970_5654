@@ -49,7 +49,9 @@ namespace PL.Engineer
             }
 
         }
-    
+
+
+
 
         private void btnAddUpdate_Click(object sender, RoutedEventArgs e)
         {
@@ -59,7 +61,7 @@ namespace PL.Engineer
                 try
                 {
                     s_bl.Engineer.Create(Engineer);
-                    MessageBox.Show("The addition was made successfully", "Creat engineer",
+                    MessageBox.Show("The addition was made successfully", "Create engineer",
                     MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 catch (Exception ex)
@@ -72,7 +74,7 @@ namespace PL.Engineer
                 try
                 {
                     s_bl.Engineer.Update(Engineer);
-                    MessageBox.Show("The Update was made successfully", "Creat engineer",
+                    MessageBox.Show("The Update was made successfully", "Create engineer",
                     MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 catch (Exception ex)
@@ -82,9 +84,11 @@ namespace PL.Engineer
 
             }
             Close();
+            new EngineerListWindow().ShowDialog();
             
         }
         
+       // public BO.EngineerExperienceOnlyLevels LevelOnly { get; set; } = BO.EngineerExperienceOnlyLevels.Beginner;
         public BO.EngineerExperience Level { get; set; } = BO.EngineerExperience.All;
     }
 }
