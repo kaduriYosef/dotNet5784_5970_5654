@@ -24,6 +24,10 @@
                  Margin="10,10,10,10"
                  MinHeight="50"
                     Click="Button_Auto_Schedule"/>
+            <Button Content="Task"
+                 Margin= "10,10,10,10"
+                 MinHeight="50"
+                 Click="Button_Task"/>
 
         </StackPanel>
     </Grid>

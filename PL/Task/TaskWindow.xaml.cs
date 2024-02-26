@@ -52,7 +52,6 @@ namespace PL.Task
                     RequiredEffortTime = null,
                     Dependencies = null,
                     Complexity = 0,
-                    ScheduledDate = DateTime.Today,
                     DeadlineDate = null,
                     Deliverables = null,
                     Remarks = null,

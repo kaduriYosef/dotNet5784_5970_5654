@@ -46,7 +46,7 @@ namespace PL.ManagerInterface
         {
             if(Date<DateTime.Now)
                 MessageBox.Show("can't select a past date", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
-            else
+            
 
         }
     }
