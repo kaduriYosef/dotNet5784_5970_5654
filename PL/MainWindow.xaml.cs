@@ -32,9 +32,16 @@ namespace PL
 
         private void Button_Init(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult a = MessageBox.Show("Would you like to create Initial data? (Y/N)", "Initialization data", 
+            MessageBoxResult answer = MessageBox.Show("Would you like to create Initial data? (Y/N)", "Initialization data", 
                                    MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.Yes);
-            if(a==MessageBoxResult.Yes) { s_bl.InitializeDB(); }
+            if(answer==MessageBoxResult.Yes) { s_bl.InitializeDB(); }
+        }
+
+        private void Button_Reset(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult answer = MessageBox.Show("Would you like to Reset all data? ", "Initialization data",
+                                   MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.Yes);
+            if (answer == MessageBoxResult.Yes) { s_bl.ResetDB(); }
         }
 
         private void Button_Admin(object sender, RoutedEventArgs e)

@@ -86,6 +86,9 @@ internal class EngineerImplementation : IEngineer
 
         checkValidity(BOEngineer);
 
+        if ((int)BOEngineer.Level < (int)eng.Level)
+            throw new BlInvalidDataException($"can't lower the level of experience of an engineer with id {eng.Id}");
+
         var doTasks = _dal.Task.ReadAll(task => task.EngineerId == BOEngineer.Id);
 
         foreach (var t in doTasks.Where(t => t is not null))

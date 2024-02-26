@@ -14,7 +14,7 @@ public interface IBl
 
     public void InitializeDB();
 
-     
+    public void ResetDB();
     //public IMilestone Milestone { get; }
 
 }
