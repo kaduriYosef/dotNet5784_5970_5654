@@ -15,7 +15,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <!--<ColumnDefinition Width="*"/>-->
         </Grid.ColumnDefinitions>
 
         <Image Source="D:\imanuel\מכון לב\שנה ב\סמסטר א\פרויקט במערכת חלונות\פרוייקט עצמו\dotNet5784_5970_5654\PL\mainImage.webp"  
@@ -25,22 +25,13 @@
                        Grid.ColumnSpan="3"
                Margin="0,0,0,0"/>
 
-        <Button Grid.Column="1" Grid.Row="2" Content="Enginner"
-            Margin="10,10,10,10"
-            Click="Button_Engineers"/>
-        <StackPanel Grid.Row="1" Grid.RowSpan="2" Grid.Column="2">
-            <Button Content="Init"
-            Margin="10,10,10,10"
-            MinHeight="50"
-            Click="Button_Init"/>
-            <Button Content="Reset"
-            Margin="10,10,10,10"
-            MinHeight="50"
-             Click="Button_Reset"/>
-        </StackPanel>
+       
         <Button Grid.Column="0" Grid.Row="2" Content="Admin"
             Margin="10,10,10,10"
             Click="Button_Admin"/>
+        <Button Grid.Column="1" Grid.Row="2" Content="Engineer"
+                Margin= "10,10,10,10"
+                Click="Button_Engineer"/>
         <Grid/>
     </Grid>
 </Window>

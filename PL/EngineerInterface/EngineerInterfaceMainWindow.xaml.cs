@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace PL.ManagerInterface
+namespace PL.EngineerInterface
 {
     /// <summary>
-    /// Interaction logic for Window1.xaml
+    /// Interaction logic for EngineerInterfaceMain.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class EngineerInterfaceMainWindow : Window
     {
-        public Window1()
+        public EngineerInterfaceMainWindow()
         {
             InitializeComponent();
         }

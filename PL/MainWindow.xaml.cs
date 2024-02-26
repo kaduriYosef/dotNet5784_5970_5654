@@ -8,7 +8,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using PL.Engineer;
+//using PL.Engineer;
+using PL.EngineerInterface;
+using PL.ManagerInterface;
 
 namespace PL
 {
@@ -23,30 +25,19 @@ namespace PL
         {
             InitializeComponent();
         }
-        private void Button_Engineers(object sender, RoutedEventArgs e)
-        {
-            new EngineerListWindow().ShowDialog();
-            
-            //MessageBox.Show("it works");
-        }
+       
 
-        private void Button_Init(object sender, RoutedEventArgs e)
-        {
-            MessageBoxResult answer = MessageBox.Show("Would you like to create Initial data? (Y/N)", "Initialization data", 
-                                   MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.Yes);
-            if(answer==MessageBoxResult.Yes) { s_bl.InitializeDB(); }
-        }
-
-        private void Button_Reset(object sender, RoutedEventArgs e)
-        {
-            MessageBoxResult answer = MessageBox.Show("Would you like to Reset all data? ", "Initialization data",
-                                   MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.Yes);
-            if (answer == MessageBoxResult.Yes) { s_bl.ResetDB(); }
-        }
 
         private void Button_Admin(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("you're the manager");
+            new ManagerInterfaceMainWindow().ShowDialog();
+        }
+
+
+
+        private void Button_Engineer(object sender, RoutedEventArgs e)
+        {
+            new EngineerInterfaceMainWindow().ShowDialog();
         }
 
     }
