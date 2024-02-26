@@ -48,5 +48,10 @@ namespace PL.ManagerInterface
             //MessageBox.Show("it works");
         }
 
+        private void Button_Auto_Schedule(object sender, RoutedEventArgs e)
+        {
+            new AutoScheduleWindow().ShowDialog();
+        }
+
     }
 }

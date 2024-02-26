@@ -9,17 +9,21 @@
     <Grid>
         <StackPanel Grid.Row="1" Grid.RowSpan="2" Grid.Column="2">
             <Button Content="Init"
-    Margin="10,10,10,10"
-    MinHeight="50"
-    Click="Button_Init"/>
+                Margin="10,10,10,10"
+                MinHeight="50"
+                Click="Button_Init"/>
             <Button Content="Reset"
+                Margin="10,10,10,10"
+                MinHeight="50"
+                Click="Button_Reset"/>  
+            <Button Content="Enginners"
+                Margin="10,10,10,10"
+                MinHeight="50"
+                Click="Button_Engineers"/>
+            <Button Content="auto-schedule"
                  Margin="10,10,10,10"
                  MinHeight="50"
-                 Click="Button_Reset"/>
-            <Button Grid.Column="1" Grid.Row="2" Content="Enginners"
-                    Margin="10,10,10,10"
-                    MinHeight="50"
-     Click="Button_Engineers"/>
+                    Click="Button_Auto_Schedule"/>
 
         </StackPanel>
     </Grid>
