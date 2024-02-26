@@ -7,10 +7,18 @@
         mc:Ignorable="d"
         Title="AutoScheduleWindow" Height="450" Width="800">
     <Grid>
-        <DatePicker SelectedDate="{Binding Date, Mode=TwoWay}" 
-                    HorizontalAlignment="Left" Margin="320,166,0,0"  
-                    VerticalAlignment="Top" Width="115" Height="36"
-                    Text="Select a start date for the project"/>
-        <Button Content="OK" Click="Button_OK" Margin="348,346,392,54"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Select a start date for the project" 
+           HorizontalAlignment="Center"   
+           VerticalAlignment="Top" Height="32" Width="195"/>
+        <DatePicker Grid.Row="1" SelectedDate="{Binding Date, Mode=TwoWay}" 
+            HorizontalAlignment="Center"  
+            VerticalAlignment="Top" Width="115" Height="36"/>
+        <Button Grid.Row="2" Content="OK" Click="Button_OK"  Width="100" Height="30"/>
+
     </Grid>
 </Window>

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PL.Engineer"
         mc:Ignorable="d"
         DataContext="{Binding Engineer, RelativeSource={RelativeSource Self}, Mode=TwoWay}"
-        Title="EngineerWindow" Height="800" Width="700">
+        Title="EngineerWindow" Height="700" Width="700">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -32,7 +32,7 @@
         <TextBox Grid.Row="3" Text="{Binding Email, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Height="30" Width="200" Foreground="#FF1A337A" Background="#FFFFFFFF" FontSize="20" TextAlignment="Center" VerticalContentAlignment="Center" />
         <ComboBox Grid.Row="4"  ItemsSource="{Binding Source={StaticResource EngineerExperienceOnlyLevelsKey}}"
                   SelectedValue="{Binding Path=Level, Mode=TwoWay}" 
-            Height="30" Width="200"  FontSize="20" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+            Height="30" Width="200"  FontSize="20" VerticalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"
             
             />
         <TextBox Grid.Row="5" Text="{Binding Cost, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Height="30" Width="200" Foreground="#FF1A337A" Background="#FFFFFFFF" FontSize="20" TextAlignment="Center" VerticalContentAlignment="Center"/>

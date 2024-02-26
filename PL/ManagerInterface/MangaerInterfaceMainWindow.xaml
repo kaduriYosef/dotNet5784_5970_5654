@@ -8,23 +8,23 @@
         Title="Window1" Height="450" Width="800">
     <Grid>
         <StackPanel Grid.Row="1" Grid.RowSpan="2" Grid.Column="2">
-            <Button Content="Init"
+            <Button Style="{StaticResource button_circle}" Content="Init"
                 Margin="10,10,10,10"
                 MinHeight="50"
                 Click="Button_Init"/>
-            <Button Content="Reset"
+            <Button Style="{StaticResource button_circle}" Content="Reset"
                 Margin="10,10,10,10"
                 MinHeight="50"
-                Click="Button_Reset"/>  
-            <Button Content="Enginners"
+                Click="Button_Reset"/>
+            <Button Style="{StaticResource button_circle}" Content="Enginners"
                 Margin="10,10,10,10"
                 MinHeight="50"
                 Click="Button_Engineers"/>
-            <Button Content="auto-schedule"
+            <Button Style="{StaticResource button_circle}" Content="auto-schedule"
                  Margin="10,10,10,10"
                  MinHeight="50"
                     Click="Button_Auto_Schedule"/>
-            <Button Content="Task"
+            <Button Style="{StaticResource button_circle}" Content="Task"
                  Margin= "10,10,10,10"
                  MinHeight="50"
                  Click="Button_Task"/>

@@ -64,11 +64,13 @@ namespace PL.Task
 
         }
 
-        private void add_engineer(object sender, RoutedEventArgs e)
+        private void add_task(object sender, RoutedEventArgs e)
         {
             this.Close();
             new TaskWindow().ShowDialog();
             TaskList = s_bl.Task.ReadAll();
         }
+
+       
     }
 }

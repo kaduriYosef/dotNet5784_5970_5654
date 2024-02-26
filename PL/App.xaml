@@ -7,5 +7,20 @@
         <local:EngineerExperience x:Key="EngineerExperienceKey" />
         <local:EngineerExperienceOnlyLevels x:Key="EngineerExperienceOnlyLevelsKey" />
         <local:ConvertIdToContent x:Key="ConverIdToContentKey"/>
+        <Style x:Key="button_circle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="Azure"
+                            CornerRadius="30"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Application.Resources>
 </Application>
