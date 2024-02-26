@@ -21,6 +21,7 @@ namespace PL.Engineer
     {
         static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
         int id = 0;
+
         public BO.Engineer Engineer
         {
             get { return (BO.Engineer)GetValue(EngineerWindowProperty); }
@@ -28,13 +29,12 @@ namespace PL.Engineer
         }
 
 
- 
-
         public static readonly DependencyProperty EngineerWindowProperty =
             DependencyProperty.Register("Engineer",
             typeof(BO.Engineer),
             typeof(EngineerWindow),
             new PropertyMetadata(null));
+
         public EngineerWindow(int Id=0)
         {
             InitializeComponent();
@@ -45,12 +45,10 @@ namespace PL.Engineer
             }
             else
             {
-                Engineer = new BO.Engineer() { Id = 0, Name = "Israel Israeli", Cost = 180, Email = "Israel", Level = 0 };
+                Engineer = new BO.Engineer() { Id = 0, Name = "", Cost = 0, Email = "", Level = 0 };
             }
 
         }
-
-
 
 
         private void btnAddUpdate_Click(object sender, RoutedEventArgs e)
@@ -74,7 +72,7 @@ namespace PL.Engineer
                 try
                 {
                     s_bl.Engineer.Update(Engineer);
-                    MessageBox.Show("The Update was made successfully", "Create engineer",
+                    MessageBox.Show("The Update was made successfully", "Update engineer",
                     MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 catch (Exception ex)

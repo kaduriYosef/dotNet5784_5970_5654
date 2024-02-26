@@ -23,5 +23,15 @@ namespace PL.ManagerInterface
         {
             InitializeComponent();
         }
+
+        private void Button_Init(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Reset(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
