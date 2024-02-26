@@ -42,7 +42,7 @@ namespace PL.Engineer
 
         public BO.EngineerExperience Level { get; set; } = BO.EngineerExperience.All;
         
-        private void cbEngineerExperiensSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void cbEngineerExperienceSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             EngineerList = (Level == BO.EngineerExperience.All) ?
                 (s_bl?.Engineer.ReadAll()!) : (s_bl?.Engineer.ReadAll(item => item.Level == Level)!);

@@ -8,7 +8,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using PL.Engineer;
+//using PL.Engineer;
+using PL.EngineerInterface;
 using PL.ManagerInterface;
 
 namespace PL
@@ -30,6 +31,13 @@ namespace PL
         private void Button_Admin(object sender, RoutedEventArgs e)
         {
             new ManagerInterfaceMainWindow().ShowDialog();
+        }
+
+
+
+        private void Button_Engineer(object sender, RoutedEventArgs e)
+        {
+            new EngineerInterfaceMainWindow().ShowDialog();
         }
 
     }

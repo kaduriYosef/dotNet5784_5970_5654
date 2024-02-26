@@ -24,7 +24,7 @@
                       ItemsSource="{Binding Source={StaticResource EngineerExperienceKey}}"
                       Grid.Column="1" 
                       SelectedValue="{Binding Level, Mode=TwoWay}"
-                      SelectionChanged="cbEngineerExperiensSelector_SelectionChanged" 
+                      SelectionChanged="cbEngineerExperienceSelector_SelectionChanged" 
                       Height="43" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Width="400">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
