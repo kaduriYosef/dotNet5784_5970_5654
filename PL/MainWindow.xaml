@@ -6,11 +6,15 @@
         xmlns:local="clr-namespace:PL"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="1000">
+    <Window.Background>
+        <ImageBrush ImageSource="https://raw.githubusercontent.com/kaduriYosef/dotNet5784_5970_5654/main/PL/mainImage.webp?token=GHSAT0AAAAAACL3EEP26I32SJSEL5JZWTVSZO44YNQ"/>
+    </Window.Background>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="160*"/>
             <RowDefinition Height="40*"/>
-            <RowDefinition Height="40*"/>
+            <!--<RowDefinition Height="40*"/>-->
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -18,20 +22,20 @@
             <!--<ColumnDefinition Width="*"/>-->
         </Grid.ColumnDefinitions>
 
-        <Image Source="D:\imanuel\מכון לב\שנה ב\סמסטר א\פרויקט במערכת חלונות\פרוייקט עצמו\dotNet5784_5970_5654\PL\mainImage.webp"  
-                       Grid.Row="0"
-                       Grid.RowSpan="2"
-                       Grid.Column="0"  
-                       Grid.ColumnSpan="3"
-               Margin="0,0,0,0"/>
 
-       
-        <Button Grid.Column="0" Grid.Row="2" Content="Admin"
+
+        <Button Style="{StaticResource button_circle}" Grid.Column="0" Grid.Row="2" Content="Admin"
             Margin="10,10,10,10"
             Click="Button_Admin"/>
-        <Button Grid.Column="1" Grid.Row="2" Content="Engineer"
+
+
+        <Button Style="{StaticResource button_circle}" Grid.Column="1" Grid.Row="2" Content="Engineer"
                 Margin= "10,10,10,10"
                 Click="Button_Engineer"/>
+
+
+
+
         <Grid/>
     </Grid>
 </Window>

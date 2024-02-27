@@ -5,8 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PL.Task"
         mc:Ignorable="d"
-        Title="TaskListWindow" Height="450" Width="800">
+        DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
+        Title="TaskListWindow" Height="700" Width="700">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="500*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid HorizontalAlignment="Stretch" Height="auto" Grid.Row="0" VerticalAlignment="Stretch" Width="auto">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Content="Select complexity:" Foreground="#FFFFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <ComboBox 
+                   ItemsSource="{Binding Source={StaticResource EngineerExperienceKey}}"
+                   Grid.Column="1" 
+                   SelectedValue="{Binding Complexity, Mode=TwoWay}"
+                   SelectionChanged="cbTaskComplexitySelector_SelectionChanged" 
+                   Height="43" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Width="400">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+
+
+
+
+        </Grid>
+        <ListBox Grid.Row="1"/>
+        <ListView Grid.Row="1" ItemsSource="{Binding TaskList}" MouseDoubleClick="click_update">
+            <ListView.Background>
+                <SolidColorBrush Color="#FFFFFFFF"/>
+
+            </ListView.Background>
+        </ListView>
+
+        <Button Content="Add" Click="add_task" Grid.Row="2" HorizontalAlignment="Center" Height="50" Width="100"/>
+        <Grid.Background>
+            <LinearGradientBrush>
+                <GradientStop Color="#FF336699" Offset="5" />
+                <GradientStop Color="#FF125F61" Offset="1" />
+            </LinearGradientBrush>
+        </Grid.Background>
     </Grid>
 </Window>

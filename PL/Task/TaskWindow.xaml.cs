@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Automation;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -39,6 +40,15 @@ namespace PL.Task
         public TaskWindow(int Id = 0)
         {
             InitializeComponent();
+
+            foreach(var task in s_bl.Task.ReadAllSimplified()) 
+            {
+                CheckBox checkBox = new CheckBox();
+                checkBox.Content = task.Id + " " + task.Alias;
+                ComboBoxItem item = new ComboBoxItem();
+                item.Content = checkBox;
+                dependencies.Items.Add(item);
+            }
             id = Id;
             if (Id != 0)
                 Task = s_bl.Task.Read(Id);
@@ -52,7 +62,6 @@ namespace PL.Task
                     RequiredEffortTime = null,
                     Dependencies = null,
                     Complexity = 0,
-                    ScheduledDate = DateTime.Today,
                     DeadlineDate = null,
                     Deliverables = null,
                     Remarks = null,

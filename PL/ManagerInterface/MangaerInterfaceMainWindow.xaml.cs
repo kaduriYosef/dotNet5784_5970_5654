@@ -1,4 +1,5 @@
 ﻿using PL.Engineer;
+using PL.Task;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,5 +54,9 @@ namespace PL.ManagerInterface
             new AutoScheduleWindow().ShowDialog();
         }
 
+        private void Button_Task(object sender, RoutedEventArgs e)
+        {
+            new TaskListWindow().ShowDialog();
+        }
     }
 }
