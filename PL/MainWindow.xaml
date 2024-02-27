@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="1000">
     <Window.Background>
-        <ImageBrush ImageSource="https://raw.githubusercontent.com/kaduriYosef/dotNet5784_5970_5654/main/PL/mainImage.webp?token=GHSAT0AAAAAACL3EEP26I32SJSEL5JZWTVSZO44YNQ"/>
+        <ImageBrush ImageSource="C:\Users\User\source\repos\מיני פרוייקט\dotNet5784_5970_5654\PL\mainImage1.png"/>
+        
     </Window.Background>
 
     <Grid>
@@ -23,7 +24,6 @@
         </Grid.ColumnDefinitions>
 
 
-
         <Button Style="{StaticResource button_circle}" Grid.Column="0" Grid.Row="2" Content="Admin"
             Margin="10,10,10,10"
             Click="Button_Admin"/>
@@ -32,9 +32,6 @@
         <Button Style="{StaticResource button_circle}" Grid.Column="1" Grid.Row="2" Content="Engineer"
                 Margin= "10,10,10,10"
                 Click="Button_Engineer"/>
-
-
-
 
         <Grid/>
     </Grid>
