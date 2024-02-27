@@ -30,7 +30,17 @@ namespace PL
 
         private void Button_Admin(object sender, RoutedEventArgs e)
         {
-            new ManagerInterfaceMainWindow().ShowDialog();
+            var passwordWindow = new AdminPassword();
+            var dialogResult = passwordWindow.ShowDialog();
+
+            if (dialogResult == true)
+                new ManagerInterfaceMainWindow().ShowDialog();
+            else
+                MessageBox.Show("Incorrect Password and too many attempts",
+                        "Access Denied", MessageBoxButton.OK, MessageBoxImage.Error);
+            
+            
+            //new ManagerInterfaceMainWindow().ShowDialog();
         }
 
 
