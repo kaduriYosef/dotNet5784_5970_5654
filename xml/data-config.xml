@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <config>
+  <StartDate />
   <NextTaskId>1030</NextTaskId>
   <NextDependencyId>10050</NextDependencyId>
 </config>

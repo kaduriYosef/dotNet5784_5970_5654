@@ -24,4 +24,6 @@ public interface ITask : ICrud<BO.Task>
     /// </summary>
     /// <param name="startOfProject">The start date from which to schedule all tasks.</param>
     public void ScheduleAllDates(DateTime startOfProject);
+
+//    public DateTime? StartDateOrNull();
 }

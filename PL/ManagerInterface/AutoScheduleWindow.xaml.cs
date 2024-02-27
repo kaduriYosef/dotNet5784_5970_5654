@@ -34,28 +34,31 @@ namespace PL.ManagerInterface
         public static readonly DependencyProperty DateProperty =
             DependencyProperty.Register("Date", typeof(DateTime), typeof(AutoScheduleWindow), new PropertyMetadata());
 
+        private ManagerInterfaceMainWindow mainWindow;
 
 
 
-        public AutoScheduleWindow()
+        public AutoScheduleWindow(ManagerInterfaceMainWindow mainWindow)
         {
             InitializeComponent();
             this.DataContext = this;
-            Date =DateTime.Now;
-
+            Date = DateTime.Now;
+            this.mainWindow = mainWindow; // Set the reference to the passed mainWindow
         }
+
+
         private void Button_OK(object sender, RoutedEventArgs e)
         {
-            if(Date<DateTime.Now)
+            if (Date < DateTime.Now)
                 MessageBox.Show("can't select a past date", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
             else
-            { 
-                    s_bl.Task.ScheduleAllDates(Date);
-                    MessageBox.Show("All task were scheduled");
-                    this.Close();
-                
+            {
+                s_bl.Task.ScheduleAllDates(Date);
+                MessageBox.Show("All task were scheduled");
+                mainWindow.isStartDate = true; // Access isStartDate through mainWindow reference
+                this.Close();
             }
-
         }
+
     }
 }

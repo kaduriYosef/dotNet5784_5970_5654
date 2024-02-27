@@ -183,6 +183,7 @@ internal class EngineerImplementation : IEngineer
         if (boEngineer.Id <= 0) throw new BlInvalidDataException($"the engineer with Id: {boEngineer.Id} is invalid");
         if (boEngineer.Name == "") throw new BlInvalidDataException($"the engineer with Name: {boEngineer.Name} is invalid");
         if (boEngineer.Email == "") throw new BlInvalidDataException($"the engineer with Email: {boEngineer.Email} is invalid");
+        Tools.IsValidEmail(boEngineer.Email);
         if (boEngineer.Cost <= 0) throw new BlInvalidDataException($"the engineer with Cost: {boEngineer.Cost} is invalid");
 
         if (boEngineer.Task == null)

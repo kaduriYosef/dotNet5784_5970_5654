@@ -269,9 +269,11 @@ public static class Initialization
         xDependency.Save(@"..\xml\dependencys.xml");
 
         //the config file
+        XElement StartDate = new XElement("StartDate",null);
         XElement NextTaskId = new XElement("NextTaskId", 1000);
         XElement NextDependencyId = new XElement("NextDependencyId", 10000);
-        XElement config = new XElement("config", NextTaskId, NextDependencyId);
+        XElement config = new XElement("config",StartDate, NextTaskId, NextDependencyId);
+
         config.Save(@"..\xml\data-config.xml");
 
     }

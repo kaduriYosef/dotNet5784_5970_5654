@@ -24,6 +24,19 @@ namespace PL.ManagerInterface
 
         static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
 
+
+
+        public bool isStartDate
+        {
+            get { return (bool)GetValue(isStartDateProperty); }
+            set { SetValue(isStartDateProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for isStartDate.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty isStartDateProperty =
+            DependencyProperty.Register("isStartDate", typeof(bool), typeof(ManagerInterfaceMainWindow), new PropertyMetadata(false));
+
+
         public ManagerInterfaceMainWindow()
         {
             InitializeComponent();
@@ -51,12 +64,17 @@ namespace PL.ManagerInterface
 
         private void Button_Auto_Schedule(object sender, RoutedEventArgs e)
         {
-            new AutoScheduleWindow().ShowDialog();
+            new AutoScheduleWindow(this).ShowDialog(); // Pass this as reference
         }
+
 
         private void Button_Task(object sender, RoutedEventArgs e)
         {
             new TaskListWindow().ShowDialog();
+        }
+        private void Button_Gauntt(object sender, RoutedEventArgs e)
+        {
+            new GaunttWindow().ShowDialog();
         }
     }
 }

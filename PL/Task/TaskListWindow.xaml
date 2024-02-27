@@ -45,7 +45,8 @@
             </ListView.Background>
         </ListView>
 
-        <Button Content="Add" Click="add_task" Grid.Row="2" HorizontalAlignment="Center" Height="50" Width="100"/>
+        <Button Content="Add" Click="add_task"  Grid.Row="2" HorizontalAlignment="Center" Height="50" Width="100"/>
+        <!--IsEnabled="{Binding isStartDate}"-->
         <Grid.Background>
             <LinearGradientBrush>
                 <GradientStop Color="#FF336699" Offset="5" />

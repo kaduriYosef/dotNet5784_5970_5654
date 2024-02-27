@@ -7,6 +7,8 @@ using DO;
 using System.Collections.Immutable;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography;
+using System.Xml;
+using System.Xml.Linq;
 
 /// <summary>
 /// Implements the ITask interface, providing business logic and operations for task management.
@@ -44,6 +46,8 @@ internal class TaskImplementation : ITask
     /// <returns>The ID of the newly created task.</returns>
     public int Create(BO.Task boTask)
     {
+        if (Tools.StartDateOrNull() != null)
+            throw new BlImpossibleToCreate("can't create new task once the start date was declared");
         checkValidity(boTask);
         foreach (var t in boTask.Dependencies)
             _dal.Dependency.Create(new DO.Dependency
@@ -184,6 +188,15 @@ internal class TaskImplementation : ITask
     /// <param name="boTask">The task to update.</param>
     public void Update(BO.Task boTask)
     {
+        var boTaskOriginal = Read(boTask.Id);
+        if (boTaskOriginal == null)
+            throw new BlDoesNotExistException($"task with id {boTask.Id} doesn't exist");
+
+        if (Tools.StartDateOrNull() != null && 
+            (boTask.ScheduledDate!=boTaskOriginal.ScheduledDate ||boTask.RequiredEffortTime!=boTaskOriginal.RequiredEffortTime|| boTask.Dependencies!=boTaskOriginal.Dependencies))
+                throw new BlImpossibleToCreate("can't update new task once the start date was declared");
+
+
         checkValidity(boTask);
 
         //delete all previous dependencies
@@ -203,9 +216,9 @@ internal class TaskImplementation : ITask
         catch(DO.DalDoesNotExistException ex) 
         { throw new BO.BlDoesNotExistException(ex.Message); }
         
-        //need just for the checking of the validity of the date
-        if(boTask.StartDate is not null)
-            ScheduledDateManagement(boTask.Id, (DateTime)boTask.StartDate!);
+        ////need just for the checking of the validity of the date
+        //if(boTask.StartDate is not null)
+        //    ScheduledDateManagement(boTask.Id, (DateTime)boTask.StartDate!);
     }
 
     /// <summary>
@@ -358,7 +371,13 @@ internal class TaskImplementation : ITask
 
     public void ScheduleAllDates(DateTime startOfProject)
     {
-        foreach(var boTask in ReadAll().Where(x=>x is not null))
+        // Define the path to your XML file
+        DateTime? tmp=Tools.StartDateOrNull();
+        if (tmp != null)
+            throw new BlImpossibleToUpdateException("project already has a start date!");
+        
+        Tools.update_StartDate_unsafe(startOfProject);
+        foreach (var boTask in ReadAll().Where(x=>x is not null))
         {
             TimeSpan required = boTask!.RequiredEffortTime ?? TimeSpan.FromDays(10);
             _dal.Task.Update(BOtoDO(boTask)with { ScheduledDate =null,RequiredEffortTime=required});
@@ -429,5 +448,5 @@ internal class TaskImplementation : ITask
 
 
     #endregion
-
+   
 }

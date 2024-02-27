@@ -1,6 +1,9 @@
 ﻿using System.ComponentModel;
+using System.Net.Mail;
 using System.Reflection;
 using System.Text;
+using System.Net.Mail;
+using System.Xml;
 
 namespace BO;
 
@@ -10,12 +13,26 @@ namespace BO;
 static public class Tools
 {
 
+
+    internal static void IsValidEmail(string email)
+    {
+        try
+        {
+            MailAddress mailAddress = new MailAddress(email);
+            
+        }
+        catch
+        {
+            throw new BlInvalidDataException("email is invalid");
+        }
+    }
+
     #region to string property
-/// <summary>
-/// returns whether the obj is a primitive string or we should look into it
-/// </summary>
-/// <param name="obj"></param>
-/// <returns></returns>
+    /// <summary>
+    /// returns whether the obj is a primitive string or we should look into it
+    /// </summary>
+    /// <param name="obj"></param>
+    /// <returns></returns>
     private static bool isPrimitiveString(object obj)
     {
         if (obj.GetType().IsPrimitive || obj is string || obj.GetType().IsEnum || obj is DateTime || obj is TimeSpan)
@@ -213,6 +230,68 @@ static public class Tools
             Id = boTask.Id,
             Alias = boTask.Alias
         };
+    }
+    #endregion
+
+    #region help function with xml
+    public static DateTime? StartDateOrNull()
+    {
+        // Define the path to your XML file
+        string path = @"D:\imanuel\מכון לב\שנה ב\סמסטר א\פרויקט במערכת חלונות\פרוייקט עצמו\dotNet5784_5970_5654\xml\data-config.xml";
+
+        // Load the XML document
+        XmlDocument xmlDoc = new XmlDocument();
+        xmlDoc.Load(path);
+
+        // Find the <StartDate> element
+        XmlNode? startDateNode = xmlDoc.SelectSingleNode("//StartDate");
+        if (startDateNode != null)
+        {
+            // Check if the <StartDate> value is null or empty
+            if (string.IsNullOrEmpty(startDateNode.InnerText))
+            {
+                return null;
+            }
+            else
+            {
+                // <StartDate> has a value
+                return DateTime.Parse(startDateNode.InnerText);
+            }
+        }
+        else
+        {
+            Console.WriteLine("StartDate element not found.");
+            return null;
+        }
+
+    }
+
+    public static void update_StartDate_unsafe(DateTime date)
+    {
+        // Define the path to your XML file
+        string path = @"D:\imanuel\מכון לב\שנה ב\סמסטר א\פרויקט במערכת חלונות\פרוייקט עצמו\dotNet5784_5970_5654\xml\data-config.xml";
+
+
+        // Load the XML document
+        XmlDocument xmlDoc = new XmlDocument();
+        xmlDoc.Load(path);
+
+        // Find the <StartDate> element
+        XmlNode? startDateNode = xmlDoc.SelectSingleNode("//StartDate");
+        if (startDateNode != null)
+        {
+            // Update the <StartDate> value to the new date
+            startDateNode.InnerText = date.ToString();
+
+            // Save the changes back to the file
+            xmlDoc.Save(path);
+
+        }
+        else
+        {
+            Console.WriteLine("StartDate element not found.");
+            throw new BlDoesNotExistException("StartDate was not found!");
+        }
     }
     #endregion
 }

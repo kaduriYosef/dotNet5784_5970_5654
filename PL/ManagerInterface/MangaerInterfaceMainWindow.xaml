@@ -28,6 +28,10 @@
                  Margin= "10,10,10,10"
                  MinHeight="50"
                  Click="Button_Task"/>
+            <Button Style="{StaticResource button_circle}" Content="Gauntt"
+                Margin= "10,10,10,10"
+                MinHeight="50"
+                Click="Button_Gauntt"/>
 
         </StackPanel>
     </Grid>

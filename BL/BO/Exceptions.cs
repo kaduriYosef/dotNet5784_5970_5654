@@ -55,6 +55,13 @@ public class BlInvalidDataException : Exception
                 : base(message, innerException) { }
 }
 
+[Serializable]
+public class BlImpossibleToCreate : Exception
+{
+    public BlImpossibleToCreate(string? message) : base(message) { }
+}
+
+
 /// <summary>
 /// Exception thrown when a required property on an entity is null, but a non-null value is expected.
 /// </summary>
