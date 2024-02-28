@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="1000">
     <Window.Background>
-        <ImageBrush ImageSource="C:\Users\User\source\repos\מיני פרוייקט\dotNet5784_5970_5654\PL\mainImage1.png"/>
+        <ImageBrush ImageSource="D:\imanuel\מכון לב\שנה ב\סמסטר א\פרויקט במערכת חלונות\פרוייקט עצמו\dotNet5784_5970_5654\PL\mainImage.png"/>
         
     </Window.Background>
 
