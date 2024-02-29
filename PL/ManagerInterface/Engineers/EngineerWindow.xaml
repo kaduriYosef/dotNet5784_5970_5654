@@ -19,23 +19,23 @@
         </Grid.RowDefinitions>
 
         <Label Grid.Row="0" Content="Enter Engineer Data" FontSize="30" Height="60" Foreground="#FFFFFFFF" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Label Grid.Row="1" Content="Id:" FontSize="22" Height="60"  VerticalContentAlignment="Center" Margin="160,0,0,0" Foreground="#FFFFFFFF"/>
-        <Label Grid.Row="2" Content="Name:" FontSize="22" Height="60" VerticalContentAlignment="Center" Margin="160,0,0,0" Foreground="#FFFFFFFF"/>
-        <Label Grid.Row="3" Content="Email:" FontSize="22" Height="60" VerticalContentAlignment="Center" Margin="160,0,0,0" Foreground="#FFFFFFFF"/>
-        <Label Grid.Row="4" Content="Level:" FontSize="22" Height="60" VerticalContentAlignment="Center" Margin="160,0,0,0" Foreground="#FFFFFFFF"/>
-        <Label Grid.Row="5" Content="Cost:" FontSize="22" Height="60" VerticalContentAlignment="Center" Margin="160,0,0,0" Foreground="#FFFFFFFF"/>
+        <Label Grid.Row="1" Content="Id:" Style="{StaticResource lable_eng_task_window}"/>
+        <Label Grid.Row="2" Content="Name:" Style="{StaticResource lable_eng_task_window}"/>
+        <Label Grid.Row="3" Content="Email:" Style="{StaticResource lable_eng_task_window}"/>
+        <Label Grid.Row="4" Content="Level:" Style="{StaticResource lable_eng_task_window}"/>
+        <Label Grid.Row="5" Content="Cost:" Style="{StaticResource lable_eng_task_window}"/>
 
 
 
-        <TextBox Grid.Row="1" Text="{Binding Id}"  Height="30" Width="200"  Background="#FFFFFFFF" FontSize="20" TextAlignment="Center" VerticalContentAlignment="Center" /> <!--IsEnabled="{Binding Id,Converter={StaticResource IdToIsEnabledConverter}}"-->
-        <TextBox Grid.Row="2" Text="{Binding Name, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Height="30" Width="200" Foreground="#FF1A337A" Background="#FFFFFFFF" FontSize="20" TextAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox Grid.Row="3" Text="{Binding Email, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Height="30" Width="200" Foreground="#FF1A337A" Background="#FFFFFFFF" FontSize="20" TextAlignment="Center" VerticalContentAlignment="Center" />
+        <TextBox Grid.Row="1" Text="{Binding Id}"  Style="{StaticResource text_box_eng_task_window}" /> <!--IsEnabled="{Binding Id,Converter={StaticResource IdToIsEnabledConverter}}"-->
+        <TextBox Grid.Row="2" Text="{Binding Name, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Style="{StaticResource text_box_eng_task_window}"/>
+        <TextBox Grid.Row="3" Text="{Binding Email, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Style="{StaticResource text_box_eng_task_window}" />
         <ComboBox Grid.Row="4"  ItemsSource="{Binding Source={StaticResource EngineerExperienceOnlyLevelsKey}}"
                   SelectedValue="{Binding Path=Level, Mode=TwoWay}" 
             Height="30" Width="200"  FontSize="20" VerticalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"
             
             />
-        <TextBox Grid.Row="5" Text="{Binding Cost, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Height="30" Width="200" Foreground="#FF1A337A" Background="#FFFFFFFF" FontSize="20" TextAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox Grid.Row="5" Text="{Binding Cost, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Style="{StaticResource text_box_eng_task_window}"/>
         <Button Grid.Row="6" Content="{Binding Id, Mode=OneTime, Converter={StaticResource ConverIdToContentKey}}" Click="btnAddUpdate_Click" HorizontalAlignment="Center" Height="50" Width="100" Foreground="#FF1A337A" Background="#FFFFFFFF"/>
         <Grid.Background>
             <LinearGradientBrush>
