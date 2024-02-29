@@ -25,18 +25,18 @@ namespace PL.Task
         public TaskListWindow()
         {
             InitializeComponent();
-            TaskList = s_bl.Task.ReadAll()!;
+            TaskList = s_bl.Task.ReadAllSimplified()!;
         }
-        public IEnumerable<BO.Task> TaskList
+        public IEnumerable<BO.TaskInList> TaskList
         {
-            get { return (IEnumerable<BO.Task>)GetValue(TaskListProperty); }
+            get { return (IEnumerable<BO.TaskInList>)GetValue(TaskListProperty); }
             set { SetValue(TaskListProperty, value); }
 
         }
 
         public static readonly DependencyProperty TaskListProperty =
             DependencyProperty.Register("TaskList",
-            typeof(IEnumerable<BO.Task>),
+            typeof(IEnumerable<BO.TaskInList>),
             typeof(TaskListWindow),
             new PropertyMetadata(null));
 
@@ -45,20 +45,17 @@ namespace PL.Task
         private void cbTaskComplexitySelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             TaskList = (Complexity == BO.EngineerExperience.All) ?
-                (s_bl?.Task.ReadAll()!) : (s_bl?.Task.ReadAll(item => item.Complexity == Complexity)!);
+                (s_bl?.Task.ReadAllSimplified()!) : (s_bl?.Task.ReadAllSimplified(item => item.Complexity == Complexity)!);
         }
 
         private void click_update(object sender, MouseButtonEventArgs e)
         {
-            BO.Task? task = (sender as ListView)?.SelectedItem as BO.Task;
+            BO.TaskInList task = (sender as ListView)?.SelectedItem as BO.TaskInList;
             if (task != null)
             {
                 this.Close();
-                Window Update = new TaskWindow(task.Id);
-
-
-                Update.ShowDialog();
-                TaskList = s_bl.Task.ReadAll();
+                new TaskWindow(task.Id).ShowDialog();
+                TaskList = s_bl.Task.ReadAllSimplified();
 
             }
 
@@ -68,7 +65,7 @@ namespace PL.Task
         {
             this.Close();
             new TaskWindow().ShowDialog();
-            TaskList = s_bl.Task.ReadAll();
+            TaskList = s_bl.Task.ReadAllSimplified();
         }
 
        

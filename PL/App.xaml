@@ -7,7 +7,7 @@
         <local:EngineerExperience x:Key="EngineerExperienceKey" />
         <local:EngineerExperienceOnlyLevels x:Key="EngineerExperienceOnlyLevelsKey" />
         <local:ConvertIdToContent x:Key="ConverIdToContentKey"/>
-        <Style x:Key="button_circle" TargetType="Button">
+        <!--<Style x:Key="button_circle" TargetType="Button">
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -21,6 +21,41 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
+        </Style>-->
+        <Style x:Key="GridBackgroundStyle" TargetType="Grid">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#FFF9EBEA" Offset="0"/>
+                        <GradientStop Color="#FFD7CCC8" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="button_circle" TargetType="Button">
+            <Setter Property="Background" Value="#FFCCE8FF"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="BorderBrush" Value="#FF88A1CE"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <!-- עיגול פינות הכפתור -->
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="20">
+                            <!-- ערך העיגול -->
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
         <Style x:Key="lable_eng_task_window" TargetType="Label">
             <Setter Property="FontSize" Value="22"/>
@@ -28,7 +63,7 @@
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="Margin" Value="80,0,0,0"/>
-            <Setter Property="Foreground" Value="#FFFFFFFF"/>
+            <Setter Property="Foreground" Value="Black"/>
         </Style>
         <Style x:Key="text_box_eng_task_window" TargetType="TextBox">
             <Setter Property="Height" Value="30"/>

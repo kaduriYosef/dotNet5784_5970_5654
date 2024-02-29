@@ -186,7 +186,7 @@ static class Program
         string email = Console.ReadLine() ?? "";
         Console.Write("cost: ");
         int cost = GetInteger();
-        Console.Write("level, Rating between 1-5: ");
+        Console.Write("level, Rating between 0-4: ");
         BO.EngineerExperience level = (BO.EngineerExperience)(checkNum());
         Console.Write("Task's ID for engineer: ");
         BO.TaskInEngineer? taskInEngineer = new BO.TaskInEngineer();
@@ -308,13 +308,14 @@ static class Program
     static private int checkNum()
     {
         int level;
-        do
+        level = GetInteger();
+        
+        while (level <= 0 || level > 4)
         {
-            level = GetInteger();
             Console.WriteLine("ERROR: choose level between 0-4");
-
-        } while (level <= 0 || level > 4);
-        return level;
+            level = GetInteger();
+        }
+            return level;
     }
     static private int GetInteger()
     {

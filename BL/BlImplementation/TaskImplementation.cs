@@ -22,6 +22,8 @@ internal class TaskImplementation : ITask
     /// Checks the validity of a BO.Task object, throwing exceptions if invalid data is found.
     /// </summary>
     /// <param name="boTask">The BO.Task object to validate.</param>
+
+    static readonly BlApi.IBl e_bl = BlApi.Factory.Get();
     private void checkValidity(BO.Task boTask)
     {
         if (boTask == null) throw new BO.BlInvalidDataException( "this BO.Task is null");
@@ -30,8 +32,13 @@ internal class TaskImplementation : ITask
         //if (boTask.Id < 0) error+="Id can't be less than zero. ";                  //completely unnecessary and useless since the id is running
         if (boTask.RequiredEffortTime is not null && (boTask.RequiredEffortTime < TimeSpan.Zero))
             error += "required effort time can't be less than zero";
-
         
+        BO.Engineer? checkLevel = e_bl.Engineer.Read(boTask.Engineer.Id);
+        if (boTask.Complexity > checkLevel.Level)
+        {
+            boTask.Engineer = null;
+            throw new BO.BlInvalidDataException("This task requires a higher level of engineer");
+        }
         if(error !="") throw new BO.BlInvalidDataException( error );
     }
 

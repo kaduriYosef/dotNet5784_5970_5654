@@ -7,11 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="1000">
     <Window.Background>
-        <ImageBrush ImageSource="C:\Users\User\source\repos\מיני פרוייקט\dotNet5784_5970_5654\PL\mainImage1.png"/>
+        <ImageBrush ImageSource="C:\Users\User\source\repos\מיני פרוייקט\dotNet5784_5970_5654\PL\mainImage1.png" TileMode="None" ViewboxUnits="RelativeToBoundingBox" ViewportUnits="RelativeToBoundingBox"/>
         
     </Window.Background>
 
-    <Grid>
+    <Grid Style="{StaticResource GridBackgroundStyle}">
         <Grid.RowDefinitions>
             <RowDefinition Height="160*"/>
             <RowDefinition Height="40*"/>
@@ -33,7 +33,8 @@
                 Margin= "10,10,10,10"
                 Click="Button_Engineer"/>
 
-        <Grid/>
+        
+        
     </Grid>
 </Window>
 

@@ -237,7 +237,7 @@ static public class Tools
     public static DateTime? StartDateOrNull()
     {
         // Define the path to your XML file
-        string path = @"D:\imanuel\מכון לב\שנה ב\סמסטר א\פרויקט במערכת חלונות\פרוייקט עצמו\dotNet5784_5970_5654\xml\data-config.xml";
+        string path = @"C:\Users\User\source\repos\מיני פרוייקט\dotNet5784_5970_5654\xml\data-config.xml";
 
         // Load the XML document
         XmlDocument xmlDoc = new XmlDocument();
@@ -269,7 +269,7 @@ static public class Tools
     public static void update_StartDate_unsafe(DateTime date)
     {
         // Define the path to your XML file
-        string path = @"D:\imanuel\מכון לב\שנה ב\סמסטר א\פרויקט במערכת חלונות\פרוייקט עצמו\dotNet5784_5970_5654\xml\data-config.xml";
+        string path = @"C:\Users\User\source\repos\מיני פרוייקט\dotNet5784_5970_5654\xml\data-config.xml";
 
 
         // Load the XML document
