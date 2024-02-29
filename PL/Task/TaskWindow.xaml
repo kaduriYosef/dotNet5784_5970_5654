@@ -48,7 +48,8 @@
                            Margin="250,0,0,0"
                            VerticalContentAlignment="Stretch"
                            HorizontalContentAlignment="Stretch"
-                           Text="{Binding CreatedAtDate}"/>
+                           Text="{Binding CreatedAtDate}"
+                           IsEnabled="False"/>
         <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding RequiredEffortTime}" Style="{StaticResource text_box_eng_task_window}"/>
 
         <ComboBox Name="dependencies" Grid.Row="6" Text="{Binding Dependencies}" 
