@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,22 @@ namespace PL.Task
         static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
         int id = 0;
 
+
+
+        public IEnumerable<BO.EngineerInTask> EngineerList
+        {
+            get { return (IEnumerable<BO.EngineerInTask>)GetValue(EngineerListProperty); }
+            set { SetValue(EngineerListProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for EngineerList.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty EngineerListProperty =
+            DependencyProperty.Register("EngineerList",
+                typeof(IEnumerable<BO.EngineerInTask>),
+                typeof(TaskWindow),
+                new PropertyMetadata(null));
+
+
         public BO.Task Task
         {
             get { return (BO.Task)GetValue(TaskProperty); }
@@ -39,16 +56,17 @@ namespace PL.Task
 
         public TaskWindow(int Id = 0)
         {
+
             InitializeComponent();
 
-            foreach(var task in s_bl.Task.ReadAllSimplified()) 
+
+            EngineerList = from eng in s_bl.Engineer.ReadAll()
+            select new BO.EngineerInTask()
             {
-                CheckBox checkBox = new CheckBox();
-                checkBox.Content = task.Id + " " + task.Alias;
-                ComboBoxItem item = new ComboBoxItem();
-                item.Content = checkBox;
-                dependencies.Items.Add(item);
-            }
+                Id = eng.Id,
+                Name = eng.Name,
+            };
+            
             id = Id;
             if (Id != 0)
                 Task = s_bl.Task.Read(Id);

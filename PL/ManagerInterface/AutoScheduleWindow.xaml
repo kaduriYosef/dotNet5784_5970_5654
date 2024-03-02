@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PL.ManagerInterface"
         mc:Ignorable="d"
         Title="AutoScheduleWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Style="{StaticResource GridBackgroundStyle}">
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"/>
             <RowDefinition Height="30*"/>
@@ -15,7 +15,7 @@
         <TextBlock Grid.Row="0" Text="Select a start date for the project" 
            HorizontalAlignment="Center"   
            VerticalAlignment="Top" Height="32" Width="195"/>
-        <DatePicker Grid.Row="1" SelectedDate="{Binding Date, Mode=TwoWay}" 
+        <DatePicker Grid.Row="1" SelectedDate="{Binding Date}" 
             HorizontalAlignment="Center"  
             VerticalAlignment="Top" Width="115" Height="36"/>
         <Button Grid.Row="2" Content="OK" Click="Button_OK"  Width="100" Height="30"/>

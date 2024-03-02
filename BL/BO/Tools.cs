@@ -234,14 +234,16 @@ static public class Tools
     #endregion
 
     #region help function with xml
+
+    private static string path_to_data_config = @"D:\imanuel\מכון לב\שנה ב\סמסטר א\פרויקט במערכת חלונות\פרוייקט עצמו\dotNet5784_5970_5654\xml\data-config.xml";
     public static DateTime? StartDateOrNull()
     {
         // Define the path to your XML file
-        string path = @"D:\imanuel\מכון לב\שנה ב\סמסטר א\פרויקט במערכת חלונות\פרוייקט עצמו\dotNet5784_5970_5654\xml\data-config.xml";
+       
 
         // Load the XML document
         XmlDocument xmlDoc = new XmlDocument();
-        xmlDoc.Load(path);
+        xmlDoc.Load(path_to_data_config);
 
         // Find the <StartDate> element
         XmlNode? startDateNode = xmlDoc.SelectSingleNode("//StartDate");
@@ -269,12 +271,12 @@ static public class Tools
     public static void update_StartDate_unsafe(DateTime date)
     {
         // Define the path to your XML file
-        string path = @"D:\imanuel\מכון לב\שנה ב\סמסטר א\פרויקט במערכת חלונות\פרוייקט עצמו\dotNet5784_5970_5654\xml\data-config.xml";
+       
 
 
         // Load the XML document
         XmlDocument xmlDoc = new XmlDocument();
-        xmlDoc.Load(path);
+        xmlDoc.Load(path_to_data_config);
 
         // Find the <StartDate> element
         XmlNode? startDateNode = xmlDoc.SelectSingleNode("//StartDate");
@@ -284,7 +286,7 @@ static public class Tools
             startDateNode.InnerText = date.ToString();
 
             // Save the changes back to the file
-            xmlDoc.Save(path);
+            xmlDoc.Save(path_to_data_config);
 
         }
         else

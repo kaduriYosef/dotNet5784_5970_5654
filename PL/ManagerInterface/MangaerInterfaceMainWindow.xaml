@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PL.ManagerInterface"
         mc:Ignorable="d"
         Title="ManagerInterface" Height="450" Width="800">
-    <Grid>
+    <Grid Style="{StaticResource GridBackgroundStyle}">
         <StackPanel Grid.Row="1" Grid.RowSpan="2" Grid.Column="2">
             <Button Style="{StaticResource button_circle}" Content="Init"
                 Margin="10,10,10,10"

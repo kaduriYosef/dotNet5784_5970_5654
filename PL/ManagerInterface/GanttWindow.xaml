@@ -3,21 +3,25 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PL.ManagerInterface"
+        xmlns:local="clr-namespace:PL"
         mc:Ignorable="d"
-        Title="GanttWindow" Height="450" Width="800">
+        Title="Gantt Chart Example" Height="450" Width="800">
     <Grid>
-        <!-- Example ListView with inline ItemsSource and ItemTemplate -->
-        <ListView ItemsSource="{Binding YourCollection}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <!-- Example item template with full binding -->
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Title}" FontWeight="Bold"/>
-                        <TextBlock Text="{Binding Description}"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <ItemsControl ItemsSource="{Binding Tasks}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Canvas Height="400" Width="{Binding TotalDurationWidth}"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <!--<Rectangle Fill="SkyBlue" Height="20"
+                                   Width="{Binding Duration, Converter={local:DurationToWidthConverter}}"
+                                   Canvas.Left="{Binding StartDate, Converter={local:StartDateToLeftConverter}}"/>-->
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
     </Grid>
 </Window>
