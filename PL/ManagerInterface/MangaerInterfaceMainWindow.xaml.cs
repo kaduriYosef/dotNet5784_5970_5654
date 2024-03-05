@@ -74,7 +74,8 @@ namespace PL.ManagerInterface
         }
         private void Button_Gauntt(object sender, RoutedEventArgs e)
         {
-            new GaunttWindow().ShowDialog();
+            new Gantt1Window().ShowDialog();
+            //new GanttWindow().ShowDialog();
         }
     }
 }

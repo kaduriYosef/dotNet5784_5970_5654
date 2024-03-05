@@ -378,6 +378,9 @@ internal class TaskImplementation : ITask
 
     public void ScheduleAllDates(DateTime startOfProject)
     {
+        if (startOfProject < DateTime.Now)
+            throw new BlImpossibleToUpdateException( "can't select a past date");
+
         // Define the path to your XML file
         DateTime? tmp=Tools.StartDateOrNull();
         if (tmp != null)

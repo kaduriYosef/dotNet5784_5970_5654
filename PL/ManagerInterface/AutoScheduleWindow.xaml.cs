@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace PL.ManagerInterface
@@ -49,15 +50,17 @@ namespace PL.ManagerInterface
 
         private void Button_OK(object sender, RoutedEventArgs e)
         {
-            if (Date < DateTime.Now)
-                MessageBox.Show("can't select a past date", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
-            else
+            try
             {
-                s_bl.Task.ScheduleAllDates(Date);
-                MessageBox.Show("All task were scheduled");
-                mainWindow.isStartDate = true; // Access isStartDate through mainWindow reference
-                this.Close();
+                
+                    s_bl.Task.ScheduleAllDates(Date);
+                    MessageBox.Show("All task were scheduled");
+                    mainWindow.isStartDate = true; // Access isStartDate through mainWindow reference
+                    this.Close();
+
+                
             }
+            catch(Exception ex) { MessageBox.Show(ex.Message, "ERROR", MessageBoxButton.OK, MessageBoxImage.Error); }
         }
 
     }

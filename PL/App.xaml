@@ -27,17 +27,24 @@
             <Setter Property="Background">
                 <Setter.Value>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                        <GradientStop Color="#FFF9EBEA" Offset="0"/>
-                        <GradientStop Color="#FFD7CCC8" Offset="1"/>
+                        <GradientStop Color="#FF004D40" Offset="0"/>
+                        <!-- ירוק כהה / טיל -->
+                        <GradientStop Color="#FF009688" Offset="0.5"/>
+                        <!-- טורקיז -->
+                        <GradientStop Color="#FF005C5C" Offset="1"/>
+                        <!-- כחול ירוק כהה -->
                     </LinearGradientBrush>
                 </Setter.Value>
             </Setter>
         </Style>
         <Style x:Key="button_circle" TargetType="Button">
-            <Setter Property="Background" Value="#FFCCE8FF"/>
-            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="#FF003366"/>
+            <!-- כחול כהה -->
+            <Setter Property="Foreground" Value="White"/>
+            <!-- טקסט לבן לניגוד גבוה -->
             <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="BorderBrush" Value="#FF88A1CE"/>
+            <!-- משקל גופן Bold -->
+            <Setter Property="BorderBrush" Value="Black"/>
             <Setter Property="BorderThickness" Value="2"/>
             <Setter Property="Padding" Value="10,5"/>
             <Setter Property="FontSize" Value="22"/>
