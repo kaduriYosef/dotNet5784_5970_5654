@@ -27,7 +27,7 @@
 
 
 
-        <TextBox Grid.Row="1" Text="{Binding Id}"  Style="{StaticResource text_box_eng_task_window}" IsEnabled="{Binding Id, Mode=OneTime, Converter={StaticResource ConverIdToContentKey}}"/> <!--IsEnabled="{Binding Id,Converter={StaticResource IdToIsEnabledConverter}}"-->
+        <TextBox Grid.Row="1" Text="{Binding Id}"  Style="{StaticResource text_box_eng_task_window}" IsEnabled="{Binding Id, Mode=OneTime, Converter={StaticResource ConvertIdToIsEnableForIdKey}}"/> 
         <TextBox Grid.Row="2" Text="{Binding Name, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Style="{StaticResource text_box_eng_task_window}"/>
         <TextBox Grid.Row="3" Text="{Binding Email, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Style="{StaticResource text_box_eng_task_window}" />
         <ComboBox Grid.Row="4"  Style="{StaticResource combo_box_eng_task_window}"

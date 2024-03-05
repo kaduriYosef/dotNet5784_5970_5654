@@ -17,4 +17,9 @@ public interface IBl
     public void ResetDB();
     //public IMilestone Milestone { get; }
 
+    //public DateTime Clock { get; };
+    //public void AddYear();
+    //public void AddMonth();
+    //public void AddHour();
+    //public void TimeReset();
 }

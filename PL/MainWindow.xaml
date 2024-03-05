@@ -6,10 +6,6 @@
         xmlns:local="clr-namespace:PL"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="1000">
-    <Window.Background>
-        <ImageBrush ImageSource="D:\imanuel\מכון לב\שנה ב\סמסטר א\פרויקט במערכת חלונות\פרוייקט עצמו\dotNet5784_5970_5654\PL\mainImage.png"/>
-        
-    </Window.Background>
 
     <Grid Style="{StaticResource GridBackgroundStyle}">
         <Grid.RowDefinitions>
