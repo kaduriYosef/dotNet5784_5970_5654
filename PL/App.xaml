@@ -6,6 +6,7 @@
     <Application.Resources>
         <local:EngineerExperience x:Key="EngineerExperienceKey" />
         <local:EngineerExperienceOnlyLevels x:Key="EngineerExperienceOnlyLevelsKey" />
+        <local:ConvertIdToIsEnableForId x:Key="ConvertIdToIsEnableForIdKey" />
         <local:ConvertIdToContent x:Key="ConverIdToContentKey"/>
         <!--<Style x:Key="button_circle" TargetType="Button">
             <Setter Property="Template">

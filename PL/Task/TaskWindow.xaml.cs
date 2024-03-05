@@ -54,6 +54,19 @@ namespace PL.Task
                 typeof(TaskWindow),
                 new PropertyMetadata(null));
 
+        public IEnumerable<BO.TaskInList> TaskListDep
+        {
+            get { return (IEnumerable<BO.TaskInList>)GetValue(TaskListDepProperty); }
+            set { SetValue(TaskListDepProperty, value); }
+
+        }
+
+        public static readonly DependencyProperty TaskListDepProperty =
+            DependencyProperty.Register("TaskListDep",
+            typeof(IEnumerable<BO.TaskInList>),
+            typeof(TaskListWindow),
+            new PropertyMetadata(null));
+
         public TaskWindow(int Id = 0)
         {
 
@@ -66,7 +79,16 @@ namespace PL.Task
                 Id = eng.Id,
                 Name = eng.Name,
             };
-            
+            TaskListDep = from task in s_bl.Task.ReadAllSimplified()
+                       select new BO.TaskInList()
+                       {
+                           Id = task.Id,
+                           Description = task.Description,
+                           Alias = task.Alias,
+                           Status = task.Status,
+                       };
+
+
             id = Id;
             if (Id != 0)
                 Task = s_bl.Task.Read(Id);
@@ -78,7 +100,7 @@ namespace PL.Task
                     Description = null,
                     CreatedAtDate = DateTime.Now,
                     RequiredEffortTime = null,
-                    Dependencies = null,
+                    Dependencies = TaskListDep.ToList(),
                     Complexity = 0,
                     DeadlineDate = null,
                     Deliverables = null,

@@ -7,70 +7,73 @@
         mc:Ignorable="d"
         DataContext="{Binding Task, RelativeSource={RelativeSource Self}, Mode=TwoWay}"
         Title="TaskWindow" Height="700" Width="700">
+
     <Grid Style="{StaticResource GridBackgroundStyle}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            
-        </Grid.RowDefinitions>
-        <!--<Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>-->
-        <Label Grid.Row="0" Grid.ColumnSpan="2" Content="Enter task's details"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Height="60" Foreground="#FFFFFFFF" />
-        <Label Grid.Row="1" Content="ID:" Style="{StaticResource lable_eng_task_window}" />
-        <Label Grid.Row="2" Content="Alias:" Style="{StaticResource lable_eng_task_window}" />
-        <Label Grid.Row="3" Content="Description:" Style="{StaticResource lable_eng_task_window}" />
-        <Label Grid.Row="4" Content="CreatedAtDate:" Style="{StaticResource lable_eng_task_window}" />
-        <Label Grid.Row="5" Content="RequiredEffortTime:" Style="{StaticResource lable_eng_task_window}" />
-        <Label Grid.Row="6" Content="Dependencies:" Style="{StaticResource lable_eng_task_window}" />
-        <Label Grid.Row="7" Content="Complexity:" Style="{StaticResource lable_eng_task_window}" />
-        <!--<Label Grid.Row="8" Content="DeadlineDate:" Style="{StaticResource lable_eng_task_window}" />-->
-        <Label Grid.Row="8" Content="Deliverables:" Style="{StaticResource lable_eng_task_window}" />
-        <Label Grid.Row="9" Content="Remarks:" Style="{StaticResource lable_eng_task_window}" />
-        <Label Grid.Row="10" Content="Engineer:" Style="{StaticResource lable_eng_task_window}" />
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="10">
 
-        <TextBox Grid.Row="1" Text="{Binding Id}" Style="{StaticResource text_box_eng_task_window}" IsEnabled="{Binding Id, Mode=OneTime, Converter={StaticResource ConverIdToContentKey}}"/>
-        <TextBox Grid.Row="2" Text="{Binding Alias}" Style="{StaticResource text_box_eng_task_window}"/>
-        <TextBox Grid.Row="3" Text="{Binding Description}" Style="{StaticResource text_box_eng_task_window}"/>
-        <DatePickerTextBox Grid.Row="4" Height="30" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center" 
-                           Margin="250,0,0,0"
-                           VerticalContentAlignment="Stretch"
-                           HorizontalContentAlignment="Stretch"
-                           Text="{Binding CreatedAtDate}"/>
-        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding RequiredEffortTime}" Style="{StaticResource text_box_eng_task_window}"/>
+                <TextBlock Text="Enter task's details" FontSize="30" Foreground="#FFFFFFFF" TextAlignment="Center" Margin="0,0,0,20"/>
 
-        <ComboBox Grid.Row="6" ItemsSource="{Binding Dependencies}" 
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                    <TextBlock Text="ID:" Width="100"/>
+                    <TextBox Text="{Binding Id}" Width="150" IsEnabled="{Binding Id, Mode=OneTime, Converter={StaticResource ConvertIdToIsEnableForIdKey}}"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                    <TextBlock Text="Alias:" Width="100"/>
+                    <TextBox Text="{Binding Alias}" Width="150"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                    <TextBlock Text="Description:" Width="100"/>
+                    <TextBox Text="{Binding Description}" Width="150"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                    <TextBlock Text="CreatedAtDate:" Width="100"/>
+                    <DatePicker SelectedDate="{Binding CreatedAtDate}" Width="150"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                    <TextBlock Text="RequiredEffortTime:" Width="100"/>
+                    <TextBox Text="{Binding RequiredEffortTime}" Width="150"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                    <TextBlock Text="Dependencies:" Width="100"/>
+                    <ComboBox ItemsSource="{Binding TaskListDep, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:TaskWindow}}}" 
                  Style="{StaticResource combo_box_eng_task_window}" />
-        
-        <ComboBox Grid.Row="7" 
-                  ItemsSource="{Binding Source={StaticResource EngineerExperienceOnlyLevelsKey}}"
-                  SelectedValue="{Binding Path=Complexity, Mode=TwoWay}" 
-                  Style="{StaticResource combo_box_eng_task_window}"/>
+                </StackPanel>
 
-        <TextBox Grid.Row="8" Text="{Binding Deliverables}" Style="{StaticResource text_box_eng_task_window}"/>
-        <TextBox Grid.Row="9" Text="{Binding Remarks}" Style="{StaticResource text_box_eng_task_window}"/>
 
-        <ComboBox Grid.Row="10" Style="{StaticResource combo_box_eng_task_window}" 
-        ItemsSource="{Binding EngineerList, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:TaskWindow}}}"/>
+                <!-- Complexity ComboBox -->
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                    <TextBlock Text="Complexity:" Width="100"/>
+                    <ComboBox ItemsSource="{Binding Source={StaticResource EngineerExperienceOnlyLevelsKey}}"
+                              SelectedValue="{Binding Path=Complexity, Mode=TwoWay}" Width="150"/>
+                </StackPanel>
 
-        <Button Grid.Row="12" Content="{Binding Id,Mode=OneTime,Converter={StaticResource ConverIdToContentKey}}" Click="btnAddUpdate_Click" HorizontalAlignment="Center" Foreground="#FF1A337A" Background="#FFFFFFFF" Height="50" Width="100"/>
-        <!--<Grid.Background>
-                <LinearGradientBrush>
-                    <GradientStop Color="#FF336699" Offset="5" />
-                    <GradientStop Color="#FF125F61" Offset="1" />
-                </LinearGradientBrush>
-            </Grid.Background>-->
+                <!-- Deliverables TextBox -->
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                    <TextBlock Text="Deliverables:" Width="100"/>
+                    <TextBox Text="{Binding Deliverables}" Width="150"/>
+                </StackPanel>
+
+                <!-- Remarks TextBox -->
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                    <TextBlock Text="Remarks:" Width="100"/>
+                    <TextBox Text="{Binding Remarks}" Width="150"/>
+                </StackPanel>
+
+                <!-- Engineer ComboBox -->
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                    <TextBlock Text="Engineer:" Width="100"/>
+                    <ComboBox ItemsSource="{Binding EngineerList, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:TaskWindow}}}" Width="150"/>
+                </StackPanel>
+
+                <Button Grid.Row="11" Grid.RowSpan="2" Content="{Binding Id,Mode=OneTime,Converter={StaticResource ConverIdToContentKey}}" Click="btnAddUpdate_Click" Style="{StaticResource button_circle}" HorizontalAlignment="Center" Height="50" Width="100"/>
+
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Window>
