@@ -29,7 +29,20 @@
                 Margin= "10,10,10,10"
                 Click="Button_Engineer"/>
 
-        
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button Grid.ColumnSpan="2"
+                       />
+
+        </Grid>
         
     </Grid>
 </Window>
