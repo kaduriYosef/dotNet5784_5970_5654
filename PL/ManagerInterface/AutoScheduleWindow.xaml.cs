@@ -43,7 +43,7 @@ namespace PL.ManagerInterface
         {
             InitializeComponent();
             this.DataContext = this;
-            Date = DateTime.Now;
+            Date = s_bl.Clock;
             this.mainWindow = mainWindow; // Set the reference to the passed mainWindow
         }
 
