@@ -12,6 +12,15 @@ public interface IBl
 
     public ITask Task { get; }
 
+    #region Clock
+    public DateTime Clock { get; }
+    public void AddHour();
+    public void AddDay();
+    public void AddYear();
+    public void ResetClock();
+
+    #endregion 
+
     public void InitializeDB();
 
     public void ResetDB();

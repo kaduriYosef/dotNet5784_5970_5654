@@ -8,6 +8,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
+
 //using PL.Engineer;
 using PL.EngineerInterface;
 using PL.ManagerInterface;
@@ -20,31 +22,35 @@ namespace PL
     public partial class MainWindow : Window
     {
 
-        private void clock_run() 
-        { 
-            Thread.Sleep(1000);
-            Time += new TimeSpan(1, 0, 0, 0);
-        }
         static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
+        private DispatcherTimer timer;
+
         public MainWindow()
         {
             InitializeComponent();
-            new Thread(clock_run).Start();
+            this.DataContext = this;
+
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += Timer_Tick;
+            timer.Start();
         }
 
-
-
-        public TimeSpan Time      
+        public DateTime CurrentTime
         {
-            get { return (TimeSpan)GetValue(TimeProperty); }
+            get { return (DateTime)GetValue(TimeProperty); }
             set { SetValue(TimeProperty, value); }
         }
 
-        // Using a DependencyProperty as the backing store for Time.  This enables animation, styling, binding, etc...
+        // Changed the default value to DateTime.Now
         public static readonly DependencyProperty TimeProperty =
-            DependencyProperty.Register("Time", typeof(TimeSpan), typeof(MainWindow), new PropertyMetadata(new TimeSpan(0,0,0,0)));
+            DependencyProperty.Register("CurrentTime", typeof(DateTime), typeof(MainWindow), new PropertyMetadata(s_bl.Clock));
 
-
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            // Update CurrentTime from s_bl.Clock every time the timer ticks.
+            CurrentTime = s_bl.Clock;
+        }
 
         private void Button_Admin(object sender, RoutedEventArgs e)
         {
@@ -56,17 +62,20 @@ namespace PL
             else
                 MessageBox.Show("Incorrect Password and too many attempts",
                         "Access Denied", MessageBoxButton.OK, MessageBoxImage.Error);
-            
-            
+
+
             //new ManagerInterfaceMainWindow().ShowDialog();
         }
-
-
 
         private void Button_Engineer(object sender, RoutedEventArgs e)
         {
             new EngineerInterfaceMainWindow().ShowDialog();
         }
-
+        
+        private void button_click_Add_hour(object sender, RoutedEventArgs e) {
+            s_bl.AddHour(); CurrentTime = s_bl.Clock; }
+        private void button_click_Add_day(object sender, RoutedEventArgs e) { s_bl.AddDay(); CurrentTime = s_bl.Clock; }
+        private void button_click_Add_year(object sender, RoutedEventArgs e) { s_bl.AddYear(); CurrentTime = s_bl.Clock; }
+        private void button_click_Reset_current_time(object sender, RoutedEventArgs e) { s_bl.ResetClock(); CurrentTime = s_bl.Clock; }
     }
 }

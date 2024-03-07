@@ -4,8 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PL"
+        
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="1000">
+        Title="MainWindow" Height="600" Width="1000"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}">
 
     <Grid Style="{StaticResource GridBackgroundStyle}">
         <Grid.RowDefinitions>
@@ -35,12 +37,22 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
-            <Button Grid.ColumnSpan="2"
-                       />
+            <!--<Label Grid.ColumnSpan="2"
+           Content="{Binding Path=CurrentTime}"
+           HorizontalAlignment="Center"
+           VerticalAlignment="Center" />-->
+            <Label Content="{Binding CurrentTime}" Height="32" Width="auto" />
+            <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal">
+                <Button Content="Add Year" Click="button_click_Add_year"/>
+                <Button Content="Add Day" Click="button_click_Add_day"/>
+                <Button Content="Add Hour" Click="button_click_Add_hour"/>
+                <Button Content="Reset Date" Click="button_click_Reset_current_time"/>
+            </StackPanel>
+
 
         </Grid>
         

@@ -17,6 +17,10 @@ internal class TaskImplementation : ITask
 {
     private DalApi.IDal _dal = DalApi.Factory.Get;
 
+    private readonly IBl _bl;
+    internal TaskImplementation(IBl bl) => _bl = bl;
+
+
 
     /// <summary>
     /// Checks the validity of a BO.Task object, throwing exceptions if invalid data is found.
@@ -64,7 +68,7 @@ internal class TaskImplementation : ITask
                 ));
 
         //nothing can go wrong after the checkValidity so 
-        int retId = _dal.Task.Create(BOtoDO(boTask));
+        int retId = _dal.Task.Create(BOtoDOForCreate(boTask));
 
         return retId;
     }
@@ -278,7 +282,25 @@ internal class TaskImplementation : ITask
             EngineerId: boTask.Engineer?.Id ?? null
             );
     }
-
+    internal DO.Task BOtoDOForCreate(BO.Task boTask)
+    {
+        return new DO.Task(
+            Id: boTask.Id,
+            Alias: boTask.Alias,
+            Description: boTask.Description,
+            CreatedAtDate: _bl.Clock,
+            RequiredEffortTime: boTask.RequiredEffortTime,
+            IsMilestone: false,
+            Complexity: (DO.EngineerExperience?)(int?)(boTask.Complexity),
+            StartDate: boTask.StartDate,
+            ScheduledDate: boTask.ScheduledDate,
+            DeadlineDate: boTask.DeadlineDate,
+            CompleteDate: boTask.CompleteDate,
+            Deliverables: boTask.Deliverables,
+            Remarks: boTask.Remarks,
+            EngineerId: boTask.Engineer?.Id ?? null
+            );
+    }
 
     /// <summary>
     /// Converts a DO.Task object to a BO.Task object.
@@ -326,8 +348,9 @@ internal class TaskImplementation : ITask
 
     static internal BO.Task DOtoBO(DalApi.IDal dal, DO.Task doTask)
     {
+        IBl temporary = new Bl();
         TaskImplementation tmp
-            = new TaskImplementation { _dal= dal};
+            = new TaskImplementation(temporary) { _dal= dal};
         return tmp.DOtoBO(doTask);
     }
 
@@ -378,7 +401,7 @@ internal class TaskImplementation : ITask
 
     public void ScheduleAllDates(DateTime startOfProject)
     {
-        if (startOfProject < DateTime.Now)
+        if (startOfProject <_bl.Clock)
             throw new BlImpossibleToUpdateException( "can't select a past date");
 
         // Define the path to your XML file

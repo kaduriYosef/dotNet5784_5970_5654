@@ -20,14 +20,38 @@ internal class Bl : IBl
     /// <summary>
     /// Provides access to the task-related functionalities.
     /// </summary>
-    public ITask Task => new TaskImplementation();
+    public ITask Task => new TaskImplementation(this);
 
     /// <summary>
     /// Provides access to the milestone-related functionalities.
     /// </summary>
     public IMilestone Milestone => new MilestoneImplementation();
+    private static DateTime s_Clock = DateTime.Now;
+    public DateTime Clock { get { return s_Clock; } private set { s_Clock = value; } }
+
+    public void AddDay()
+    {
+        s_Clock = s_Clock.AddDays(1); // Adds one day to the current DateTime stored in s_Clock
+    }
+
+    public void AddHour()
+    {
+        s_Clock = s_Clock.AddHours(1); // Adds one hour to the current DateTime stored in s_Clock
+    }
+
+    public void AddYear()
+    {
+        s_Clock = s_Clock.AddYears(1); // Adds one year to the current DateTime stored in s_Clock
+    }
+
+    public void ResetClock()
+    {
+        s_Clock = DateTime.Now; // Resets s_Clock to the current date and time
+    }
+
 
     public void InitializeDB() => DalTest.Initialization.Do();
 
     public void ResetDB() => DalTest.Initialization.Reset();
+
 }
