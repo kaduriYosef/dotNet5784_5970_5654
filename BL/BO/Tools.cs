@@ -235,7 +235,7 @@ static public class Tools
 
     #region help function with xml
 
-    private static string path_to_data_config = @"D:\imanuel\מכון לב\שנה ב\סמסטר א\פרויקט במערכת חלונות\פרוייקט עצמו\dotNet5784_5970_5654\xml\data-config.xml";
+    private static string path_to_data_config = @"..\xml\data-config.xml";
     public static DateTime? StartDateOrNull()
     {
         // Define the path to your XML file

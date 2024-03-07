@@ -32,14 +32,19 @@ internal class TaskImplementation : ITask
         //if (boTask.Id < 0) error+="Id can't be less than zero. ";                  //completely unnecessary and useless since the id is running
         if (boTask.RequiredEffortTime is not null && (boTask.RequiredEffortTime < TimeSpan.Zero))
             error += "required effort time can't be less than zero";
-        
-        BO.Engineer? checkLevel = e_bl.Engineer.Read(boTask.Engineer.Id);
-        if (boTask.Complexity > checkLevel.Level)
+
+        BO.Engineer checkLevel;
+        if (boTask.Engineer?.Id is not null)
         {
-            boTask.Engineer = null;
-            throw new BO.BlInvalidDataException("This task requires a higher level of engineer");
+            checkLevel = e_bl.Engineer.Read(boTask.Engineer?.Id ?? 0)!;
+            if (boTask.Complexity > checkLevel.Level)
+            {
+                boTask.Engineer = null;
+                throw new BO.BlInvalidDataException("This task requires a higher level of engineer");
+            }
+            if (error != "") throw new BO.BlInvalidDataException(error);
         }
-        if(error !="") throw new BO.BlInvalidDataException( error );
+
     }
 
 
