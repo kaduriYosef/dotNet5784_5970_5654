@@ -62,7 +62,11 @@ namespace PL
             {
                 double offsetDays = ((task.startDate ?? DateTime.Today) - minStartDate).TotalDays;
                 double leftPosition = offsetDays * 10 + maxAliasWidth; // המלבנים מתחילים לאחר הטקסט הארוך ביותר
-
+                bool is_late = false;
+                if(task.startDate<s_bl.Clock)
+                    is_late = true;
+                if(s_bl.Task.ReadAll(t=> s_bl.Task.Read(task.id).Dependencies.Any(t1=>t1.Id==t.Id )).Where(t2=>t2.ScheduledDate<s_bl.Clock).Any())
+                    is_late=true;
                 // הוספת תווית של שם המשימה
                 TextBlock aliasLabel = new TextBlock
                 {
@@ -74,9 +78,14 @@ namespace PL
                 Canvas.SetLeft(aliasLabel, 5); // קצת רווח מהשוליים השמאליים
                 Canvas.SetTop(aliasLabel, topPosition);
 
+
+                var red = new SolidColorBrush(Color.FromArgb(0xFF, 0xFF, 0x00, 0x00));
+
+                var normal = new SolidColorBrush(Color.FromArgb(0x88, 0x1E, 0x2F, 0x47));
+                var color =(is_late ? red : normal);
                 Rectangle rectangle = new Rectangle
                 {
-                    Fill = new SolidColorBrush(Color.FromArgb(0xFF, 0x1E, 0x2F, 0x47)),
+                    Fill = color,
                     Width = task.taskDuration * 10, // כפל המשך המשימה ב-10 לדוגמה
                     Height = 20,
                     Stroke = new SolidColorBrush(Colors.Black),
