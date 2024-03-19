@@ -11,27 +11,62 @@
             <Button Style="{StaticResource button_circle}" Content="Init"
                 Margin="10,10,10,10"
                 MinHeight="50"
+                Width="250"
                 Click="Button_Init"/>
             <Button Style="{StaticResource button_circle}" Content="Reset"
                 Margin="10,10,10,10"
                 MinHeight="50"
+                Width="250"
                 Click="Button_Reset"/>
             <Button Style="{StaticResource button_circle}" Content="Enginners"
                 Margin="10,10,10,10"
+                Width="250"
                 MinHeight="50"
                 Click="Button_Engineers"/>
             <Button Style="{StaticResource button_circle}" Content="auto-schedule"
                  Margin="10,10,10,10"
+                Width="250"
                  MinHeight="50"
                     Click="Button_Auto_Schedule"/>
             <Button Style="{StaticResource button_circle}" Content="Task"
                  Margin= "10,10,10,10"
+                 Width="250"
                  MinHeight="50"
                  Click="Button_Task"/>
-            <Button Style="{StaticResource button_circle}" Content="Gauntt"
+            <Button Style="{StaticResource button_circle_with_image}" Content="Gauntt"
                 Margin= "10,10,10,10"
-                MinHeight="50"
+                Height="50"
+                Width="250"
                 Click="Button_Gauntt"/>
+            <Button x:Name="FadeInButton" Content="Gauntt" Margin="10" MinHeight="50" Click="Button_Gauntt">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Image x:Name="buttonImage" Source="path_to_your_image.png" Opacity="0" Stretch="Fill"/>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="buttonImage" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:1"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="buttonImage" Storyboard.TargetProperty="Opacity" To="0" Duration="0:0:1"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
 
         </StackPanel>
     </Grid>

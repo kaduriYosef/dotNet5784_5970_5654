@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -67,6 +68,30 @@ namespace PL.Task
             typeof(TaskListWindow),
             new PropertyMetadata(null));
 
+        public ObservableCollection<int> Ids { get; set; }
+        private void CheckBox_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            if (Ids != null && sender is CheckBox checkBox && checkBox.Tag is int id && Ids.Contains(id))
+            {
+                checkBox.IsChecked = true;
+            }
+        }
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            if (sender is CheckBox checkBox && checkBox.Tag is int id)
+            {
+                if (Ids != null&&!Ids.Contains(id))
+                    Ids.Add(id);
+            }
+        }
+        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (Ids != null && sender is CheckBox checkBox && checkBox.Tag is int id)
+            {
+                Ids.Remove(id);
+            }
+        }
         public TaskWindow(int Id = 0)
         {
 
@@ -144,6 +169,7 @@ namespace PL.Task
 
 
         }
+       
 
     }
 

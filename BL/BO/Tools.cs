@@ -257,7 +257,17 @@ static public class Tools
             else
             {
                 // <StartDate> has a value
-                return DateTime.Parse(startDateNode.InnerText);
+                //return DateTime.TryParse(startDateNode.InnerText);
+                if (DateTime.TryParse(startDateNode.InnerText, out DateTime result))
+                {
+                    return result;
+                }
+                else
+                {
+                    // Handle the situation where the date could not be parsed
+                    return null;
+                }
+
             }
         }
         else
