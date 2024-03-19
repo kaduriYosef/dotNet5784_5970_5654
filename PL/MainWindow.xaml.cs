@@ -38,12 +38,12 @@ namespace PL
 
         public DateTime CurrentTime
         {
-            get { return (DateTime)GetValue(TimeProperty); }
-            set { SetValue(TimeProperty, value); }
+            get { return (DateTime)GetValue(CurrentTimeProperty); }
+            set { SetValue(CurrentTimeProperty, value); }
         }
 
         // Changed the default value to DateTime.Now
-        public static readonly DependencyProperty TimeProperty =
+        public static readonly DependencyProperty CurrentTimeProperty =
             DependencyProperty.Register("CurrentTime", typeof(DateTime), typeof(MainWindow), new PropertyMetadata(s_bl.Clock));
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -70,7 +70,7 @@ namespace PL
 
         private void Button_Engineer(object sender, RoutedEventArgs e)
         {
-            new EngineerInterfaceMainWindow().ShowDialog();
+            new EngineerInterfaceMainWindow().Show();
         }
         
         private void button_click_Add_hour(object sender, RoutedEventArgs e) {
