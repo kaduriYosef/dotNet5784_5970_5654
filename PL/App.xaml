@@ -8,8 +8,9 @@
         <local:EngineerExperienceOnlyLevels x:Key="EngineerExperienceOnlyLevelsKey" />
         <local:ConvertIdToIsEnableForId x:Key="ConvertIdToIsEnableForIdKey" />
         <local:ConvertIdToContent x:Key="ConverIdToContentKey"/>
-       
-       
+        <!-- Resource for Has Allredy Task Convert -->
+        <local:HasAllredyTaskConvert x:Key="HasAllredyTaskConvertKey"/>
+
         <!--<local:ConvertIdToIsEnabled x:Key = "ConvertIdToIsEnabledKey"/>-->
         <!--<Style x:Key="button_circle" TargetType="Button">
             <Setter Property="Template">

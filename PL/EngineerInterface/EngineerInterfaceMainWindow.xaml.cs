@@ -32,9 +32,9 @@ namespace PL.EngineerInterface
             set { SetValue(TaskInListProperty, value); }
         }
         public static readonly DependencyProperty TaskInListProperty =
-            DependencyProperty.Register("TaskInList", typeof(IEnumerable<TaskInList>), typeof(EngineerInterfaceMainWindow), new PropertyMetadata(s_bl.Task.ReadAll()));
+            DependencyProperty.Register("TaskInList", typeof(IEnumerable<TaskInList>), typeof(EngineerInterfaceMainWindow), new PropertyMetadata(s_bl.Task.ReadAllSimplified()));
 
-        // Dependency Property for CurrentEngineer
+        // Dependency  Property for CurrentEngineer
         public BO.Engineer CurrentEngineer
         {
             get { return (BO.Engineer)GetValue(CurrentEngineerProperty); }

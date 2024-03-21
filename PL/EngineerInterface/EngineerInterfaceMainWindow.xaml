@@ -5,8 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PL.EngineerInterface"
         mc:Ignorable="d"
-        Title="EngineerInterfaceMain" Height="450" Width="800">
-    <Grid>
-        
+        Title="EngineerView" Height="auto" Width="800"
+        DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}">
+    <Grid  DataContext="{Binding CurrentTask}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Greeting message -->
+        <Label Content="Hello"   FontSize="26"  HorizontalAlignment="Center" Margin="0,0,0,40"/>
+
+        <!-- Display the name of the current engineer -->
+        <Label FontSize="30" HorizontalAlignment="Center" Margin="0,60,0,0">
+            <Label.Content>
+                <Binding Path="CurrentEngineer.Name" RelativeSource="{RelativeSource FindAncestor, AncestorType={x:Type local:EngineerInterfaceMainWindow}}"  />
+            </Label.Content>
+        </Label>
+
+        <!-- Label indicating the need to choose a task -->
+        <Label Content= "You need to choose a task:" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Row="1" Visibility="{Binding Id ,Converter={StaticResource HasAllredyTaskConvertKey}}"/>
+
+        <!-- StackPanel for task management options -->
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0,60,300,0" Height="auto" Width="auto" Grid.Row="2">
+            <Label Content="View task option:"  FontSize="26" Margin="0,0,0,50"/>
+            <Label Content= "Your task's details:"   FontSize="26"  Margin="0,0,0,50"/>
+            <Label Content="I finished the task:"   FontSize="26"  Margin="0,0,0,50"/>
+        </StackPanel>
+
+        <!-- StackPanel for task management buttons -->
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="200,60,0,0" Width="auto" Height="auto" Grid.Row="2">
+            <Button Content="Tasks option"   Click="TaskOption_Button" Margin="0,0,0,30"/>
+            <Button Content="Your task details" Click="UpdateTask_Button"  Margin="0,0,0,30"/>
+            <Button Content="Task completed"  Click="TaskCompleted_Button" Margin="0,0,0,30"/>
+        </StackPanel>
     </Grid>
 </Window>
