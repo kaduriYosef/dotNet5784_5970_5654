@@ -20,8 +20,8 @@ namespace PL.EngineerInterface
     /// </summary>
     public partial class EngineerInterfaceMainWindow : Window
     {
-        
-    static readonly BlApi.IBl s_bl = BlApi.Factory.Get(); // Initializing s_bl with Factory.Get()
+
+        static readonly BlApi.IBl s_bl = BlApi.Factory.Get(); // Initializing s_bl with Factory.Get()
 
 
 
@@ -53,7 +53,7 @@ namespace PL.EngineerInterface
      DependencyProperty.Register("CurrentTask", typeof(BO.Task), typeof(EngineerInterfaceMainWindow), new PropertyMetadata(null));
 
 
-        public EngineerInterfaceMainWindow(int Id=0)
+        public EngineerInterfaceMainWindow(int Id = 0)
         {
             InitializeComponent();
             try
@@ -83,7 +83,7 @@ namespace PL.EngineerInterface
             {
                 bool flag = true;
                 Close();
-                new TaskAddOrUpdate(CurrentTask.Id, flag).ShowDialog();
+                //new TaskAddOrUpdate(CurrentTask.Id, flag).ShowDialog();
             }
             catch (Exception ex)
             {
@@ -124,3 +124,4 @@ namespace PL.EngineerInterface
 
         }
     }
+}
