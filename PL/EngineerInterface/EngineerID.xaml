@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PL.EngineerInterface"
         mc:Ignorable="d"
-        Title="Password Required" Height="200" Width="300">
+        Title="Password Required" Height="Auto" Width="Auto">
     <Grid>
 
         <Button Content="Log In" VerticalAlignment="Bottom" Margin="0,0,0,30" Click="EngineerLogin_Click" />
@@ -15,7 +15,7 @@
             <Label Content="Id:" Margin="0,80,250,0" FontSize="20" FontWeight="Bold"/>
         </StackPanel>
 
-        <!--stack panel for the text and password from user-->
+        
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0" Height="200" Width="400" >
             <TextBox  Width="200" Height="40" FontSize="20" HorizontalAlignment="Right" VerticalContentAlignment="Center" TextChanged="TextBox_UserName"/>
             <TextBox  Width="200" Height="40" HorizontalAlignment="Right" Margin="0,80,0,0" FontSize="20"

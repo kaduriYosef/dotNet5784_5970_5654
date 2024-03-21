@@ -71,7 +71,15 @@ namespace PL
 
         private void Button_Engineer(object sender, RoutedEventArgs e)
         {
-            new EngineerInterfaceMainWindow().Show();
+            var engineerId= new EngineerID();
+            var dialogResult = engineerId.ShowDialog();
+
+            //if (dialogResult == true)
+            //    new EngineerInterfaceMainWindow(engineerId.id).ShowDialog();
+            //else
+            //    MessageBox.Show("Incorrect ID or User name and too many attempts",
+            //            "Access Denied", MessageBoxButton.OK, MessageBoxImage.Error);
+
         }
         
         private void button_click_Add_hour(object sender, RoutedEventArgs e) {

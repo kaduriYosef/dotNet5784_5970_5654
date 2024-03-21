@@ -83,7 +83,7 @@ namespace PL.EngineerInterface
             {
                 bool flag = true;
                 Close();
-                new TaskWindowForEngineer(CurrentTask.Id).ShowDialog();
+                //new TaskAddOrUpdate(CurrentTask.Id, flag).ShowDialog();
             }
             catch (Exception ex)
             {
