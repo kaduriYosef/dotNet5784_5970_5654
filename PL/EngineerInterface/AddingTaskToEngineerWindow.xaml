@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PL.Engineer"
+        xmlns:local="clr-namespace:PL.EngineerInterface"
         mc:Ignorable="d"
         Title="AddTaskForEngineer" Height="auto" Width="800"
                  DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}">
@@ -38,7 +38,8 @@
                 <TextBox Text="{Binding Alias, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" />
                 <TextBox Text="{Binding Description, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" />
                 <TextBox Text="{Binding CreatedAtDate}" IsEnabled="False" />
-                <ListBox SelectionMode="Extended" ItemsSource="{Binding TaskInList, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:AddTaskForEngineer}}, Mode=TwoWay}" 
+                <ListBox SelectionMode="Extended" 
+                         ItemsSource="{Binding TaskInList, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:AddingTaskToEngineerWindow}}, Mode=TwoWay}"
                      Height="100" Foreground="#FF1A337A" Background="#FFDDDDDD" FontSize="22" VerticalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="0,0,0,30"  >
                     <ListBox.ItemTemplate>
                         <DataTemplate>

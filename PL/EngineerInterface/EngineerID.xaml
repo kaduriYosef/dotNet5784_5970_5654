@@ -8,7 +8,7 @@
         Title="Password Required" Height="200" Width="300">
     <Grid>
 
-        <Button Content="Log In" VerticalAlignment="Bottom" Margin="0,0,0,30" Click="EngineerLogin_Click" Style="{StaticResource CommonButtonStyle}"/>
+        <Button Content="Log In" VerticalAlignment="Bottom" Margin="0,0,0,30" Click="EngineerLogin_Click" />
 
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0" Height="200" Width="400" >
             <Label Content="User Name:" HorizontalAlignment="Left" FontSize="18" FontWeight="Bold"/>

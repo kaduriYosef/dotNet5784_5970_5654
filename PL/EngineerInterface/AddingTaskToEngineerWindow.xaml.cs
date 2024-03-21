@@ -61,6 +61,6 @@ public partial class AddingTaskToEngineerWindow : Window
         s_bl.Task.Update(CurrentTask);
         Close();
         MessageBox.Show("The task was successfully added to you");
-        new EngineerView(currentEngineer.Id).Show();
+        new EngineerInterfaceMainWindow(currentEngineer.Id).Show();
     }
 }

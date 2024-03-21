@@ -112,7 +112,7 @@ namespace PL.Task
                            Alias = task.Alias,
                            Status = task.Status,
                        };
-
+                                                            //looks unnecessary
 
             id = Id;
             if (Id != 0)

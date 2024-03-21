@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,7 @@ using System.Windows.Shapes;
 namespace PL.EngineerInterface
 {
     /// <summary>
-    /// Interaction logic for Task_sChoice.xaml
+    /// Interaction logic for TaskChoice.xaml
     /// </summary>
     public partial class TaskChoice : Window
     { 
@@ -29,7 +30,7 @@ namespace PL.EngineerInterface
         set { SetValue(TaskListProperty, value); }
     }
     public static readonly DependencyProperty TaskListProperty =
-        DependencyProperty.Register("TaskList", typeof(IEnumerable<BO.TaskInList>), typeof(TaskForEngineer), new PropertyMetadata(null));
+        DependencyProperty.Register("TaskList", typeof(IEnumerable<BO.TaskInList>), typeof(TaskChoice), new PropertyMetadata(null));
 
     // Current engineer for whom the tasks are being displayed
     public BO.Engineer currentEngineer = new BO.Engineer();
@@ -39,7 +40,7 @@ namespace PL.EngineerInterface
     {
         InitializeComponent();
         // Retrieve tasks based on engineer's level and availability
-        TaskList = s_bl.Task.ReadAll(item => (int)item.Complexity <= (int)CurrentEngineer.Level && item.Engineer.Id == null && item.StartDate == null);
+        TaskList = s_bl.Task.ReadAllSimplified(item => (int)item.Complexity <= (int)CurrentEngineer.Level && item.Engineer.Id == null && item.StartDate == null);
         currentEngineer = CurrentEngineer;
     }
 
@@ -47,7 +48,7 @@ namespace PL.EngineerInterface
     private void ChooseTask_Button(object sender, MouseButtonEventArgs e)
     {
         // Check if a schedule of tasks has been set up
-        if (s_bl.Dates.getStartProject() == null)
+        if (Tools.StartDateOrNull() == null)
         {
             MessageBox.Show("A schedule of tasks needs to be set up first");
             return;
@@ -56,7 +57,7 @@ namespace PL.EngineerInterface
         BO.TaskInList? task = (sender as ListView)?.SelectedItem as BO.TaskInList;
         // Close the current window and open the window to add task for engineer
         Close();
-        new AddTaskForEngineer(currentEngineer, task.Id).ShowDialog();
+        //new AddTaskForEngineer(currentEngineer, task.Id).Show();
     }
 
     // Event handler for the Home button click
@@ -64,7 +65,7 @@ namespace PL.EngineerInterface
     {
         // Close the current window and open the EngineerView window for the current engineer
         Close();
-        new EngineerView(currentEngineer.Id).ShowDialog();
+        new EngineerInterfaceMainWindow(currentEngineer.Id).ShowDialog();
     }
 }
 }

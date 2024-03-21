@@ -23,17 +23,18 @@ namespace PL
     {
 
         static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
-        private DispatcherTimer timer;
+        private DispatcherTimer _timer;
 
         public MainWindow()
         {
             InitializeComponent();
             this.DataContext = this;
 
-            timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1);
-            timer.Tick += Timer_Tick;
-            timer.Start();
+            _timer = new DispatcherTimer();
+            _timer.Interval = TimeSpan.FromSeconds(1);
+            _timer.Tick += Timer_Tick;
+            _timer.Start();
+
         }
 
         public DateTime CurrentTime

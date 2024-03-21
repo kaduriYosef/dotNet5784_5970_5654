@@ -22,7 +22,7 @@ namespace PL.EngineerInterface
         static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
 
         // Variables to store user input
-        private string EngineerName =  string.Empty;
+        private string EngineerName = string.Empty;
         private int id = 0;
 
         public EngineerID()
@@ -75,4 +75,5 @@ namespace PL.EngineerInterface
             }
         }
     }
+}
 
