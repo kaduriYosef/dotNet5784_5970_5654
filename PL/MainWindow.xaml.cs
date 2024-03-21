@@ -70,7 +70,8 @@ namespace PL
 
         private void Button_Engineer(object sender, RoutedEventArgs e)
         {
-            new EngineerInterfaceMainWindow().ShowDialog();
+
+            new EngineerID().ShowDialog();
         }
         
         private void button_click_Add_hour(object sender, RoutedEventArgs e) {
