@@ -35,12 +35,12 @@ public partial class GanttWindow : Window
         {
             var taskFromDal = s_bl.Task.Read(task!.Id);
             var stringOfDay = taskFromDal!.RequiredEffortTime.ToString();
-            TaskForGantt newTaskForGantt = new TaskForGantt { id = task.Id, alias = task.Alias, taskDuration = int.Parse(stringOfDay.Substring(0, stringOfDay.IndexOf('.'))), startDate = taskFromDal.ScheduledDate };
+            TaskForGantt newTaskForGantt = new TaskForGantt { id = task.Id, alias = task.Alias, taskDuration = int.Parse(stringOfDay.Substring(0, stringOfDay.IndexOf('.'))), scheduledDate = taskFromDal.ScheduledDate };
             //TaskForGantt newTaskForGantt = new TaskForGantt { id = task.Id, alias = task.Alias, taskDuration = taskFromDal.RequiredEffortTime.days(), startDate = taskFromDal.ScheduledDate };
             ListOfTask.Add(newTaskForGantt);
         }
         //נמיין את הרשימה
-        ListOfTask = ListOfTask.OrderBy(task => task.startDate).ToList();
+        ListOfTask = ListOfTask.OrderBy(task => task.scheduledDate).ToList();
 
         InitializeComponent();
         DataContext = new GanttChartViewModel();

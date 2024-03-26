@@ -97,7 +97,13 @@ namespace PL.Task
 
             InitializeComponent();
 
-
+            Ids= new ObservableCollection<int>();
+            var currentTask = s_bl.Task.Read(Id);
+            if (currentTask != null)
+            {
+                foreach (var t in currentTask.Dependencies)
+                    Ids.Add(t.Id);
+            }
             EngineerList = from eng in s_bl.Engineer.ReadAll()
             select new BO.EngineerInTask()
             {

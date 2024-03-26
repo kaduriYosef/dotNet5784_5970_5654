@@ -37,7 +37,7 @@ public partial class AddingTaskToEngineerWindow : Window
         set { SetValue(TaskInListProperty, value); }
     }
     public static readonly DependencyProperty TaskInListProperty =
-        DependencyProperty.Register("TaskInList", typeof(IEnumerable<TaskInList>), typeof(AddingTaskToEngineerWindow), new PropertyMetadata(s_bl.Task.ReadAll()));
+        DependencyProperty.Register("TaskInList", typeof(IEnumerable<TaskInList>), typeof(AddingTaskToEngineerWindow), new PropertyMetadata(s_bl.Task.ReadAllSimplified()));
 
     public BO.Engineer currentEngineer = new BO.Engineer();
     public AddingTaskToEngineerWindow(BO.Engineer CurrentEngineer, int id)
@@ -56,8 +56,9 @@ public partial class AddingTaskToEngineerWindow : Window
 
     private void addTaskToEngineer_Button(object sender, RoutedEventArgs e)
     {
-        CurrentTask.StartDate = DateTime.Now;
+        CurrentTask.StartDate = s_bl.Clock;
         CurrentTask.Engineer = new EngineerInTask { Id = currentEngineer.Id, Name = currentEngineer.Name };
+        CurrentTask.Status = BO.Status.OnTrack;
         s_bl.Task.Update(CurrentTask);
         Close();
         MessageBox.Show("The task was successfully added to you");

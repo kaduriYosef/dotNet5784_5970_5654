@@ -94,6 +94,13 @@ namespace PL.EngineerInterface
 
                 InitializeComponent();
 
+                Ids = new ObservableCollection<int>();
+                var currentTask = s_bl.Task.Read(Id);
+                if (currentTask != null)
+                {
+                    foreach (var t in currentTask.Dependencies)
+                        Ids.Add(t.Id);
+                }
 
                 EngineerList = from eng in s_bl.Engineer.ReadAll()
                                select new BO.EngineerInTask()
@@ -131,7 +138,7 @@ namespace PL.EngineerInterface
                     };
             }
 
-            private void btnAddUpdate_Click(object sender, RoutedEventArgs e)
+            private void btnUpdate_Click(object sender, RoutedEventArgs e)
             {
                 if (id == 0)
                 {
@@ -162,13 +169,16 @@ namespace PL.EngineerInterface
 
                 }
                 Close();
-                new EngineerInterfaceMainWindow().Show();
+                //new EngineerInterfaceMainWindow().Show();
 
 
             }
 
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
 
         }
+    }
 
 
 

@@ -29,15 +29,15 @@ namespace PL
         {
             InitializeComponent();
             //ניצור רשימה של המשימות עם התאריך התחלה
-            foreach (var task in s_bl.Task.ReadAll())
+            foreach (var task in s_bl.Task.ReadAll().Where(x=>x is not null))
             {
-                var taskFromDal = s_bl.Task.Read(task.Id);
-                var stringOfDay = taskFromDal.RequiredEffortTime.ToString();
-                TaskForGantt newTaskForGantt = new TaskForGantt { id = task.Id, alias = task.Alias, taskDuration = int.Parse(stringOfDay.Substring(0, stringOfDay.IndexOf('.'))), startDate = taskFromDal.ScheduledDate };
+               // var taskFromDal = s_bl.Task.Read(task.Id);
+                var stringOfDay = task.RequiredEffortTime.ToString();
+                TaskForGantt newTaskForGantt = new TaskForGantt { id = task.Id, alias = task.Alias, taskDuration = int.Parse(stringOfDay.Substring(0, stringOfDay.IndexOf('.'))), scheduledDate = task.ScheduledDate,completeDate=task.CompleteDate };
                 ListOfTask.Add(newTaskForGantt);
             }
-            //נמיין את הרשימה
-            ListOfTask = ListOfTask.OrderBy(task => task.startDate).ToList();
+            //sort the list by start date
+            ListOfTask = ListOfTask.OrderBy(task => task.scheduledDate).ToList();
 
             this.Loaded += Window_Loaded;
         }
@@ -47,12 +47,12 @@ namespace PL
             Canvas canvas = FindVisualChild<Canvas>(this);
             if (canvas == null) return;
 
-            DateTime minStartDate = ListOfTask.Min(task => task.startDate ?? DateTime.MaxValue);
-            DateTime maxEndDate = ListOfTask.Max(task => (task.startDate ?? DateTime.MinValue).AddDays(task.taskDuration));
+            DateTime minStartDate = ListOfTask.Min(task => task.scheduledDate ?? DateTime.MaxValue);
+            DateTime maxEndDate = ListOfTask.Max(task => (task.scheduledDate ?? DateTime.MinValue).AddDays(task.taskDuration));
 
             double maxAliasWidth = GetMaxAliasWidth(); // קביעת הרוחב המקסימלי של הכינויים
 
-            double maxWidth = ListOfTask.Max(task => ((task.startDate ?? DateTime.Today) - minStartDate).TotalDays * 10 + task.taskDuration * 10) + maxAliasWidth + 20; // הוספת רווח קצת בסוף
+            double maxWidth = ListOfTask.Max(task => ((task.scheduledDate ?? DateTime.Today) - minStartDate).TotalDays * 10 + task.taskDuration * 10) + maxAliasWidth + 20; // הוספת רווח קצת בסוף
             canvas.Width = maxWidth;
             canvas.Height = ListOfTask.Count * 30 + 60; // הוספת רווח לסרגל התאריכים ולמשימות
 
@@ -60,10 +60,10 @@ namespace PL
 
             foreach (var task in ListOfTask)
             {
-                double offsetDays = ((task.startDate ?? DateTime.Today) - minStartDate).TotalDays;
+                double offsetDays = ((task.scheduledDate ?? DateTime.Today) - minStartDate).TotalDays;
                 double leftPosition = offsetDays * 10 + maxAliasWidth; // המלבנים מתחילים לאחר הטקסט הארוך ביותר
                 bool is_late = false;
-                if(task.startDate<s_bl.Clock)
+                if(task.scheduledDate<s_bl.Clock)
                     is_late = true;
                 if(s_bl.Task.ReadAll(t=> s_bl.Task.Read(task.id).Dependencies.Any(t1=>t1.Id==t.Id )).Where(t2=>t2.ScheduledDate<s_bl.Clock).Any())
                     is_late=true;
@@ -80,9 +80,10 @@ namespace PL
 
 
                 var red = new SolidColorBrush(Color.FromArgb(0xFF, 0xFF, 0x00, 0x00));
-
+                var green = new SolidColorBrush(Color.FromArgb(0xFF,0x00,0xFF,0x00));
                 var normal = new SolidColorBrush(Color.FromArgb(0x88, 0x1E, 0x2F, 0x47));
                 var color =(is_late ? red : normal);
+                color = (task.completeDate!=null)?green:color;
                 Rectangle rectangle = new Rectangle
                 {
                     Fill = color,
@@ -101,7 +102,7 @@ namespace PL
                 // הוספת תווית תאריך ומשך זמן למלבן
                 TextBlock dateLabel = new TextBlock
                 {
-                    Text = $"{task.startDate?.ToString("dd/MM")} + {task.taskDuration}",
+                    Text = $"{task.scheduledDate?.ToString("dd/MM")} + {task.taskDuration}",
                     Foreground = new SolidColorBrush(Colors.White),
                     FontWeight = FontWeights.Bold,
                     TextAlignment = TextAlignment.Center
@@ -149,14 +150,14 @@ namespace PL
             while (currentMonth <= maxEndDate)
             {
                 DateTime nextMonth = currentMonth.AddMonths(1);
-                bool isMonthStartVisible = ListOfTask.Any(task => task.startDate.HasValue && task.startDate.Value.Month == currentMonth.Month && task.startDate.Value.Year == currentMonth.Year);
+                bool isMonthStartVisible = ListOfTask.Any(task => task.scheduledDate.HasValue && task.scheduledDate.Value.Month == currentMonth.Month && task.scheduledDate.Value.Year == currentMonth.Year);
 
                 double leftPosition;
                 if (isMonthStartVisible)
                 {
                     // אם יש מלבן שמתחיל בחודש זה, בדוק את המיקום המדויק של התחלת המלבן
-                    DateTime firstTaskStart = ListOfTask.Where(task => task.startDate.HasValue && task.startDate.Value.Month == currentMonth.Month && task.startDate.Value.Year == currentMonth.Year)
-                                                         .Min(task => task.startDate.Value);
+                    DateTime firstTaskStart = ListOfTask.Where(task => task.scheduledDate.HasValue && task.scheduledDate.Value.Month == currentMonth.Month && task.scheduledDate.Value.Year == currentMonth.Year)
+                                                         .Min(task => task.scheduledDate.Value);
 
                     if (firstTaskStart.Day > 1)
                     {
@@ -217,6 +218,7 @@ namespace PL
         public int id { get; set; }
         public string alias { get; set; }
         public int taskDuration { get; set; }
-        public DateTime? startDate { get; set; }
+        public DateTime? scheduledDate { get; set; }
+        public DateTime? completeDate { get; set; }
     }
 }

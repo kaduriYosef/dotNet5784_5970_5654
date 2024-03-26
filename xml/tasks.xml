@@ -6,10 +6,10 @@
     <Description>Outline specific, measurable goals for the fundraising campaign.</Description>
     <CreatedAtDate>2020-07-28T00:00:00</CreatedAtDate>
     <RequiredEffortTime>P25D</RequiredEffortTime>
-    <IsMilestone>true</IsMilestone>
+    <IsMilestone>false</IsMilestone>
     <Complexity>Intermediate</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate>2026-04-29T00:00:00</ScheduledDate>
+    <ScheduledDate>2027-03-26T15:42:57.3979828+03:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -20,10 +20,10 @@
     <Description>Research and determine the demographic and psychographic characteristics of potential donors.</Description>
     <CreatedAtDate>2000-09-16T00:00:00</CreatedAtDate>
     <RequiredEffortTime>P21D</RequiredEffortTime>
-    <IsMilestone>true</IsMilestone>
+    <IsMilestone>false</IsMilestone>
     <Complexity>AdvancedBeginner</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate>2008-10-21T00:00:00</ScheduledDate>
+    <ScheduledDate>2027-03-26T15:42:57.3979828+03:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -34,10 +34,10 @@
     <Description>Draft a detailed plan covering strategies, timelines, and responsibilities.</Description>
     <CreatedAtDate>2011-08-18T00:00:00</CreatedAtDate>
     <RequiredEffortTime>P23D</RequiredEffortTime>
-    <IsMilestone>true</IsMilestone>
+    <IsMilestone>false</IsMilestone>
     <Complexity>Advanced</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate>2027-02-05T00:00:00</ScheduledDate>
+    <ScheduledDate>2027-04-20T15:42:57.3979828+03:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -48,10 +48,10 @@
     <Description>Determine the financial requirements and create a budget for the campaign.</Description>
     <CreatedAtDate>2010-11-23T00:00:00</CreatedAtDate>
     <RequiredEffortTime>P24D</RequiredEffortTime>
-    <IsMilestone>true</IsMilestone>
+    <IsMilestone>false</IsMilestone>
     <Complexity>Intermediate</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate>2032-06-26T00:00:00</ScheduledDate>
+    <ScheduledDate>2027-04-16T15:42:57.3979828+03:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -62,10 +62,10 @@
     <Description>Assemble a team of individuals with skills pertinent to fundraising.</Description>
     <CreatedAtDate>2020-03-04T00:00:00</CreatedAtDate>
     <RequiredEffortTime>P12D</RequiredEffortTime>
-    <IsMilestone>true</IsMilestone>
+    <IsMilestone>false</IsMilestone>
     <Complexity>Expert</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate>2024-08-29T00:00:00</ScheduledDate>
+    <ScheduledDate>2027-05-13T15:42:57.3979828+03:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -76,10 +76,10 @@
     <Description>Provide necessary training and resources to the fundraising team.</Description>
     <CreatedAtDate>2002-02-08T00:00:00</CreatedAtDate>
     <RequiredEffortTime>P18D</RequiredEffortTime>
-    <IsMilestone>true</IsMilestone>
+    <IsMilestone>false</IsMilestone>
     <Complexity>Intermediate</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate>2015-07-30T00:00:00</ScheduledDate>
+    <ScheduledDate>2027-05-10T15:42:57.3979828+03:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -90,10 +90,10 @@
     <Description>Create engaging materials like brochures, videos, and flyers for the campaign.</Description>
     <CreatedAtDate>2001-02-16T00:00:00</CreatedAtDate>
     <RequiredEffortTime>P28D</RequiredEffortTime>
-    <IsMilestone>true</IsMilestone>
+    <IsMilestone>false</IsMilestone>
     <Complexity>Advanced</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate>2020-01-23T00:00:00</ScheduledDate>
+    <ScheduledDate>2027-05-25T15:42:57.3979828+03:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -104,10 +104,10 @@
     <Description>Build a database to manage donor information and track contributions.</Description>
     <CreatedAtDate>2001-08-31T00:00:00</CreatedAtDate>
     <RequiredEffortTime>P28D</RequiredEffortTime>
-    <IsMilestone>true</IsMilestone>
+    <IsMilestone>false</IsMilestone>
     <Complexity>Expert</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate>2004-03-28T00:00:00</ScheduledDate>
+    <ScheduledDate>2027-06-22T15:42:57.3979828+03:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -118,10 +118,10 @@
     <Description>Design and organize fundraising events, including logistics and programming.</Description>
     <CreatedAtDate>2009-11-04T00:00:00</CreatedAtDate>
     <RequiredEffortTime>P21D</RequiredEffortTime>
-    <IsMilestone>true</IsMilestone>
+    <IsMilestone>false</IsMilestone>
     <Complexity>AdvancedBeginner</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate>2019-09-06T00:00:00</ScheduledDate>
+    <ScheduledDate>2027-07-20T15:42:57.3979828+03:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -132,10 +132,10 @@
     <Description>Develop a secure and user-friendly online platform for accepting donations.</Description>
     <CreatedAtDate>2011-06-03T00:00:00</CreatedAtDate>
     <RequiredEffortTime>P11D</RequiredEffortTime>
-    <IsMilestone>true</IsMilestone>
+    <IsMilestone>false</IsMilestone>
     <Complexity>Advanced</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate>2021-10-19T00:00:00</ScheduledDate>
+    <ScheduledDate>2027-08-10T15:42:57.3979828+03:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -146,24 +146,10 @@
     <Description>Produce promotional content for various media channels.</Description>
     <CreatedAtDate>2015-12-21T00:00:00</CreatedAtDate>
     <RequiredEffortTime>P28D</RequiredEffortTime>
-    <IsMilestone>true</IsMilestone>
+    <IsMilestone>false</IsMilestone>
     <Complexity>Intermediate</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate>2024-10-07T00:00:00</ScheduledDate>
-    <DeadlineDate xsi:nil="true" />
-    <CompleteDate xsi:nil="true" />
-    <EngineerId xsi:nil="true" />
-  </Task>
-  <Task>
-    <Id>1011</Id>
-    <Alias>Launch social media campaign</Alias>
-    <Description>Implement a campaign on social media platforms to increase awareness and donations.</Description>
-    <CreatedAtDate>2021-11-23T00:00:00</CreatedAtDate>
-    <RequiredEffortTime>P26D</RequiredEffortTime>
-    <IsMilestone>true</IsMilestone>
-    <Complexity>Beginner</Complexity>
-    <StartDate xsi:nil="true" />
-    <ScheduledDate>2038-07-20T00:00:00</ScheduledDate>
+    <ScheduledDate>2027-08-21T15:42:57.3979828+03:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -174,10 +160,10 @@
     <Description>Reach out to potential corporate sponsors to seek financial or in-kind support.</Description>
     <CreatedAtDate>2000-03-10T00:00:00</CreatedAtDate>
     <RequiredEffortTime>P15D</RequiredEffortTime>
-    <IsMilestone>true</IsMilestone>
+    <IsMilestone>false</IsMilestone>
     <Complexity>Advanced</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate>2015-11-24T00:00:00</ScheduledDate>
+    <ScheduledDate>2027-10-14T15:42:57.3979828+03:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -188,10 +174,10 @@
     <Description>Engage with the local community through events and activities to boost support.</Description>
     <CreatedAtDate>2022-03-05T00:00:00</CreatedAtDate>
     <RequiredEffortTime>P23D</RequiredEffortTime>
-    <IsMilestone>true</IsMilestone>
+    <IsMilestone>false</IsMilestone>
     <Complexity>AdvancedBeginner</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate>2024-06-11T00:00:00</ScheduledDate>
+    <ScheduledDate>2027-10-29T15:42:57.3979828+03:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -202,10 +188,10 @@
     <Description>Plan and execute a direct mail campaign to solicit donations.</Description>
     <CreatedAtDate>2010-11-01T00:00:00</CreatedAtDate>
     <RequiredEffortTime>P23D</RequiredEffortTime>
-    <IsMilestone>true</IsMilestone>
+    <IsMilestone>false</IsMilestone>
     <Complexity>Intermediate</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate>2014-03-24T00:00:00</ScheduledDate>
+    <ScheduledDate>2027-11-21T15:42:57.3979828+02:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -216,10 +202,10 @@
     <Description>Write and distribute press releases to media outlets to gain publicity.</Description>
     <CreatedAtDate>2010-09-29T00:00:00</CreatedAtDate>
     <RequiredEffortTime>P13D</RequiredEffortTime>
-    <IsMilestone>true</IsMilestone>
+    <IsMilestone>false</IsMilestone>
     <Complexity>Advanced</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate>2014-09-15T00:00:00</ScheduledDate>
+    <ScheduledDate>2027-12-14T15:42:57.3979828+02:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -230,10 +216,10 @@
     <Description>Hold meetings with potential and existing sponsors to secure funding.</Description>
     <CreatedAtDate>2001-02-27T00:00:00</CreatedAtDate>
     <RequiredEffortTime>P12D</RequiredEffortTime>
-    <IsMilestone>true</IsMilestone>
+    <IsMilestone>false</IsMilestone>
     <Complexity>AdvancedBeginner</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate>2020-08-26T00:00:00</ScheduledDate>
+    <ScheduledDate>2027-12-27T15:42:57.3979828+02:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -244,24 +230,10 @@
     <Description>Execute the planned fundraising events, ensuring they run smoothly.</Description>
     <CreatedAtDate>2024-01-07T00:00:00</CreatedAtDate>
     <RequiredEffortTime>P20D</RequiredEffortTime>
-    <IsMilestone>true</IsMilestone>
+    <IsMilestone>false</IsMilestone>
     <Complexity>Intermediate</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate>2038-12-19T00:00:00</ScheduledDate>
-    <DeadlineDate xsi:nil="true" />
-    <CompleteDate xsi:nil="true" />
-    <EngineerId xsi:nil="true" />
-  </Task>
-  <Task>
-    <Id>1018</Id>
-    <Alias>Monitor fundraising progress</Alias>
-    <Description>Regularly track and analyze the progress of the fundraising efforts.</Description>
-    <CreatedAtDate>2021-09-14T00:00:00</CreatedAtDate>
-    <RequiredEffortTime>P27D</RequiredEffortTime>
-    <IsMilestone>true</IsMilestone>
-    <Complexity>Beginner</Complexity>
-    <StartDate xsi:nil="true" />
-    <ScheduledDate>2036-12-04T00:00:00</ScheduledDate>
+    <ScheduledDate>2028-01-08T15:42:57.3979828+02:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -272,10 +244,10 @@
     <Description>Modify and adapt fundraising strategies based on performance and feedback.</Description>
     <CreatedAtDate>2022-02-02T00:00:00</CreatedAtDate>
     <RequiredEffortTime>P28D</RequiredEffortTime>
-    <IsMilestone>true</IsMilestone>
+    <IsMilestone>false</IsMilestone>
     <Complexity>Advanced</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate>2028-05-03T00:00:00</ScheduledDate>
+    <ScheduledDate>2028-02-24T15:42:57.3979828+02:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -286,10 +258,10 @@
     <Description>Actively communicate with donors to build relationships and encourage ongoing support.</Description>
     <CreatedAtDate>2021-08-29T00:00:00</CreatedAtDate>
     <RequiredEffortTime>P17D</RequiredEffortTime>
-    <IsMilestone>true</IsMilestone>
+    <IsMilestone>false</IsMilestone>
     <Complexity>Intermediate</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate>2040-07-01T00:00:00</ScheduledDate>
+    <ScheduledDate>2028-03-23T15:42:57.3979828+02:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -300,10 +272,10 @@
     <Description>Handle the receipt, recording, and acknowledgment of donations.</Description>
     <CreatedAtDate>2014-10-16T00:00:00</CreatedAtDate>
     <RequiredEffortTime>P14D</RequiredEffortTime>
-    <IsMilestone>true</IsMilestone>
+    <IsMilestone>false</IsMilestone>
     <Complexity>Expert</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate>2030-01-03T00:00:00</ScheduledDate>
+    <ScheduledDate>2028-04-09T15:42:57.3979828+03:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -314,10 +286,10 @@
     <Description>Send personalized thank-you notes to donors to show appreciation and foster loyalty.</Description>
     <CreatedAtDate>2009-10-17T00:00:00</CreatedAtDate>
     <RequiredEffortTime>P20D</RequiredEffortTime>
-    <IsMilestone>true</IsMilestone>
+    <IsMilestone>false</IsMilestone>
     <Complexity>Intermediate</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate>2019-04-13T00:00:00</ScheduledDate>
+    <ScheduledDate>2028-04-23T15:42:57.3979828+03:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -328,10 +300,10 @@
     <Description>Assess the success of each event and overall campaign effectiveness.</Description>
     <CreatedAtDate>2006-06-04T00:00:00</CreatedAtDate>
     <RequiredEffortTime>P21D</RequiredEffortTime>
-    <IsMilestone>true</IsMilestone>
+    <IsMilestone>false</IsMilestone>
     <Complexity>Advanced</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate>2016-07-15T00:00:00</ScheduledDate>
+    <ScheduledDate>2028-05-13T15:42:57.3979828+03:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -342,10 +314,10 @@
     <Description>Update the donor database with the latest information post-campaign.</Description>
     <CreatedAtDate>2002-01-12T00:00:00</CreatedAtDate>
     <RequiredEffortTime>P20D</RequiredEffortTime>
-    <IsMilestone>true</IsMilestone>
+    <IsMilestone>false</IsMilestone>
     <Complexity>Beginner</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate>2022-11-05T00:00:00</ScheduledDate>
+    <ScheduledDate>2028-06-03T15:42:57.3979828+03:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -356,10 +328,10 @@
     <Description>Compile and present a report of the campaign's outcomes to stakeholders.</Description>
     <CreatedAtDate>2017-02-03T00:00:00</CreatedAtDate>
     <RequiredEffortTime>P15D</RequiredEffortTime>
-    <IsMilestone>true</IsMilestone>
+    <IsMilestone>false</IsMilestone>
     <Complexity>AdvancedBeginner</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate>2026-01-07T00:00:00</ScheduledDate>
+    <ScheduledDate>2028-06-23T15:42:57.3979828+03:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -370,10 +342,10 @@
     <Description>Begin planning for future fundraising efforts based on learned insights.</Description>
     <CreatedAtDate>2019-12-24T00:00:00</CreatedAtDate>
     <RequiredEffortTime>P22D</RequiredEffortTime>
-    <IsMilestone>true</IsMilestone>
+    <IsMilestone>false</IsMilestone>
     <Complexity>Intermediate</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate>2032-12-23T00:00:00</ScheduledDate>
+    <ScheduledDate>2028-07-08T15:42:57.3979828+03:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -384,10 +356,10 @@
     <Description>Perform a thorough audit of the campaign's finances for transparency and accountability.</Description>
     <CreatedAtDate>2007-11-04T00:00:00</CreatedAtDate>
     <RequiredEffortTime>P11D</RequiredEffortTime>
-    <IsMilestone>true</IsMilestone>
+    <IsMilestone>false</IsMilestone>
     <Complexity>Advanced</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate>2030-10-25T00:00:00</ScheduledDate>
+    <ScheduledDate>2028-07-30T15:42:57.3979828+03:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -398,10 +370,10 @@
     <Description>Prepare a comprehensive report detailing the campaign's activities and financials.</Description>
     <CreatedAtDate>2013-11-28T00:00:00</CreatedAtDate>
     <RequiredEffortTime>P10D</RequiredEffortTime>
-    <IsMilestone>true</IsMilestone>
+    <IsMilestone>false</IsMilestone>
     <Complexity>AdvancedBeginner</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate>2020-11-25T00:00:00</ScheduledDate>
+    <ScheduledDate>2028-08-10T15:42:57.3979828+03:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -415,9 +387,38 @@
     <IsMilestone>false</IsMilestone>
     <Complexity>Expert</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate>2036-05-06T00:00:00</ScheduledDate>
+    <ScheduledDate>2028-08-10T15:42:57.3979828+03:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1011</Id>
+    <Alias>Launch social media campaign</Alias>
+    <Description>Implement a campaign on social media platforms to increase awareness and donations.</Description>
+    <CreatedAtDate>2021-11-23T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P26D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Complexity>Beginner</Complexity>
+    <StartDate>2024-03-25T21:20:23.6468452+02:00</StartDate>
+    <ScheduledDate>2027-09-18T15:42:57.3979828+03:00</ScheduledDate>
+    <DeadlineDate xsi:nil="true" />
+    <CompleteDate>2024-03-25T21:59:16.168698+02:00</CompleteDate>
+    <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1018</Id>
+    <Alias>Monitor fundraising progress</Alias>
+    <Description>Regularly track and analyze the progress of the fundraising efforts.</Description>
+    <CreatedAtDate>2021-09-14T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P27D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Complexity>Beginner</Complexity>
+    <StartDate>2024-03-24T23:54:15.4440444+02:00</StartDate>
+    <ScheduledDate>2028-01-28T15:42:57.3979828+02:00</ScheduledDate>
+    <DeadlineDate xsi:nil="true" />
+    <CompleteDate>2024-03-25T21:59:16.168698+02:00</CompleteDate>
+    <Deliverables>rdgfgdf</Deliverables>
     <EngineerId xsi:nil="true" />
   </Task>
 </ArrayOfTask>

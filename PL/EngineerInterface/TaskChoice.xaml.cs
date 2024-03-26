@@ -57,7 +57,7 @@ namespace PL.EngineerInterface
             BO.TaskInList? task = (sender as ListView)?.SelectedItem as BO.TaskInList;
             // Close the current window and open the window to add task for engineer
             Close();
-            //new AddTaskForEngineer(currentEngineer, task.Id).ShowDialog();
+            new AddingTaskToEngineerWindow(currentEngineer, task.Id).Show();
         }
 
     // Event handler for the Home button click
