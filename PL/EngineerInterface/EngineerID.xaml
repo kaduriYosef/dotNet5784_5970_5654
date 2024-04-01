@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PL.EngineerInterface"
         mc:Ignorable="d"
-        Title="Password Required" Height="200" Width="300">
+        Title="Password Required" Height="Auto" Width="Auto">
     <Grid>
 
         <Button Content="Log In" VerticalAlignment="Bottom" Margin="0,0,0,30" Click="EngineerLogin_Click" />

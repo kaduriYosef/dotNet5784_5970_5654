@@ -71,17 +71,22 @@ namespace PL.Task
         public ObservableCollection<int> Ids { get; set; }
         private void CheckBox_Loaded(object sender, RoutedEventArgs e)
         {
-
-            if (Ids != null && sender is CheckBox checkBox && checkBox.Tag is int id && Ids.Contains(id))
+            CheckBox checkBox = sender as CheckBox;
+            if (checkBox != null && checkBox.Tag is int id && Ids.Contains(id))
             {
                 checkBox.IsChecked = true;
             }
         }
+        //if (Ids != null && sender is CheckBox checkBox && checkBox.Tag is int id && Ids.Contains(id))
+        //{
+        //    checkBox.IsChecked = true;
+        //}
+
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
             if (sender is CheckBox checkBox && checkBox.Tag is int id)
             {
-                if (Ids != null&&!Ids.Contains(id))
+                if (Ids != null && !Ids.Contains(id))
                     Ids.Add(id);
             }
         }
@@ -92,26 +97,36 @@ namespace PL.Task
                 Ids.Remove(id);
             }
         }
+        //Ctor
         public TaskWindow(int Id = 0)
         {
 
             InitializeComponent();
+            //init the Ids 
+            Ids = new ObservableCollection<int>();
+            if (Id != 0)//if we have the user id we insert the dependent task
+            {
+                foreach (var task in s_bl.Task.Read(Id).Dependencies)
+                {
+                    Ids.Add(task.Id);
+                }
+            }
 
 
             EngineerList = from eng in s_bl.Engineer.ReadAll()
-            select new BO.EngineerInTask()
-            {
-                Id = eng.Id,
-                Name = eng.Name,
-            };
+                           select new BO.EngineerInTask()
+                           {
+                               Id = eng.Id,
+                               Name = eng.Name,
+                           };
             TaskListDep = from task in s_bl.Task.ReadAllSimplified()
-                       select new BO.TaskInList()
-                       {
-                           Id = task.Id,
-                           Description = task.Description,
-                           Alias = task.Alias,
-                           Status = task.Status,
-                       };
+                          select new BO.TaskInList()
+                          {
+                              Id = task.Id,
+                              Description = task.Description,
+                              Alias = task.Alias,
+                              Status = task.Status,
+                          };
 
 
             id = Id;
@@ -169,10 +184,10 @@ namespace PL.Task
 
 
         }
-       
+
 
     }
 
 
-        
+
 }

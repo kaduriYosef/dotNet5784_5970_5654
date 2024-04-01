@@ -7,7 +7,7 @@
         
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="1000"
-        DataContext="{Binding RelativeSource={RelativeSource Self}}">
+        DataContext="{Binding RelativeSource={RelativeSource Self}}" Icon="/risk-management.png">
 
     <Grid Style="{StaticResource GridBackgroundStyle}">
         <Grid.RowDefinitions>

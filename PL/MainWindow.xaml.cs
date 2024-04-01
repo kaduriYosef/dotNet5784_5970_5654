@@ -44,7 +44,9 @@ namespace PL
 
         // Changed the default value to DateTime.Now
         public static readonly DependencyProperty TimeProperty =
-            DependencyProperty.Register("CurrentTime", typeof(DateTime), typeof(MainWindow), new PropertyMetadata(s_bl.Clock));
+            DependencyProperty.Register("CurrentTime",
+                typeof(DateTime),
+                typeof(MainWindow), new PropertyMetadata(s_bl.Clock));
 
         private void Timer_Tick(object sender, EventArgs e)
         {
@@ -61,7 +63,7 @@ namespace PL
             if (dialogResult == true)
                 new ManagerInterfaceMainWindow().ShowDialog();
             else
-                MessageBox.Show("Incorrect Password and too many attempts",
+                MessageBox.Show("Incorrect ID or U and too many attempts",
                         "Access Denied", MessageBoxButton.OK, MessageBoxImage.Error);
 
 
@@ -70,7 +72,6 @@ namespace PL
 
         private void Button_Engineer(object sender, RoutedEventArgs e)
         {
-
             new EngineerID().ShowDialog();
         }
         
