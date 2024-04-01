@@ -112,7 +112,13 @@ namespace PL.Task
                 }
             }
 
-
+            Ids= new ObservableCollection<int>();
+            var currentTask = s_bl.Task.Read(Id);
+            if (currentTask != null)
+            {
+                foreach (var t in currentTask.Dependencies)
+                    Ids.Add(t.Id);
+            }
             EngineerList = from eng in s_bl.Engineer.ReadAll()
                            select new BO.EngineerInTask()
                            {
@@ -120,14 +126,14 @@ namespace PL.Task
                                Name = eng.Name,
                            };
             TaskListDep = from task in s_bl.Task.ReadAllSimplified()
-                          select new BO.TaskInList()
-                          {
-                              Id = task.Id,
-                              Description = task.Description,
-                              Alias = task.Alias,
-                              Status = task.Status,
-                          };
-
+                       select new BO.TaskInList()
+                       {
+                           Id = task.Id,
+                           Description = task.Description,
+                           Alias = task.Alias,
+                           Status = task.Status,
+                       };
+                                                            //looks unnecessary
 
             id = Id;
             if (Id != 0)

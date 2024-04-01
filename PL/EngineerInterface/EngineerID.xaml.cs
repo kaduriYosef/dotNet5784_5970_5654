@@ -25,6 +25,8 @@ namespace PL.EngineerInterface
         private string EngineerName = string.Empty;
         private int id = 0;
 
+        //public string EngineerNameProp { get=>EngineerName; set; }
+
         public EngineerID()
         {
             InitializeComponent();
@@ -33,7 +35,7 @@ namespace PL.EngineerInterface
 
         private void TextBox_UserName(object sender, TextChangedEventArgs e)
         {
-            //Retrieve the user name entered in the TextBox
+            // Retrieve the user name entered in the TextBox
             EngineerName = ((TextBox)sender).Text;
         }
 
@@ -71,7 +73,7 @@ namespace PL.EngineerInterface
             catch(Exception ex) 
             {
                 // Handle any exceptions
-                MessageBox.Show(ex.Message,"User does not exist");
+                MessageBox.Show(ex.Message,"error: User does not exist");
             }
         }
     }

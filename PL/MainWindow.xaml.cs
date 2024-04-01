@@ -23,35 +23,34 @@ namespace PL
     {
 
         static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
-        private DispatcherTimer timer;
+        private DispatcherTimer _timer;
 
         public MainWindow()
         {
             InitializeComponent();
             this.DataContext = this;
 
-            timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1);
-            timer.Tick += Timer_Tick;
-            timer.Start();
+            _timer = new DispatcherTimer();
+            _timer.Interval = TimeSpan.FromSeconds(1);
+            _timer.Tick += Timer_Tick;
+            _timer.Start();
+
         }
 
         public DateTime CurrentTime
         {
-            get { return (DateTime)GetValue(TimeProperty); }
-            set { SetValue(TimeProperty, value); }
+            get { return (DateTime)GetValue(CurrentTimeProperty); }
+            set { SetValue(CurrentTimeProperty, value); }
         }
 
         // Changed the default value to DateTime.Now
-        public static readonly DependencyProperty TimeProperty =
-            DependencyProperty.Register("CurrentTime",
-                typeof(DateTime),
-                typeof(MainWindow), new PropertyMetadata(s_bl.Clock));
+        public static readonly DependencyProperty CurrentTimeProperty =
+            DependencyProperty.Register("CurrentTime", typeof(DateTime), typeof(MainWindow), new PropertyMetadata(s_bl.Clock));
 
         private void Timer_Tick(object sender, EventArgs e)
         {
             // Update CurrentTime from s_bl.Clock every time the timer ticks.
-            s_bl.Clock.AddSeconds(1);
+            s_bl.AddSeconds(1);
             CurrentTime = s_bl.Clock;
         }
 
@@ -72,7 +71,15 @@ namespace PL
 
         private void Button_Engineer(object sender, RoutedEventArgs e)
         {
-            new EngineerID().ShowDialog();
+            var engineerId= new EngineerID();
+            var dialogResult = engineerId.ShowDialog();
+
+            //if (dialogResult == true)
+            //    new EngineerInterfaceMainWindow(engineerId.id).ShowDialog();
+            //else
+            //    MessageBox.Show("Incorrect ID or User name and too many attempts",
+            //            "Access Denied", MessageBoxButton.OK, MessageBoxImage.Error);
+
         }
         
         private void button_click_Add_hour(object sender, RoutedEventArgs e) {

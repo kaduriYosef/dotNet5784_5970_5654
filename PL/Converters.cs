@@ -9,6 +9,19 @@ using System.Windows.Data;
 
 namespace PL;
 
+class ConvertIdToIsEnabled : IValueConverter
+{
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        return (int)value == 0 ? true : false;
+    }
+
+    public object ConvertBack(object value, Type targetTypes, object parameter, CultureInfo culture)
+    {
+        throw new NotImplementedException();
+    }
+}
+
 class ConvertIdToContent : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -20,9 +33,10 @@ class ConvertIdToContent : IValueConverter
     {
         throw new NotImplementedException();
     }
-   
-    
+
+
 }
+
 class ConvertIdToIsEnableForId : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -60,4 +74,18 @@ class ConvertIdToVisibilityForUp : IValueConverter
     {
         throw new NotImplementedException();
     }
+
+    
 }
+public class HasAllredyTaskConvert : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return (int)value == 0 ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }

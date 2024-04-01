@@ -23,7 +23,7 @@ namespace PL.EngineerInterface
 
         static readonly BlApi.IBl s_bl = BlApi.Factory.Get(); // Initializing s_bl with Factory.Get()
 
-
+        private TaskWindowForEngineer taskOfThisEngineer;
 
         // Dependency Property for TaskInList
         public IEnumerable<TaskInList> TaskInList
@@ -32,12 +32,9 @@ namespace PL.EngineerInterface
             set { SetValue(TaskInListProperty, value); }
         }
         public static readonly DependencyProperty TaskInListProperty =
-            DependencyProperty.Register("TaskInList",
-                typeof(IEnumerable<TaskInList>),
-                typeof(EngineerInterfaceMainWindow),
-                new PropertyMetadata(s_bl.Task.ReadAllSimplified()));
+            DependencyProperty.Register("TaskInList", typeof(IEnumerable<TaskInList>), typeof(EngineerInterfaceMainWindow), new PropertyMetadata(s_bl.Task.ReadAllSimplified()));
 
-        // Dependency Property for CurrentEngineer
+        // Dependency  Property for CurrentEngineer
         public BO.Engineer CurrentEngineer
         {
             get { return (BO.Engineer)GetValue(CurrentEngineerProperty); }
@@ -62,7 +59,7 @@ namespace PL.EngineerInterface
             try
             {
                 CurrentEngineer = s_bl.Engineer.Read(Id);
-                CurrentTask = s_bl.Task.Read(item => item.Engineer.Id == Id);
+                CurrentTask = s_bl.Task.Read(item => item.Engineer!=null&&item.Engineer.Id == Id);
             }
             catch
             {
@@ -84,9 +81,9 @@ namespace PL.EngineerInterface
 
             try
             {
-                bool flag = true;
                 Close();
-                //new TaskAddOrUpdate(CurrentTask.Id, flag).ShowDialog();
+                new TaskWindowForEngineer(CurrentTask.Id).ShowDialog();
+                new EngineerInterfaceMainWindow(CurrentEngineer.Id).Show();
             }
             catch (Exception ex)
             {
@@ -97,12 +94,15 @@ namespace PL.EngineerInterface
 
         private void TaskOption_Button(object sender, RoutedEventArgs e)
         {
-            if (CurrentTask.Id != 0)    //check if the current task was finished
+            if (BO.Tools.StartDateOrNull()==null)   
+                MessageBox.Show("the manager needs to choose a start date for the project first");
+            else if (CurrentTask.Id != 0)    //check if the current task was finished
                 MessageBox.Show("you need to finish your task first");
             else      //shoes the task that the engineer can do
             {
                 Close();
-                new TaskChoice(CurrentEngineer).Show();
+                new TaskChoice(CurrentEngineer).ShowDialog();
+                new EngineerInterfaceMainWindow(CurrentEngineer.Id).Show();
             }
 
         }
@@ -118,6 +118,7 @@ namespace PL.EngineerInterface
             {
                 CurrentTask.CompleteDate = s_bl.Clock;// Setting CompleteDate to current date
                 CurrentTask.Engineer = null;    // Clearing Engineer
+                CurrentTask.Status = BO.Status.Done;
                 s_bl.Task.Update(CurrentTask);  // Updating Task
                 MessageBox.Show("Well done, you have successfully completed the task");
                 Close();

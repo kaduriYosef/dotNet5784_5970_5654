@@ -5,8 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PL.EngineerInterface"
         mc:Ignorable="d"
-        Title="Task_sChoice" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
-</Window>
+        Title="TaskChoice" Height="450" Width="800"
+    DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}">
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="8*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Home button -->
+            <Button Width="50" Height="50" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,20,20,0" Click="Home_Click"  BorderThickness="0">
+                <StackPanel>
+                    
+                </StackPanel>
+            </Button>
+
+            <!-- Label for displaying available tasks -->
+            <Label Content="tasks you can chooze:" VerticalAlignment="Top" HorizontalAlignment="Center" />
+
+            <!-- ListView to display the list of available tasks -->
+            <ListView  Grid.Row="1" ItemsSource="{Binding TaskList}"  MouseDoubleClick="ChooseTask_Button" FontSize="16" Height="auto" VerticalAlignment="Top" >
+                <ListView.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#0F37CDCE" Offset="0" />
+                        <GradientStop Color="#FF125F61" Offset="1" />
+                    </LinearGradientBrush>
+                </ListView.Background>
+            </ListView>
+
+        </Grid>
+    </Window>

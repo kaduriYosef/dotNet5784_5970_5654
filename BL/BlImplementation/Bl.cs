@@ -29,6 +29,16 @@ internal class Bl : IBl
     private static DateTime s_Clock = DateTime.Now;
     public DateTime Clock { get { return s_Clock; } private set { s_Clock = value; } }
 
+
+    public void AddSeconds(int sec)
+    {
+        s_Clock=s_Clock.AddSeconds(sec);
+    }
+
+    public void AddMinutes(int min)
+    {
+        s_Clock= s_Clock.AddMinutes(min);
+    }
     public void AddDay()
     {
         s_Clock = s_Clock.AddDays(1); // Adds one day to the current DateTime stored in s_Clock
@@ -53,5 +63,6 @@ internal class Bl : IBl
     public void InitializeDB() => DalTest.Initialization.Do();
 
     public void ResetDB() => DalTest.Initialization.Reset();
+
 
 }

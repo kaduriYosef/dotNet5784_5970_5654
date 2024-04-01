@@ -9,7 +9,8 @@ using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography;
 using System.Xml;
 using System.Xml.Linq;
-
+using System.Collections.Generic;
+using System.Linq;
 /// <summary>
 /// Implements the ITask interface, providing business logic and operations for task management.
 /// </summary>
@@ -209,7 +210,7 @@ internal class TaskImplementation : ITask
             throw new BlDoesNotExistException($"task with id {boTask.Id} doesn't exist");
 
         if (Tools.StartDateOrNull() != null && 
-            (boTask.ScheduledDate!=boTaskOriginal.ScheduledDate ||boTask.RequiredEffortTime!=boTaskOriginal.RequiredEffortTime|| boTask.Dependencies!=boTaskOriginal.Dependencies))
+            (boTask.ScheduledDate!=boTaskOriginal.ScheduledDate ||boTask.RequiredEffortTime!=boTaskOriginal.RequiredEffortTime/*|| !(boTask.Dependencies.SequenceEqual(boTaskOriginal.Dependencies))*/))
                 throw new BlImpossibleToCreate("can't update new task once the start date was declared");
 
 
