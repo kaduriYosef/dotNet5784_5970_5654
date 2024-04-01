@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PL.Task"
         mc:Ignorable="d"
         DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
-        Title="TaskListWindow" Height="700" Width="700">
+        Title="TaskListWindow" Height="700" Width="700" Icon="/Task/task-list.png">
     <Grid Style="{StaticResource GridBackgroundStyle}">
         <Grid.RowDefinitions>
             <RowDefinition Height="40*"/>

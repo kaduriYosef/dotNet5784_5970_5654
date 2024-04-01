@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <None Remove="risk-management.png" />
+    <None Remove="Task\task-list.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,6 +24,7 @@
 
   <ItemGroup>
     <Resource Include="risk-management.png" />
+    <Resource Include="Task\task-list.png" />
   </ItemGroup>
 
 </Project>
