@@ -50,7 +50,7 @@ namespace PL
         private void Timer_Tick(object sender, EventArgs e)
         {
             // Update CurrentTime from s_bl.Clock every time the timer ticks.
-            s_bl.Clock.AddSeconds(1);
+            s_bl.AddSeconds(1);
             CurrentTime = s_bl.Clock;
         }
 

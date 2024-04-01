@@ -45,7 +45,7 @@
            Content="{Binding Path=CurrentTime}"
            HorizontalAlignment="Center"
            VerticalAlignment="Center" />-->
-            <Label Content="{Binding CurrentTime, StringFormat='{}{0:yyyy-MM-dd hh:mm:ss tt}'}" Height="32" Width="auto" />
+            <TextBlock Text="{Binding CurrentTime, StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'}" Height="32" Width="Auto" />
             <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal">
                 <Button Content="Add Year" Click="button_click_Add_year"/>
                 <Button Content="Add Day" Click="button_click_Add_day"/>

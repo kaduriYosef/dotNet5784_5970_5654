@@ -14,6 +14,9 @@ public interface IBl
 
     #region Clock
     public DateTime Clock { get; }
+
+    public void AddSeconds(int sec);
+    public void AddMinutes(int min);
     public void AddHour();
     public void AddDay();
     public void AddYear();
