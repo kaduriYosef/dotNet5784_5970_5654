@@ -36,6 +36,22 @@ namespace PL
             _timer.Start();
 
         }
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            // Your code here, for example, a confirmation dialog
+            MessageBoxResult result = MessageBox.Show("Do you really want to close the window?", "Closing", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.No)
+            {
+                // Cancel the closing process
+                e.Cancel = true;
+            }
+            else
+            {
+                s_bl.SaveClock(s_bl.Clock);
+            }
+        }
+
 
         public DateTime CurrentTime
         {

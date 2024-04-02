@@ -74,7 +74,7 @@ namespace PL.ManagerInterface
         }
         private void Button_Gauntt(object sender, RoutedEventArgs e)
         {
-            if(BO.Tools.StartDateOrNull()!=null)
+            if(s_bl.StartDate!=null)
             new Gantt1Window().ShowDialog();
             else
                 MessageBox.Show("can't create Gantt chart before all dates are scheduled",

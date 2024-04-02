@@ -12,6 +12,8 @@ using BlApi;
 /// </summary>
 internal class Bl : IBl
 {
+    public DateTime? StartDate { get { return BO.Tools.StartDateOrNull(); } }
+
     /// <summary>
     /// Provides access to the engineer-related functionalities.
     /// </summary>
@@ -26,9 +28,9 @@ internal class Bl : IBl
     /// Provides access to the milestone-related functionalities.
     /// </summary>
     public IMilestone Milestone => new MilestoneImplementation();
-    private static DateTime s_Clock = DateTime.Now;
+    private static DateTime s_Clock = BO.Tools.GetClock();
     public DateTime Clock { get { return s_Clock; } private set { s_Clock = value; } }
-
+    public void SaveClock(DateTime c)=>BO.Tools.SetClock(c);
 
     public void AddSeconds(int sec)
     {

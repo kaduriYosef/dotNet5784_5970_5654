@@ -4,6 +4,7 @@ using System.Reflection;
 using System.Text;
 using System.Net.Mail;
 using System.Xml;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace BO;
 
@@ -59,14 +60,14 @@ static public class Tools
         //if (obj.GetType().IsPrimitive || obj is string || obj.GetType().IsEnum || obj is DateTime || obj is TimeSpan) 
         //    return $"{new String('\t', depth)}{obj}";
         if (isPrimitiveString(obj))
-            return $"{new String('\t', depth)}{obj}";
+            return $"{new System.String('\t', depth)}{obj}";
 
 
         Type type = obj.GetType();
         StringBuilder sb = new StringBuilder();
         if (depth > 0)
         {
-            sb.AppendLine($"{new String('\t', depth)}Type: {type.Name}");
+            sb.AppendLine($"{new System.String('\t', depth)}Type: {type.Name}");
         }
         else
         {
@@ -78,7 +79,7 @@ static public class Tools
             if (property.GetGetMethod() != null && !property.GetIndexParameters().Any())
             {
                 object? value = property.GetValue(obj, null);
-                var propertyIndentation = new String('\t', depth);
+                var propertyIndentation = new System.String('\t', depth);
                 if (value is System.Collections.IEnumerable && !(value is string) && !(value.GetType().IsEnum))
                 {
                     sb.AppendLine($"{propertyIndentation}{property.Name}:");
@@ -86,7 +87,7 @@ static public class Tools
                     {
                         if (isPrimitiveString(item))
                         {
-                            sb.AppendLine($"{new String('\t', depth + 1)}{item}");
+                            sb.AppendLine($"{new System.String('\t', depth + 1)}{item}");
                         }
                         else
                         {
@@ -236,10 +237,10 @@ static public class Tools
     #region help function with xml
 
     private static string path_to_data_config = @"..\xml\data-config.xml";
+
+    #region start date
     public static DateTime? StartDateOrNull()
-    {
-        // Define the path to your XML file
-       
+    { 
 
         // Load the XML document
         XmlDocument xmlDoc = new XmlDocument();
@@ -280,10 +281,6 @@ static public class Tools
 
     public static void update_StartDate_unsafe(DateTime date)
     {
-        // Define the path to your XML file
-       
-
-
         // Load the XML document
         XmlDocument xmlDoc = new XmlDocument();
         xmlDoc.Load(path_to_data_config);
@@ -301,9 +298,122 @@ static public class Tools
         }
         else
         {
-            Console.WriteLine("StartDate element not found.");
             throw new BlDoesNotExistException("StartDate was not found!");
         }
     }
+
+    #endregion
+
+    //#region clock
+    //public static void setClock(DateTime clock)
+    //{
+    //    // Load the XML document
+    //    XmlDocument xmlDoc = new XmlDocument();
+    //    xmlDoc.Load(path_to_data_config);
+
+    //    // Find the <Clock> element
+    //    XmlNode? clockNode = xmlDoc.SelectSingleNode("//Clock");
+    //    if (clockNode != null)
+    //    {
+    //        // Update the <Clock> value to the new date
+    //        clockNode.InnerText = clock.ToString();
+
+    //        // Save the changes back to the file
+    //        xmlDoc.Save(path_to_data_config);
+
+    //    }
+    //    else
+    //    {
+    //        throw new BlDoesNotExistException("Clock was not found!");
+    //    }
+    //}
+    //static public DateTime getClock()
+    //{
+    //    // Load the XML document
+    //    XmlDocument xmlDoc = new XmlDocument();
+    //    xmlDoc.Load(path_to_data_config);
+
+    //    // Find the <Clock> element
+    //    XmlNode? clockNode = xmlDoc.SelectSingleNode("//Clock");
+    //    if (clockNode != null)
+    //    {
+    //        // Check if the <StartDate> value is null or empty
+    //        if (string.IsNullOrEmpty(clockNode.InnerText))
+    //        {
+    //            setClock(DateTime.Now);
+    //            return getClock();
+    //        }
+    //        else
+    //        {
+    //            // <Clock> has a value
+    //            //return DateTime.TryParse(clockNode.InnerText);
+    //            if (DateTime.TryParse(clockNode.InnerText, out DateTime result))
+    //            {
+    //                return result;
+    //            }
+    //            else
+    //            {
+    //                // Handle the situation where the date could not be parsed
+    //                setClock(DateTime.Now);
+    //                return getClock();
+    //            }
+
+    //        }
+    //    }
+    //    else
+    //    {
+    //        setClock(DateTime.Now);
+    //        return getClock();
+    //    }
+
+    //}
+
+    //#endregion
+
+    #region clock
+    public static void SetClock(DateTime clock)
+    {
+        // Load the XML document
+        XmlDocument xmlDoc = new XmlDocument();
+        xmlDoc.Load(path_to_data_config);
+
+        // Find the <Clock> element
+        XmlNode clockNode = xmlDoc.SelectSingleNode("//Clock");
+        if (clockNode != null)
+        {
+            // Update the <Clock> value to the new date
+            clockNode.InnerText = clock.ToString("o"); // Use a standard date format
+
+            // Attempt to save the changes back to the file
+            xmlDoc.Save(path_to_data_config);
+        }
+        else
+        {
+            throw new BlDoesNotExistException("Clock node was not found in the XML.");
+        }
+    }
+
+    public static DateTime GetClock()
+    {
+        // Load the XML document
+        XmlDocument xmlDoc = new XmlDocument();
+        xmlDoc.Load(path_to_data_config);
+
+        // Find the <Clock> element
+        XmlNode clockNode = xmlDoc.SelectSingleNode("//Clock");
+        if (clockNode != null)
+        {
+            // Try to parse the InnerText to a DateTime object
+            if (DateTime.TryParse(clockNode.InnerText, null, System.Globalization.DateTimeStyles.RoundtripKind, out DateTime result))
+            {
+                return result;
+            }
+        }
+
+        // If the <Clock> node is not found or the date could not be parsed, return DateTime.Now
+        return DateTime.Now;
+    }
+    #endregion
+
     #endregion
 }

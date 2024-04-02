@@ -73,7 +73,7 @@ namespace PL.EngineerInterface
                 MessageBox.Show("You don't have a task yet");
                 return;
             }
-            if (BO.Tools.StartDateOrNull() == null)
+            if (s_bl.StartDate==null)
             {
                 MessageBox.Show("A schedule of tasks needs to be set up first");
                 return;
@@ -94,7 +94,7 @@ namespace PL.EngineerInterface
 
         private void TaskOption_Button(object sender, RoutedEventArgs e)
         {
-            if (BO.Tools.StartDateOrNull()==null)   
+            if (s_bl.StartDate==null)   
                 MessageBox.Show("the manager needs to choose a start date for the project first");
             else if (CurrentTask.Id != 0)    //check if the current task was finished
                 MessageBox.Show("you need to finish your task first");

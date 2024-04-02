@@ -8,13 +8,16 @@ namespace BlApi;
 
 public interface IBl
 {
+    public DateTime? StartDate { get; }
     public IEngineer Engineer { get; }
 
     public ITask Task { get; }
 
+    //public IMilestone Milestone { get; }
+    
     #region Clock
     public DateTime Clock { get; }
-
+    public void SaveClock(DateTime c);
     public void AddSeconds(int sec);
     public void AddMinutes(int min);
     public void AddHour();
@@ -27,11 +30,6 @@ public interface IBl
     public void InitializeDB();
 
     public void ResetDB();
-    //public IMilestone Milestone { get; }
 
-    //public DateTime Clock { get; };
-    //public void AddYear();
-    //public void AddMonth();
-    //public void AddHour();
-    //public void TimeReset();
+
 }

@@ -48,7 +48,7 @@ namespace PL.EngineerInterface
     private void ChooseTask_Button(object sender, MouseButtonEventArgs e)
     {
             // Check if a schedule of tasks has been set up
-            if (BO.Tools.StartDateOrNull() == null)
+            if (s_bl.StartDate == null)
             {
                 MessageBox.Show("A schedule of tasks needs to be set up first");
                 return;
