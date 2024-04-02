@@ -93,7 +93,7 @@ public partial class AddingTaskToEngineerWindow : Window
 
             s_bl.Task.Update(CurrentTask);
             Close();
-            MessageBox.Show("congrajulations, from now this task is binded to you forever until you finish");
+            MessageBox.Show("congratulations, from now this task is bound to you forever until you finish");
             //new EngineerInterfaceMainWindow(currentEngineer.Id).Show();
         }
         catch (Exception ex)

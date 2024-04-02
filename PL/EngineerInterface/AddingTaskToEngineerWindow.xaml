@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:PL.EngineerInterface"
         mc:Ignorable="d"
         Title="AddTaskForEngineer" Height="600" Width="800"
-                 DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}">
+        DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}">
 
 
     <Grid Style="{StaticResource GridBackgroundStyle}">
-        <ScrollViewer VerticalScrollBarVisibility="Auto">
-            <StackPanel Margin="10" HorizontalAlignment="Center">
+      <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="10" HorizontalAlignment="Center" DataContext="{Binding CurrentTask}">
 
                 <TextBlock Text="Add Task for engineer" FontSize="30" Foreground="#FFFFFFFF" TextAlignment="Center" Margin="0,0,0,20"/>
 
@@ -87,7 +87,7 @@
             </StackPanel>
 
         </StackPanel>
-        </ScrollViewer>
+      </ScrollViewer>
 
     </Grid>
     

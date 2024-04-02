@@ -15,20 +15,6 @@
     <EngineerId xsi:nil="true" />
   </Task>
   <Task>
-    <Id>1003</Id>
-    <Alias>Establish a budget</Alias>
-    <Description>Determine the financial requirements and create a budget for the campaign.</Description>
-    <CreatedAtDate>2010-11-23T00:00:00</CreatedAtDate>
-    <RequiredEffortTime>P24D</RequiredEffortTime>
-    <IsMilestone>false</IsMilestone>
-    <Complexity>Intermediate</Complexity>
-    <StartDate xsi:nil="true" />
-    <ScheduledDate>2027-04-16T15:42:57.3979828+03:00</ScheduledDate>
-    <DeadlineDate xsi:nil="true" />
-    <CompleteDate xsi:nil="true" />
-    <EngineerId xsi:nil="true" />
-  </Task>
-  <Task>
     <Id>1004</Id>
     <Alias>Form a fundraising team</Alias>
     <Description>Assemble a team of individuals with skills pertinent to fundraising.</Description>
@@ -420,5 +406,19 @@
     <DeadlineDate xsi:nil="true" />
     <CompleteDate>2030-04-02T18:27:07.6249746+03:00</CompleteDate>
     <EngineerId xsi:nil="true" />
+  </Task>
+  <Task>
+    <Id>1003</Id>
+    <Alias>Establish a budget</Alias>
+    <Description>Determine the financial requirements and create a budget for the campaign.</Description>
+    <CreatedAtDate>2010-11-23T00:00:00</CreatedAtDate>
+    <RequiredEffortTime>P24D</RequiredEffortTime>
+    <IsMilestone>false</IsMilestone>
+    <Complexity>Intermediate</Complexity>
+    <StartDate>2025-04-03T01:48:16.6362762+03:00</StartDate>
+    <ScheduledDate>2027-04-16T15:42:57.3979828+03:00</ScheduledDate>
+    <DeadlineDate xsi:nil="true" />
+    <CompleteDate xsi:nil="true" />
+    <EngineerId>1</EngineerId>
   </Task>
 </ArrayOfTask>

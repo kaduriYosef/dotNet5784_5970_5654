@@ -213,7 +213,7 @@ internal class EngineerImplementation : IEngineer
         #endregion
 
         if (areThereAnyIncompleteDeps)
-            throw new BlInvalidDataException($"can't give the task with id {doTask.Id} to an engineer before all its previous tasks will be completed");
+            throw new BlInvalidDataException($"can't give the task with id {doTask.Id} to an engineer before all its previous tasks that this task depends on will be completed");
 
     }
 }
