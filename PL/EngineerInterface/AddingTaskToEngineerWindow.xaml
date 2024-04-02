@@ -39,12 +39,13 @@
                 <TextBox Text="{Binding Description, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}"  IsEnabled="False" />
                 <TextBox Text="{Binding CreatedAtDate}" IsEnabled="False" />
                 <ListBox SelectionMode="Extended" 
-                         ItemsSource="{Binding TaskInList, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:AddingTaskToEngineerWindow}}, Mode=TwoWay}"
-                     Height="100"  Background="#FFDDDDDD" FontSize="22" VerticalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="0,0,0,30"  >
+                         
+                         ItemsSource="{Binding TaskList, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:AddingTaskToEngineerWindow}}, Mode=TwoWay}"
+                     Height="100"   VerticalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="0,0,0,30"  >
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                <CheckBox Content="{Binding Id}"  IsChecked="{Binding IsSelected, Mode=TwoWay}" VerticalAlignment="Center"  IsEnabled="False"/>
+                                <CheckBox Content="{Binding Id}" Loaded="CheckBox_Loaded"  IsChecked="{Binding IsSelected, Mode=TwoWay}" VerticalAlignment="Center"  IsEnabled="False"/>
                                 <TextBlock Text="{Binding Alias}" VerticalAlignment="Center" Margin="5,0,0,0" />
                             </StackPanel>
                         </DataTemplate>
@@ -55,8 +56,9 @@
                 <TextBox Text ="{Binding DeadlineDate}" IsEnabled="False" />
                 <TextBox Text="{Binding Deliverables}"  IsEnabled="False"/>
                 <TextBox Text="{Binding Remarks, NotifyOnValidationError=true,  ValidatesOnExceptions=true}"  IsEnabled="False"/>
-                <ComboBox  ItemsSource="{Binding Source={StaticResource EngineerExperienceKey}}" SelectedValue="{Binding Path=Copmlexity, Mode=TwoWay}" 
-                         Height="50"   FontSize="20" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,0,70"  IsEnabled="False"/>
+                <TextBox Text="{Binding Complexity}" IsEnabled="False"/>
+                <!--<ComboBox  ItemsSource="{Binding Source={StaticResource EngineerExperienceKey}}" SelectedValue="{Binding Path=Copmlexity, Mode=TwoWay}" 
+                         Height="50"   FontSize="20" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,0,70"  IsEnabled="False"/>-->
             </StackPanel>
             <!--button to add the new task-->
             <Button  Grid.RowSpan="2"  Click="addTaskToEngineer_Button" Grid.Row="2"

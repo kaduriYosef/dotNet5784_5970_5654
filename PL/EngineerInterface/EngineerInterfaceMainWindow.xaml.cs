@@ -23,7 +23,7 @@ namespace PL.EngineerInterface
 
         static readonly BlApi.IBl s_bl = BlApi.Factory.Get(); // Initializing s_bl with Factory.Get()
 
-        private TaskWindowForEngineer taskOfThisEngineer;
+        private TaskWindowForEngineer? taskOfThisEngineer;
 
         // Dependency Property for TaskInList
         public IEnumerable<TaskInList> TaskInList
@@ -111,16 +111,21 @@ namespace PL.EngineerInterface
         {
             if (CurrentTask.Id == 0)
             {
-                MessageBox.Show("You don't have a task yet");
+                MessageBox.Show("you can finish your task if you don't have any task");
                 return;
             }
             try
             {
+
                 CurrentTask.CompleteDate = s_bl.Clock;// Setting CompleteDate to current date
                 CurrentTask.Engineer = null;    // Clearing Engineer
                 CurrentTask.Status = BO.Status.Done;
                 s_bl.Task.Update(CurrentTask);  // Updating Task
-                MessageBox.Show("Well done, you have successfully completed the task");
+
+                CurrentEngineer.Task = null;
+                s_bl.Engineer.Update(CurrentEngineer);
+
+                MessageBox.Show("thank you for doing your job  and completing the task");
                 Close();
                 new EngineerInterfaceMainWindow(CurrentEngineer.Id).Show();
             }

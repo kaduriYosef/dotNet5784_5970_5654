@@ -103,14 +103,7 @@ namespace PL.Task
 
             InitializeComponent();
             //init the Ids 
-            Ids = new ObservableCollection<int>();
-            if (Id != 0)//if we have the user id we insert the dependent task
-            {
-                foreach (var task in s_bl.Task.Read(Id).Dependencies)
-                {
-                    Ids.Add(task.Id);
-                }
-            }
+           
 
             Ids= new ObservableCollection<int>();
             var currentTask = s_bl.Task.Read(Id);
