@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PL.EngineerInterface"
         mc:Ignorable="d"
-        Title="Password Required" Height="Auto" Width="Auto">
+        Title="please your name and id" Height="Auto" Width="Auto">
     <Grid>
 
-        <Button Content="Log In" VerticalAlignment="Bottom" Margin="0,0,0,30" Click="EngineerLogin_Click" />
+        <Button Content="Enter" VerticalAlignment="Bottom" Margin="0,0,0,30" Click="EngineerLogin_Click" />
 
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0" Height="200" Width="400" >
-            <Label Content="User Name:" HorizontalAlignment="Left" FontSize="18" FontWeight="Bold"/>
+            <Label Content="Name:" HorizontalAlignment="Left" FontSize="18" FontWeight="Bold"/>
             <Label Content="Id:" Margin="0,80,250,0" FontSize="20" FontWeight="Bold"/>
         </StackPanel>
 

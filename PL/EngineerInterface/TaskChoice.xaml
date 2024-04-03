@@ -24,16 +24,11 @@
             </Button>
 
             <!-- Label for displaying available tasks -->
-            <Label Content="tasks you can chooze:" VerticalAlignment="Top" HorizontalAlignment="Center" />
+            <Label Content="these are the tasks that matches your espreience:" VerticalAlignment="Top" HorizontalAlignment="Center" />
 
             <!-- ListView to display the list of available tasks -->
             <ListView  Grid.Row="1" ItemsSource="{Binding TaskList}"  MouseDoubleClick="ChooseTask_Button" FontSize="16" Height="auto" VerticalAlignment="Top" >
-                <ListView.Background>
-                    <LinearGradientBrush>
-                        <GradientStop Color="#0F37CDCE" Offset="0" />
-                        <GradientStop Color="#FF125F61" Offset="1" />
-                    </LinearGradientBrush>
-                </ListView.Background>
+               
             </ListView>
 
         </Grid>

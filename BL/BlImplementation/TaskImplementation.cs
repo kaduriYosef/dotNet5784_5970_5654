@@ -210,7 +210,9 @@ internal class TaskImplementation : ITask
             throw new BlDoesNotExistException($"task with id {boTask.Id} doesn't exist");
 
         if (Tools.StartDateOrNull() != null && 
-            (boTask.ScheduledDate!=boTaskOriginal.ScheduledDate ||boTask.RequiredEffortTime!=boTaskOriginal.RequiredEffortTime/*|| !(boTask.Dependencies.SequenceEqual(boTaskOriginal.Dependencies))*/))
+            ( boTask.ScheduledDate!=boTaskOriginal.ScheduledDate 
+            ||boTask.RequiredEffortTime!=boTaskOriginal.RequiredEffortTime
+            || !(boTask.Dependencies.SequenceEqual(boTaskOriginal.Dependencies))))
                 throw new BlImpossibleToCreate("can't update new task once the start date was declared");
 
 

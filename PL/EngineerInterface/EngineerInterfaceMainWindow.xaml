@@ -10,34 +10,55 @@
     <Grid  DataContext="{Binding CurrentTask}">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
         <!-- Greeting message -->
-        <Label Content="Hello"   FontSize="26"  HorizontalAlignment="Center" Margin="0,0,0,40"/>
+        <Label Content="Good to see you,"   FontSize="26"  HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0"/>
 
         <!-- Display the name of the current engineer -->
-        <Label FontSize="30" HorizontalAlignment="Center" Margin="0,60,0,0">
+        <Label FontSize="30" HorizontalAlignment="Center" Grid.Column="1">
             <Label.Content>
                 <Binding Path="CurrentEngineer.Name" RelativeSource="{RelativeSource FindAncestor, AncestorType={x:Type local:EngineerInterfaceMainWindow}}"  />
             </Label.Content>
         </Label>
 
         <!-- Label indicating the need to choose a task -->
-        <Label Content= "You need to choose a task:" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Row="1" Visibility="{Binding Id ,Converter={StaticResource HasAllredyTaskConvertKey}}"/>
-
+        <Label Content= "You need to choose a task:" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Grid.ColumnSpan="2" Visibility="{Binding Id ,Converter={StaticResource HasAllredyTaskConvertKey}}" Margin="295,76,0,0" Grid.RowSpan="3"/>
+        <StackPanel Orientation="Vertical" Grid.Row="3" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <!--<Label Content="View task option:"  FontSize="26" Margin="0,0,0,50"/>-->
+                <Button Content="task to choose from"   Click="TaskOption_Button" Margin="0,0,0,30"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <!--<Label Content= "Your task's details:"   FontSize="26"  Margin="0,0,0,50"/>-->
+                <Button Content="details of your task" Click="UpdateTask_Button"  Margin="0,0,0,30"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <!--<Label Content="I finished the task:"   FontSize="26"  Margin="0,0,0,50"/>-->
+                <Button Content="report if you finished the Task"  Click="TaskCompleted_Button" Margin="0,0,0,30"/>
+            </StackPanel>
+        </StackPanel>
         <!-- StackPanel for task management options -->
+        <!--
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0,60,300,0" Height="auto" Width="auto" Grid.Row="2">
             <Label Content="View task option:"  FontSize="26" Margin="0,0,0,50"/>
             <Label Content= "Your task's details:"   FontSize="26"  Margin="0,0,0,50"/>
             <Label Content="I finished the task:"   FontSize="26"  Margin="0,0,0,50"/>
         </StackPanel>
 
+        -->
         <!-- StackPanel for task management buttons -->
+        <!--
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="200,60,0,0" Width="auto" Height="auto" Grid.Row="2">
             <Button Content="Tasks option"   Click="TaskOption_Button" Margin="0,0,0,30"/>
             <Button Content="Your task details" Click="UpdateTask_Button"  Margin="0,0,0,30"/>
             <Button Content="Task completed"  Click="TaskCompleted_Button" Margin="0,0,0,30"/>
-        </StackPanel>
+        </StackPanel>-->
     </Grid>
 </Window>

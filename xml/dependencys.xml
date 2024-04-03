@@ -1,11 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfDependency>
   <dependencys>
-    <Id>10000</Id>
-    <DependentTask>1002</DependentTask>
-    <DependentOnTask>1000</DependentOnTask>
-  </dependencys>
-  <dependencys>
     <Id>10002</Id>
     <DependentTask>1004</DependentTask>
     <DependentOnTask>1002</DependentOnTask>
@@ -14,11 +9,6 @@
     <Id>10003</Id>
     <DependentTask>1004</DependentTask>
     <DependentOnTask>1003</DependentOnTask>
-  </dependencys>
-  <dependencys>
-    <Id>10004</Id>
-    <DependentTask>1005</DependentTask>
-    <DependentOnTask>1000</DependentOnTask>
   </dependencys>
   <dependencys>
     <Id>10005</Id>
@@ -131,16 +121,6 @@
     <DependentOnTask>1027</DependentOnTask>
   </dependencys>
   <dependencys>
-    <Id>10030</Id>
-    <DependentTask>1002</DependentTask>
-    <DependentOnTask>1001</DependentOnTask>
-  </dependencys>
-  <dependencys>
-    <Id>10031</Id>
-    <DependentTask>1005</DependentTask>
-    <DependentOnTask>1003</DependentOnTask>
-  </dependencys>
-  <dependencys>
     <Id>10032</Id>
     <DependentTask>1008</DependentTask>
     <DependentOnTask>1006</DependentOnTask>
@@ -246,8 +226,28 @@
     <DependentOnTask>1022</DependentOnTask>
   </dependencys>
   <dependencys>
-    <Id>10066</Id>
+    <Id>10067</Id>
+    <DependentTask>1002</DependentTask>
+    <DependentOnTask>1000</DependentOnTask>
+  </dependencys>
+  <dependencys>
+    <Id>10068</Id>
+    <DependentTask>1002</DependentTask>
+    <DependentOnTask>1001</DependentOnTask>
+  </dependencys>
+  <dependencys>
+    <Id>10069</Id>
     <DependentTask>1003</DependentTask>
     <DependentOnTask>1001</DependentOnTask>
+  </dependencys>
+  <dependencys>
+    <Id>10072</Id>
+    <DependentTask>1005</DependentTask>
+    <DependentOnTask>1000</DependentOnTask>
+  </dependencys>
+  <dependencys>
+    <Id>10073</Id>
+    <DependentTask>1005</DependentTask>
+    <DependentOnTask>1003</DependentOnTask>
   </dependencys>
 </ArrayOfDependency>

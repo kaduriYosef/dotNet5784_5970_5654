@@ -70,12 +70,12 @@ namespace PL.EngineerInterface
         {
             if (CurrentTask.Id == 0)
             {
-                MessageBox.Show("You don't have a task yet");
+                MessageBox.Show("you can't look at the details of your task since you don't have a task");
                 return;
             }
             if (s_bl.StartDate==null)
             {
-                MessageBox.Show("A schedule of tasks needs to be set up first");
+                MessageBox.Show("wait for the manager to schedule all the tasks");
                 return;
             }
 
@@ -111,7 +111,7 @@ namespace PL.EngineerInterface
         {
             if (CurrentTask.Id == 0)
             {
-                MessageBox.Show("you can finish your task if you don't have any task");
+                MessageBox.Show("how can finish your task if you don't have any task?");
                 return;
             }
             try

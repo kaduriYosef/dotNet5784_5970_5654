@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Xml.Linq;
 
 namespace BO;
 
@@ -22,4 +23,10 @@ public class TaskInList
     /// <summary>Returns a string representation of the TaskInList object, detailing its properties.</summary>
     /// <returns>Formatted string of task details.</returns>
     public override string ToString() => this.ToStringProperty();
+    public override bool Equals(object? obj)
+    {
+        return obj is TaskInList item &&
+        Id == item.Id;
+    }
+
 }
