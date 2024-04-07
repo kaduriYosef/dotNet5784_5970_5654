@@ -40,4 +40,20 @@
     <Level>Expert</Level>
     <Active>true</Active>
   </Engineer>
+  <Engineer>
+    <Id>987654321</Id>
+    <Email>ryai@gmail.com</Email>
+    <Cost>100000</Cost>
+    <Name>rabi yair</Name>
+    <Level>Expert</Level>
+    <Active>true</Active>
+  </Engineer>
+  <Engineer>
+    <Id>123456789</Id>
+    <Email>reli@gmail.com</Email>
+    <Cost>100000</Cost>
+    <Name>rabi eliezer</Name>
+    <Level>Expert</Level>
+    <Active>true</Active>
+  </Engineer>
 </ArrayOfEngineer>
