@@ -16,7 +16,7 @@
 
                 <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
                     <TextBlock Text="ID:" Width="100"/>
-                    <TextBox Text="{Binding Id}" Width="150" IsEnabled="{Binding Id, Mode=OneTime, Converter={StaticResource ConvertIdToIsEnableForIdKey}}"/>
+                    <TextBox Text="{Binding Id}" Width="150" IsEnabled="False"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="0,0,0,10">

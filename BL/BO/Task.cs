@@ -20,7 +20,7 @@ public class Task
     public string Description { get; set; }
 
     /// <summary>Date and time when the task was created.</summary>
-    public DateTime CreatedAtDate { get; init; }
+    public DateTime CreatedAtDate { get; init; }=DateTime.Now;
 
     /// <summary>Current status of the task, indicating its progress.</summary>
     public Status? Status { get; set; }

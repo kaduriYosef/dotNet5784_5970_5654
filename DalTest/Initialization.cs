@@ -145,11 +145,11 @@ public static class Initialization
             DateTime CreatedAtDate = start.AddDays(s_rand.Next(range));
             TimeSpan? RequiredEffortTime = TimeSpan.FromDays(s_rand.Next(10, 30));
             bool IsMilestone = range % 2 == 0;
-            //since the engineers are sorted by thier experience
+            //since the engineers are sorted by their experience
             EngineerExperience? Complexity = (EngineerExperience)(engineerLevelsForTask[i]);
             DateTime? StartDate = null;
             int timeSpent= RequiredEffortTime?.Days ?? 0;
-            DateTime? ScheduledDate = CreatedAtDate.AddDays(s_rand.Next(range - timeSpent));
+            DateTime? ScheduledDate = null;
             //DateTime? DeadlineDate = ScheduledDate?.AddDays(timeSpent + s_rand.Next(10, 40));
             DateTime? CompleteDate = null;
             string? Deliverables = null;
@@ -270,9 +270,10 @@ public static class Initialization
 
         //the config file
         XElement StartDate = new XElement("StartDate",null);
+        XElement Clock = new XElement("Clock",DateTime.Now);
         XElement NextTaskId = new XElement("NextTaskId", 1000);
         XElement NextDependencyId = new XElement("NextDependencyId", 10000);
-        XElement config = new XElement("config",StartDate, NextTaskId, NextDependencyId);
+        XElement config = new XElement("config",StartDate,Clock, NextTaskId, NextDependencyId);
 
         config.Save(@"..\xml\data-config.xml");
 

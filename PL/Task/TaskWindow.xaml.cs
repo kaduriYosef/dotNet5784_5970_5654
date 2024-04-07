@@ -94,7 +94,9 @@ namespace PL.Task
         {
             if (Ids != null && sender is CheckBox checkBox && checkBox.Tag is int id)
             {
+                
                 Ids.Remove(id);
+                
             }
         }
         //Ctor
@@ -102,16 +104,43 @@ namespace PL.Task
         {
 
             InitializeComponent();
-            //init the Ids 
-           
 
-            Ids= new ObservableCollection<int>();
-            var currentTask = s_bl.Task.Read(Id);
-            if (currentTask != null)
+            id = Id;
+            if (Id != 0)
+                Task = s_bl.Task.Read(Id);
+            else
             {
-                foreach (var t in currentTask.Dependencies)
+                //var tmp = new BO.Task();
+                var currentTask = new BO.Task()
+                {
+                    Id = 0,
+                    Alias = "",
+                    Description = "",
+                    CreatedAtDate = s_bl.Clock,
+                    RequiredEffortTime = null,
+                    StartDate=null,
+                    ScheduledDate=null,
+                    ForecastDate=null,
+                    DeadlineDate = null,
+                    CompleteDate=null,
+                    Dependencies = TaskListDep?.ToList() ?? new List<BO.TaskInList>(),
+                    Complexity = BO.EngineerExperience.Beginner,
+                    Deliverables = null,
+                    Remarks = null,
+                    Engineer = null
+                };
+                Task = currentTask;
+            }
+            //init the Ids 
+            Ids = new ObservableCollection<int>();
+            //var currentTask = s_bl.Task.Read(Id);
+            if (Id !=0)
+            {
+                foreach (var t in Task.Dependencies)
                     Ids.Add(t.Id);
             }
+            
+            
             EngineerList = from eng in s_bl.Engineer.ReadAll()
                            select new BO.EngineerInTask()
                            {
@@ -128,28 +157,15 @@ namespace PL.Task
                        };
                                                             //looks unnecessary
 
-            id = Id;
-            if (Id != 0)
-                Task = s_bl.Task.Read(Id);
-            else
-                Task = new BO.Task()
-                {
-                    Id = 0,
-                    Alias = null,
-                    Description = null,
-                    CreatedAtDate = DateTime.Now,
-                    RequiredEffortTime = null,
-                    Dependencies = TaskListDep.ToList(),
-                    Complexity = 0,
-                    DeadlineDate = null,
-                    Deliverables = null,
-                    Remarks = null,
-                    Engineer = null
-                };
+           
         }
 
         private void btnAddUpdate_Click(object sender, RoutedEventArgs e)
         {
+            foreach(var _id in Ids)
+            {
+                Task.Dependencies.Add(BO.Tools.fromTaskToTaskInList( s_bl.Task.Read(_id)));
+            }
             if (id == 0)
             {
 
