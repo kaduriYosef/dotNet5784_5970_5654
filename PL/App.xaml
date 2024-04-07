@@ -98,6 +98,7 @@
             <Setter Property="VerticalContentAlignment" Value="Center"/>
         </Style>
 
+        
         <Style x:Key="button_circle_with_image" TargetType="Button">
             <Setter Property="Background" Value="#FF003366"/>
             <Setter Property="Foreground" Value="White"/>

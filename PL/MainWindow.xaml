@@ -28,8 +28,36 @@
 
 
         <Button Style="{StaticResource button_circle}" Grid.Column="1" Grid.Row="2" Content="Engineer"
+        Margin="10,10,10,10"
+        Click="Button_Engineer">
+            <Button.Triggers>
+                <!-- אנימציה כאשר העכבר מרחף מעל הכפתור -->
+                <EventTrigger RoutedEvent="Button.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                        Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                        To="LightBlue" Duration="0:0:0.3"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <!-- אנימציה כאשר העכבר עוזב את הכפתור -->
+                <EventTrigger RoutedEvent="Button.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                        Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                        To="#FF003366" Duration="0:0:0.3"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+
+
+        <!--<Button Style="{StaticResource button_circle}" Grid.Column="1" Grid.Row="2" Content="Engineer"
                 Margin= "10,10,10,10"
-                Click="Button_Engineer"/>
+                Click="Button_Engineer"/>-->
 
         <Grid Grid.Column="1">
             <Grid.ColumnDefinitions>

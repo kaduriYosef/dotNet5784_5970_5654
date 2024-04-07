@@ -3,11 +3,20 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PL.Engineer"
+        xmlns:local="clr-namespace:PL"
         mc:Ignorable="d"
         DataContext="{Binding Engineer, RelativeSource={RelativeSource Self}, Mode=TwoWay}"
         Title="EngineerWindow" Height="700" Width="700">
-    <Grid Style="{StaticResource GridBackgroundStyle}">
+
+
+        <Window.Resources>
+                <local:LengthToColorConverter x:Key="LengthToColorConverter"/>
+         </Window.Resources>
+    
+
+   
+
+        <Grid Style="{StaticResource GridBackgroundStyle}">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -27,7 +36,7 @@
 
 
 
-        <TextBox Grid.Row="1" Text="{Binding Id}"  Style="{StaticResource text_box_eng_task_window}" IsEnabled="{Binding Id, Mode=OneTime, Converter={StaticResource ConvertIdToIsEnableForIdKey}}"/> 
+        <TextBox Grid.Row="1" Text="{Binding Id}"  Style="{StaticResource text_box_eng_task_window}" IsEnabled="{Binding Id, Mode=OneTime, Converter={StaticResource ConvertIdToIsEnableForIdKey}}" Background="{Binding Text, RelativeSource={RelativeSource Self}, Converter={StaticResource LengthToColorConverter}}"/> 
         <TextBox Grid.Row="2" Text="{Binding Name, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Style="{StaticResource text_box_eng_task_window}"/>
         <TextBox Grid.Row="3" Text="{Binding Email, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Style="{StaticResource text_box_eng_task_window}" />
         <ComboBox Grid.Row="4"  Style="{StaticResource combo_box_eng_task_window}"
