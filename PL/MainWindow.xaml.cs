@@ -24,11 +24,16 @@ namespace PL
 
         static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
         private DispatcherTimer _timer;
+        private bool isEnd = false;
 
         public MainWindow()
         {
             InitializeComponent();
             this.DataContext = this;
+
+            //isEnd = false;
+            //Thread clockTicker = new Thread(Timer_Tick_2);
+            //clockTicker.Start();
 
             _timer = new DispatcherTimer();
             _timer.Interval = TimeSpan.FromSeconds(1);
@@ -48,6 +53,7 @@ namespace PL
             }
             else
             {
+                isEnd = true;
                 s_bl.SaveClock(s_bl.Clock);
             }
         }
@@ -68,6 +74,19 @@ namespace PL
             // Update CurrentTime from s_bl.Clock every time the timer ticks.
             s_bl.AddSeconds(1);
             CurrentTime = s_bl.Clock;
+        }
+
+        private void Timer_Tick_2()
+        {
+            while(isEnd==false)
+            {
+                Thread.Sleep(1000);
+                s_bl.AddSeconds(1);
+                Application.Current.Dispatcher.Invoke(() =>
+                {
+                    CurrentTime = s_bl.Clock;
+                });
+            }
         }
 
         private void Button_Admin(object sender, RoutedEventArgs e)

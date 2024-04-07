@@ -104,7 +104,7 @@ internal class TaskImplementation : ITask
     public BO.Task? Read(Func<BO.Task, bool> boFilter)
     {
         Func<DO.Task, bool> doFilter = t => boFilter(DOtoBO(t));
-        DO.Task doTask =_dal?.Task?.Read(doFilter)?? throw new BO.BlDoesNotExistException($"Task that correspondes to such filter doesn't exist.");
+        DO.Task doTask =_dal?.Task?.Read(doFilter)?? throw new BO.BlDoesNotExistException($"Task that corresponds to such filter doesn't exist.");
         return DOtoBO(doTask);
     }
 

@@ -33,7 +33,7 @@
         <StackPanel Orientation="Vertical" Grid.Row="3" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center">
             <StackPanel Orientation="Horizontal">
                 <!--<Label Content="View task option:"  FontSize="26" Margin="0,0,0,50"/>-->
-                <Button Content="task to choose from"   Click="TaskOption_Button" Margin="0,0,0,30"/>
+                <Button Content="tasks to choose from"   Click="TaskOption_Button" Margin="0,0,0,30"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <!--<Label Content= "Your task's details:"   FontSize="26"  Margin="0,0,0,50"/>-->
