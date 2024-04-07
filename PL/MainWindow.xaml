@@ -9,6 +9,12 @@
         Title="MainWindow" Height="600" Width="1000"
         DataContext="{Binding RelativeSource={RelativeSource Self}}" Icon="/risk-management.png">
 
+    <Window.Resources>
+        <RadialGradientBrush x:Key="DeepHexagonBrush" GradientOrigin="0.5,0.5" Center="0.5,0.5" RadiusX="0.5" RadiusY="0.5">
+            <GradientStop Color="#FFFFE070" Offset="0.3"/>
+            <GradientStop Color="#FFFFC000" Offset="1"/>
+        </RadialGradientBrush>
+    </Window.Resources>
     <Grid Style="{StaticResource GridBackgroundStyle}">
         <Grid.RowDefinitions>
             <RowDefinition Height="160*"/>
@@ -21,6 +27,18 @@
             <!--<ColumnDefinition Width="*"/>-->
         </Grid.ColumnDefinitions>
 
+        <Polygon Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" 
+         Points="50,0 100,25 100,75 50,100 0,75 0,25" Fill="{StaticResource DeepHexagonBrush}" StrokeThickness="2" Margin="411,-304,0,0" Grid.ColumnSpan="2">
+            <Polygon.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="33.875"/>
+                    <TranslateTransform X="500" Y="300"/>
+                </TransformGroup>
+            </Polygon.RenderTransform>
+        </Polygon>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Right" Foreground="black" TextTrimming="CharacterEllipsis" TextWrapping="WrapWithOverflow" FontSize="18" Text="          בס&quot;ד" FontWeight="Bold"/>
 
         <Button Style="{StaticResource button_circle}" Grid.Column="0" Grid.Row="2" Content="Admin"
             Margin="10,10,10,10"
@@ -83,7 +101,7 @@
 
 
         </Grid>
-        
+
     </Grid>
 </Window>
 
