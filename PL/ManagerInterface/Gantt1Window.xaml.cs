@@ -23,8 +23,15 @@ namespace PL
         static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
 
         //רשימת המשימות עם תאריכי התחלה ומשך זמן
-        public List<TaskForGantt> ListOfTask = new List<TaskForGantt>();
-
+        public List<TaskInGantt> ListOfTask = new List<TaskInGantt>();
+        public class TaskInGantt
+    {
+        public int id { get; set; }
+        public string alias { get; set; }
+        public int taskDuration { get; set; }
+        public DateTime? scheduledDate { get; set; }
+        public DateTime? completeDate { get; set; }
+    }
         public Gantt1Window()
         {
             InitializeComponent();
@@ -32,9 +39,14 @@ namespace PL
             foreach (var task in s_bl.Task.ReadAll().Where(x=>x is not null))
             {
                // var taskFromDal = s_bl.Task.Read(task.Id);
-                var stringOfDay = task.RequiredEffortTime.ToString();
-                TaskForGantt newTaskForGantt = new TaskForGantt { id = task.Id, alias = task.Alias, taskDuration = int.Parse(stringOfDay.Substring(0, stringOfDay.IndexOf('.'))), scheduledDate = task.ScheduledDate,completeDate=task.CompleteDate };
-                ListOfTask.Add(newTaskForGantt);
+                var stringOfDay = task!.RequiredEffortTime.ToString();
+                TaskInGantt newTaskInGantt = new TaskInGantt { 
+                    id = task.Id, 
+                    alias = task.Alias, 
+                    taskDuration = int.Parse(stringOfDay.Substring(0, stringOfDay.IndexOf('.'))), 
+                    scheduledDate = task.ScheduledDate,
+                    completeDate=task.CompleteDate };
+                ListOfTask.Add(newTaskInGantt);
             }
             //sort the list by start date
             ListOfTask = ListOfTask.OrderBy(task => task.scheduledDate).ToList();
@@ -52,11 +64,10 @@ namespace PL
 
             double maxAliasWidth = GetMaxAliasWidth(); // קביעת הרוחב המקסימלי של הכינויים
 
-            double maxWidth = ListOfTask.Max(task => ((task.scheduledDate ?? DateTime.Today) - minStartDate).TotalDays * 10 + task.taskDuration * 10) + maxAliasWidth + 20; // הוספת רווח קצת בסוף
-            canvas.Width = maxWidth;
+            canvas.Width =  ListOfTask.Max(task => ((task.scheduledDate ?? DateTime.Today) - minStartDate).TotalDays * 10 + task.taskDuration * 10) + maxAliasWidth + 20; // הוספת רווח קצת בסוף
             canvas.Height = ListOfTask.Count * 30 + 60; // הוספת רווח לסרגל התאריכים ולמשימות
 
-            double topPosition = 40; // מתחילים מ-40 פיקסלים למעלה כדי לתת מקום לסרגל התאריכים
+            double topPosition = 40; // מתחילים מ-40 פיקסלים מלמעלה כדי לתת מקום לסרגל התאריכים
 
             foreach (var task in ListOfTask)
             {
@@ -212,13 +223,5 @@ namespace PL
             }
             return null;
         }
-    }
-    public class TaskForGantt
-    {
-        public int id { get; set; }
-        public string alias { get; set; }
-        public int taskDuration { get; set; }
-        public DateTime? scheduledDate { get; set; }
-        public DateTime? completeDate { get; set; }
     }
 }

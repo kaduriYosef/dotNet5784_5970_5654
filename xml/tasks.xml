@@ -9,7 +9,7 @@
     <IsMilestone>false</IsMilestone>
     <Complexity>Intermediate</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate xsi:nil="true" />
+    <ScheduledDate>2024-04-19T00:00:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -23,7 +23,7 @@
     <IsMilestone>false</IsMilestone>
     <Complexity>AdvancedBeginner</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate xsi:nil="true" />
+    <ScheduledDate>2024-04-19T00:00:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -37,7 +37,7 @@
     <IsMilestone>false</IsMilestone>
     <Complexity>Advanced</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate xsi:nil="true" />
+    <ScheduledDate>2024-05-10T00:00:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -51,7 +51,7 @@
     <IsMilestone>false</IsMilestone>
     <Complexity>Intermediate</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate xsi:nil="true" />
+    <ScheduledDate>2024-05-10T00:00:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -65,7 +65,7 @@
     <IsMilestone>false</IsMilestone>
     <Complexity>Expert</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate xsi:nil="true" />
+    <ScheduledDate>2024-05-30T00:00:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -79,7 +79,7 @@
     <IsMilestone>false</IsMilestone>
     <Complexity>Intermediate</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate xsi:nil="true" />
+    <ScheduledDate>2024-05-22T00:00:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -93,7 +93,7 @@
     <IsMilestone>false</IsMilestone>
     <Complexity>Advanced</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate xsi:nil="true" />
+    <ScheduledDate>2024-06-25T00:00:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -107,7 +107,7 @@
     <IsMilestone>false</IsMilestone>
     <Complexity>Expert</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate xsi:nil="true" />
+    <ScheduledDate>2024-07-10T00:00:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -121,7 +121,7 @@
     <IsMilestone>false</IsMilestone>
     <Complexity>AdvancedBeginner</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate xsi:nil="true" />
+    <ScheduledDate>2024-08-05T00:00:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -135,7 +135,7 @@
     <IsMilestone>false</IsMilestone>
     <Complexity>Advanced</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate xsi:nil="true" />
+    <ScheduledDate>2024-08-17T00:00:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -149,7 +149,7 @@
     <IsMilestone>false</IsMilestone>
     <Complexity>Intermediate</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate xsi:nil="true" />
+    <ScheduledDate>2024-08-31T00:00:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -163,7 +163,7 @@
     <IsMilestone>false</IsMilestone>
     <Complexity>Beginner</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate xsi:nil="true" />
+    <ScheduledDate>2024-09-11T00:00:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -177,7 +177,7 @@
     <IsMilestone>false</IsMilestone>
     <Complexity>Advanced</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate xsi:nil="true" />
+    <ScheduledDate>2024-09-28T00:00:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -191,7 +191,7 @@
     <IsMilestone>false</IsMilestone>
     <Complexity>AdvancedBeginner</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate xsi:nil="true" />
+    <ScheduledDate>2024-10-14T00:00:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -205,7 +205,7 @@
     <IsMilestone>false</IsMilestone>
     <Complexity>Intermediate</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate xsi:nil="true" />
+    <ScheduledDate>2024-10-27T00:00:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -219,7 +219,7 @@
     <IsMilestone>false</IsMilestone>
     <Complexity>Advanced</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate xsi:nil="true" />
+    <ScheduledDate>2024-11-06T00:00:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -233,7 +233,7 @@
     <IsMilestone>false</IsMilestone>
     <Complexity>AdvancedBeginner</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate xsi:nil="true" />
+    <ScheduledDate>2024-12-04T00:00:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -247,7 +247,7 @@
     <IsMilestone>false</IsMilestone>
     <Complexity>Intermediate</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate xsi:nil="true" />
+    <ScheduledDate>2024-12-15T00:00:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -261,7 +261,7 @@
     <IsMilestone>false</IsMilestone>
     <Complexity>Beginner</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate xsi:nil="true" />
+    <ScheduledDate>2024-12-31T00:00:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -275,7 +275,7 @@
     <IsMilestone>false</IsMilestone>
     <Complexity>Advanced</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate xsi:nil="true" />
+    <ScheduledDate>2025-01-11T00:00:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -289,7 +289,7 @@
     <IsMilestone>false</IsMilestone>
     <Complexity>Intermediate</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate xsi:nil="true" />
+    <ScheduledDate>2025-01-21T00:00:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -303,7 +303,7 @@
     <IsMilestone>false</IsMilestone>
     <Complexity>Expert</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate xsi:nil="true" />
+    <ScheduledDate>2025-02-09T00:00:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -317,7 +317,7 @@
     <IsMilestone>false</IsMilestone>
     <Complexity>Intermediate</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate xsi:nil="true" />
+    <ScheduledDate>2025-02-26T00:00:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -331,7 +331,7 @@
     <IsMilestone>false</IsMilestone>
     <Complexity>Advanced</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate xsi:nil="true" />
+    <ScheduledDate>2025-03-13T00:00:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -345,7 +345,7 @@
     <IsMilestone>false</IsMilestone>
     <Complexity>Beginner</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate xsi:nil="true" />
+    <ScheduledDate>2025-04-01T00:00:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -359,7 +359,7 @@
     <IsMilestone>false</IsMilestone>
     <Complexity>AdvancedBeginner</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate xsi:nil="true" />
+    <ScheduledDate>2025-04-15T00:00:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -373,7 +373,7 @@
     <IsMilestone>false</IsMilestone>
     <Complexity>Intermediate</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate xsi:nil="true" />
+    <ScheduledDate>2025-05-11T00:00:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -387,7 +387,7 @@
     <IsMilestone>false</IsMilestone>
     <Complexity>Advanced</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate xsi:nil="true" />
+    <ScheduledDate>2025-06-01T00:00:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -401,7 +401,7 @@
     <IsMilestone>false</IsMilestone>
     <Complexity>AdvancedBeginner</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate xsi:nil="true" />
+    <ScheduledDate>2025-06-18T00:00:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />
@@ -415,7 +415,7 @@
     <IsMilestone>false</IsMilestone>
     <Complexity>Expert</Complexity>
     <StartDate xsi:nil="true" />
-    <ScheduledDate xsi:nil="true" />
+    <ScheduledDate>2025-06-18T00:00:00</ScheduledDate>
     <DeadlineDate xsi:nil="true" />
     <CompleteDate xsi:nil="true" />
     <EngineerId xsi:nil="true" />

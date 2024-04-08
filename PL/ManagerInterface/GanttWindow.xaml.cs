@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static PL.Gantt1Window;
 
 namespace PL.ManagerInterface;
 
@@ -23,7 +24,7 @@ public partial class GanttWindow : Window
     static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
 
     //רשימת המשימות עם תאריכי התחלה ומשך זמן
-    public List<TaskForGantt> ListOfTask = new List<TaskForGantt>();
+    public List<TaskInGantt> ListOfTask = new List<TaskInGantt>();
 
 
     
@@ -35,7 +36,7 @@ public partial class GanttWindow : Window
         {
             var taskFromDal = s_bl.Task.Read(task!.Id);
             var stringOfDay = taskFromDal!.RequiredEffortTime.ToString();
-            TaskForGantt newTaskForGantt = new TaskForGantt { id = task.Id, alias = task.Alias, taskDuration = int.Parse(stringOfDay.Substring(0, stringOfDay.IndexOf('.'))), scheduledDate = taskFromDal.ScheduledDate };
+            TaskInGantt newTaskForGantt = new TaskInGantt { id = task.Id, alias = task.Alias, taskDuration = int.Parse(stringOfDay.Substring(0, stringOfDay.IndexOf('.'))), scheduledDate = taskFromDal.ScheduledDate };
             //TaskForGantt newTaskForGantt = new TaskForGantt { id = task.Id, alias = task.Alias, taskDuration = taskFromDal.RequiredEffortTime.days(), startDate = taskFromDal.ScheduledDate };
             ListOfTask.Add(newTaskForGantt);
         }
